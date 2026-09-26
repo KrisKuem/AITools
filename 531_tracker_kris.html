@@ -1,0 +1,1162 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>5/3/1 Tracker — Kris</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap');
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #edecea;
+    --bg-card: #fafaf8;
+    --bg-secondary: #f0efeb;
+    --bg-tertiary: #e4e3de;
+    --text: #1a1a18;
+    --text-secondary: #6b6b67;
+    --text-tertiary: #9e9e9a;
+    --border: rgba(0,0,0,0.09);
+    --border-secondary: rgba(0,0,0,0.16);
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --font: 'DM Sans', system-ui, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #1a1a18;
+      --bg-card: #242422;
+      --bg-secondary: #2a2a27;
+      --bg-tertiary: #2e2e2b;
+      --text: #f0efe9;
+      --text-secondary: #9e9e9a;
+      --text-tertiary: #6b6b67;
+      --border: rgba(255,255,255,0.08);
+      --border-secondary: rgba(255,255,255,0.15);
+    }
+  }
+  html, body { height: 100%; background: var(--bg); color: var(--text); font-family: var(--font); font-size: 16px; }
+
+  .app { max-width: 520px; margin: 0 auto; padding: 1.25rem 1rem 3rem; }
+  .app-header { display: flex; align-items: baseline; gap: 10px; margin-bottom: 1.5rem; }
+  .app-title { font-size: 20px; font-weight: 600; color: var(--text); letter-spacing: -.02em; }
+  .app-sub { font-size: 13px; color: var(--text-tertiary); }
+
+  .nav { display: flex; gap: 6px; margin-bottom: 1.5rem; flex-wrap: wrap; }
+  .nav button { font-size: 13px; font-family: var(--font); padding: 6px 14px; border-radius: 99px; border: 0.5px solid var(--border-secondary); background: var(--bg-card); color: var(--text-secondary); cursor: pointer; transition: all .15s; }
+  .nav button:hover { background: var(--bg-secondary); color: var(--text); }
+  .nav button.active { background: var(--text); color: var(--bg); border-color: var(--text); }
+
+  .screen { display: none; } .screen.active { display: block; }
+
+  .card { background: var(--bg-card); border: 0.5px solid var(--border); border-radius: var(--radius-lg); padding: 1rem 1.25rem; margin-bottom: 1rem; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
+  .card-title { font-size: 11px; font-weight: 500; color: var(--text-tertiary); text-transform: uppercase; letter-spacing: .06em; margin-bottom: 12px; }
+
+  .metric-row { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 8px; margin-bottom: 1rem; }
+  .metric { background: var(--bg-card); border: 0.5px solid var(--border); border-radius: var(--radius-md); padding: 10px 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
+  .metric-label { font-size: 11px; color: var(--text-tertiary); margin-bottom: 2px; }
+  .metric-val { font-size: 18px; font-weight: 600; color: var(--text); font-family: 'DM Mono', monospace; }
+  .metric-sub { font-size: 10px; color: var(--text-tertiary); margin-top: 1px; }
+
+  .lift-card { background: var(--bg-card); border: 0.5px solid var(--border); border-radius: var(--radius-lg); padding: 1rem 1.25rem; margin-bottom: 0.75rem; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
+  .lift-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; }
+  .lift-name { font-size: 15px; font-weight: 600; letter-spacing: -.01em; }
+  .lift-tm { font-size: 12px; color: var(--text-secondary); margin-top: 2px; }
+
+  .sets-row { display: grid; grid-template-columns: repeat(3,1fr); gap: 8px; margin-bottom: 10px; }
+  .set-box { background: var(--bg-secondary); border-radius: var(--radius-md); padding: 10px; text-align: center; }
+  .set-box.top-set { border: 1.5px solid #378ADD; }
+  .set-pct { font-size: 10px; color: var(--text-tertiary); margin-bottom: 2px; }
+  .set-kg { font-size: 17px; font-weight: 600; color: var(--text); font-family: 'DM Mono', monospace; }
+  .set-kg.top { color: #185FA5; }
+  .set-reps { font-size: 11px; color: var(--text-secondary); margin-top: 2px; }
+
+  .fsl-row { display: flex; justify-content: space-between; align-items: center; padding-top: 10px; border-top: 0.5px solid var(--border); margin-top: 4px; }
+  .fsl-label { font-size: 12px; color: var(--text-secondary); }
+  .fsl-val { font-size: 13px; font-weight: 600; color: var(--text); font-family: 'DM Mono', monospace; }
+
+  .badge { display: inline-block; font-size: 10px; font-weight: 500; padding: 3px 8px; border-radius: 99px; }
+  .badge-blue { background: #E6F1FB; color: #185FA5; }
+  .badge-amber { background: #FAEEDA; color: #854F0B; }
+  .badge-green { background: #EAF3DE; color: #3B6D11; }
+  .deload-badge { background: #FAEEDA; color: #854F0B; font-size: 11px; padding: 3px 9px; border-radius: 99px; font-weight: 500; }
+
+  input[type=number] { width: 58px; font-size: 13px; font-family: 'DM Mono', monospace; padding: 5px 8px; border-radius: var(--radius-md); border: 0.5px solid var(--border-secondary); background: var(--bg-card); color: var(--text); text-align: center; outline: none; }
+  input[type=number]:focus { box-shadow: 0 0 0 2px rgba(55,138,221,.3); border-color: #378ADD; }
+  input[type=number]::-webkit-inner-spin-button { opacity: 1; }
+
+  .btn-primary { font-size: 13px; font-family: var(--font); font-weight: 500; padding: 9px 20px; border-radius: 99px; border: none; background: var(--text); color: var(--bg); cursor: pointer; transition: opacity .15s; }
+  .btn-primary:hover { opacity: .8; }
+  .btn-secondary { font-size: 13px; font-family: var(--font); padding: 8px 16px; border-radius: 99px; border: 0.5px solid var(--border-secondary); background: var(--bg-card); color: var(--text); cursor: pointer; transition: background .15s; }
+  .btn-secondary:hover { background: var(--bg-secondary); }
+
+  .week-tabs { display: flex; gap: 6px; margin-bottom: 1rem; flex-wrap: wrap; }
+  .week-tab { font-size: 12px; font-family: var(--font); padding: 5px 12px; border-radius: 99px; border: 0.5px solid var(--border); background: var(--bg-card); color: var(--text-secondary); cursor: pointer; }
+  .week-tab.active { background: var(--bg-secondary); color: var(--text); border-color: var(--border-secondary); }
+
+  .timer-display { font-size: 36px; font-weight: 600; font-family: 'DM Mono', monospace; color: var(--text); text-align: center; padding: 1rem 0 0.75rem; letter-spacing: .04em; }
+  .timer-controls { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; margin-bottom: 0.5rem; }
+
+  .history-item { display: flex; justify-content: space-between; align-items: center; padding: 9px 0; border-bottom: 0.5px solid var(--border); font-size: 13px; }
+  .history-item:last-child { border-bottom: none; }
+  .history-lift { font-weight: 500; color: var(--text); }
+  .history-detail { font-size: 11px; color: var(--text-secondary); margin-top: 2px; }
+  .history-date { font-size: 11px; color: var(--text-tertiary); }
+
+  .progress-bar { background: var(--bg-tertiary); border-radius: 99px; height: 4px; overflow: hidden; margin-top: 5px; }
+  .progress-fill { height: 4px; border-radius: 99px; background: #378ADD; transition: width .4s ease; }
+
+  .rm-row { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 0.5px solid var(--border); }
+  .rm-row:last-child { border-bottom: none; }
+  .rm-lift { font-size: 14px; font-weight: 500; }
+  .adj-btn { width: 28px; height: 28px; border-radius: 50%; border: 0.5px solid var(--border-secondary); background: var(--bg-card); color: var(--text); cursor: pointer; font-size: 16px; font-family: var(--font); display: flex; align-items: center; justify-content: center; transition: background .15s; }
+  .adj-btn:hover { background: var(--bg-secondary); }
+
+  .empty-state { text-align: center; padding: 2.5rem 1rem; color: var(--text-secondary); font-size: 14px; line-height: 1.7; }
+
+  .export-area { width: 100%; min-height: 80px; font-size: 11px; font-family: 'DM Mono', monospace; padding: 8px; border-radius: var(--radius-md); border: 0.5px solid var(--border-secondary); background: var(--bg-secondary); color: var(--text); resize: vertical; }
+
+  /* Ref table */
+  .ref-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+  .ref-table th { font-size: 10px; font-weight: 500; color: var(--text-tertiary); text-transform: uppercase; letter-spacing: .05em; padding: 6px 8px; text-align: left; border-bottom: 0.5px solid var(--border-secondary); }
+  .ref-table td { padding: 7px 8px; border-bottom: 0.5px solid var(--border); font-family: 'DM Mono', monospace; font-size: 12px; color: var(--text); }
+  .ref-table tr:last-child td { border-bottom: none; }
+  .ref-table tr.highlight td { background: var(--bg-secondary); }
+  .ref-table td.pct-col { color: var(--text-secondary); font-family: var(--font); font-size: 11px; }
+
+  /* TM recommendation badge */
+  .tm-rec { display: inline-flex; align-items: center; gap: 5px; font-size: 12px; font-weight: 500; padding: 5px 10px; border-radius: 99px; margin-top: 8px; }
+  .tm-rec.hold { background: #FAEEDA; color: #854F0B; }
+  .tm-rec.up { background: #EAF3DE; color: #3B6D11; }
+  .tm-rec.up2 { background: #D4EDCC; color: #2A5A0A; }
+  .tm-rec.down { background: #FAEADA; color: #A32D2D; }
+
+  /* Joker sets */
+  .joker-section { margin-top: 10px; padding-top: 10px; border-top: 0.5px solid var(--border); }
+  .joker-row { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; flex-wrap: wrap; }
+  .joker-label { font-size: 12px; color: var(--text-secondary); min-width: 60px; }
+  .joker-badge { font-size: 10px; background: #FAEEDA; color: #854F0B; padding: 2px 7px; border-radius: 99px; font-weight: 500; }
+</style>
+</head>
+<body>
+<div class="app">
+  <div class="app-header">
+    <div class="app-title">5/3/1 Tracker</div>
+    <div class="app-sub">Kris</div>
+  </div>
+
+  <div class="nav">
+    <button class="active" onclick="showScreen('today',this)">Today</button>
+    <button onclick="showScreen('program',this)">Program</button>
+    <button onclick="showScreen('history',this)">History</button>
+    <button onclick="showScreen('maxes',this)">1RM / TM</button>
+    <button onclick="showScreen('cycle',this)">Cycle</button>
+    <button onclick="showScreen('analyse',this)">Analyse</button>
+    <button onclick="showScreen('ref',this)">Ref</button>
+    <button onclick="showScreen('export',this)">Save / Load</button>
+  </div>
+
+  <div id="screen-today" class="screen active"></div>
+  <div id="screen-program" class="screen"></div>
+  <div id="screen-history" class="screen"></div>
+  <div id="screen-maxes" class="screen"></div>
+  <div id="screen-cycle" class="screen"></div>
+  <div id="screen-analyse" class="screen"></div>
+  <div id="screen-ref" class="screen"></div>
+  <div id="screen-export" class="screen"></div>
+</div>
+
+<script>
+const DEFAULT_STATE = {
+  cycle: 1, week: 2, dayIndex: 4,
+  skipDeload: false,
+  weekOrder: '5s-3s', // '5s-3s' = standard | '3s-5s' = swap W1/W2
+  deloadMode: 'light', // 'light' = 40/50/60% | 'moderate' = 50/60/70%
+  lifts: {
+    ohp:   { name: 'Seated OHP',  tm: 75,  inc: 2.5, color: '#7F77DD', e1rm: 83 },
+    dl:    { name: 'Deadlift',    tm: 180, inc: 5,   color: '#1D9E75', e1rm: 200 },
+    bench: { name: 'Bench Press', tm: 115, inc: 2.5, color: '#378ADD', e1rm: 127 },
+    squat: { name: 'Squat',       tm: 140, inc: 5,   color: '#D85A30', e1rm: 155 }
+  },
+  schedule: ['ohp','squat','bench','dl'],
+  history: [],
+  sessionLog: {},
+  timerSeconds: 180,
+  timerRunning: false,
+  notes: {},
+  cues: {
+    ohp:   'Ellbogen vorne · Kern gespannt · Kopf durch',
+    dl:    'Schulterblätter hinten oben · Arme lang · Glute+Ham spannen · Hüfte nicht absenken · Brace+Belt · Push floor',
+    bench: 'Schulterblätter zusammen · Bar über Unterarme · Brust raus',
+    squat: 'Sit down not back · Knie nach außen · Chest up · Elbow under bar'
+  }
+};
+
+let STATE = JSON.parse(JSON.stringify(DEFAULT_STATE));
+let timerInterval = null;
+
+try {
+  const saved = localStorage.getItem('531_kris');
+  if (saved) STATE = JSON.parse(saved);
+} catch(e) {}
+
+// TM correction patch v4 — applied once
+if (!STATE._tmPatchV4) {
+  STATE.lifts.bench.tm = 115;
+  STATE.lifts.squat.tm = 140;
+  STATE.lifts.dl.tm    = 180;
+  STATE.lifts.ohp.tm   = 75;
+  STATE.lifts.bench.e1rm = Math.max(STATE.lifts.bench.e1rm || 0, 127);
+  STATE.lifts.squat.e1rm = Math.max(STATE.lifts.squat.e1rm || 0, 155);
+  STATE.lifts.dl.e1rm    = Math.max(STATE.lifts.dl.e1rm    || 0, 200);
+  STATE.lifts.ohp.e1rm   = Math.max(STATE.lifts.ohp.e1rm   || 0, 83);
+  STATE.schedule = ['ohp','squat','bench','dl'];
+  STATE._tmPatchV4 = true;
+  try { localStorage.setItem('531_kris', JSON.stringify(STATE)); } catch(e) {}
+}
+
+function save() {
+  try { localStorage.setItem('531_kris', JSON.stringify(STATE)); } catch(e) {}
+}
+
+const DELOAD_VARIANTS = {
+  light:    { label: 'Week 4 — Deload', sets: [{pct:.40,reps:'5'},{pct:.50,reps:'5'},{pct:.60,reps:'5'}], fslPct: 0.40, deload: true },
+  moderate: { label: 'Week 4 — Deload', sets: [{pct:.50,reps:'5'},{pct:.60,reps:'5'},{pct:.70,reps:'5'}], fslPct: 0.50, deload: true }
+};
+
+const WEEKS = [
+  { label: 'Week 1 — 5s',     sets: [{pct:.65,reps:'5'},{pct:.75,reps:'5'},{pct:.85,reps:'5+'}],  fslPct: 0.65, deload: false },
+  { label: 'Week 2 — 3s',     sets: [{pct:.70,reps:'3'},{pct:.80,reps:'3'},{pct:.90,reps:'3+'}],  fslPct: 0.70, deload: false },
+  { label: 'Week 3 — 5/3/1',  sets: [{pct:.75,reps:'5'},{pct:.85,reps:'3'},{pct:.95,reps:'1+'}],  fslPct: 0.65, deload: false },
+  null // placeholder — deload week, resolved dynamically via getDeloadWeek()
+];
+
+function getDeloadWeek() {
+  return DELOAD_VARIANTS[STATE.deloadMode || 'light'];
+}
+
+// FSL uses Week 1 pct always per Wendler convention, but we allow per-week here
+// Per bug fix request: FSL = first set of current week
+function getFSLPct(weekIndex) {
+  return WEEKS[weekIndex].sets[0].pct;
+}
+
+// Returns the WEEKS index for a given slot (1-4), respecting weekOrder toggle
+function weekSlotToIndex(slot) {
+  if (slot === 1) return (STATE.weekOrder === '3s-5s') ? 1 : 0;
+  if (slot === 2) return (STATE.weekOrder === '3s-5s') ? 0 : 1;
+  return slot - 1; // slot 3 → index 2 (5/3/1), slot 4 → index 3 (deload)
+}
+
+function getWeekDef() {
+  const idx = weekSlotToIndex(STATE.week);
+  if (idx === 3) return getDeloadWeek();
+  return WEEKS[idx];
+}
+
+function round25(v) { return Math.round(v / 2.5) * 2.5; }
+function fmt(v) { return Number(v).toFixed(1).replace(/\.0$/, ''); }
+function calcE1RM(w, r) { if (r <= 0) return w; return Math.round(w * (1 + r / 30)); }
+function todayLiftKey() { return STATE.schedule[STATE.dayIndex % 4]; }
+
+function getTMRecommendation(reps, inc) {
+  if (reps === 0)   return { label: 'TM zu hoch → −5%', cls: 'down', delta: 'down' };
+  if (reps <= 3)    return { label: 'Knapp → halten', cls: 'hold', delta: 'hold' };
+  if (reps <= 8)    return { label: 'Gut → +' + fmt(inc) + ' kg', cls: 'up', delta: 'normal' };
+  return            { label: 'Stark → +' + fmt(inc * 2) + ' kg', cls: 'up2', delta: 'double' };
+}
+
+function getWeekData() {
+  const w = getWeekDef();
+  const liftKey = todayLiftKey();
+  const lift = STATE.lifts[liftKey];
+  const sets = w.sets.map(s => ({ pct: s.pct, kg: round25(lift.tm * s.pct), reps: s.reps }));
+  const fslPct = w.sets[0].pct;
+  const fslKg = round25(lift.tm * fslPct);
+  return { lift, liftKey, sets, fslKg, fslPct, deload: w.deload, weekLabel: w.label };
+}
+
+function showScreen(name, btn) {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.nav button').forEach(b => b.classList.remove('active'));
+  document.getElementById('screen-' + name).classList.add('active');
+  if (btn) btn.classList.add('active');
+  const renders = { today: renderToday, program: renderProgram, history: renderHistory, maxes: renderMaxes, cycle: renderCycle, analyse: renderAnalyse, ref: renderRef, export: renderExport };
+  if (renders[name]) renders[name]();
+}
+
+function completeSession() {
+  const { lift, liftKey } = getWeekData();
+  const key = `c${STATE.cycle}w${STATE.week}d${STATE.dayIndex}`;
+  const logged = STATE.sessionLog[key] || {};
+  const topSet = logged[2];
+  const topKg = topSet ? (parseFloat(topSet.weight) || round25(lift.tm * getWeekDef().sets[2].pct)) : round25(lift.tm * getWeekDef().sets[2].pct);
+  const topReps = topSet ? parseInt(topSet.reps) : null;
+  const e1rm = (topReps && topReps > 0) ? calcE1RM(topKg, topReps) : null;
+
+  // TM recommendation for next cycle
+  const rec = (topReps !== null) ? getTMRecommendation(topReps, lift.inc) : null;
+
+  STATE.history.unshift({
+    date: new Date().toLocaleDateString('de-DE', { day: '2-digit', month: '2-digit', year: '2-digit' }),
+    lift: lift.name, liftKey,
+    cycle: STATE.cycle, week: STATE.week,
+    tm: lift.tm, topSetKg: topKg, topSetReps: topReps, e1rm,
+    tmRec: rec ? rec.delta : null,
+    jokers: logged.jokers || []
+  });
+
+  if (e1rm && e1rm > (STATE.lifts[liftKey].e1rm || 0)) STATE.lifts[liftKey].e1rm = e1rm;
+
+  STATE.dayIndex++;
+  STATE.sessionLog = {};
+
+  if (STATE.dayIndex % 4 === 0) {
+    STATE.week++;
+    if (STATE.week === 4 && STATE.skipDeload) {
+      STATE.week = 1;
+      STATE.cycle++;
+      applyTMIncrements();
+    } else if (STATE.week > 4) {
+      STATE.week = 1;
+      STATE.cycle++;
+      applyTMIncrements();
+    }
+  }
+  save();
+  renderToday();
+}
+
+function applyTMIncrements() {
+  // Apply based on last logged rec per lift
+  Object.keys(STATE.lifts).forEach(k => {
+    const lift = STATE.lifts[k];
+    // Find most recent history entry for this lift with a tmRec
+    const lastEntry = STATE.history.find(h => h.liftKey === k && h.tmRec);
+    if (lastEntry) {
+      if (lastEntry.tmRec === 'down') {
+        lift.tm = round25(lift.tm * 0.95);
+      } else if (lastEntry.tmRec === 'hold') {
+        // no change
+      } else if (lastEntry.tmRec === 'double') {
+        lift.tm = round25(lift.tm + lift.inc * 2);
+      } else {
+        lift.tm = round25(lift.tm + lift.inc);
+      }
+    } else {
+      lift.tm = round25(lift.tm + lift.inc);
+    }
+  });
+}
+
+function renderToday() {
+  const el = document.getElementById('screen-today');
+  const { lift, sets, fslKg, fslPct, deload, weekLabel, liftKey } = getWeekData();
+  const sKey = `c${STATE.cycle}w${STATE.week}d${STATE.dayIndex}`;
+  const logged = STATE.sessionLog[sKey] || {};
+  const jokers = logged.jokers || [];
+
+  const topSetReps = logged[2] ? parseInt(logged[2].reps) : null;
+  const rec = (topSetReps !== null && !isNaN(topSetReps)) ? getTMRecommendation(topSetReps, lift.inc) : null;
+
+  const setsHTML = sets.map((s, i) => {
+    const isTop = i === 2 && !deload;
+    const logVal = logged[i];
+    return `<div class="set-box${isTop ? ' top-set' : ''}">
+      <div class="set-pct">${Math.round(s.pct * 100)}%</div>
+      <div class="set-kg${isTop ? ' top' : ''}">${fmt(s.kg)}</div>
+      <div class="set-reps">${s.reps}${isTop ? ' AMRAP' : ''}</div>
+      ${isTop ? `<div style="margin-top:7px">
+        <input type="number" id="amrap-reps" placeholder="reps" min="0" max="30" value="${logVal ? logVal.reps : ''}"
+          oninput="logTopSet(${s.kg}, this.value)" style="width:100%">
+        ${logVal && logVal.reps !== '' ? `<div style="font-size:10px;color:#3B6D11;margin-top:4px;text-align:center">e1RM ≈ ${calcE1RM(s.kg, parseInt(logVal.reps))} kg</div>` : ''}
+      </div>` : ''}
+    </div>`;
+  }).join('');
+
+  // Joker sets HTML
+  let jokersHTML = '';
+  if (!deload) {
+    const topKg = sets[2].kg;
+    const jokerSuggestions = [
+      round25(topKg * 1.025),
+      round25(topKg * 1.05),
+      round25(topKg * 1.075)
+    ];
+    jokersHTML = `<div class="joker-section">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px">
+        <span class="fsl-label">Joker Sets <span class="joker-badge">optional</span></span>
+        <button class="btn-secondary" style="font-size:11px;padding:4px 10px" onclick="addJoker(${topKg})">+ Add</button>
+      </div>
+      <div style="font-size:11px;color:var(--text-tertiary);margin-bottom:8px">Vorschläge: ${jokerSuggestions.map(j => fmt(j) + ' kg').join(' → ')}</div>
+      <div id="joker-list">
+        ${jokers.map((j, i) => `<div class="joker-row">
+          <span class="joker-label">J${i+1}</span>
+          <input type="number" value="${j.kg}" min="0" step="2.5" oninput="updateJoker(${i},'kg',this.value)" style="width:70px"> kg ×
+          <input type="number" value="${j.reps}" min="1" max="5" oninput="updateJoker(${i},'reps',this.value)" style="width:52px"> reps
+          <button onclick="removeJoker(${i})" style="background:none;border:none;color:var(--text-tertiary);cursor:pointer;font-size:14px;padding:0 4px">×</button>
+        </div>`).join('')}
+      </div>
+    </div>`;
+  }
+
+  // Next session
+  const nextDayIdx = STATE.dayIndex + 1;
+  const nextLiftKey = STATE.schedule[nextDayIdx % 4];
+  const nextLift = STATE.lifts[nextLiftKey];
+  const nextWeek = (nextDayIdx % 4 === 0) ? (STATE.week === 3 ? (STATE.skipDeload ? 1 : 4) : STATE.week + 1) : STATE.week;
+  const nextWeekLabel = nextWeek === 4 ? 'Deload' : ['5s','3s','5/3/1','Deload'][nextWeek-1];
+
+  // Elite goal progress
+  const elites = { ohp: 107, dl: 242, bench: 162, squat: 185 };
+  const eliteGoal = elites[liftKey];
+  const currentE1rm = lift.e1rm || Math.round(lift.tm / 0.9);
+  const elitePct = Math.min(100, Math.round(currentE1rm / eliteGoal * 100));
+  // Estimate cycles remaining: each cycle TM increases by inc, e1rm ≈ TM / 0.9
+  const e1rmPerCycle = lift.inc / 0.9;
+  const cyclesLeft = currentE1rm >= eliteGoal ? 0 : Math.ceil((eliteGoal - currentE1rm) / e1rmPerCycle);
+
+  // Note
+  const noteKey = `note_c${STATE.cycle}w${STATE.week}d${STATE.dayIndex}`;
+  const savedNote = STATE.notes ? (STATE.notes[noteKey] || '') : '';
+
+  el.innerHTML = `
+    <div class="metric-row">
+      <div class="metric"><div class="metric-label">Cycle</div><div class="metric-val">${STATE.cycle}</div></div>
+      <div class="metric"><div class="metric-label">Week</div><div class="metric-val">${STATE.week}</div><div class="metric-sub">${weekLabel.split('—')[1].trim()}</div></div>
+      <div class="metric"><div class="metric-label">Day</div><div class="metric-val">${STATE.dayIndex % 4 + 1}/4</div></div>
+      <div class="metric"><div class="metric-label">TM</div><div class="metric-val">${fmt(lift.tm)}</div><div class="metric-sub">kg</div></div>
+    </div>
+
+    <div class="progress-bar" style="margin-bottom:6px;height:5px">
+      <div class="progress-fill" style="width:${elitePct}%;background:${lift.color}"></div>
+    </div>
+    <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--text-tertiary);margin-bottom:4px">
+      <span style="color:${lift.color};font-weight:500">${elitePct}% to Elite (${eliteGoal} kg)</span>
+      <span>${currentE1rm} kg e1RM · ${cyclesLeft > 0 ? '~'+cyclesLeft+' Cycles' : '🏆 Erreicht!'}</span>
+    </div>
+    <div style="font-size:11px;color:var(--text-tertiary);margin-bottom:12px">Next: <strong style="color:${nextLift.color}">${nextLift.name}</strong> W${nextWeek} ${nextWeekLabel}</div>
+
+    <div class="lift-card">
+      <div class="lift-header">
+        <div>
+          <div class="lift-name" style="color:${lift.color}">${lift.name}</div>
+          <div class="lift-tm">TM: ${fmt(lift.tm)} kg · ${weekLabel}</div>
+        </div>
+        ${deload ? '<span class="deload-badge">Deload</span>' : ''}
+      </div>
+      <div class="sets-row">${setsHTML}</div>
+      ${rec ? `<div style="padding-top:8px"><span class="tm-rec ${rec.cls}">📊 ${rec.label}</span></div>` : ''}
+      ${jokersHTML}
+    </div>
+
+    <div class="card">
+      <div class="card-title">Session Notiz</div>
+      <textarea id="session-note" placeholder="Form, Feeling, Besonderheiten..." 
+        style="width:100%;min-height:60px;font-size:12px;font-family:var(--font);padding:8px;border-radius:var(--radius-md);border:0.5px solid var(--border-secondary);background:var(--bg-secondary);color:var(--text);resize:vertical;outline:none"
+        oninput="saveNote('${noteKey}', this.value)">${savedNote}</textarea>
+    </div>
+
+    <div style="margin-top:0.5rem">
+      <button class="btn-primary" onclick="completeSession()">Mark done → next session</button>
+    </div>`;
+}
+
+function saveNote(key, val) {
+  if (!STATE.notes) STATE.notes = {};
+  STATE.notes[key] = val;
+  save();
+}
+
+function logTopSet(kg, reps) {
+  const sKey = `c${STATE.cycle}w${STATE.week}d${STATE.dayIndex}`;
+  if (!STATE.sessionLog[sKey]) STATE.sessionLog[sKey] = {};
+  STATE.sessionLog[sKey][2] = { weight: kg, reps };
+  // Re-render to show recommendation live
+  renderToday();
+  // Restore focus
+  const inp = document.getElementById('amrap-reps');
+  if (inp) { inp.focus(); inp.value = reps; }
+}
+
+function addJoker(topKg) {
+  const sKey = `c${STATE.cycle}w${STATE.week}d${STATE.dayIndex}`;
+  if (!STATE.sessionLog[sKey]) STATE.sessionLog[sKey] = {};
+  if (!STATE.sessionLog[sKey].jokers) STATE.sessionLog[sKey].jokers = [];
+  const n = STATE.sessionLog[sKey].jokers.length;
+  const suggestedKg = round25(topKg * (1 + 0.025 * (n + 1)));
+  STATE.sessionLog[sKey].jokers.push({ kg: suggestedKg, reps: 1 });
+  save();
+  renderToday();
+}
+
+function updateJoker(i, field, val) {
+  const sKey = `c${STATE.cycle}w${STATE.week}d${STATE.dayIndex}`;
+  if (STATE.sessionLog[sKey] && STATE.sessionLog[sKey].jokers && STATE.sessionLog[sKey].jokers[i]) {
+    STATE.sessionLog[sKey].jokers[i][field] = field === 'kg' ? parseFloat(val) : parseInt(val);
+    save();
+  }
+}
+
+function removeJoker(i) {
+  const sKey = `c${STATE.cycle}w${STATE.week}d${STATE.dayIndex}`;
+  if (STATE.sessionLog[sKey] && STATE.sessionLog[sKey].jokers) {
+    STATE.sessionLog[sKey].jokers.splice(i, 1);
+    save();
+    renderToday();
+  }
+}
+
+function fmtTime(s) {
+  const abs = Math.abs(s);
+  return `${Math.floor(abs/60)}:${(abs%60).toString().padStart(2,'0')}`;
+}
+
+function setTimer(s) {
+  if (timerInterval) { clearInterval(timerInterval); timerInterval = null; }
+  STATE.timerSeconds = s;
+  STATE.timerRunning = false;
+  const btn = document.getElementById('timer-btn');
+  const disp = document.getElementById('timer-disp');
+  if (btn) btn.textContent = 'Start';
+  if (disp) { disp.textContent = fmtTime(s); disp.style.color = 'var(--text)'; }
+}
+
+function toggleTimer() {
+  if (STATE.timerRunning) {
+    clearInterval(timerInterval); timerInterval = null;
+    STATE.timerRunning = false;
+    const btn = document.getElementById('timer-btn');
+    if (btn) btn.textContent = 'Resume';
+  } else {
+    if (!STATE.timerSeconds || STATE.timerSeconds <= 0) STATE.timerSeconds = 180;
+    STATE.timerRunning = true;
+    const btn = document.getElementById('timer-btn');
+    if (btn) btn.textContent = 'Pause';
+    timerInterval = setInterval(() => {
+      STATE.timerSeconds--;
+      const disp = document.getElementById('timer-disp');
+      if (disp) {
+        disp.textContent = fmtTime(STATE.timerSeconds);
+        disp.style.color = STATE.timerSeconds <= 10 ? '#E24B4A' : 'var(--text)';
+      }
+      if (STATE.timerSeconds <= 0) {
+        clearInterval(timerInterval); timerInterval = null;
+        STATE.timerRunning = false;
+        const b = document.getElementById('timer-btn');
+        if (b) b.textContent = 'Start';
+      }
+    }, 1000);
+  }
+}
+
+function renderProgram() {
+  const el = document.getElementById('screen-program');
+  let html = '<div class="week-tabs">';
+  for (let i = 0; i < 4; i++) {
+    const w = (i === 3) ? getDeloadWeek() : WEEKS[i];
+    html += `<button class="week-tab${STATE.week-1===i?' active':''}" onclick="switchWeekView(${i+1},this)">${w.label.split('—')[0].trim()}</button>`;
+  }
+  html += '</div><div id="prog-body"></div>';
+  el.innerHTML = html;
+  renderProgramWeek(STATE.week);
+}
+
+function switchWeekView(w, btn) {
+  document.querySelectorAll('.week-tab').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  renderProgramWeek(w);
+}
+
+function renderProgramWeek(w) {
+  const idx = weekSlotToIndex(w);
+  const week = (idx === 3) ? getDeloadWeek() : WEEKS[idx];
+  const fslPct = week.sets[0].pct;
+  const el = document.getElementById('prog-body');
+  let html = '';
+  STATE.schedule.forEach((lk, di) => {
+    const lift = STATE.lifts[lk];
+    const sets = week.sets.map(s => ({ pct: s.pct, kg: round25(lift.tm * s.pct), reps: s.reps }));
+    const fslKg = round25(lift.tm * fslPct);
+    const isCurrent = (STATE.dayIndex % 4 === di) && (STATE.week === w);
+    html += `<div class="lift-card"${isCurrent ? ' style="border-color:'+lift.color+';border-width:1.5px"' : ''}>
+      <div class="lift-header">
+        <div>
+          <div class="lift-name" style="color:${lift.color}">${lift.name}</div>
+          <div class="lift-tm">TM: ${fmt(lift.tm)} kg</div>
+        </div>
+        <span class="badge badge-blue">Day ${di+1}${isCurrent?' · today':''}</span>
+      </div>
+      <div class="sets-row">
+        ${sets.map((s, i) => `<div class="set-box${i===2&&!week.deload?' top-set':''}">
+          <div class="set-pct">${Math.round(s.pct*100)}%</div>
+          <div class="set-kg${i===2&&!week.deload?' top':''}">${fmt(s.kg)}</div>
+          <div class="set-reps">${s.reps}</div>
+        </div>`).join('')}
+      </div>
+    </div>`;
+  });
+  el.innerHTML = html;
+}
+
+function renderHistory() {
+  const el = document.getElementById('screen-history');
+  if (STATE.history.length === 0) {
+    el.innerHTML = `<div class="card"><div class="empty-state">No sessions logged yet.<br>Complete your first session on Today.</div></div>`;
+    return;
+  }
+  let html = '<div class="card"><div class="card-title">Session history</div>';
+  STATE.history.forEach((h, idx) => {
+    const lift = STATE.lifts[h.liftKey];
+    const recLabels = { down: '↓ TM runter', hold: '= halten', normal: '↑ standard', double: '↑↑ doppelt' };
+    const recColors = { down: '#A32D2D', hold: '#854F0B', normal: '#3B6D11', double: '#2A5A0A' };
+    // PR = highest e1RM for this lift up to this point
+    const prevBest = STATE.history.slice(idx+1).filter(x => x.liftKey === h.liftKey && x.e1rm).reduce((max, x) => Math.max(max, x.e1rm), 0);
+    const isPR = h.e1rm && h.e1rm > prevBest;
+    const noteKey = `note_c${h.cycle}w${h.week}d${h.dayIndex !== undefined ? h.dayIndex : ''}`;
+    const note = STATE.notes ? (STATE.notes[noteKey] || '') : '';
+    html += `<div class="history-item">
+      <div style="flex:1">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:2px">
+          <div class="history-lift" style="color:${lift ? lift.color : 'var(--text)'}">${h.lift}</div>
+          <div style="font-size:11px;font-weight:500;color:var(--text-secondary);background:var(--bg-secondary);padding:1px 7px;border-radius:99px">${h.date || '—'}</div>
+          ${isPR ? `<div style="font-size:10px;font-weight:600;background:#EAF3DE;color:#3B6D11;padding:1px 7px;border-radius:99px">🏆 PR</div>` : ''}
+        </div>
+        <div class="history-detail">C${h.cycle} W${h.week} · TM ${fmt(h.tm)} kg · ${fmt(h.topSetKg)} kg × ${h.topSetReps !== null ? h.topSetReps : '?'}
+          ${h.jokers && h.jokers.length ? ` · ${h.jokers.length} Joker` : ''}
+        </div>
+        ${h.tmRec ? `<div style="font-size:10px;color:${recColors[h.tmRec]};margin-top:2px">${recLabels[h.tmRec]}</div>` : ''}
+        ${note ? `<div style="font-size:11px;color:var(--text-secondary);margin-top:3px;font-style:italic">"${note}"</div>` : ''}
+      </div>
+      <div style="text-align:right;flex-shrink:0;margin-left:10px">
+        ${h.e1rm ? `<div style="font-size:13px;font-weight:600;color:var(--text);font-family:'DM Mono',monospace">${h.e1rm} kg</div><div style="font-size:10px;color:#3B6D11">e1RM</div>` : ''}
+      </div>
+    </div>`;
+  });
+  html += '</div>';
+  el.innerHTML = html;
+}
+
+function renderMaxes() {
+  const el = document.getElementById('screen-maxes');
+  const elites = { ohp: 107, dl: 242, bench: 162, squat: 185 };
+  let html = '<div class="card"><div class="card-title">Estimated 1RM & elite progress</div>';
+  Object.entries(STATE.lifts).forEach(([k, lift]) => {
+    const pct = lift.e1rm ? Math.min(100, Math.round(lift.e1rm / elites[k] * 100)) : null;
+    html += `<div class="rm-row">
+      <div style="flex:1">
+        <div class="rm-lift" style="color:${lift.color}">${lift.name}</div>
+        <div style="font-size:11px;color:var(--text-tertiary)">TM: ${fmt(lift.tm)} kg</div>
+        ${pct ? `<div class="progress-bar" style="width:160px"><div class="progress-fill" style="width:${pct}%"></div></div>
+        <div style="font-size:10px;color:var(--text-tertiary);margin-top:3px">${pct}% to elite (${elites[k]} kg)</div>` : '<div style="font-size:10px;color:var(--text-tertiary);margin-top:4px">Log AMRAP reps to track</div>'}
+      </div>
+      <div style="text-align:right">
+        ${lift.e1rm ? `<div style="font-size:16px;font-weight:600;font-family:'DM Mono',monospace;color:var(--text)">${lift.e1rm} kg</div>` : ''}
+      </div>
+    </div>`;
+  });
+  html += '</div>';
+
+  html += '<div class="card"><div class="card-title">Adjust training max</div>';
+  Object.entries(STATE.lifts).forEach(([k, lift]) => {
+    html += `<div style="display:flex;align-items:center;justify-content:space-between;padding:9px 0;border-bottom:0.5px solid var(--border)">
+      <span style="font-size:13px;font-weight:500;color:${lift.color}">${lift.name}</span>
+      <div style="display:flex;align-items:center;gap:10px">
+        <button class="adj-btn" onclick="adjustTM('${k}',-2.5)">−</button>
+        <span style="font-size:14px;font-weight:600;font-family:'DM Mono',monospace;min-width:60px;text-align:center" id="tmv-${k}">${fmt(lift.tm)} kg</span>
+        <button class="adj-btn" onclick="adjustTM('${k}',2.5)">+</button>
+      </div>
+    </div>`;
+  });
+  html += '</div>';
+  el.innerHTML = html;
+}
+
+function adjustTM(key, delta) {
+  STATE.lifts[key].tm = round25(STATE.lifts[key].tm + delta);
+  const el = document.getElementById('tmv-' + key);
+  if (el) el.textContent = fmt(STATE.lifts[key].tm) + ' kg';
+  save();
+}
+
+function renderCycle() {
+  const el = document.getElementById('screen-cycle');
+  const nextTMs = {};
+  Object.entries(STATE.lifts).forEach(([k, l]) => nextTMs[k] = round25(l.tm + l.inc));
+
+  let html = `<div class="card">
+    <div class="card-title">Current position</div>
+    <div class="metric-row" style="grid-template-columns:repeat(2,minmax(0,1fr))">
+      <div class="metric"><div class="metric-label">Cycle</div><div class="metric-val">${STATE.cycle}</div></div>
+      <div class="metric"><div class="metric-label">Week</div><div class="metric-val">${STATE.week} / 4</div></div>
+    </div>
+    <div style="font-size:13px;color:var(--text-secondary)">Next: <strong style="color:var(--text)">${STATE.lifts[todayLiftKey()].name}</strong> — Day ${STATE.dayIndex % 4 + 1}</div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Deload</div>
+    <div style="display:flex;align-items:center;justify-content:space-between;padding:4px 0">
+      <div>
+        <div style="font-size:14px;color:var(--text)">Skip week 4 deload</div>
+        <div style="font-size:12px;color:var(--text-tertiary);margin-top:2px">TMs still auto-progress. Use when feeling fresh.</div>
+      </div>
+      <label style="position:relative;display:inline-block;width:44px;height:24px;flex-shrink:0;margin-left:12px">
+        <input type="checkbox" id="skip-deload-toggle" ${STATE.skipDeload?'checked':''} onchange="toggleSkipDeload(this.checked)" style="opacity:0;width:0;height:0">
+        <span id="toggle-track" style="position:absolute;cursor:pointer;inset:0;border-radius:99px;background:${STATE.skipDeload?'#378ADD':'var(--bg-tertiary)'};border:0.5px solid var(--border-secondary);transition:background .2s">
+          <span style="position:absolute;width:18px;height:18px;border-radius:50%;background:var(--bg-card);top:2px;left:${STATE.skipDeload?'22px':'2px'};transition:left .2s;border:0.5px solid var(--border)"></span>
+        </span>
+      </label>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Deload Intensität</div>
+    <div style="display:flex;align-items:center;justify-content:space-between;padding:4px 0">
+      <div>
+        <div style="font-size:14px;color:var(--text)">${STATE.deloadMode==='moderate' ? 'Moderat — 50/60/70%' : 'Leicht — 40/50/60%'}</div>
+        <div style="font-size:12px;color:var(--text-tertiary);margin-top:2px">${STATE.deloadMode==='moderate' ? 'Mehr Reiz bei reduziertem Volumen' : 'Standard Wendler Deload'}</div>
+      </div>
+      <label style="position:relative;display:inline-block;width:44px;height:24px;flex-shrink:0;margin-left:12px">
+        <input type="checkbox" id="deload-mode-toggle" ${STATE.deloadMode==='moderate'?'checked':''} onchange="toggleDeloadMode(this.checked)" style="opacity:0;width:0;height:0">
+        <span id="deload-mode-track" style="position:absolute;cursor:pointer;inset:0;border-radius:99px;background:${STATE.deloadMode==='moderate'?'#378ADD':'var(--bg-tertiary)'};border:0.5px solid var(--border-secondary);transition:background .2s">
+          <span style="position:absolute;width:18px;height:18px;border-radius:50%;background:var(--bg-card);top:2px;left:${STATE.deloadMode==='moderate'?'22px':'2px'};transition:left .2s;border:0.5px solid var(--border)"></span>
+        </span>
+      </label>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Week order</div>
+    <div style="display:flex;align-items:center;justify-content:space-between;padding:4px 0">
+      <div>
+        <div style="font-size:14px;color:var(--text)">${STATE.weekOrder === '3s-5s' ? '3s → 5s → 5/3/1' : '5s → 3s → 5/3/1'}</div>
+        <div style="font-size:12px;color:var(--text-tertiary);margin-top:2px">${STATE.weekOrder === '3s-5s' ? 'W1 schwerere Singles, W2 mehr Volumen' : 'Standard Wendler — W1 Volumen, W2 Intensität'}</div>
+      </div>
+      <label style="position:relative;display:inline-block;width:44px;height:24px;flex-shrink:0;margin-left:12px">
+        <input type="checkbox" id="week-order-toggle" ${STATE.weekOrder==='3s-5s'?'checked':''} onchange="toggleWeekOrder(this.checked)" style="opacity:0;width:0;height:0">
+        <span id="week-order-track" style="position:absolute;cursor:pointer;inset:0;border-radius:99px;background:${STATE.weekOrder==='3s-5s'?'#378ADD':'var(--bg-tertiary)'};border:0.5px solid var(--border-secondary);transition:background .2s">
+          <span style="position:absolute;width:18px;height:18px;border-radius:50%;background:var(--bg-card);top:2px;left:${STATE.weekOrder==='3s-5s'?'22px':'2px'};transition:left .2s;border:0.5px solid var(--border)"></span>
+        </span>
+      </label>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Next cycle TMs (after week 4)</div>
+    ${Object.entries(STATE.lifts).map(([k,l]) => `
+      <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:0.5px solid var(--border);font-size:13px">
+        <span style="color:${l.color}">${l.name}</span>
+        <span style="color:var(--text-tertiary)">${fmt(l.tm)} → <strong style="color:var(--text);font-family:'DM Mono',monospace">${fmt(nextTMs[k])} kg</strong></span>
+      </div>`).join('')}
+    <div style="font-size:11px;color:var(--text-tertiary);margin-top:8px">TMs auto-update at end of week 4 · basiert auf AMRAP-Ergebnis</div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">TM increment per cycle</div>
+    ${Object.entries(STATE.lifts).map(([k,l]) => `
+      <div style="display:flex;align-items:center;justify-content:space-between;padding:8px 0;border-bottom:0.5px solid var(--border)">
+        <span style="font-size:13px;color:${l.color}">${l.name}</span>
+        <div style="display:flex;align-items:center;gap:10px">
+          <button class="adj-btn" onclick="adjustInc('${k}',-2.5)">−</button>
+          <span style="font-size:13px;font-family:'DM Mono',monospace;min-width:50px;text-align:center" id="inc-${k}">+${fmt(l.inc)} kg</span>
+          <button class="adj-btn" onclick="adjustInc('${k}',2.5)">+</button>
+        </div>
+      </div>`).join('')}
+  </div>`;
+  el.innerHTML = html;
+}
+
+function adjustInc(key, delta) {
+  STATE.lifts[key].inc = Math.max(0, round25(STATE.lifts[key].inc + delta));
+  const el = document.getElementById('inc-' + key);
+  if (el) el.textContent = '+' + fmt(STATE.lifts[key].inc) + ' kg';
+  save();
+}
+
+function toggleSkipDeload(val) {
+  STATE.skipDeload = val;
+  const track = document.getElementById('toggle-track');
+  if (track) {
+    track.style.background = val ? '#378ADD' : 'var(--bg-tertiary)';
+    const thumb = track.querySelector('span');
+    if (thumb) thumb.style.left = val ? '22px' : '2px';
+  }
+  save();
+}
+
+function toggleWeekOrder(val) {
+  STATE.weekOrder = val ? '3s-5s' : '5s-3s';
+  save();
+  renderCycle(); // re-render to update label
+}
+
+function toggleDeloadMode(val) {
+  STATE.deloadMode = val ? 'moderate' : 'light';
+  save();
+  renderCycle();
+}
+
+// ── Analyse screen ──────────────────────────────────────────────────────────
+function renderAnalyse() {
+  const el = document.getElementById('screen-analyse');
+  if (STATE.history.length === 0) {
+    el.innerHTML = `<div class="card"><div class="empty-state">Noch keine Sessions geloggt.<br>Starte deine erste Session im Today-Tab.</div></div>`;
+    return;
+  }
+
+  // Build per-lift data series (chronological)
+  const liftKeys = ['dl','bench','squat','ohp'];
+  const series = {};
+  liftKeys.forEach(k => { series[k] = []; });
+  [...STATE.history].reverse().forEach(h => {
+    if (series[h.liftKey] !== undefined) {
+      series[h.liftKey].push({
+        date: h.date,
+        e1rm: h.e1rm || null,
+        vol: (h.topSetKg && h.topSetReps) ? Math.round(h.topSetKg * h.topSetReps) : null
+      });
+    }
+  });
+
+  // Active lift tab
+  const activeLift = el._activeLift || 'dl';
+  el._activeLift = activeLift;
+
+  const tabs = liftKeys.map(k => {
+    const lift = STATE.lifts[k];
+    return `<button class="week-tab${k===activeLift?' active':''}" onclick="setAnalyseLift('${k}')" style="color:${k===activeLift?lift.color:'var(--text-secondary)'}">${lift.name.replace(' Press','').replace('Seated ','')}</button>`;
+  }).join('');
+
+  const data = series[activeLift];
+  const lift = STATE.lifts[activeLift];
+
+  // Stats summary
+  const e1rms = data.filter(d => d.e1rm).map(d => d.e1rm);
+  const vols   = data.filter(d => d.vol).map(d => d.vol);
+  const maxE1rm = e1rms.length ? Math.max(...e1rms) : null;
+  const lastE1rm = e1rms.length ? e1rms[e1rms.length-1] : null;
+  const firstE1rm = e1rms.length ? e1rms[0] : null;
+  const e1rmDelta = (maxE1rm && firstE1rm) ? maxE1rm - firstE1rm : null;
+  const maxVol = vols.length ? Math.max(...vols) : null;
+
+  // SVG chart builder
+  function buildChart(points, color, label, unit) {
+    if (points.length < 2) return `<div style="font-size:12px;color:var(--text-tertiary);padding:20px 0;text-align:center">Mindestens 2 Sessions für Chart</div>`;
+    const W = 440, H = 140, PL = 36, PR = 8, PT = 10, PB = 24;
+    const cW = W - PL - PR, cH = H - PT - PB;
+    const vals = points.map(p => p.v);
+    const minV = Math.min(...vals), maxV = Math.max(...vals);
+    const range = maxV - minV || 1;
+    const xs = points.map((_, i) => PL + (i / (points.length - 1)) * cW);
+    const ys = points.map(p => PT + cH - ((p.v - minV) / range) * cH);
+
+    // Line path
+    const path = xs.map((x, i) => `${i===0?'M':'L'}${x.toFixed(1)},${ys[i].toFixed(1)}`).join(' ');
+    // Area fill
+    const area = `${path} L${xs[xs.length-1].toFixed(1)},${(PT+cH).toFixed(1)} L${xs[0].toFixed(1)},${(PT+cH).toFixed(1)} Z`;
+
+    // Y axis labels
+    const yLabels = [minV, Math.round(minV + range/2), maxV].map((v, i) => {
+      const y = PT + cH - (i * cH / 2);
+      return `<text x="${PL-4}" y="${y+4}" text-anchor="end" font-size="9" fill="var(--text-tertiary)">${v}</text>`;
+    }).join('');
+
+    // X axis date labels (first, mid, last)
+    const xLabels = [0, Math.floor((points.length-1)/2), points.length-1].map(i => {
+      return `<text x="${xs[i].toFixed(1)}" y="${H-4}" text-anchor="middle" font-size="9" fill="var(--text-tertiary)">${points[i].date}</text>`;
+    }).join('');
+
+    // Dots
+    const dots = xs.map((x, i) => `<circle cx="${x.toFixed(1)}" cy="${ys[i].toFixed(1)}" r="3" fill="${color}" />`).join('');
+
+    return `<svg viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg" style="width:100%;overflow:visible">
+      <defs>
+        <linearGradient id="grad-${label}" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="${color}" stop-opacity="0.18"/>
+          <stop offset="100%" stop-color="${color}" stop-opacity="0"/>
+        </linearGradient>
+      </defs>
+      <path d="${area}" fill="url(#grad-${label})"/>
+      <path d="${path}" fill="none" stroke="${color}" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+      ${dots}
+      ${yLabels}
+      ${xLabels}
+      <line x1="${PL}" y1="${PT}" x2="${PL}" y2="${PT+cH}" stroke="var(--border-secondary)" stroke-width="0.5"/>
+      <line x1="${PL}" y1="${PT+cH}" x2="${PL+cW}" y2="${PT+cH}" stroke="var(--border-secondary)" stroke-width="0.5"/>
+    </svg>`;
+  }
+
+  const e1rmPoints = data.filter(d => d.e1rm).map(d => ({ date: d.date, v: d.e1rm }));
+  const volPoints  = data.filter(d => d.vol).map(d => ({ date: d.date, v: d.vol }));
+
+  el.innerHTML = `
+    <div class="week-tabs">${tabs}</div>
+
+    <div class="metric-row" style="grid-template-columns:repeat(3,minmax(0,1fr))">
+      <div class="metric">
+        <div class="metric-label">Sessions</div>
+        <div class="metric-val">${data.length}</div>
+      </div>
+      <div class="metric">
+        <div class="metric-label">Bestes e1RM</div>
+        <div class="metric-val" style="color:${lift.color}">${maxE1rm ? maxE1rm+' kg' : '—'}</div>
+      </div>
+      <div class="metric">
+        <div class="metric-label">Zuwachs</div>
+        <div class="metric-val" style="color:#3B6D11">${e1rmDelta ? '+'+e1rmDelta+' kg' : '—'}</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">e1RM Verlauf — ${lift.name}</div>
+      ${buildChart(e1rmPoints, lift.color, 'e1rm', 'kg')}
+      ${lastE1rm ? `<div style="font-size:11px;color:var(--text-tertiary);margin-top:8px">Letzter Wert: <strong style="color:var(--text)">${lastE1rm} kg</strong> · Best: <strong style="color:${lift.color}">${maxE1rm} kg</strong></div>` : ''}
+    </div>
+
+
+    <div class="card">
+      <div class="card-title">Alle Sessions — ${lift.name}</div>
+      ${data.length === 0 ? '<div class="empty-state">Keine Daten</div>' : data.slice().reverse().map(d => `
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:7px 0;border-bottom:0.5px solid var(--border);font-size:12px">
+          <span style="color:var(--text-tertiary);min-width:64px">${d.date || '—'}</span>
+          <span style="color:var(--text);font-family:'DM Mono',monospace">${d.e1rm ? d.e1rm+' kg e1RM' : '—'}</span>
+        </div>`).join('')}
+    </div>
+
+    <div class="card">
+      <div class="card-title">TM Verlauf — ${lift.name}</div>
+      ${(() => {
+        const tmPoints = [...STATE.history].reverse().filter(h => h.liftKey === activeLift && h.tm).map(h => ({ date: h.date, v: h.tm }));
+        return buildChart(tmPoints, '#9e9e9a', 'tm', 'kg');
+      })()}
+    </div>
+
+    <div class="card">
+      <div class="card-title" style="margin-bottom:10px">Cues — ${lift.name}</div>
+      <div style="font-size:13px;color:var(--text);line-height:1.8">${(STATE.cues && STATE.cues[activeLift]) ? STATE.cues[activeLift].split('·').map(c => `<div style="padding:3px 0;border-bottom:0.5px solid var(--border)">· ${c.trim()}</div>`).join('') : 'Keine Cues gespeichert.'}</div>
+      <div style="margin-top:10px">
+        <textarea id="cue-edit-${activeLift}" style="width:100%;min-height:60px;font-size:12px;font-family:var(--font);padding:8px;border-radius:var(--radius-md);border:0.5px solid var(--border-secondary);background:var(--bg-secondary);color:var(--text);resize:vertical;outline:none"
+          placeholder="Cues mit · trennen...">${(STATE.cues && STATE.cues[activeLift]) || ''}</textarea>
+        <button class="btn-secondary" style="margin-top:6px;font-size:12px" onclick="saveCue('${activeLift}')">Speichern</button>
+      </div>
+    </div>`;
+}
+
+function saveCue(liftKey) {
+  if (!STATE.cues) STATE.cues = {};
+  const el = document.getElementById('cue-edit-' + liftKey);
+  if (el) { STATE.cues[liftKey] = el.value; save(); renderAnalyse(); }
+}
+
+function setAnalyseLift(key) {
+  const el = document.getElementById('screen-analyse');
+  el._activeLift = key;
+  renderAnalyse();
+}
+
+// ── Ref screen ──────────────────────────────────────────────────────────────
+const REF_ROWS = [
+  { pct: 100, reps: 1 },
+  { pct: 97,  reps: 2 },
+  { pct: 94,  reps: 3 },
+  { pct: 92,  reps: 4 },
+  { pct: 89,  reps: 5 },
+  { pct: 86,  reps: 6 },
+  { pct: 83,  reps: 7 },
+  { pct: 81,  reps: 8 },
+  { pct: 78,  reps: 9 },
+  { pct: 75,  reps: 10 },
+  { pct: 73,  reps: 11 },
+  { pct: 71,  reps: 12 },
+];
+
+function renderRef() {
+  const el = document.getElementById('screen-ref');
+
+  // Lift selector
+  const liftOptions = Object.entries(STATE.lifts).map(([k, l]) =>
+    `<button class="week-tab" id="ref-tab-${k}" onclick="switchRefLift('${k}')">${l.name}</button>`
+  ).join('');
+
+  el.innerHTML = `
+    <div class="week-tabs" id="ref-tabs">${liftOptions}</div>
+    <div id="ref-body"></div>
+  `;
+
+  // Default to first lift
+  const firstKey = Object.keys(STATE.lifts)[0];
+  switchRefLift(firstKey);
+}
+
+function switchRefLift(liftKey) {
+  document.querySelectorAll('[id^="ref-tab-"]').forEach(b => b.classList.remove('active'));
+  const tab = document.getElementById('ref-tab-' + liftKey);
+  if (tab) tab.classList.add('active');
+
+  const lift = STATE.lifts[liftKey];
+  const e1rm = lift.e1rm || null;
+  const tm = lift.tm;
+  // TM is ~90% of 1RM, so implied 1RM from TM:
+  const impliedE1RM = round25(tm / 0.9);
+  const display1RM = e1rm || impliedE1RM;
+
+  const el = document.getElementById('ref-body');
+
+  // 531 working percentages for context
+  const pctZones = [
+    { label: '5/3/1 Top W1', pct: 85 },
+    { label: '5/3/1 Top W2', pct: 90 },
+    { label: '5/3/1 Top W3', pct: 95 },
+    { label: 'FSL W1/W3',    pct: 65 },
+    { label: 'FSL W2',       pct: 70 },
+  ];
+
+  let html = `
+  <div class="card">
+    <div class="card-title">${lift.name} — Referenzwerte</div>
+    <div style="font-size:12px;color:var(--text-secondary);margin-bottom:12px">
+      TM: <strong style="color:${lift.color}">${fmt(tm)} kg</strong>
+      &nbsp;·&nbsp;
+      ${e1rm ? `e1RM (geloggt): <strong style="color:var(--text)">${e1rm} kg</strong>` : `e1RM (geschätzt aus TM): <strong style="color:var(--text)">${impliedE1RM} kg</strong>`}
+    </div>
+
+    <div class="card-title" style="margin-bottom:8px">% von 1RM → Wdh (Epley)</div>
+    <table class="ref-table">
+      <thead><tr>
+        <th>% 1RM</th>
+        <th>Wdh</th>
+        <th>kg (von ${display1RM} kg)</th>
+        <th>5/3/1 Zone</th>
+      </tr></thead>
+      <tbody>
+        ${REF_ROWS.map(r => {
+          const kg = round25(display1RM * r.pct / 100);
+          const zone = pctZones.find(z => Math.abs(z.pct - r.pct) <= 2);
+          const isHighlight = [85, 90, 95].includes(r.pct);
+          return `<tr${isHighlight ? ' class="highlight"' : ''}>
+            <td class="pct-col">${r.pct}%</td>
+            <td>${r.reps}</td>
+            <td>${fmt(kg)}</td>
+            <td style="font-size:10px;color:var(--text-tertiary)">${zone ? zone.label : ''}</td>
+          </tr>`;
+        }).join('')}
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card">
+    <div class="card-title">% von TM → kg</div>
+    <div style="font-size:11px;color:var(--text-tertiary);margin-bottom:10px">TM = ${fmt(tm)} kg (≈ ${Math.round(tm/display1RM*100)}% von 1RM) · *Wdh geschätzt via Epley</div>
+    <table class="ref-table">
+      <thead><tr>
+        <th>% TM</th>
+        <th>kg</th>
+        <th>Wdh*</th>
+        <th>5/3/1 Einsatz</th>
+      </tr></thead>
+      <tbody>
+        ${[
+          { pct: 40, label: 'Deload S1' },
+          { pct: 50, label: 'Deload S2' },
+          { pct: 60, label: 'Deload S3' },
+          { pct: 65, label: 'W1 S1 / FSL W1' },
+          { pct: 70, label: 'W2 S1 / FSL W2' },
+          { pct: 75, label: 'W1 S2 / W3 S1' },
+          { pct: 80, label: 'W2 S2' },
+          { pct: 85, label: 'W1 Top Set' },
+          { pct: 90, label: 'W2 Top Set' },
+          { pct: 95, label: 'W3 Top Set' },
+        ].map(r => {
+          const kg = round25(tm * r.pct / 100);
+          const reps = display1RM > 0 ? Math.max(1, Math.round(30 * (display1RM / kg - 1))) : '–';
+          const isHighlight = [85, 90, 95].includes(r.pct);
+          return `<tr${isHighlight ? ' class="highlight"' : ''}>
+            <td class="pct-col">${r.pct}%</td>
+            <td>${fmt(kg)}</td>
+            <td>${reps}</td>
+            <td style="font-size:10px;color:var(--text-tertiary)">${r.label}</td>
+          </tr>`;
+        }).join('')}
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card">
+    <div class="card-title">TM-Empfehlung (Wendler)</div>
+    <table class="ref-table">
+      <thead><tr><th>AMRAP Reps</th><th>Empfehlung</th></tr></thead>
+      <tbody>
+        <tr><td>0</td><td style="color:#A32D2D">TM −5% (zu schwer)</td></tr>
+        <tr><td>1–3</td><td style="color:#854F0B">Halten (kein Increment)</td></tr>
+        <tr><td>4–8</td><td style="color:#3B6D11">+${fmt(lift.inc)} kg (standard)</td></tr>
+        <tr><td>9+</td><td style="color:#2A5A0A">+${fmt(lift.inc * 2)} kg (doppelt)</td></tr>
+      </tbody>
+    </table>
+  </div>`;
+
+  el.innerHTML = html;
+}
+
+function renderExport() {
+  const el = document.getElementById('screen-export');
+  el.innerHTML = `
+  <div class="card">
+    <div class="card-title">Save</div>
+    <p style="font-size:13px;color:var(--text-secondary);margin-bottom:12px">Speichert den aktuellen Stand als <strong>531_kris.json</strong> auf deinem Gerät.</p>
+    <button class="btn-primary" onclick="downloadState()">💾 Save to file</button>
+  </div>
+  <div class="card">
+    <div class="card-title">Load</div>
+    <p style="font-size:13px;color:var(--text-secondary);margin-bottom:12px">Wähle eine zuvor gespeicherte <strong>531_kris.json</strong> Datei aus.</p>
+    <input type="file" id="load-file" accept=".json" onchange="loadFromFile(this)" style="display:none">
+    <button class="btn-primary" onclick="document.getElementById('load-file').click()">📂 Load from file</button>
+    <div id="load-msg" style="font-size:12px;margin-top:10px"></div>
+  </div>
+  <div class="card">
+    <div class="card-title">Reset</div>
+    <p style="font-size:13px;color:var(--text-secondary);margin-bottom:12px">Setzt alle Daten auf die Standardwerte zurück. Nicht rückgängig zu machen.</p>
+    <button class="btn-secondary" onclick="resetState()">Reset to defaults</button>
+  </div>`;
+}
+
+function downloadState() {
+  const blob = new Blob([JSON.stringify(STATE, null, 2)], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = '531_kris.json';
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
+function loadFromFile(input) {
+  const file = input.files[0];
+  if (!file) return;
+  const msg = document.getElementById('load-msg');
+  const reader = new FileReader();
+  reader.onload = (e) => {
+    try {
+      const parsed = JSON.parse(e.target.result);
+      STATE = parsed;
+      save();
+      msg.style.color = '#3B6D11';
+      msg.textContent = '✓ Geladen — ' + file.name;
+    } catch(err) {
+      msg.style.color = '#A32D2D';
+      msg.textContent = 'Fehler: Ungültige JSON-Datei.';
+    }
+  };
+  reader.readAsText(file);
+}
+
+function resetState() {
+  if (confirm('Reset all data to defaults?')) {
+    STATE = JSON.parse(JSON.stringify(DEFAULT_STATE));
+    save();
+    showScreen('today', document.querySelector('.nav button'));
+  }
+}
+
+renderToday();
+</script>
+</body>
+</html>
