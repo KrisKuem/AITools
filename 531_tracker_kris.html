@@ -1104,18 +1104,72 @@ function renderExport() {
     <p style="font-size:13px;color:var(--text-secondary);margin-bottom:12px">Speichert den aktuellen Stand als <strong>531_kris.json</strong> auf deinem Gerät.</p>
     <button class="btn-primary" onclick="downloadState()">💾 Save to file</button>
   </div>
+
   <div class="card">
-    <div class="card-title">Load</div>
-    <p style="font-size:13px;color:var(--text-secondary);margin-bottom:12px">Wähle eine zuvor gespeicherte <strong>531_kris.json</strong> Datei aus.</p>
+    <div class="card-title">Load from URL</div>
+    <p style="font-size:13px;color:var(--text-secondary);margin-bottom:10px">Raw GitHub URL der JSON-Datei eingeben.</p>
+    <input type="url" id="load-url" placeholder="https://raw.githubusercontent.com/..." 
+      style="width:100%;font-size:12px;font-family:var(--font);padding:8px;border-radius:var(--radius-md);border:0.5px solid var(--border-secondary);background:var(--bg-secondary);color:var(--text);outline:none;margin-bottom:8px">
+    <button class="btn-primary" onclick="loadFromURL()">📡 Load from URL</button>
+    <div id="url-msg" style="font-size:12px;margin-top:8px"></div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Load from file</div>
+    <p style="font-size:13px;color:var(--text-secondary);margin-bottom:10px">Wähle eine <strong>531_kris.json</strong> Datei aus.</p>
     <input type="file" id="load-file" accept=".json" onchange="loadFromFile(this)" style="display:none">
     <button class="btn-primary" onclick="document.getElementById('load-file').click()">📂 Load from file</button>
-    <div id="load-msg" style="font-size:12px;margin-top:10px"></div>
+    <div id="load-msg" style="font-size:12px;margin-top:8px"></div>
   </div>
+
+  <div class="card">
+    <div class="card-title">Paste JSON</div>
+    <p style="font-size:13px;color:var(--text-secondary);margin-bottom:10px">JSON direkt einfügen und laden.</p>
+    <textarea class="export-area" id="paste-txt" placeholder="JSON hier einfügen..." style="min-height:80px"></textarea>
+    <div style="display:flex;gap:8px;margin-top:8px;flex-wrap:wrap">
+      <button class="btn-primary" onclick="loadFromPaste()">Load</button>
+      <button class="btn-secondary" onclick="copyCurrentState()">Copy current JSON</button>
+    </div>
+    <div id="paste-msg" style="font-size:12px;margin-top:8px"></div>
+  </div>
+
   <div class="card">
     <div class="card-title">Reset</div>
-    <p style="font-size:13px;color:var(--text-secondary);margin-bottom:12px">Setzt alle Daten auf die Standardwerte zurück. Nicht rückgängig zu machen.</p>
+    <p style="font-size:13px;color:var(--text-secondary);margin-bottom:12px">Setzt alle Daten auf die Standardwerte zurück.</p>
     <button class="btn-secondary" onclick="resetState()">Reset to defaults</button>
   </div>`;
+}
+
+function loadFromURL() {
+  const url = document.getElementById('load-url').value.trim();
+  const msg = document.getElementById('url-msg');
+  if (!url) { msg.style.color = '#A32D2D'; msg.textContent = 'Bitte URL eingeben.'; return; }
+  msg.style.color = 'var(--text-tertiary)'; msg.textContent = 'Lädt...';
+  fetch(url)
+    .then(res => { if (!res.ok) throw new Error('HTTP ' + res.status); return res.json(); })
+    .then(parsed => { STATE = parsed; save(); msg.style.color = '#3B6D11'; msg.textContent = '✓ Geladen von URL.'; renderToday(); })
+    .catch(e => { msg.style.color = '#A32D2D'; msg.textContent = 'Fehler: ' + e.message; });
+}
+
+function loadFromPaste() {
+  const txt = document.getElementById('paste-txt').value.trim();
+  const msg = document.getElementById('paste-msg');
+  try {
+    STATE = JSON.parse(txt); save();
+    msg.style.color = '#3B6D11'; msg.textContent = '✓ Geladen.';
+    renderToday();
+  } catch(e) {
+    msg.style.color = '#A32D2D'; msg.textContent = 'Ungültiges JSON.';
+  }
+}
+
+function copyCurrentState() {
+  const txt = JSON.stringify(STATE, null, 2);
+  const el = document.getElementById('paste-txt');
+  el.value = txt;
+  navigator.clipboard.writeText(txt).catch(() => {});
+  const msg = document.getElementById('paste-msg');
+  msg.style.color = '#3B6D11'; msg.textContent = '✓ Kopiert.';
 }
 
 function downloadState() {
