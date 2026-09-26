@@ -258,11 +258,20 @@ function fmt(v) { return Number(v).toFixed(1).replace(/\.0$/, ''); }
 function calcE1RM(w, r) { if (r <= 0) return w; return Math.round(w * (1 + r / 30)); }
 function todayLiftKey() { return STATE.schedule[STATE.dayIndex % 4]; }
 
-function getTMRecommendation(reps, inc) {
-  if (reps === 0)   return { label: 'TM zu hoch → −5%', cls: 'down', delta: 'down' };
-  if (reps <= 3)    return { label: 'Knapp → halten', cls: 'hold', delta: 'hold' };
-  if (reps <= 8)    return { label: 'Gut → +' + fmt(inc) + ' kg', cls: 'up', delta: 'normal' };
-  return            { label: 'Stark → +' + fmt(inc * 2) + ' kg', cls: 'up2', delta: 'double' };
+function getTMRecommendation(reps, inc, week) {
+  // Minimum target per week: W1=5, W2=3, W3=1
+  const targets = { 1: 5, 2: 3, 3: 1, 4: 5 };
+  const target = targets[week] || 5;
+  const below = reps < target;        // failed to hit minimum
+  const barely = reps < target + 2;   // hit minimum but barely
+
+  if (reps === 0 || (below && reps <= target - 3))
+    return { label: 'TM zu hoch → −5%', cls: 'down', delta: 'down' };
+  if (below || barely)
+    return { label: 'Knapp → halten', cls: 'hold', delta: 'hold' };
+  if (reps <= target + 5)
+    return { label: 'Gut → +' + fmt(inc) + ' kg', cls: 'up', delta: 'normal' };
+  return { label: 'Stark → +' + fmt(inc * 2) + ' kg', cls: 'up2', delta: 'double' };
 }
 
 function getWeekData() {
@@ -294,7 +303,7 @@ function completeSession() {
   const e1rm = (topReps && topReps > 0) ? calcE1RM(topKg, topReps) : null;
 
   // TM recommendation for next cycle
-  const rec = (topReps !== null) ? getTMRecommendation(topReps, lift.inc) : null;
+  const rec = (topReps !== null) ? getTMRecommendation(topReps, lift.inc, STATE.week) : null;
 
   STATE.history.unshift({
     date: new Date().toLocaleDateString('de-DE', { day: '2-digit', month: '2-digit', year: '2-digit' }),
@@ -356,7 +365,7 @@ function renderToday() {
   const jokers = logged.jokers || [];
 
   const topSetReps = logged[2] ? parseInt(logged[2].reps) : null;
-  const rec = (topSetReps !== null && !isNaN(topSetReps)) ? getTMRecommendation(topSetReps, lift.inc) : null;
+  const rec = (topSetReps !== null && !isNaN(topSetReps)) ? getTMRecommendation(topSetReps, lift.inc, STATE.week) : null;
 
   const setsHTML = sets.map((s, i) => {
     const isTop = i === 2 && !deload;
