@@ -467,6 +467,17 @@ function renderToday() {
 
     <div style="margin-top:0.5rem">
       <button class="btn-primary" onclick="completeSession()">Mark done → next session</button>
+    </div>
+
+    <div class="card" style="margin-top:0.5rem">
+      <div class="card-title">Jump to day</div>
+      <div style="font-size:12px;color:var(--text-tertiary);margin-bottom:10px">Überspringe zur gewünschten Übung (z.B. nach Verletzungspause)</div>
+      <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:8px">
+        ${STATE.schedule.map((lk, di) => {
+          const isCurrent = (STATE.dayIndex % 4) === di;
+          return `<button onclick="jumpToDay(${di})" style="padding:10px 8px;border-radius:var(--radius-md);border:0.5px solid ${isCurrent ? STATE.lifts[lk].color : 'var(--border-secondary)'};background:${isCurrent ? STATE.lifts[lk].color + '22' : 'var(--bg-secondary)'};color:${isCurrent ? STATE.lifts[lk].color : 'var(--text-secondary)'};font-size:13px;cursor:${isCurrent ? 'default' : 'pointer'};font-weight:${isCurrent ? '600' : '400'}">${STATE.lifts[lk].name}${isCurrent ? ' ✓' : ''}</button>`;
+        }).join('')}
+      </div>
     </div>`;
 }
 
@@ -474,6 +485,19 @@ function saveNote(key, val) {
   if (!STATE.notes) STATE.notes = {};
   STATE.notes[key] = val;
   save();
+}
+
+function jumpToDay(slotIndex) {
+  const currentSlot = STATE.dayIndex % 4;
+  if (slotIndex === currentSlot) return; // already there
+  // Advance dayIndex until it lands on the target slot
+  // without changing week/cycle (we just shift within current week)
+  const delta = (slotIndex - currentSlot + 4) % 4;
+  STATE.dayIndex += delta;
+  // If crossing a week boundary, roll week forward
+  // We only jump within the same week: warn if it would skip to next week naturally
+  save();
+  renderToday();
 }
 
 function logTopSet(kg, reps) {
@@ -750,6 +774,19 @@ function renderCycle() {
   </div>
 
   <div class="card">
+    <div class="card-title">Lift order</div>
+    <div style="font-size:12px;color:var(--text-tertiary);margin-bottom:10px">Permanente Reihenfolge der 4 Tage pro Woche</div>
+    ${STATE.schedule.map((lk, i) => `
+      <div style="display:flex;align-items:center;justify-content:space-between;padding:7px 0;border-bottom:0.5px solid var(--border)">
+        <span style="font-size:13px;color:${STATE.lifts[lk].color};flex:1">${STATE.lifts[lk].name}</span>
+        <div style="display:flex;gap:6px">
+          <button class="adj-btn" onclick="moveSchedule(${i},-1)" ${i===0?'disabled style="opacity:0.3"':''}>↑</button>
+          <button class="adj-btn" onclick="moveSchedule(${i},1)" ${i===STATE.schedule.length-1?'disabled style="opacity:0.3"':''}>↓</button>
+        </div>
+      </div>`).join('')}
+  </div>
+
+  <div class="card">
     <div class="card-title">Next cycle TMs (after week 4)</div>
     ${Object.entries(STATE.lifts).map(([k,l]) => `
       <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:0.5px solid var(--border);font-size:13px">
@@ -800,6 +837,21 @@ function toggleWeekOrder(val) {
 
 function toggleDeloadMode(val) {
   STATE.deloadMode = val ? 'moderate' : 'light';
+  save();
+  renderCycle();
+}
+
+function moveSchedule(index, direction) {
+  const sched = STATE.schedule;
+  const target = index + direction;
+  if (target < 0 || target >= sched.length) return;
+  // Also adjust dayIndex slot if it points to one of the swapped positions
+  const currentSlot = STATE.dayIndex % 4;
+  const [a, b] = [index, target];
+  [sched[a], sched[b]] = [sched[b], sched[a]];
+  // Keep dayIndex pointing at the same lift after reorder
+  if (currentSlot === a) STATE.dayIndex = Math.floor(STATE.dayIndex / 4) * 4 + b;
+  else if (currentSlot === b) STATE.dayIndex = Math.floor(STATE.dayIndex / 4) * 4 + a;
   save();
   renderCycle();
 }
@@ -1117,7 +1169,7 @@ function renderExport() {
   <div class="card">
     <div class="card-title">Load from URL</div>
     <p style="font-size:13px;color:var(--text-secondary);margin-bottom:10px">Raw GitHub URL der JSON-Datei eingeben.</p>
-    <input type="url" id="load-url" placeholder="https://raw.githubusercontent.com/..." 
+    <input type="url" id="load-url" value="https://raw.githubusercontent.com/KrisKuem/AITools/531/531_kris.json"
       style="width:100%;font-size:12px;font-family:var(--font);padding:8px;border-radius:var(--radius-md);border:0.5px solid var(--border-secondary);background:var(--bg-secondary);color:var(--text);outline:none;margin-bottom:8px">
     <button class="btn-primary" onclick="loadFromURL()">📡 Load from URL</button>
     <div id="url-msg" style="font-size:12px;margin-top:8px"></div>
@@ -1219,7 +1271,36 @@ function resetState() {
   }
 }
 
+// ── Auto-load from GitHub on startup ────────────────────────────────────────
+const GITHUB_RAW_URL = 'https://raw.githubusercontent.com/KrisKuem/AITools/531/531_kris.json';
+
+function autoLoadFromGitHub() {
+  // Show subtle loading indicator
+  const indicator = document.createElement('div');
+  indicator.id = 'auto-load-indicator';
+  indicator.style.cssText = 'position:fixed;bottom:12px;right:12px;background:var(--bg-card);border:0.5px solid var(--border-secondary);border-radius:var(--radius-md);padding:8px 12px;font-size:12px;color:var(--text-tertiary);z-index:999;box-shadow:0 2px 8px rgba(0,0,0,.12)';
+  indicator.textContent = '↓ Sync von GitHub…';
+  document.body.appendChild(indicator);
+
+  fetch(GITHUB_RAW_URL)
+    .then(res => { if (!res.ok) throw new Error('HTTP ' + res.status); return res.json(); })
+    .then(parsed => {
+      STATE = parsed;
+      save();
+      renderToday();
+      indicator.style.color = '#3B6D11';
+      indicator.textContent = '✓ Sync OK';
+      setTimeout(() => indicator.remove(), 2000);
+    })
+    .catch(e => {
+      indicator.style.color = 'var(--text-tertiary)';
+      indicator.textContent = '↻ Offline — lokale Daten';
+      setTimeout(() => indicator.remove(), 3000);
+    });
+}
+
 renderToday();
+autoLoadFromGitHub();
 </script>
 </body>
 </html>
