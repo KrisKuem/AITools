@@ -1,7 +1,7 @@
 {
   "cycle": 8,
-  "week": 1,
-  "dayIndex": 101,
+  "week": 3,
+  "dayIndex": 109,
   "lifts": {
     "ohp": {
       "name": "Seated OHP",
@@ -26,7 +26,7 @@
     },
     "squat": {
       "name": "Squat",
-      "tm": 140,
+      "tm": 120,
       "inc": 0,
       "color": "#D85A30",
       "e1rm": 159
@@ -39,6 +39,110 @@
     "dl"
   ],
   "history": [
+    {
+      "date": "07.10.26",
+      "lift": "Seated OHP",
+      "liftKey": "ohp",
+      "cycle": 8,
+      "week": 3,
+      "tm": 90,
+      "topSetKg": 85,
+      "topSetReps": 1,
+      "e1rm": 88,
+      "tmRec": "hold",
+      "jokers": []
+    },
+    {
+      "date": "07.10.26",
+      "lift": "Deadlift",
+      "liftKey": "dl",
+      "cycle": 8,
+      "week": 2,
+      "tm": 202.5,
+      "topSetKg": 182.5,
+      "topSetReps": 3,
+      "e1rm": 201,
+      "tmRec": "hold",
+      "jokers": []
+    },
+    {
+      "date": "03.10.26",
+      "lift": "Bench Press",
+      "liftKey": "bench",
+      "cycle": 8,
+      "week": 2,
+      "tm": 127.5,
+      "topSetKg": 115,
+      "topSetReps": 5,
+      "e1rm": 134,
+      "tmRec": "normal",
+      "jokers": []
+    },
+    {
+      "date": "02.10.26",
+      "lift": "Squat",
+      "liftKey": "squat",
+      "cycle": 8,
+      "week": 2,
+      "tm": 140,
+      "topSetKg": 125,
+      "topSetReps": 1,
+      "e1rm": 129,
+      "tmRec": "hold",
+      "jokers": []
+    },
+    {
+      "date": "30.09.26",
+      "lift": "Seated OHP",
+      "liftKey": "ohp",
+      "cycle": 8,
+      "week": 2,
+      "tm": 90,
+      "topSetKg": 80,
+      "topSetReps": 4,
+      "e1rm": 91,
+      "tmRec": "hold",
+      "jokers": []
+    },
+    {
+      "date": "29.09.26",
+      "lift": "Deadlift",
+      "liftKey": "dl",
+      "cycle": 8,
+      "week": 1,
+      "tm": 202.5,
+      "topSetKg": 172.5,
+      "topSetReps": 5,
+      "e1rm": 201,
+      "tmRec": "hold",
+      "jokers": []
+    },
+    {
+      "date": "27.09.26",
+      "lift": "Bench Press",
+      "liftKey": "bench",
+      "cycle": 8,
+      "week": 1,
+      "tm": 127.5,
+      "topSetKg": 107.5,
+      "topSetReps": 8,
+      "e1rm": 136,
+      "tmRec": "normal",
+      "jokers": []
+    },
+    {
+      "date": "26.09.26",
+      "lift": "Squat",
+      "liftKey": "squat",
+      "cycle": 8,
+      "week": 1,
+      "tm": 140,
+      "topSetKg": 120,
+      "topSetReps": 2,
+      "e1rm": 128,
+      "tmRec": "hold",
+      "jokers": []
+    },
     {
       "date": "23.09.26",
       "lift": "Seated OHP",
