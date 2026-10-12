@@ -1274,7 +1274,7 @@ function resetState() {
 // ── Auto-load from GitHub on startup ────────────────────────────────────────
 const GITHUB_RAW_URL = 'https://raw.githubusercontent.com/KrisKuem/AITools/531/531_kris.json';
 
-function autoLoadFromGitHub() {
+/*function autoLoadFromGitHub() {
   // Show subtle loading indicator
   const indicator = document.createElement('div');
   indicator.id = 'auto-load-indicator';
@@ -1285,22 +1285,22 @@ function autoLoadFromGitHub() {
   fetch(GITHUB_RAW_URL)
     .then(res => { if (!res.ok) throw new Error('HTTP ' + res.status); return res.json(); })
     .then(parsed => {
-      STATE = parsed;
-      save();
-      renderToday();
-      indicator.style.color = '#3B6D11';
-      indicator.textContent = '✓ Sync OK';
-      setTimeout(() => indicator.remove(), 2000);
+    STATE = parsed;
+     save();
+     renderToday();
+     indicator.style.color = '#3B6D11';
+     indicator.textContent = '✓ Sync OK';
+     setTimeout(() => indicator.remove(), 2000);
     })
     .catch(e => {
       indicator.style.color = 'var(--text-tertiary)';
-      indicator.textContent = '↻ Offline — lokale Daten';
+      /*indicator.textContent = '↻ Offline — lokale Daten';
       setTimeout(() => indicator.remove(), 3000);
     });
 }
 
 renderToday();
-autoLoadFromGitHub();
+autoLoadFromGitHub();*/
 </script>
 </body>
 </html>
