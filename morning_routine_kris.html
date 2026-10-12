@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Morning routine · Kris</title>
+<title>Morning Routine · Kris</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
 <style>
@@ -30,7 +30,13 @@ body{margin:0;background:var(--bg);color:var(--ink);
   font-size:17px;line-height:1.5}
 main{max-width:680px;margin:0 auto;padding:28px 18px 60px}
 
-/* horizon: progress line that fills like a sunrise */
+.topbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;gap:8px}
+.back-link{font-size:14px;color:var(--muted);text-decoration:none;padding:4px 0;flex-shrink:0}
+.back-link:hover{color:var(--dawn)}
+.topbar-right{display:flex;gap:8px}
+.icon-btn{font:inherit;font-size:14px;border-radius:99px;border:1px solid var(--line);background:var(--surface);color:var(--muted);padding:5px 12px;cursor:pointer}
+.icon-btn:hover{color:var(--ink)}
+
 .horizon{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);padding:10px 0 12px}
 .horizon-track{height:6px;border-radius:3px;background:var(--line);overflow:hidden}
 .horizon-fill{height:100%;width:0;background:var(--dawn);transition:width .35s ease}
@@ -42,7 +48,7 @@ h1{font-size:34px;line-height:1.15;margin:4px 0 4px;letter-spacing:-.01em}
 h2{font-size:21px;margin:32px 0 10px}
 .note{font-size:14px;color:var(--muted);margin:-4px 0 12px}
 
-ol.steps{list-style:none;margin:0;padding:0;counter-reset:s}
+ol.steps{list-style:none;margin:0;padding:0}
 .step{background:var(--surface);border:1px solid var(--line);border-radius:12px;margin:0 0 10px;padding:14px 14px 14px 16px}
 .step.done{background:var(--dawn-soft);border-color:var(--dawn)}
 .step-head{display:flex;gap:12px;align-items:flex-start}
@@ -53,170 +59,495 @@ input[type=checkbox]{width:24px;height:24px;margin:1px 0 0;accent-color:var(--da
 input[type=checkbox]:focus-visible,button:focus-visible{outline:3px solid var(--dawn);outline-offset:2px}
 .num{font-weight:700;color:var(--muted);min-width:1.4em;font-variant-numeric:tabular-nums}
 .tag{display:inline-block;font-size:12px;border-radius:999px;padding:1px 9px;margin-left:6px;vertical-align:2px;border:1px solid var(--sage);color:var(--sage)}
-.tag.tbd{border-color:var(--warn);color:var(--warn)}
 
 ul.sublist{list-style:none;margin:10px 0 0;padding:0 0 0 36px}
 ul.sublist li{display:flex;gap:10px;align-items:flex-start;padding:6px 0;border-top:1px dashed var(--line)}
+ul.sublist li.hidden-item{display:none}
 ul.sublist li label{flex:1;cursor:pointer}
 ul.sublist li.done .item-text{text-decoration:line-through;text-decoration-color:var(--dawn)}
 ul.sublist input[type=checkbox]{width:20px;height:20px}
 .item-detail{display:block;font-size:14px;color:var(--muted)}
 
+/* Swap row — shared by step 4 and sit-up picker */
 .swap{display:flex;align-items:center;gap:10px;margin:10px 0 0 36px;font-size:15px;color:var(--muted)}
 .swap select{font:inherit;font-size:15px;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:6px 8px}
 .swap select:focus-visible{outline:3px solid var(--dawn);outline-offset:2px}
+
 .mobility-toggle{display:flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 14px;cursor:pointer}
 #mobility[hidden]{display:none}
 
-.callout{border-left:4px solid var(--warn);background:var(--surface);padding:10px 14px;border-radius:0 10px 10px 0;font-size:15px;margin:10px 0}
+/* Panel overlay */
+.panel-overlay{display:none;position:fixed;inset:0;z-index:20;background:rgba(0,0,0,.35)}
+.panel-overlay.open{display:block}
+.panel{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:680px;background:var(--surface);border-radius:20px 20px 0 0;padding:20px 18px 40px;max-height:80vh;overflow-y:auto;box-shadow:0 -4px 24px rgba(0,0,0,.15)}
+.panel h3{font-size:18px;margin:0 0 4px}
+.panel-note{font-size:14px;color:var(--muted);margin:0 0 16px}
+.panel-section{font-size:13px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin:16px 0 6px}
+.toggle-row{display:flex;align-items:center;justify-content:space-between;padding:10px 0;border-top:1px solid var(--line)}
+.toggle-row:first-of-type{border-top:none}
+.toggle-label{font-size:15px;flex:1;padding-right:12px}
+.sw{position:relative;width:44px;height:26px;flex-shrink:0}
+.sw input{opacity:0;width:0;height:0;position:absolute}
+.sw-track{position:absolute;inset:0;border-radius:13px;background:var(--line);transition:background .2s}
+.sw input:checked + .sw-track{background:var(--dawn)}
+.sw-thumb{position:absolute;top:3px;left:3px;width:20px;height:20px;border-radius:50%;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.3);transition:transform .2s}
+.sw input:checked ~ .sw-thumb{transform:translateX(18px)}
+.panel-close{width:100%;margin-top:16px;padding:12px;font-size:16px;border-radius:12px;border:1px solid var(--line);background:var(--bg);color:var(--ink);cursor:pointer;font:inherit}
+
 .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px}
-button{font:inherit;font-size:15px;border-radius:10px;border:1px solid var(--line);background:var(--surface);color:var(--ink);padding:9px 14px;cursor:pointer}
+button.action-btn{font:inherit;font-size:15px;border-radius:10px;border:1px solid var(--line);background:var(--surface);color:var(--ink);padding:9px 14px;cursor:pointer}
 footer{margin-top:24px;font-size:13px;color:var(--muted)}
 </style>
 </head>
 <body>
 <main>
-  <div class="horizon" aria-live="polite">
-    <div class="horizon-track"><div class="horizon-fill" id="fill"></div></div>
-    <div class="horizon-meta"><span id="today"></span><span id="count"></span></div>
+  <div class="topbar">
+    <a href="index.html" class="back-link">&#8592; Hub</a>
+    <div class="topbar-right">
+      <button class="icon-btn" onclick="openPanel()">&#9881; Anpassen</button>
+      <button class="icon-btn" id="theme-btn" onclick="toggleTheme()">&#9790;</button>
+    </div>
   </div>
 
-  <h1>Morning routine</h1>
-  <p class="lede">Tick things off as you go. Progress is saved per day on this device and starts fresh tomorrow. The strength session is separate.</p>
+  <div class="horizon" aria-live="polite">
+    <div class="horizon-track"><div class="horizon-fill" id="fill"></div></div>
+    <div class="horizon-meta"><span id="today-label"></span><span id="count"></span></div>
+  </div>
 
-  <div class="callout"><strong>Wound check first.</strong> Burpees and hip-heavy items were paused during rehab. Skip anything that pulls or hurts at the site until it's fully closed.</div>
+  <h1>Morning Routine</h1>
+  <p class="lede">Haken setzen beim Machen. Fortschritt wird pro Tag auf diesem Ger&#228;t gespeichert, morgen frisch.</p>
 
-  <h2>Daily</h2>
+  <h2>T&#228;glich</h2>
   <ol class="steps" id="daily">
-    <li class="step" data-id="vagus"><div class="step-head"><span class="num">1</span><input type="checkbox" id="c-vagus"><label for="c-vagus"><span class="step-title">Vagus activation</span><span class="step-sub"> — tongue, 5–10 reps</span></label></div></li>
 
-    <li class="step" data-id="fuel"><div class="step-head"><span class="num">2</span><input type="checkbox" id="c-fuel"><label for="c-fuel"><span class="step-title">Water, salt, supplements</span><br><span class="step-sub">Fasted: ½ tsp salt, creatine 5 g, B-complex</span></label></div></li>
-
-    <li class="step" data-id="tib" data-group="1"><div class="step-head"><span class="num">3</span><input type="checkbox" id="c-tib" aria-label="5 Tibeter block complete"><label for="c-tib"><span class="step-title">5 Tibeter + additions</span></label></div>
-      <ul class="sublist">
-        <li data-id="tib-spin"><input type="checkbox" id="c-tib-spin"><label for="c-tib-spin"><span class="item-text">Spins × 21</span></label></li>
-        <li data-id="tib-sit"><input type="checkbox" id="c-tib-sit"><label for="c-tib-sit"><span class="item-text">Weighted sit-ups × 21</span></label></li>
-        <li data-id="tib-table"><input type="checkbox" id="c-tib-table"><label for="c-tib-table"><span class="item-text">Table Mountain / Table-Maker to L-Sit × 21</span></label></li>
-        <li data-id="tib-dog"><input type="checkbox" id="c-tib-dog"><label for="c-tib-dog"><span class="item-text">Down Dog to Cobra × 10</span></label></li>
-        <li data-id="tib-round"><input type="checkbox" id="c-tib-round"><label for="c-tib-round"><span class="item-text">Rundrücken <span class="tag tbd">dosage tbd</span></span><span class="item-detail">Child's pose, hands clasped behind head, on elbows, rock forward and back</span></label></li>
-        <li data-id="tib-ankle"><input type="checkbox" id="c-tib-ankle"><label for="c-tib-ankle"><span class="item-text">Ankle: Fersensitz <span class="tag tbd">dosage tbd</span></span><span class="item-detail">Heels under glutes, instep on the floor, shift weight forward</span></label></li>
-        <li data-id="tib-book"><input type="checkbox" id="c-tib-book"><label for="c-tib-book"><span class="item-text">Foot: book air squats <span class="tag tbd">dosage tbd</span></span><span class="item-detail">Inner side of the feet on a book, yoga block between the legs, air squats</span></label></li>
-        <li data-id="tib-wall"><input type="checkbox" id="c-tib-wall"><label for="c-tib-wall"><span class="item-text">Foot: wall lean <span class="tag tbd">dosage tbd</span></span><span class="item-detail">Arm's length from the wall, start sideways, block between the legs. Turn to face the wall, hinge until the upper body is at 90°, press both hands into the wall, feet straight, hold the leg stretch</span></label></li>
-      </ul>
+    <li class="step" data-id="vagus">
+      <div class="step-head">
+        <span class="num">1</span>
+        <input type="checkbox" id="c-vagus">
+        <label for="c-vagus">
+          <span class="step-title">Vagus-Aktivierung</span>
+          <span class="step-sub"> &#8212; Zunge, 5&#8211;10 Wdh.</span>
+        </label>
+      </div>
     </li>
 
-    <li class="step" data-id="burpees"><div class="step-head"><span class="num">4</span><input type="checkbox" id="c-burpees"><label for="c-burpees"><span class="step-title" id="ex-title">Navy SEAL burpees × 21</span><span class="step-sub"> — before coffee</span><br><span class="step-sub" id="ex-detail"></span></label></div>
-      <div class="swap"><label for="ex-pick">Today's exercise</label>
-        <select id="ex-pick">
-          <option value="seal">Navy SEAL burpees</option>
-          <option value="swing">Kettlebell swings</option>
-          <option value="tgu">Turkish get-up</option>
-          <option value="jump">Jump squats</option>
+    <li class="step" data-id="supplements">
+      <div class="step-head">
+        <span class="num">2</span>
+        <input type="checkbox" id="c-supplements">
+        <label for="c-supplements">
+          <span class="step-title">Wasser + Salz + Supplements</span><br>
+          <span class="step-sub">N&#252;chtern: &#189; TL Salz, Kreatin 5 g, B-Komplex</span>
+        </label>
+      </div>
+    </li>
+
+    <li class="step" data-id="tibeter">
+      <div class="step-head">
+        <span class="num">3</span>
+        <input type="checkbox" id="c-tibeter" aria-label="5 Tibeter Block komplett">
+        <label for="c-tibeter"><span class="step-title">5 Tibeter + Erg&#228;nzungen</span></label>
+      </div>
+      <ul class="sublist" id="tib-sublist">
+
+        <li data-id="tib-spins" data-cfg="tib-spins">
+          <input type="checkbox" id="c-tib-spins">
+          <label for="c-tib-spins"><span class="item-text">Spins &#215; 21</span></label>
+        </li>
+
+        <!-- Sit-up block with own picker -->
+        <li data-id="tib-situps" data-cfg="tib-situps">
+          <input type="checkbox" id="c-tib-situps">
+          <label for="c-tib-situps">
+            <span class="item-text" id="situp-title">Weighted Sit-ups &#215; 21</span>
+            <span class="item-detail" id="situp-detail"></span>
+          </label>
+        </li>
+
+        <li data-id="tib-table" data-cfg="tib-table">
+          <input type="checkbox" id="c-tib-table">
+          <label for="c-tib-table"><span class="item-text">Table Mountain &#8594; L-Sit &#215; 21</span></label>
+        </li>
+
+        <li data-id="tib-dogcobra" data-cfg="tib-dogcobra">
+          <input type="checkbox" id="c-tib-dogcobra">
+          <label for="c-tib-dogcobra"><span class="item-text">Down Dog to Cobra &#215; 10</span></label>
+        </li>
+
+        <li data-id="tib-atm9090" data-cfg="tib-atm9090">
+          <input type="checkbox" id="c-tib-atm9090">
+          <label for="c-tib-atm9090">
+            <span class="item-text">90/90-Atmung (Wand) &#8212; 4&#8211;5 Atemz&#252;ge &#215; 3&#8211;4 Runden</span>
+            <span class="item-detail">R&#252;ckenlage, F&#252;&#223;e flach an der Wand, H&#252;fte + Knie 90&#176;. Rippe zur H&#252;fte, Lendenwirbel flach. Tief ein, Bauch und Seiten weiten, lange aus.</span>
+          </label>
+        </li>
+
+        <li data-id="tib-rundruecken" data-cfg="tib-rundruecken">
+          <input type="checkbox" id="c-tib-rundruecken">
+          <label for="c-tib-rundruecken">
+            <span class="item-text">Rundr&#252;cken &#215; 20</span>
+            <span class="item-detail">Child&#8217;s Pose, H&#228;nde hinter Kopf, auf die Ellbogen, vor und zur&#252;ck wiegen</span>
+          </label>
+        </li>
+
+        <li data-id="tib-ankle" data-cfg="tib-ankle">
+          <input type="checkbox" id="c-tib-ankle">
+          <label for="c-tib-ankle">
+            <span class="item-text">Ankle &#8212; Fersensitz, 47 Sek.</span>
+            <span class="item-detail">Fersen unter Ges&#228;&#223;, Spann auf dem Boden, Gewicht nach vorne verlagern</span>
+          </label>
+        </li>
+
+        <li data-id="tib-book" data-cfg="tib-book">
+          <input type="checkbox" id="c-tib-book">
+          <label for="c-tib-book">
+            <span class="item-text">Fu&#223; &#8212; Buch Air Squats &#215; 21</span>
+            <span class="item-detail">Innenseite der F&#252;&#223;e auf einem Buch, Yoga-Block zwischen den Beinen, Air Squats</span>
+          </label>
+        </li>
+
+        <li data-id="tib-dorsi" data-cfg="tib-dorsi">
+          <input type="checkbox" id="c-tib-dorsi">
+          <label for="c-tib-dorsi">
+            <span class="item-text">Fu&#223; &#8212; Dorsalflexion (Wand) &#215; 10/Seite</span>
+            <span class="item-detail">Kn&#246;chel-Abstand zur Wand, Knie gerade nach vorne &#252;ber die Fu&#223;spitze gegen die Wand dr&#252;cken. Ferse bleibt am Boden.</span>
+          </label>
+        </li>
+
+        <li data-id="tib-wall" data-cfg="tib-wall">
+          <input type="checkbox" id="c-tib-wall">
+          <label for="c-tib-wall">
+            <span class="item-text">Fu&#223; &#8212; Wand-Lean &#215; 21 / Halten</span>
+            <span class="item-detail">Eine Arml&#228;nge von der Wand, erst seitlich, Block zwischen den Beinen. Zur Wand drehen, beugen bis Oberk&#246;rper 90&#176;, beide H&#228;nde gegen die Wand, Beinstretch halten</span>
+          </label>
+        </li>
+
+        <li data-id="tib-band" data-cfg="tib-band">
+          <input type="checkbox" id="c-tib-band">
+          <label for="c-tib-band">
+            <span class="item-text">Fu&#223; &#8212; Band-Dorsalflexion (Ausfallschritt) &#215; 10/Seite</span>
+            <span class="item-detail">Trainingsband auf Kn&#246;chelh&#246;he befestigen, Band an Innenseite des Kn&#246;chels. 45&#176;-Ausfallschritt r&#252;ckw&#228;rts &#8212; Knie nicht &#252;ber Zehen. Spannung halten, Fu&#223; dorsiflektieren.</span>
+          </label>
+        </li>
+
+      </ul>
+      <!-- Sit-up picker sits below sublist, inside the tibeter li -->
+      <div class="swap" id="situp-swap-row">
+        <label for="situp-pick">Core-Variante</label>
+        <select id="situp-pick">
+          <option value="situp">Weighted Sit-ups</option>
+          <option value="legraise">Leg Raises</option>
+          <option value="ajcore">AJ Core</option>
+          <option value="nadeloehr">Nadel&#246;hr</option>
+          <option value="scheibenwischer">Scheibenwischer</option>
         </select>
       </div>
     </li>
 
-    <li class="step" data-id="coffee"><div class="step-head"><span class="num">·</span><input type="checkbox" id="c-coffee"><label for="c-coffee"><span class="step-title">Coffee</span><br><span class="step-sub">Bulletproof with D3/K2 + omega-3. Log ~200 kcal in MacroFactor</span></label></div></li>
+    <li class="step" data-id="wechsel">
+      <div class="step-head">
+        <span class="num">4</span>
+        <input type="checkbox" id="c-wechsel">
+        <label for="c-wechsel">
+          <span class="step-title" id="ex-title">Navy SEAL Burpees &#215; 21</span>
+          <span class="step-sub"> &#8212; vor dem Kaffee</span><br>
+          <span class="step-sub" id="ex-detail"></span>
+        </label>
+      </div>
+      <div class="swap">
+        <label for="ex-pick">Heutige &#220;bung</label>
+        <select id="ex-pick">
+          <option value="seal">Navy SEAL Burpees</option>
+          <option value="swing">Kettlebell Swings</option>
+          <option value="tgu">Turkish Get-up</option>
+          <option value="jump">Jump Squats</option>
+        </select>
+      </div>
+    </li>
 
-    <li class="step" data-id="squat"><div class="step-head"><span class="num">5</span><input type="checkbox" id="c-squat"><label for="c-squat"><span class="step-title">Deep squat + Spanish</span><br><span class="step-sub">Hold the deep squat while practicing Spanish</span></label></div></li>
+    <li class="step" data-id="coffee">
+      <div class="step-head">
+        <span class="num">&#183;</span>
+        <input type="checkbox" id="c-coffee">
+        <label for="c-coffee">
+          <span class="step-title">Kaffee-Anker</span><br>
+          <span class="step-sub">Bulletproof mit D3/K2 + Omega-3. ~200 kcal in MacroFactor loggen</span>
+        </label>
+      </div>
+    </li>
 
-    <li class="step" data-id="memo"><div class="step-head"><span class="num">6</span><input type="checkbox" id="c-memo"><label for="c-memo"><span class="step-title">Morning memo + breathing</span></label></div></li>
+    <li class="step" data-id="hocke">
+      <div class="step-head">
+        <span class="num">5</span>
+        <input type="checkbox" id="c-hocke">
+        <label for="c-hocke">
+          <span class="step-title">Tiefe Hocke + Spanisch</span><br>
+          <span class="step-sub">In der tiefen Hocke halten und gleichzeitig Spanisch &#252;ben</span>
+        </label>
+      </div>
+    </li>
 
-    <li class="step" data-id="read"><div class="step-head"><span class="num">7</span><input type="checkbox" id="c-read"><label for="c-read"><span class="step-title">Reading</span></label></div></li>
+    <li class="step" data-id="memo">
+      <div class="step-head">
+        <span class="num">6</span>
+        <input type="checkbox" id="c-memo">
+        <label for="c-memo">
+          <span class="step-title">Morning Memo + Atem&#252;bung</span>
+        </label>
+      </div>
+    </li>
+
+    <li class="step" data-id="lesen">
+      <div class="step-head">
+        <span class="num">7</span>
+        <input type="checkbox" id="c-lesen">
+        <label for="c-lesen">
+          <span class="step-title">Lesen</span>
+        </label>
+      </div>
+    </li>
+
   </ol>
 
-  <h2>Optional on weekdays</h2>
-  <p class="note">Skipping these is fine. They don't count toward today's progress.</p>
+  <h2>Optional an Wochentagen</h2>
+  <p class="note">Kein Muss. Z&#228;hlen nicht zum Tagesfortschritt.</p>
   <ol class="steps">
-    <li class="step" data-id="hiit" data-optional="1"><div class="step-head"><span class="num">+</span><input type="checkbox" id="c-hiit"><label for="c-hiit"><span class="step-title">HIIT</span><span class="tag">optional</span><br><span class="step-sub">Adrian James: medium if not 100 %, heavy if fit</span></label></div></li>
-    <li class="step" data-id="rope" data-optional="1"><div class="step-head"><span class="num">+</span><input type="checkbox" id="c-rope"><label for="c-rope"><span class="step-title">Rope skipping</span><span class="tag">optional</span></label></div></li>
+    <li class="step" data-id="hiit" data-optional="1">
+      <div class="step-head">
+        <span class="num">+</span>
+        <input type="checkbox" id="c-hiit">
+        <label for="c-hiit">
+          <span class="step-title">HIIT</span><span class="tag">optional</span><br>
+          <span class="step-sub">Adrian James: medium wenn nicht 100&#160;%, heavy wenn fit</span>
+        </label>
+      </div>
+    </li>
+    <li class="step" data-id="rope" data-optional="1">
+      <div class="step-head">
+        <span class="num">+</span>
+        <input type="checkbox" id="c-rope">
+        <label for="c-rope">
+          <span class="step-title">Seilspringen</span><span class="tag">optional</span>
+        </label>
+      </div>
+    </li>
   </ol>
 
-  <h2>Mobility programme</h2>
-  <p class="note">Mornings after leg days, about twice a week. Foam rolling first, then stretches, then leg swings.</p>
-  <label class="mobility-toggle" for="t-mob"><input type="checkbox" id="t-mob"><span>Today is a mobility day</span></label>
+  <h2>Mobility-Programm</h2>
+  <p class="note">Morgens nach Beintagen, etwa zweimal pro Woche. Erst Foam Rolling, dann Stretches, dann Leg Swings.</p>
+  <label class="mobility-toggle" for="t-mob"><input type="checkbox" id="t-mob"><span>Heute ist ein Mobility-Tag</span></label>
   <ol class="steps" id="mobility" hidden style="margin-top:10px">
-    <li class="step" data-id="mob-roll" data-mob="1"><div class="step-head"><span class="num">1</span><input type="checkbox" id="c-mob-roll" aria-label="Foam rolling block complete"><label for="c-mob-roll"><span class="step-title">Foam rolling</span></label></div>
+    <li class="step" data-id="mob-foam" data-mob="1">
+      <div class="step-head">
+        <span class="num">1</span>
+        <input type="checkbox" id="c-mob-foam" aria-label="Foam Rolling komplett">
+        <label for="c-mob-foam"><span class="step-title">Foam Rolling ~3 min</span></label>
+      </div>
       <ul class="sublist">
-        <li data-id="mob-it"><input type="checkbox" id="c-mob-it"><label for="c-mob-it"><span class="item-text">IT band</span></label></li>
+        <li data-id="mob-it"><input type="checkbox" id="c-mob-it"><label for="c-mob-it"><span class="item-text">IT-Band</span></label></li>
         <li data-id="mob-quad"><input type="checkbox" id="c-mob-quad"><label for="c-mob-quad"><span class="item-text">Quad</span></label></li>
-        <li data-id="mob-add"><input type="checkbox" id="c-mob-add"><label for="c-mob-add"><span class="item-text">Adductors</span></label></li>
-        <li data-id="mob-hf"><input type="checkbox" id="c-mob-hf"><label for="c-mob-hf"><span class="item-text">Hip flexors</span></label></li>
-        <li data-id="mob-glute"><input type="checkbox" id="c-mob-glute"><label for="c-mob-glute"><span class="item-text">Glutes</span><span class="item-detail">Lacrosse ball later, once the tissue is prepared</span></label></li>
-        <li data-id="mob-tspine"><input type="checkbox" id="c-mob-tspine"><label for="c-mob-tspine"><span class="item-text">Upper back / T-spine</span></label></li>
+        <li data-id="mob-add"><input type="checkbox" id="c-mob-add"><label for="c-mob-add"><span class="item-text">Adduktoren</span></label></li>
+        <li data-id="mob-hf"><input type="checkbox" id="c-mob-hf"><label for="c-mob-hf"><span class="item-text">H&#252;ftbeuger</span></label></li>
+        <li data-id="mob-glute"><input type="checkbox" id="c-mob-glute"><label for="c-mob-glute"><span class="item-text">Ges&#228;&#223;</span><span class="item-detail">Sp&#228;ter Lacrosse-Ball, wenn das Gewebe vorbereitet ist</span></label></li>
+        <li data-id="mob-tspine"><input type="checkbox" id="c-mob-tspine"><label for="c-mob-tspine"><span class="item-text">Oberer R&#252;cken / T-Spine</span></label></li>
       </ul>
     </li>
-    <li class="step" data-id="mob-roll2" data-mob="1"><div class="step-head"><span class="num">2</span><input type="checkbox" id="c-mob-roll2"><label for="c-mob-roll2"><span class="step-title">Rollover into V-sit</span></label></div></li>
-    <li class="step" data-id="mob-fig4" data-mob="1"><div class="step-head"><span class="num">3</span><input type="checkbox" id="c-mob-fig4"><label for="c-mob-fig4"><span class="step-title">Figure 4</span><span class="step-sub"> — glute / piriformis</span></label></div></li>
-    <li class="step" data-id="mob-9090" data-mob="1"><div class="step-head"><span class="num">4</span><input type="checkbox" id="c-mob-9090"><label for="c-mob-9090"><span class="step-title">90/90</span></label></div></li>
-    <li class="step" data-id="mob-wgs" data-mob="1"><div class="step-head"><span class="num">5</span><input type="checkbox" id="c-mob-wgs"><label for="c-mob-wgs"><span class="step-title">World's greatest stretch</span></label></div></li>
-    <li class="step" data-id="mob-ankle" data-mob="1"><div class="step-head"><span class="num">6</span><input type="checkbox" id="c-mob-ankle"><label for="c-mob-ankle"><span class="step-title">Wall ankle mobility</span></label></div></li>
-    <li class="step" data-id="mob-swing" data-mob="1"><div class="step-head"><span class="num">7</span><input type="checkbox" id="c-mob-swing"><label for="c-mob-swing"><span class="step-title">Leg swings</span></label></div></li>
+    <li class="step" data-id="mob-rollv" data-mob="1"><div class="step-head"><span class="num">2</span><input type="checkbox" id="c-mob-rollv"><label for="c-mob-rollv"><span class="step-title">Rollover into V-Sit &#215; 10</span></label></div></li>
+    <li class="step" data-id="mob-fig4" data-mob="1"><div class="step-head"><span class="num">3</span><input type="checkbox" id="c-mob-fig4"><label for="c-mob-fig4"><span class="step-title">Figure 4 &#8212; 30 Sek./Seite</span></label></div></li>
+    <li class="step" data-id="mob-9090" data-mob="1"><div class="step-head"><span class="num">4</span><input type="checkbox" id="c-mob-9090"><label for="c-mob-9090"><span class="step-title">90/90 &#8212; 60 Sek./Seite</span></label></div></li>
+    <li class="step" data-id="mob-wgs" data-mob="1"><div class="step-head"><span class="num">5</span><input type="checkbox" id="c-mob-wgs"><label for="c-mob-wgs"><span class="step-title">World&#8217;s Greatest Stretch &#215; 5/Seite</span></label></div></li>
+    <li class="step" data-id="mob-ankle" data-mob="1"><div class="step-head"><span class="num">6</span><input type="checkbox" id="c-mob-ankle"><label for="c-mob-ankle"><span class="step-title">Wall Ankle Mobility &#215; 10/Seite</span></label></div></li>
+    <li class="step" data-id="mob-swing" data-mob="1"><div class="step-head"><span class="num">7</span><input type="checkbox" id="c-mob-swing"><label for="c-mob-swing"><span class="step-title">Leg Swings &#215; 15/Seite</span></label></div></li>
   </ol>
 
   <div class="actions">
-    <button type="button" id="reset">Clear today's ticks</button>
+    <button type="button" class="action-btn" id="reset">Heutigen Stand zur&#252;cksetzen</button>
   </div>
-  <footer>Routine as of 28.09.2026. Dosage for the four new items in block 3 and for the step 4 alternatives is still open.</footer>
+  <footer>Stand: Oktober 2026 &#183; Strength-Session separat im 5/3/1 Tracker</footer>
 </main>
+
+<!-- Anpassen Panel -->
+<div class="panel-overlay" id="panel-overlay" onclick="closePanel(event)">
+  <div class="panel" onclick="event.stopPropagation()">
+    <h3>Routine anpassen</h3>
+    <p class="panel-note">&#220;bungen ein- oder ausblenden. Wird dauerhaft gespeichert.</p>
+    <div class="panel-section">Block 3 &#8212; Sub-Items</div>
+    <div id="cfg-toggles"></div>
+    <button class="panel-close" onclick="closePanel()">Fertig</button>
+  </div>
+</div>
 
 <script>
 (function(){
+
+  /* ── Configurable sub-items ── */
+  var CFG_ITEMS = [
+    { id:'tib-spins',       label:'Spins × 21' },
+    { id:'tib-situps',      label:'Core-Übung (Sit-ups / Leg Raises / …)' },
+    { id:'tib-table',       label:'Table Mountain → L-Sit × 21' },
+    { id:'tib-dogcobra',    label:'Down Dog to Cobra × 10' },
+    { id:'tib-atm9090',     label:'90/90-Atmung (Wand)' },
+    { id:'tib-rundruecken', label:'Rundrücken × 20' },
+    { id:'tib-ankle',       label:'Ankle — Fersensitz 47 Sek.' },
+    { id:'tib-book',        label:'Fuß — Buch Air Squats × 21' },
+    { id:'tib-dorsi',       label:'Fuß — Dorsalflexion (Wand) × 10/Seite' },
+    { id:'tib-wall',        label:'Fuß — Wand-Lean × 21 / Halten' },
+    { id:'tib-band',        label:'Fuß — Band-Dorsalflexion (Ausfallschritt)' }
+  ];
+
+  var CFG_KEY = 'mr-cfg';
+  var cfg = {};
+  try { cfg = JSON.parse(localStorage.getItem(CFG_KEY) || '{}'); } catch(e){}
+  CFG_ITEMS.forEach(function(it){ if (cfg[it.id] === undefined) cfg[it.id] = true; });
+  function saveCfg(){ try { localStorage.setItem(CFG_KEY, JSON.stringify(cfg)); } catch(e){} }
+
+  function applyCfg(){
+    CFG_ITEMS.forEach(function(it){
+      var el = document.querySelector('[data-cfg="' + it.id + '"]');
+      if (el) el.classList.toggle('hidden-item', !cfg[it.id]);
+    });
+    // Show/hide sit-up picker row based on whether tib-situps is active
+    var swapRow = document.getElementById('situp-swap-row');
+    if (swapRow) swapRow.style.display = cfg['tib-situps'] ? '' : 'none';
+  }
+
+  /* ── Build panel toggles ── */
+  var container = document.getElementById('cfg-toggles');
+  CFG_ITEMS.forEach(function(it){
+    var row = document.createElement('div');
+    row.className = 'toggle-row';
+    var uid = 'sw-' + it.id;
+    row.innerHTML =
+      '<span class="toggle-label">' + it.label + '</span>' +
+      '<label class="sw" aria-label="' + it.label + '">' +
+        '<input type="checkbox" id="' + uid + '"' + (cfg[it.id] ? ' checked' : '') + '>' +
+        '<span class="sw-track"></span><span class="sw-thumb"></span>' +
+      '</label>';
+    container.appendChild(row);
+    row.querySelector('input').addEventListener('change', function(){
+      cfg[it.id] = this.checked; saveCfg(); applyCfg(); rebindBoxes();
+    });
+  });
+
+  window.openPanel = function(){ document.getElementById('panel-overlay').classList.add('open'); };
+  window.closePanel = function(e){
+    if (!e || e.target === document.getElementById('panel-overlay'))
+      document.getElementById('panel-overlay').classList.remove('open');
+  };
+
+  /* ── Theme ── */
+  var THEME_KEY = 'mr-theme';
+  var currentTheme;
+  try { currentTheme = localStorage.getItem(THEME_KEY) || 'auto'; } catch(e){ currentTheme = 'auto'; }
+  function applyTheme(t){
+    if (t==='dark') document.documentElement.setAttribute('data-theme','dark');
+    else if (t==='light') document.documentElement.setAttribute('data-theme','light');
+    else document.documentElement.removeAttribute('data-theme');
+    document.getElementById('theme-btn').textContent = t==='dark' ? '☀︎' : '☾';
+  }
+  window.toggleTheme = function(){
+    currentTheme = currentTheme==='dark' ? 'light' : 'dark';
+    try { localStorage.setItem(THEME_KEY, currentTheme); } catch(e){}
+    applyTheme(currentTheme);
+  };
+  applyTheme(currentTheme);
+
+  /* ── Daily state ── */
   var today = new Date();
   var key = 'mr-' + today.getFullYear() + '-' + (today.getMonth()+1) + '-' + today.getDate();
-  document.getElementById('today').textContent = today.toLocaleDateString('en-GB',{weekday:'long',day:'numeric',month:'long'});
-
+  document.getElementById('today-label').textContent =
+    today.toLocaleDateString('de-DE',{weekday:'long',day:'numeric',month:'long'});
   var state = {};
-  try { state = JSON.parse(localStorage.getItem(key) || '{}') || {}; } catch(e){ state = {}; }
+  try { state = JSON.parse(localStorage.getItem(key) || '{}') || {}; } catch(e){}
   function save(){ try { localStorage.setItem(key, JSON.stringify(state)); } catch(e){} }
 
   var mobToggle = document.getElementById('t-mob');
   var mob = document.getElementById('mobility');
 
-  // all checkboxes bound to an element with data-id
-  var boxes = Array.prototype.slice.call(document.querySelectorAll('[data-id] > input[type=checkbox], [data-id] > .step-head > input[type=checkbox]'));
   function owner(cb){ return cb.closest('[data-id]'); }
 
   function paint(){
-    boxes.forEach(function(cb){ owner(cb).classList.toggle('done', cb.checked); });
-    // count: daily steps + mobility steps if active; optional excluded
+    document.querySelectorAll('[data-id]:not(.hidden-item)').forEach(function(el){
+      var cb = el.querySelector(':scope > input[type=checkbox], :scope > .step-head > input[type=checkbox]');
+      if (cb) el.classList.toggle('done', cb.checked);
+    });
     var counted = Array.prototype.slice.call(document.querySelectorAll('#daily > .step'));
     if (mobToggle.checked) counted = counted.concat(Array.prototype.slice.call(document.querySelectorAll('#mobility > .step')));
     var done = counted.filter(function(li){ return li.querySelector('.step-head input').checked; }).length;
-    document.getElementById('count').textContent = done + ' of ' + counted.length + ' done';
+    document.getElementById('count').textContent = done + ' von ' + counted.length + ' erledigt';
     document.getElementById('fill').style.width = (counted.length ? done/counted.length*100 : 0) + '%';
+    // Hub key
+    try {
+      var hub = {};
+      ['vagus','supplements','wechsel','coffee','hocke','memo','lesen'].forEach(function(k){ if(state[k]) hub[k]=true; });
+      var activeTibSubs = CFG_ITEMS.map(function(i){ return i.id; }).filter(function(id){ return cfg[id]; });
+      if(activeTibSubs.length && activeTibSubs.every(function(s){ return state[s]; })) hub['tibeter']=true;
+      localStorage.setItem('morning_kris_'+today.toISOString().slice(0,10), JSON.stringify(hub));
+    } catch(e){}
   }
 
-  // group parents: ticking all children ticks parent; ticking parent ticks all children
   function syncParent(parent){
-    var kids = parent.querySelectorAll('.sublist input[type=checkbox]');
-    var all = Array.prototype.every.call(kids, function(k){ return k.checked; });
+    var kids = parent.querySelectorAll('.sublist li:not(.hidden-item) input[type=checkbox]');
+    var all = kids.length > 0 && Array.prototype.every.call(kids, function(k){ return k.checked; });
     var p = parent.querySelector('.step-head input');
     p.checked = all; state[parent.dataset.id] = all;
   }
 
-  boxes.forEach(function(cb){
+  function bindBox(cb){
     var id = owner(cb).dataset.id;
     cb.checked = !!state[id];
     cb.addEventListener('change', function(){
       var el = owner(cb);
       state[id] = cb.checked;
-      var kids = el.querySelectorAll('.sublist input[type=checkbox]');
+      var kids = el.querySelectorAll('.sublist li:not(.hidden-item) input[type=checkbox]');
       if (kids.length && cb.parentNode.classList.contains('step-head')){
         Array.prototype.forEach.call(kids, function(k){ k.checked = cb.checked; state[owner(k).dataset.id] = cb.checked; });
       }
       var parentStep = el.parentNode.closest && el.parentNode.closest('.step');
-      if (parentStep && el.tagName === 'LI' && el.parentNode.classList.contains('sublist')) syncParent(parentStep);
+      if (parentStep && el.tagName==='LI' && el.parentNode.classList.contains('sublist')) syncParent(parentStep);
       save(); paint();
     });
-  });
+  }
 
-  // exchangeable step 4 — the choice is remembered across days
+  function rebindBoxes(){
+    document.querySelectorAll('[data-id]:not(.hidden-item) > input[type=checkbox], [data-id]:not(.hidden-item) > .step-head > input[type=checkbox]')
+      .forEach(function(cb){ var id = owner(cb).dataset.id; cb.checked = !!state[id]; });
+    paint();
+  }
+
+  document.querySelectorAll('[data-id] > input[type=checkbox], [data-id] > .step-head > input[type=checkbox]')
+    .forEach(bindBox);
+
+  /* ── Sit-up / Core picker ── */
+  var SITUP = {
+    situp:          { t:'Weighted Sit-ups × 21',        d:'' },
+    legraise:       { t:'Leg Raises × 21',               d:'' },
+    ajcore:         { t:'AJ Core',                             d:'Adrian James Core-Routine' },
+    nadeloehr:      { t:'Nadelöhr',                       d:'Neutral auf Händen + Knien, einen Arm nach oben aufdrehen, dann durch und Schulter bis zum Boden' },
+    scheibenwischer:{ t:'Scheibenwischer',                     d:'Rückenlage, Beine 90°, Knie seitlich absenken (Scheibenwischer)' }
+  };
+  var situpPick = document.getElementById('situp-pick');
+  var situpChoice = 'situp';
+  try { situpChoice = localStorage.getItem('mr-situp-choice') || 'situp'; } catch(e){}
+  if (!SITUP[situpChoice]) situpChoice = 'situp';
+  function showSitup(){
+    situpPick.value = situpChoice;
+    document.getElementById('situp-title').textContent = SITUP[situpChoice].t;
+    document.getElementById('situp-detail').textContent = SITUP[situpChoice].d;
+  }
+  situpPick.addEventListener('change', function(){
+    situpChoice = situpPick.value;
+    try { localStorage.setItem('mr-situp-choice', situpChoice); } catch(e){}
+    showSitup();
+  });
+  showSitup();
+
+  /* ── Main exercise picker ── */
   var EX = {
-    seal:  {t:'Navy SEAL burpees × 21', d:'Upper-body heavy because of the push-ups'},
-    swing: {t:'Kettlebell swings', d:'Hip hinge, DL side. Reps tbd. Only once the wound is closed'},
-    tgu:   {t:'Turkish get-up', d:'Shoulder stability and full-body control. Reps per side tbd'},
-    jump:  {t:'Jump squats', d:'Squat side, explosive. Reps tbd. Watch landing load on the right foot'}
+    seal:  { t:'Navy SEAL Burpees × 21',       d:'Oberkörper-betont wegen der Push-ups' },
+    swing: { t:'Kettlebell Swings × 42',        d:'Hip Hinge, DL-Seite' },
+    tgu:   { t:'Turkish Get-up × 8 (4/Seite)', d:'Schulter-Stabilität und Ganzkörper-Kontrolle' },
+    jump:  { t:'Jump Squats × 21',              d:'Squat-Seite, explosiv' }
   };
   var pick = document.getElementById('ex-pick');
   var choice = 'seal';
@@ -234,19 +565,25 @@ footer{margin-top:24px;font-size:13px;color:var(--muted)}
   });
   showEx();
 
+  /* ── Mobility toggle ── */
   mobToggle.checked = !!state.__mob;
   mob.hidden = !mobToggle.checked;
   mobToggle.addEventListener('change', function(){
     state.__mob = mobToggle.checked; mob.hidden = !mobToggle.checked; save(); paint();
   });
 
+  /* ── Reset ── */
   document.getElementById('reset').addEventListener('click', function(){
     state = {}; save();
-    boxes.forEach(function(cb){ cb.checked = false; });
+    document.querySelectorAll('[data-id] > input[type=checkbox], [data-id] > .step-head > input[type=checkbox]')
+      .forEach(function(cb){ cb.checked = false; });
     mobToggle.checked = false; mob.hidden = true; paint();
   });
 
+  /* ── Init ── */
+  applyCfg();
   paint();
+
 })();
 </script>
 </body>
