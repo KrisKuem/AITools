@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Wochenplan Kris · v4.0</title>
+<style>
+:root{
+  --bg:#f3f4f1; --card:#ffffff; --ink:#1f2622; --muted:#5d6a63; --line:#d9ded9;
+  --accent:#2f6b4f; --accent-soft:#e3efe8; --carb:#b0782a; --carb-soft:#f6ecdc;
+  --cheat:#a8463b; --cheat-soft:#f6e3e0; --office:#4a5f8c; --office-soft:#e4e9f3;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#151a17; --card:#1e2521; --ink:#e6ece8; --muted:#9aa9a1; --line:#2f3a34;
+    --accent:#7fc29e; --accent-soft:#233229; --carb:#e0ad63; --carb-soft:#352b1d;
+    --cheat:#e08a7f; --cheat-soft:#3a2522; --office:#9db1dc; --office-soft:#232b3a;
+  }
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif}
+main{max-width:920px;margin:0 auto;padding:20px 16px 60px}
+header h1{margin:0;font-size:26px}
+header p{margin:4px 0 14px;color:var(--muted);font-size:14px}
+nav{display:flex;gap:6px;flex-wrap:wrap;position:sticky;top:0;background:var(--bg);padding:8px 0;z-index:5}
+nav button{font:inherit;font-size:15px;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;padding:6px 14px;cursor:pointer}
+nav button.active{background:var(--accent);border-color:var(--accent);color:#fff}
+.tab{display:none}.tab.active{display:block}
+h2{font-size:20px;margin:24px 0 8px}
+h3{font-size:16px;margin:0 0 6px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:0 0 12px}
+.rules{margin:0;padding-left:18px}.rules li{margin:2px 0}
+.day{border-left:5px solid var(--accent)}
+.day.leg{border-left-color:var(--carb)}
+.day.office{border-left-color:var(--office)}
+.dayhead{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:6px}
+.dayhead h3{margin:0;font-size:18px}
+.tot{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+.tag{display:inline-block;font-size:12px;border-radius:999px;padding:1px 9px;margin-left:6px;background:var(--accent-soft);color:var(--accent)}
+.tag.leg{background:var(--carb-soft);color:var(--carb)}
+.tag.office{background:var(--office-soft);color:var(--office)}
+.tag.cheat{background:var(--cheat-soft);color:var(--cheat)}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th,td{text-align:left;vertical-align:top;padding:6px 6px;border-top:1px solid var(--line)}
+th{font-size:12px;color:var(--muted);font-weight:600;border-top:none}
+td.t{white-space:nowrap;font-weight:600;width:56px}
+td.m{white-space:nowrap;color:var(--muted);font-variant-numeric:tabular-nums;width:150px}
+.note{font-size:14px;color:var(--muted);margin:6px 0 0}
+.warn{border-left:4px solid var(--cheat);background:var(--cheat-soft);padding:8px 12px;border-radius:0 8px 8px 0;font-size:14px;margin:8px 0}
+ul.shop{list-style:none;margin:0;padding:0}
+ul.shop li{display:flex;gap:10px;align-items:baseline;padding:6px 0;border-top:1px solid var(--line)}
+ul.shop li:first-child{border-top:none}
+ul.shop li.done span{text-decoration:line-through;color:var(--muted)}
+ul.shop input{width:20px;height:20px;accent-color:var(--accent);flex:none}
+.qty{margin-left:auto;color:var(--muted);white-space:nowrap;font-variant-numeric:tabular-nums}
+label{display:block;font-size:13px;color:var(--muted);margin:8px 0 2px}
+input[type=text],input[type=number],textarea,select{width:100%;font:inherit;font-size:15px;padding:7px 9px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink)}
+textarea{min-height:70px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:0 12px}
+.btn{font:inherit;font-size:15px;border:none;border-radius:8px;padding:8px 14px;background:var(--accent);color:#fff;cursor:pointer;margin:12px 8px 0 0}
+pre{white-space:pre-wrap;background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:10px;font-size:13px}
+details summary{cursor:pointer;font-weight:600}
+details ul{font-size:14px}
+button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+@media (max-width:600px){td.m{white-space:normal;width:auto}}
+</style>
+</head>
+<body>
+<main>
+<header>
+  <h1>Wochenplan Kris</h1>
+  <p>v4.0 · KW 42 (12.–18.10.2026) · Ziel 2.456 kcal/Tag · Protein ~180 g · Mengen roh gewogen</p>
+</header>
+
+<nav>
+  <button class="active" data-tab="plan">Wochenplan</button>
+  <button data-tab="einkauf">Einkauf</button>
+  <button data-tab="checkin">Check-In</button>
+  <button data-tab="coaching">Coaching</button>
+</nav>
+
+<!-- ================= WOCHENPLAN ================= -->
+<section class="tab active" id="tab-plan">
+  <div class="card">
+    <h3>Regeln diese Woche</h3>
+    <ul class="rules">
+      <li>Jeden Tag das gleiche Ziel: <b>2.456 kcal</b>, Protein mindestens <b>~180 g</b>.</li>
+      <li>Carbs nur in der Mahlzeit vor Beintagen (Reis, Datteln).</li>
+      <li><b>1 Cheat-Mahlzeit</b> pro Woche, diese Woche Mi abends.</li>
+      <li>Morgens: <b>Doppel-Espresso + 20 g Butter</b> (148 kcal, loggen), max. 1–2 Espresso vor 11:00.</li>
+      <li>10:30-Mahlzeit nie auslassen, auch an Office-Tagen.</li>
+      <li>Histamin: frisch kochen, Reste am nächsten Tag essen oder sofort einfrieren. Fisch nur frisch am Kauftag oder TK.</li>
+      <li>Mengen sind für Kris. Kians Portion kommt dazu, bei ihm ohne Ei.</li>
+    </ul>
+  </div>
+
+  <div class="card day">
+    <div class="dayhead"><h3>Mo · OHP</h3><span class="tot">2.420 kcal · P 185 · F 164 · C 42</span></div>
+    <table>
+      <tr><td class="t">10:30</td><td>3 Eier in 10 g Butter · 250 g Magerquark · 15 g Leinsamen · 75 g Beeren</td><td class="m">604 · P54 F32 C22</td></tr>
+      <tr><td class="t">13:45</td><td>Hack-Pfanne: 300 g Rinderhack · 250 g Brokkoli · 15 g Olivenöl</td><td class="m">980 · P59 F76 C10</td></tr>
+      <tr><td class="t">18:00</td><td>250 g Hähnchenbrust · 200 g Brokkoli · 20 g Olivenöl · 30 g Kürbiskerne</td><td class="m">688 · P72 F39 C10</td></tr>
+    </table>
+    <p class="note">Heute alle 600 g Hack kochen: 300 g Mittag, 200 g für Di früh, Rest für Kian.</p>
+  </div>
+
+  <div class="card day leg">
+    <div class="dayhead"><h3>Di · Deadlift <span class="tag leg">Carbs vorher</span></h3><span class="tot">2.473 kcal · P 181 · F 138 · C 119</span></div>
+    <table>
+      <tr><td class="t">10:30</td><td>200 g Hack (vom Mo) · 70 g Reis (roh) · 40 g Datteln</td><td class="m">872 · P40 F41 C82</td></tr>
+      <tr><td class="t">13:45</td><td>250 g Hähnchenbrust · 250 g grüne Bohnen · 20 g Olivenöl · 20 g Kürbiskerne</td><td class="m">641 · P68 F34 C14</td></tr>
+      <tr><td class="t">18:00</td><td>250 g Tofu natur · 250 g Blumenkohl · 20 g Olivenöl + 250 g Magerquark · 15 g Leinsamen</td><td class="m">812 · P73 F47 C23</td></tr>
+    </table>
+    <p class="note">Abends 250 g Hähnchen + 200 g Bohnen für die Mittwochsbox mitkochen.</p>
+  </div>
+
+  <div class="card day office">
+    <div class="dayhead"><h3>Mi · Office <span class="tag office">Ruhetag</span> <span class="tag cheat">Cheat abends</span></h3><span class="tot">zu Hause 1.217 kcal · Rest ~1.240 für abends</span></div>
+    <table>
+      <tr><td class="t">10:30</td><td>Box: 250 g Magerquark · 3 hartgekochte Eier · 15 g Leinsamen · 20 g Kürbiskerne</td><td class="m">600 · P60 F33 C12</td></tr>
+      <tr><td class="t">13:45</td><td>Box: 250 g Hähnchenbrust · 200 g grüne Bohnen · 15 g Olivenöl</td><td class="m">470 · P61 F19 C10</td></tr>
+      <tr><td class="t">abends</td><td>Essen gehen = Cheat-Mahlzeit der Woche. Möglichst früh, Schlaf zuerst.</td><td class="m">~1.240</td></tr>
+    </table>
+  </div>
+
+  <div class="card day office">
+    <div class="dayhead"><h3>Do · Office <span class="tag office">Ruhetag</span></h3><span class="tot">zu Hause 1.234 kcal · Rest ~1.220 für Mittag</span></div>
+    <table>
+      <tr><td class="t">10:30</td><td>Box: 250 g Magerquark · 15 g Leinsamen · 75 g Beeren · 20 g Kürbiskerne</td><td class="m">402 · P39 F17 C22</td></tr>
+      <tr><td class="t">Mittag</td><td>Auswärts: Fleisch oder Fisch + Salat/Gemüse, Brot und Pommes weglassen</td><td class="m">~1.220</td></tr>
+      <tr><td class="t">18:00</td><td>4 Eier in 15 g Butter · 250 g Brokkoli + 250 g Magerquark</td><td class="m">684 · P65 F36 C22</td></tr>
+    </table>
+    <p class="note">Abends die zweiten 600 g TK-Hack in den Kühlschrank legen (für Fr/Sa).</p>
+  </div>
+
+  <div class="card day">
+    <div class="dayhead"><h3>Fr · Bench</h3><span class="tot">2.429 kcal · P 181 · F 167 · C 41</span></div>
+    <table>
+      <tr><td class="t">10:30</td><td>3 Eier in 10 g Butter · 250 g Magerquark · 15 g Leinsamen · 75 g Beeren</td><td class="m">604 · P54 F32 C22</td></tr>
+      <tr><td class="t">13:45</td><td>Hack-Pfanne: 300 g Rinderhack · 250 g Blumenkohl · 15 g Olivenöl</td><td class="m">957 · P57 F76 C8</td></tr>
+      <tr><td class="t">18:00</td><td>300 g Kabeljau (frisch, Kauftag) · 250 g Brokkoli · 25 g Olivenöl · 30 g Kürbiskerne</td><td class="m">720 · P70 F43 C12</td></tr>
+    </table>
+    <p class="note">600 g Hack kochen: 300 g Mittag, 200 g für Sa früh, Rest für Kian. Bei Lachs statt Kabeljau: 200 g Lachs, 10 g Öl.</p>
+  </div>
+
+  <div class="card day leg">
+    <div class="dayhead"><h3>Sa · Squat <span class="tag leg">Carbs vorher</span></h3><span class="tot">2.443 kcal · P 176 · F 126 · C 148</span></div>
+    <table>
+      <tr><td class="t">10:30</td><td>200 g Hack (vom Fr) · 70 g Reis (roh) · 40 g Datteln</td><td class="m">872 · P40 F41 C82</td></tr>
+      <tr><td class="t">13:45</td><td>250 g Hähnchenbrust · 200 g Süßkartoffel · 15 g Olivenöl</td><td class="m">580 · P61 F19 C40</td></tr>
+      <tr><td class="t">18:00</td><td>250 g Tofu natur · 200 g grüne Bohnen · 20 g Olivenöl + 250 g Magerquark · 20 g Kürbiskerne</td><td class="m">843 · P75 F50 C26</td></tr>
+    </table>
+  </div>
+
+  <div class="card day">
+    <div class="dayhead"><h3>So · Ruhe + Mobility</h3><span class="tot">2.448 kcal · P 186 · F 164 · C 47</span></div>
+    <table>
+      <tr><td class="t">10:30</td><td>3 Eier in 10 g Butter · 250 g Magerquark · 15 g Leinsamen · 75 g Beeren</td><td class="m">604 · P54 F32 C22</td></tr>
+      <tr><td class="t">13:45</td><td>Eintopf: 300 g Rinderhack · 200 g Blumenkohl · 150 g grüne Bohnen · 15 g Olivenöl</td><td class="m">991 · P58 F76 C14</td></tr>
+      <tr><td class="t">18:00</td><td>250 g Hähnchenbrust · 250 g Brokkoli · 20 g Olivenöl · 30 g Kürbiskerne</td><td class="m">705 · P74 F39 C12</td></tr>
+    </table>
+    <p class="note">Meal Prep: Eintopf in doppelter Menge kochen, 2–3 Portionen sofort einfrieren. Abends Check-In.</p>
+  </div>
+
+  <div class="card">
+    <h3>Täglich</h3>
+    <table>
+      <tr><th>Wann</th><th>Was</th></tr>
+      <tr><td>Morgens nüchtern</td><td>½ TL Salz in Wasser · 5 g Kreatin · B-Komplex</td></tr>
+      <tr><td>Espresso + Butter</td><td>D3/K2 2.000–4.000 IE · Omega-3 (Kapsel schlucken)</td></tr>
+      <tr><td>Mittags</td><td>Zink 15 mg, getrennt von Kreatin und Magnesium</td></tr>
+      <tr><td>Abends</td><td>Magnesium-Glycinat 300–400 mg</td></tr>
+      <tr><td>Über den Tag</td><td>Salz insgesamt 4–5 g · Wasser 3+ L</td></tr>
+    </table>
+  </div>
+</section>
+
+<!-- ================= EINKAUF ================= -->
+<section class="tab" id="tab-einkauf">
+  <div class="card">
+    <h3>Heute · Mo 12.10.</h3>
+    <ul class="shop" data-list="mo">
+      <li><input type="checkbox"><span>Rinderhack (für So + Reserve einfrieren)</span><span class="qty">1 kg</span></li>
+      <li><input type="checkbox"><span>Hähnchenbrust (inkl. Kian)</span><span class="qty">1,5 kg</span></li>
+      <li><input type="checkbox"><span>Tofu natur</span><span class="qty">1 Block</span></li>
+      <li><input type="checkbox"><span>Magerquark</span><span class="qty">3 × 500 g</span></li>
+      <li><input type="checkbox"><span>Eier (wenn weniger als 6 da)</span><span class="qty">10 Stk</span></li>
+      <li><input type="checkbox"><span>Kürbiskerne</span><span class="qty">200 g</span></li>
+      <li><input type="checkbox"><span>Brokkoli</span><span class="qty">1 kg</span></li>
+      <li><input type="checkbox"><span>Blumenkohl</span><span class="qty">1 Kopf (~700 g)</span></li>
+      <li><input type="checkbox"><span>Grüne Bohnen TK</span><span class="qty">750 g</span></li>
+      <li><input type="checkbox"><span>Beeren TK</span><span class="qty">500 g</span></li>
+      <li><input type="checkbox"><span>Süßkartoffel</span><span class="qty">200 g</span></li>
+      <li><input type="checkbox"><span>Reis (wenn keiner da)</span><span class="qty">140 g</span></li>
+      <li><input type="checkbox"><span>Datteln (wenn keine da)</span><span class="qty">80 g</span></li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3>Freitag · 16.10.</h3>
+    <ul class="shop" data-list="fr">
+      <li><input type="checkbox"><span>Kabeljau frisch (+ Kian)</span><span class="qty">300 g + Kian</span></li>
+      <li><input type="checkbox"><span>Brokkoli nachkaufen, falls nötig</span><span class="qty">250 g</span></li>
+      <li><input type="checkbox"><span>Fürs Wochenende nach Bedarf</span><span class="qty">–</span></li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3>Vorrat prüfen</h3>
+    <p class="note" style="margin-top:0">Olivenöl · Butter · Leinsamen (aufbrauchen, Hanfsamen nicht nachkaufen) · Salz · Kreatin · Magnesium · D3/K2 · Omega-3 · Zink</p>
+  </div>
+</section>
+
+<!-- ================= CHECK-IN ================= -->
+<section class="tab" id="tab-checkin">
+  <div class="card">
+    <h3>Ablauf · Sonntagabend nach der letzten Mahlzeit</h3>
+    <ol class="rules">
+      <li><b>MacroFactor:</b> in der App exportieren, Datei schicken.</li>
+      <li><b>GymGoal:</b> Workout-Log per Mail exportieren, Datei schicken.</li>
+      <li><b>Oura, Screenshots:</b> Wochenbericht (HRV, Ruhepuls, Schlaf) · Aktivität → Zeit pro Bereich · Nächtlicher Blutdruck.</li>
+      <li><b>Unten ausfüllen</b>, Text kopieren und mitschicken. Nur, was nicht in den Exporten steht.</li>
+    </ol>
+  </div>
+  <div class="card">
+    <h3>Was nur du weißt</h3>
+    <div class="grid">
+      <div><label for="ci-bef">Befinden der Woche (1–5)</label>
+        <select id="ci-bef"><option value="">–</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></div>
+      <div><label for="ci-train">Training gefühlt (1–5)</label>
+        <select id="ci-train"><option value="">–</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></div>
+    </div>
+    <label for="ci-food">Essen: Ausreißer, Cheat-Mahlzeit, Auswärts-Essen</label>
+    <textarea id="ci-food"></textarea>
+    <label for="ci-body">Körper: Schmerzen, Rücken, Fuß, Schlaf, Stress</label>
+    <textarea id="ci-body"></textarea>
+    <label for="ci-q">Fragen oder Themen für die nächste Woche</label>
+    <textarea id="ci-q"></textarea>
+    <button class="btn" type="button" id="ci-gen">Text erzeugen</button>
+    <button class="btn" type="button" id="ci-copy">Kopieren</button>
+    <pre id="ci-out" hidden></pre>
+  </div>
+  <div class="card">
+    <h3>Was ich daraus auswerte</h3>
+    <p class="note" style="margin-top:0">Trendgewicht und TDEE · kcal Ø und Spanne · Protein Ø · Top-Sätze und e1RM · HRV, Ruhepuls, Schlaf · Herzfrequenzzonen · nächtliche Blutdrucksenkung. Ergebnis landet im Coaching-Log.</p>
+  </div>
+</section>
+
+<!-- ================= COACHING ================= -->
+<section class="tab" id="tab-coaching">
+  <div class="card">
+    <h3>Prioritäten KW 42</h3>
+    <ol class="rules">
+      <li><b>Erholung:</b> Einschlafen 22:00. Schlafdefizit 2 h, HRV Ø 47 (normal 52–57).</li>
+      <li><b>Protein</b> auf ~180 g (letzte Woche Ø 162).</li>
+      <li><b>Zone 2</b> auf 2–3 h/Woche über Spaziergänge (letzte Woche 1:19 h, Schritte Ø 5.300).</li>
+      <li><b>Squat-Technik</b> mit Seb, Video aus 45°.</li>
+    </ol>
+  </div>
+
+  <div class="card">
+    <h3>Stand</h3>
+    <table>
+      <tr><th>Lift</th><th>Letzter Top-Satz</th><th>e1RM</th><th>Hinweis</th></tr>
+      <tr><td>Squat</td><td>115 × 2 (10.10.)</td><td>~123</td><td>TM 117,5 · neue Technik</td></tr>
+      <tr><td>Deadlift</td><td>182,5 × 3 (07.10.)</td><td>~201</td><td>stabil</td></tr>
+      <tr><td>Bench</td><td>120 × 4 (09.10.)</td><td>~136</td><td>stabil</td></tr>
+      <tr><td>OHP</td><td>85 × 1 (06.10.)</td><td>~88</td><td>TM nächster Cycle halten</td></tr>
+    </table>
+    <p class="note">Trendgewicht 86,5 kg · TDEE ~2.684 kcal · Ziel 2.456 kcal</p>
+  </div>
+
+  <div class="card">
+    <h3>Gültige Regeln</h3>
+    <ul class="rules">
+      <li>Gleiches kcal-Ziel jeden Tag, 1 Cheat-Mahlzeit pro Woche.</li>
+      <li>Kaffee: max. 1–2 Doppel-Espresso vor 11:00.</li>
+      <li>Squat- und DL-Technik entscheidet Seb, ich gebe dazu keine eigenen Cues.</li>
+      <li>Trendgewicht schlägt einzelne Waagewerte und MacroFactor-Surplus-Anzeigen.</li>
+      <li>Eine Variable nach der anderen ändern.</li>
+      <li>HIIT erst wieder, wenn Schlaf und HRV im Normalbereich sind.</li>
+      <li>Hamstrings: TRX Curls + Single-Leg RDL am DL-Tag, langsam steigern.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>Offen</h3>
+    <ul class="rules">
+      <li>Physio: Fußstellung, Hüfte, Hamstring als ein Termin.</li>
+      <li>Nächtliche Blutdrucksenkung gering seit Mitte Sept.: beobachten, bei gutem Schlaf und weiter gering mit Oberarmgerät nachmessen.</li>
+      <li>Morgenroutine-Seite modular umbauen (anderer Chat).</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>Arbeits-Log</h3>
+    <table>
+      <tr><th>Zeitraum</th><th>Thema</th></tr>
+      <tr><td>Jun–Jul</td><td>5/3/1-Hybrid aufgesetzt, Squat-Reset auf neue Mechanik (12.06.)</td></tr>
+      <tr><td>Jul–Mitte Aug</td><td>Wochenchecks, TKD-Reinstart (10.08.), Schlaf-Fokus 22:00</td></tr>
+      <tr><td>18.–24.08.</td><td>Magen-Darm + Erkältung, Trainingspause</td></tr>
+      <tr><td>ab Anf. Sep</td><td>Coaching bei Seb (Squat/DL), Technikumstellung</td></tr>
+      <tr><td>08.09.–12.10.</td><td>Muttermal-OP, Reha ohne Squat/DL, Befund gutartig, Wunde zu am 12.10.</td></tr>
+      <tr><td>Sep</td><td>Vergleich Mai–Aug 2025 vs. 2026: Bewegung gleich, ~240 kcal Logging-Lücke</td></tr>
+      <tr><td>~28.09.–12.10.</td><td>Koffeinpause: kein Nutzen, zurück zu 1–2 Espresso</td></tr>
+      <tr><td>~01.10.</td><td>Rückenzerrung beim Squat, TM 140 → 117,5</td></tr>
+      <tr><td>09.–12.10.</td><td>Erholungstief, kcal einheitlich auf 2.456, Cheat auf 1 Mahlzeit</td></tr>
+    </table>
+  </div>
+
+  <details class="card">
+    <summary>Changelog</summary>
+    <ul>
+      <li><b>v4.0 · 12.10.2026:</b> Neu aufgebaut. Wochenplan KW 42 mit Mengen inkl. Fetten auf 2.456 kcal. Einkauf ohne Dopplungen, aktuelle Liste oben. Check-In auf den echten Ablauf reduziert (Exporte + 4 Felder). Coaching: Prioritäten, Stand, Regeln, Offen, Arbeits-Log. Entfernt: TKD-Reinstart, Bulletproof-Box (Supplements jetzt unter „Täglich“), Meal-Prep-Box, Keto-vs-Carb-Test, Ziel-Rechner, Reha-Fenster, alte Einkaufsliste.</li>
+      <li><b>v3.4 · 09.10.2026:</b> Check-In als eigener Tab, Reha-Fenster nach oben.</li>
+      <li><b>v3.3 · 07.09.2026:</b> Reha-Fenster nach Muttermal-OP.</li>
+      <li><b>v3.2 · 25.08.2026:</b> Zucchini ersetzt, Bulletproof + Supplement-Timing, Meal Prep.</li>
+      <li><b>bis v3.1:</b> TKD-Reinstart, Histamin-Strategie, Wochenpläne ab KW 29.</li>
+    </ul>
+  </details>
+</section>
+</main>
+
+<script>
+(function(){
+  // Tabs
+  var btns=document.querySelectorAll('nav button');
+  btns.forEach(function(b){
+    b.addEventListener('click',function(){
+      btns.forEach(function(x){x.classList.remove('active');});
+      document.querySelectorAll('.tab').forEach(function(t){t.classList.remove('active');});
+      b.classList.add('active');
+      document.getElementById('tab-'+b.dataset.tab).classList.add('active');
+      window.scrollTo({top:0});
+    });
+  });
+
+  // Einkauf: Häkchen merken (pro Gerät)
+  var KEY='wp-shop-kw42', state={};
+  try{ state=JSON.parse(localStorage.getItem(KEY)||'{}')||{}; }catch(e){ state={}; }
+  document.querySelectorAll('ul.shop').forEach(function(ul){
+    ul.querySelectorAll('li').forEach(function(li,i){
+      var id=ul.dataset.list+'-'+i, cb=li.querySelector('input');
+      cb.checked=!!state[id]; li.classList.toggle('done',cb.checked);
+      cb.addEventListener('change',function(){
+        state[id]=cb.checked; li.classList.toggle('done',cb.checked);
+        try{ localStorage.setItem(KEY,JSON.stringify(state)); }catch(e){}
+      });
+    });
+  });
+
+  // Check-In Text
+  function v(id){ return document.getElementById(id).value.trim(); }
+  var out=document.getElementById('ci-out');
+  document.getElementById('ci-gen').addEventListener('click',function(){
+    out.textContent='Check-In '+new Date().toLocaleDateString('de-DE')+'\n'+
+      'Befinden: '+(v('ci-bef')||'-')+'/5 · Training: '+(v('ci-train')||'-')+'/5\n'+
+      'Essen: '+(v('ci-food')||'-')+'\n'+
+      'Körper: '+(v('ci-body')||'-')+'\n'+
+      'Fragen: '+(v('ci-q')||'-')+'\n'+
+      '(Anhänge: MacroFactor-Export, GymGoal-Log, Oura-Screenshots)';
+    out.hidden=false;
+  });
+  document.getElementById('ci-copy').addEventListener('click',function(){
+    if(out.hidden) document.getElementById('ci-gen').click();
+    if(navigator.clipboard) navigator.clipboard.writeText(out.textContent).catch(function(){});
+  });
+})();
+</script>
+</body>
+</html>
