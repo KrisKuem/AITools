@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kris — Hub</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #F7F6F3;
+    --bg-card: #FFFFFF;
+    --bg-secondary: #F0EEE9;
+    --text: #1A1916;
+    --text-secondary: #5C5850;
+    --text-tertiary: #8F8B82;
+    --border: #D9D5CC;
+    --shadow: 0 1px 4px rgba(0,0,0,.07), 0 1px 2px rgba(0,0,0,.05);
+    --shadow-hover: 0 4px 16px rgba(0,0,0,.10), 0 2px 4px rgba(0,0,0,.06);
+    --radius: 16px;
+    --radius-sm: 10px;
+    --font: 'Inter', sans-serif;
+    --mono: 'DM Mono', monospace;
+
+    /* App accent colors */
+    --morning-color: #D97706;
+    --morning-bg: #FFFBEB;
+    --morning-border: #FDE68A;
+
+    --strength-color: #D85A30;
+    --strength-bg: #FFF4F0;
+    --strength-border: #FECDBE;
+
+    --coach-color: #2D6A4F;
+    --coach-bg: #F0FAF4;
+    --coach-border: #A7F3C0;
+  }
+  [data-theme="dark"] {
+    --bg: #141412;
+    --bg-card: #1E1D1A;
+    --bg-secondary: #252420;
+    --text: #F0EDE6;
+    --text-secondary: #A89F90;
+    --text-tertiary: #6B6560;
+    --border: #2E2C27;
+    --shadow: 0 1px 4px rgba(0,0,0,.3);
+    --shadow-hover: 0 4px 16px rgba(0,0,0,.4);
+    --morning-bg: #1C1505;
+    --morning-border: #78350F;
+    --strength-bg: #1A0E0A;
+    --strength-border: #7C2D12;
+    --coach-bg: #061208;
+    --coach-border: #14532D;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: var(--font);
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    transition: background .2s, color .2s;
+  }
+
+  header {
+    padding: 48px 24px 32px;
+    text-align: center;
+  }
+  .greeting {
+    font-size: 12px; font-weight: 500;
+    color: var(--text-tertiary); letter-spacing: .08em;
+    text-transform: uppercase; margin-bottom: 8px;
+    font-family: var(--mono);
+  }
+  h1 {
+    font-size: 28px; font-weight: 700;
+    color: var(--text); line-height: 1.2; margin-bottom: 6px;
+  }
+  .subtitle {
+    font-size: 14px; color: var(--text-secondary);
+  }
+
+  .theme-btn {
+    position: fixed; top: 16px; right: 16px;
+    background: var(--bg-card); border: 1px solid var(--border);
+    border-radius: 99px; padding: 6px 12px;
+    font-size: 13px; cursor: pointer; font-family: var(--font);
+    color: var(--text-secondary); transition: all .15s;
+    box-shadow: var(--shadow);
+  }
+  .theme-btn:hover { color: var(--text); }
+
+  .grid {
+    max-width: 480px; margin: 0 auto;
+    padding: 0 16px 48px;
+    display: flex; flex-direction: column; gap: 12px;
+  }
+
+  .app-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px;
+    text-decoration: none;
+    display: flex; gap: 16px; align-items: flex-start;
+    box-shadow: var(--shadow);
+    transition: box-shadow .2s, transform .15s, border-color .15s;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+  }
+  .app-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--card-accent);
+    opacity: 0; transition: opacity .2s;
+  }
+  .app-card:hover { box-shadow: var(--shadow-hover); transform: translateY(-2px); }
+  .app-card:hover::before { opacity: 1; }
+  .app-card:active { transform: translateY(0); }
+
+  .card-morning { --card-accent: var(--morning-color); }
+  .card-strength { --card-accent: var(--strength-color); }
+  .card-coach { --card-accent: var(--coach-color); }
+
+  .app-icon {
+    width: 48px; height: 48px; border-radius: var(--radius-sm);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 22px; flex-shrink: 0;
+    border: 1px solid;
+  }
+  .icon-morning { background: var(--morning-bg); border-color: var(--morning-border); }
+  .icon-strength { background: var(--strength-bg); border-color: var(--strength-border); }
+  .icon-coach { background: var(--coach-bg); border-color: var(--coach-border); }
+
+  .card-content { flex: 1; }
+  .card-title { font-size: 16px; font-weight: 600; color: var(--text); margin-bottom: 4px; }
+  .card-desc { font-size: 13px; color: var(--text-secondary); line-height: 1.5; }
+  .card-meta {
+    font-family: var(--mono); font-size: 11px;
+    color: var(--text-tertiary); margin-top: 8px;
+  }
+  .card-arrow { color: var(--text-tertiary); font-size: 18px; align-self: center; flex-shrink: 0; }
+
+  /* Today strip */
+  .today-strip {
+    max-width: 480px; margin: 0 auto 4px;
+    padding: 0 16px;
+    display: flex; gap: 8px;
+  }
+  .today-pill {
+    background: var(--bg-secondary); border: 1px solid var(--border);
+    border-radius: 99px; padding: 4px 10px;
+    font-size: 12px; color: var(--text-tertiary); font-family: var(--mono);
+  }
+
+  /* Section labels */
+  .section-label {
+    max-width: 480px; margin: 8px auto 0;
+    padding: 0 18px;
+    font-size: 11px; font-weight: 600;
+    color: var(--text-tertiary); text-transform: uppercase; letter-spacing: .07em;
+  }
+
+  footer {
+    margin-top: auto; text-align: center;
+    padding: 16px; font-size: 11px; color: var(--text-tertiary);
+    font-family: var(--mono);
+  }
+</style>
+</head>
+<body>
+
+<button class="theme-btn" onclick="toggleTheme()">☀︎</button>
+
+<header>
+  <div class="greeting" id="greeting">Guten Morgen</div>
+  <h1>Kris' Hub</h1>
+  <p class="subtitle" id="dateline">Lade…</p>
+</header>
+
+<div class="today-strip" id="today-strip"></div>
+
+<div class="grid">
+
+  <a href="morning_routine_kris.html" class="app-card card-morning">
+    <div class="app-icon icon-morning">🌅</div>
+    <div class="card-content">
+      <div class="card-title">Morning Routine</div>
+      <div class="card-desc">Vagus · Supplements · 5 Tibeter · Mobility</div>
+      <div class="card-meta" id="morning-meta">—</div>
+    </div>
+    <div class="card-arrow">›</div>
+  </a>
+
+  <a href="531_tracker_kris.html" class="app-card card-strength">
+    <div class="app-icon icon-strength">🏋️</div>
+    <div class="card-content">
+      <div class="card-title">5/3/1 Tracker</div>
+      <div class="card-desc">Strength training — OHP · DL · Bench · Squat</div>
+      <div class="card-meta" id="strength-meta">—</div>
+    </div>
+    <div class="card-arrow">›</div>
+  </a>
+
+  <a href="coach.html" class="app-card card-coach">
+    <div class="app-icon icon-coach">🧠</div>
+    <div class="card-content">
+      <div class="card-title">Coach</div>
+      <div class="card-desc">Form-Check-Notizen · Cues · Technik-Logs</div>
+      <div class="card-meta">Öffnet Coach-Seite</div>
+    </div>
+    <div class="card-arrow">›</div>
+  </a>
+
+</div>
+
+<footer id="footer-time"></footer>
+
+<script>
+// Theme
+const PREF_KEY = 'hub_kris_prefs';
+function loadPrefs() { try { return JSON.parse(localStorage.getItem(PREF_KEY)) || {}; } catch { return {}; } }
+function savePrefs(p) { try { localStorage.setItem(PREF_KEY, JSON.stringify(p)); } catch {} }
+let prefs = loadPrefs();
+if (!prefs.theme) prefs.theme = 'dark';
+function applyTheme() {
+  document.documentElement.setAttribute('data-theme', prefs.theme);
+  document.querySelector('.theme-btn').textContent = prefs.theme === 'dark' ? '☀︎' : '☾';
+}
+function toggleTheme() { prefs.theme = prefs.theme === 'dark' ? 'light' : 'dark'; savePrefs(prefs); applyTheme(); }
+applyTheme();
+
+// Greeting & date
+const now = new Date();
+const h = now.getHours();
+const greeting = h < 12 ? 'Guten Morgen' : h < 18 ? 'Guten Nachmittag' : 'Guten Abend';
+document.getElementById('greeting').textContent = greeting;
+document.getElementById('dateline').textContent =
+  now.toLocaleDateString('de-DE', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
+document.getElementById('footer-time').textContent =
+  'Letzter Aufruf: ' + now.toLocaleTimeString('de-DE', { hour: '2-digit', minute: '2-digit' });
+
+// Morning routine progress
+const TODAY = now.toISOString().slice(0, 10);
+const morningState = (() => { try { return JSON.parse(localStorage.getItem('morning_kris_' + TODAY)) || {}; } catch { return {}; } })();
+const morningBlocks = ['vagus','supplements','tibeter','wechsel','coffee','hocke','memo','lesen'];
+const done = morningBlocks.filter(k => morningState[k] || (k === 'tibeter' && ['spins','situps','table','dogcobra','atm9090','rundruecken','ankle','fuss1','fuss2'].every(s => morningState[s]))).length;
+document.getElementById('morning-meta').textContent = done + ' / ' + morningBlocks.length + ' erledigt heute';
+
+// 5/3/1 meta from localStorage
+const s531 = (() => { try { return JSON.parse(localStorage.getItem('531_kris')); } catch { return null; } })();
+if (s531) {
+  const liftNames = { ohp: 'OHP', dl: 'DL', bench: 'Bench', squat: 'Squat' };
+  const schedule = s531.schedule || ['ohp','dl','bench','squat'];
+  const liftKey = schedule[s531.dayIndex % 4];
+  const lift = s531.lifts && s531.lifts[liftKey];
+  const weekLabel = ['','W1 — 5s','W2 — 3s','W3 — 5/3/1','W4 — Deload'][s531.week] || 'W' + s531.week;
+  document.getElementById('strength-meta').textContent =
+    'Cycle ' + s531.cycle + ' · ' + weekLabel + ' · Nächster: ' + (lift ? lift.name : liftKey);
+} else {
+  document.getElementById('strength-meta').textContent = 'Noch kein Stand gespeichert';
+}
+</script>
+</body>
+</html>
