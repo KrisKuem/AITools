@@ -1,7 +1,7 @@
 {
   "cycle": 8,
-  "week": 3,
-  "dayIndex": 109,
+  "week": 4,
+  "dayIndex": 112,
   "lifts": {
     "ohp": {
       "name": "Seated OHP",
@@ -39,6 +39,45 @@
     "dl"
   ],
   "history": [
+    {
+      "date": "13.10.26",
+      "lift": "Deadlift",
+      "liftKey": "dl",
+      "cycle": 8,
+      "week": 3,
+      "tm": 202.5,
+      "topSetKg": 192.5,
+      "topSetReps": 3,
+      "e1rm": 212,
+      "tmRec": "normal",
+      "jokers": []
+    },
+    {
+      "date": "13.10.26",
+      "lift": "Bench Press",
+      "liftKey": "bench",
+      "cycle": 8,
+      "week": 3,
+      "tm": 127.5,
+      "topSetKg": 120,
+      "topSetReps": 4,
+      "e1rm": 136,
+      "tmRec": "normal",
+      "jokers": []
+    },
+    {
+      "date": "13.10.26",
+      "lift": "Squat",
+      "liftKey": "squat",
+      "cycle": 8,
+      "week": 3,
+      "tm": 120,
+      "topSetKg": 115,
+      "topSetReps": 2,
+      "e1rm": 123,
+      "tmRec": "hold",
+      "jokers": []
+    },
     {
       "date": "07.10.26",
       "lift": "Seated OHP",
@@ -1471,7 +1510,7 @@
   "sessionLog": {},
   "timerSeconds": 179,
   "timerRunning": false,
-  "skipDeload": true,
+  "skipDeload": false,
   "_tmPatchV3": true,
   "weekOrder": "5s-3s",
   "deloadMode": "light",
