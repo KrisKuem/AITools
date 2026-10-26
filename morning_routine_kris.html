@@ -3,6 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="manifest" href="manifest-morning.json">
+<link rel="apple-touch-icon" href="icons/morning-180.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="Morning">
+<meta name="theme-color" content="#D97706">
 <title>Morning Routine · Kris</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
@@ -93,6 +100,26 @@ ul.sublist input[type=checkbox]{width:20px;height:20px}
 .sw-thumb{position:absolute;top:3px;left:3px;width:20px;height:20px;border-radius:50%;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.3);transition:transform .2s}
 .sw input:checked ~ .sw-thumb{transform:translateX(18px)}
 .panel-close{width:100%;margin-top:16px;padding:12px;font-size:16px;border-radius:12px;border:1px solid var(--line);background:var(--bg);color:var(--ink);cursor:pointer;font:inherit}
+
+/* Eigene Eintraege */
+.step.hidden-item{display:none}
+.toggle-sub{display:block;font-size:13px;color:var(--muted)}
+.row-actions{display:flex;align-items:center;gap:6px}
+.del-btn{background:none;border:none;color:var(--warn);font-size:22px;line-height:1;cursor:pointer;padding:4px 8px}
+.empty-note{font-size:14px;color:var(--muted);margin:4px 0 8px}
+.add-btn{width:100%;margin-top:8px;padding:11px;font:inherit;font-size:15px;border-radius:12px;border:1px dashed var(--dawn);background:var(--dawn-soft);color:var(--ink);cursor:pointer}
+.cform{margin-top:12px;padding:12px 14px 14px;border:1px solid var(--line);border-radius:14px;background:var(--bg)}
+.cform[hidden]{display:none}
+.cform h4{margin:0 0 2px;font-size:16px}
+.cform .hint{font-size:13px;color:var(--muted);margin:0 0 6px}
+.cform label{display:block;font-size:13px;font-weight:700;color:var(--muted);margin:10px 0 4px}
+.cform input[type=text],.cform select,.cform textarea{width:100%;font:inherit;font-size:16px;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px}
+.cform textarea{min-height:64px;resize:vertical}
+.cform .req{color:var(--warn)}
+.cform .err{font-size:13px;color:var(--warn);margin-top:8px;min-height:1em}
+.cform .btns{display:flex;gap:10px;margin-top:10px}
+.cform .btns button{flex:1;padding:11px;font:inherit;font-size:15px;border-radius:12px;cursor:pointer;border:1px solid var(--line);background:var(--surface);color:var(--ink)}
+.cform .btns button.primary{background:var(--dawn);border-color:var(--dawn);color:#1d2a3a;font-weight:700}
 
 .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px}
 button.action-btn{font:inherit;font-size:15px;border-radius:10px;border:1px solid var(--line);background:var(--surface);color:var(--ink);padding:9px 14px;cursor:pointer}
@@ -309,7 +336,7 @@ footer{margin-top:24px;font-size:13px;color:var(--muted)}
 
   <h2>Optional an Wochentagen</h2>
   <p class="note">Kein Muss. Z&#228;hlen nicht zum Tagesfortschritt.</p>
-  <ol class="steps">
+  <ol class="steps" id="optional">
     <li class="step" data-id="hiit" data-optional="1">
       <div class="step-head">
         <span class="num">+</span>
@@ -368,9 +395,44 @@ footer{margin-top:24px;font-size:13px;color:var(--muted)}
 <div class="panel-overlay" id="panel-overlay" onclick="closePanel(event)">
   <div class="panel" onclick="event.stopPropagation()">
     <h3>Routine anpassen</h3>
-    <p class="panel-note">&#220;bungen ein- oder ausblenden. Wird dauerhaft gespeichert.</p>
+    <p class="panel-note">&#220;bungen ein- oder ausblenden oder eigene hinzuf&#252;gen. Wird dauerhaft gespeichert.</p>
     <div class="panel-section">Block 3 &#8212; Sub-Items</div>
     <div id="cfg-toggles"></div>
+
+    <div class="panel-section">Eigene Eintr&#228;ge</div>
+    <div id="custom-list"></div>
+    <button type="button" class="add-btn" id="add-open">+ Neuer Eintrag</button>
+
+    <form class="cform" id="custom-form" hidden autocomplete="off">
+      <h4>Neuer Eintrag</h4>
+      <p class="hint">Felder mit * sind Pflicht. Beispiel: Name &#8222;Nackenmobilit&#228;t&#8220;, Menge &#8222;&#215; 10/Seite&#8220;.</p>
+
+      <label for="cf-section">Bereich <span class="req">*</span></label>
+      <select id="cf-section">
+        <option value="tib">Block 3 &#8212; Sub-Item</option>
+        <option value="daily">T&#228;glich &#8212; eigener Schritt</option>
+        <option value="optional">Optional an Wochentagen</option>
+        <option value="mob">Mobility-Programm</option>
+      </select>
+
+      <p class="hint" style="margin:6px 0 0">Block 3 und T&#228;glich z&#228;hlen zum Fortschritt, Optional nicht.</p>
+
+      <label for="cf-name">Name <span class="req">*</span></label>
+      <input type="text" id="cf-name" maxlength="80" placeholder="z. B. Nackenmobilit&#228;t">
+
+      <label for="cf-amount">Menge / Dauer</label>
+      <input type="text" id="cf-amount" maxlength="40" placeholder="z. B. &#215; 10/Seite oder 45 Sek.">
+
+      <label for="cf-detail">Hinweis / Cue</label>
+      <textarea id="cf-detail" maxlength="300" placeholder="z. B. Ausf&#252;hrung, worauf achten, Equipment"></textarea>
+
+      <div class="err" id="cf-err" role="alert"></div>
+      <div class="btns">
+        <button type="button" id="cf-cancel">Abbrechen</button>
+        <button type="submit" class="primary">Hinzuf&#252;gen</button>
+      </div>
+    </form>
+
     <button class="panel-close" onclick="closePanel()">Fertig</button>
   </div>
 </div>
@@ -399,10 +461,25 @@ footer{margin-top:24px;font-size:13px;color:var(--muted)}
   CFG_ITEMS.forEach(function(it){ if (cfg[it.id] === undefined) cfg[it.id] = true; });
   function saveCfg(){ try { localStorage.setItem(CFG_KEY, JSON.stringify(cfg)); } catch(e){} }
 
+  /* ── Eigene Eintraege (laden) ── */
+  var CUSTOM_KEY = 'mr-custom';
+  var custom = [];
+  try {
+    var rawC = JSON.parse(localStorage.getItem(CUSTOM_KEY) || '[]');
+    if (Array.isArray(rawC)) custom = rawC.filter(function(c){
+      return c && /^cu-[a-z0-9]+$/.test(c.id) && typeof c.name === 'string' && c.name &&
+             /^(tib|daily|optional|mob)$/.test(c.section);
+    });
+  } catch(e){}
+  custom.forEach(function(c){ if (cfg[c.id] === undefined) cfg[c.id] = true; });
+  function saveCustom(){ try { localStorage.setItem(CUSTOM_KEY, JSON.stringify(custom)); } catch(e){} }
+
+  function allCfgIds(){ return CFG_ITEMS.map(function(i){ return i.id; }).concat(custom.map(function(c){ return c.id; })); }
+
   function applyCfg(){
-    CFG_ITEMS.forEach(function(it){
-      var el = document.querySelector('[data-cfg="' + it.id + '"]');
-      if (el) el.classList.toggle('hidden-item', !cfg[it.id]);
+    allCfgIds().forEach(function(id){
+      var el = document.querySelector('[data-cfg="' + id + '"]');
+      if (el) el.classList.toggle('hidden-item', !cfg[id]);
     });
     // Show/hide sit-up picker row based on whether tib-situps is active
     var swapRow = document.getElementById('situp-swap-row');
@@ -423,7 +500,7 @@ footer{margin-top:24px;font-size:13px;color:var(--muted)}
       '</label>';
     container.appendChild(row);
     row.querySelector('input').addEventListener('change', function(){
-      cfg[it.id] = this.checked; saveCfg(); applyCfg(); rebindBoxes();
+      cfg[it.id] = this.checked; saveCfg(); applyCfg(); resyncTib(); rebindBoxes();
     });
   });
 
@@ -469,8 +546,8 @@ footer{margin-top:24px;font-size:13px;color:var(--muted)}
       var cb = el.querySelector(':scope > input[type=checkbox], :scope > .step-head > input[type=checkbox]');
       if (cb) el.classList.toggle('done', cb.checked);
     });
-    var counted = Array.prototype.slice.call(document.querySelectorAll('#daily > .step'));
-    if (mobToggle.checked) counted = counted.concat(Array.prototype.slice.call(document.querySelectorAll('#mobility > .step')));
+    var counted = Array.prototype.slice.call(document.querySelectorAll('#daily > .step:not(.hidden-item)'));
+    if (mobToggle.checked) counted = counted.concat(Array.prototype.slice.call(document.querySelectorAll('#mobility > .step:not(.hidden-item)')));
     var done = counted.filter(function(li){ return li.querySelector('.step-head input').checked; }).length;
     document.getElementById('count').textContent = done + ' von ' + counted.length + ' erledigt';
     document.getElementById('fill').style.width = (counted.length ? done/counted.length*100 : 0) + '%';
@@ -478,7 +555,9 @@ footer{margin-top:24px;font-size:13px;color:var(--muted)}
     try {
       var hub = {};
       ['vagus','supplements','wechsel','coffee','hocke','memo','lesen'].forEach(function(k){ if(state[k]) hub[k]=true; });
-      var activeTibSubs = CFG_ITEMS.map(function(i){ return i.id; }).filter(function(id){ return cfg[id]; });
+      var activeTibSubs = CFG_ITEMS.map(function(i){ return i.id; })
+        .concat(custom.filter(function(c){ return c.section === 'tib'; }).map(function(c){ return c.id; }))
+        .filter(function(id){ return cfg[id]; });
       if(activeTibSubs.length && activeTibSubs.every(function(s){ return state[s]; })) hub['tibeter']=true;
       localStorage.setItem('morning_kris_'+today.toISOString().slice(0,10), JSON.stringify(hub));
     } catch(e){}
@@ -512,6 +591,146 @@ footer{margin-top:24px;font-size:13px;color:var(--muted)}
       .forEach(function(cb){ var id = owner(cb).dataset.id; cb.checked = !!state[id]; });
     paint();
   }
+
+  /* ── Eigene Eintraege ── */
+  var SEC_LABEL = { tib:'Block 3 · Sub-Item', daily:'Täglich', optional:'Optional', mob:'Mobility' };
+  var SEC_ROOT  = { tib:'tib-sublist', daily:'daily', optional:'optional', mob:'mobility' };
+
+  function mk(tag, cls, text){
+    var n = document.createElement(tag);
+    if (cls) n.className = cls;
+    if (text !== undefined) n.textContent = text;
+    return n;
+  }
+  function titleOf(c){ return c.name + (c.amount ? ' — ' + c.amount : ''); }
+
+  function buildCustomEl(c){
+    var li = document.createElement('li');
+    li.setAttribute('data-id', c.id);
+    li.setAttribute('data-cfg', c.id);
+    li.setAttribute('data-custom', '1');
+    var cb = document.createElement('input');
+    cb.type = 'checkbox'; cb.id = 'c-' + c.id;
+    var lab = document.createElement('label');
+    lab.setAttribute('for', cb.id);
+
+    if (c.section === 'tib') {
+      lab.appendChild(mk('span', 'item-text', titleOf(c)));
+      if (c.detail) lab.appendChild(mk('span', 'item-detail', c.detail));
+      li.appendChild(cb); li.appendChild(lab);
+    } else {
+      li.className = 'step';
+      if (c.section === 'optional') li.setAttribute('data-optional', '1');
+      if (c.section === 'mob') li.setAttribute('data-mob', '1');
+      var head = mk('div', 'step-head');
+      head.appendChild(mk('span', 'num', c.section === 'optional' ? '+' : ''));
+      lab.appendChild(mk('span', 'step-title', titleOf(c)));
+      if (c.section === 'optional') lab.appendChild(mk('span', 'tag', 'optional'));
+      if (c.detail) lab.appendChild(mk('span', 'item-detail', c.detail));
+      head.appendChild(cb); head.appendChild(lab);
+      li.appendChild(head);
+    }
+    return li;
+  }
+
+  function renumber(){
+    [['daily','daily'],['mob','mobility']].forEach(function(p){
+      var root = document.getElementById(p[1]);
+      var base = 0;
+      Array.prototype.forEach.call(root.querySelectorAll(':scope > .step:not([data-custom])'), function(s){
+        var n = parseInt(s.querySelector('.num').textContent, 10);
+        if (n > base) base = n;
+      });
+      var k = 0;
+      Array.prototype.forEach.call(root.querySelectorAll(':scope > .step[data-custom]'), function(s){
+        k++; s.querySelector('.num').textContent = base + k;
+      });
+    });
+  }
+
+  function resyncTib(){
+    var tibStep = document.querySelector('[data-id="tibeter"]');
+    if (tibStep) { syncParent(tibStep); save(); }
+  }
+
+  /* initial rendern (Binden passiert gleich unten fuer alle) */
+  custom.forEach(function(c){ document.getElementById(SEC_ROOT[c.section]).appendChild(buildCustomEl(c)); });
+  renumber();
+
+  /* Panel: Liste eigener Eintraege */
+  var customList = document.getElementById('custom-list');
+  function renderCustomList(msg){
+    customList.textContent = '';
+    if (!custom.length) customList.appendChild(mk('p', 'empty-note', 'Noch keine eigenen Einträge.'));
+    custom.forEach(function(c){
+      var row = mk('div', 'toggle-row');
+      var lab = mk('span', 'toggle-label');
+      lab.appendChild(document.createTextNode(c.name));
+      lab.appendChild(mk('span', 'toggle-sub', SEC_LABEL[c.section]));
+      row.appendChild(lab);
+
+      var actions = mk('div', 'row-actions');
+      var del = mk('button', 'del-btn', '×');
+      del.type = 'button';
+      del.setAttribute('aria-label', c.name + ' löschen');
+      del.addEventListener('click', function(){ deleteCustom(c.id); });
+      var sw = mk('label', 'sw');
+      sw.setAttribute('aria-label', c.name + ' anzeigen');
+      var inp = document.createElement('input');
+      inp.type = 'checkbox'; inp.checked = !!cfg[c.id];
+      inp.addEventListener('change', function(){
+        cfg[c.id] = inp.checked; saveCfg(); applyCfg(); resyncTib(); rebindBoxes();
+      });
+      sw.appendChild(inp); sw.appendChild(mk('span', 'sw-track')); sw.appendChild(mk('span', 'sw-thumb'));
+      actions.appendChild(del); actions.appendChild(sw);
+      row.appendChild(actions);
+      customList.appendChild(row);
+    });
+    if (msg) customList.appendChild(mk('p', 'empty-note', msg));
+  }
+
+  function deleteCustom(id){
+    var c = custom.filter(function(x){ return x.id === id; })[0];
+    if (!c || !confirm('„' + c.name + '“ löschen?')) return;
+    custom = custom.filter(function(x){ return x.id !== id; });
+    delete cfg[id]; delete state[id];
+    var el = document.querySelector('[data-id="' + id + '"]');
+    if (el) el.remove();
+    saveCustom(); saveCfg(); renumber(); resyncTib(); renderCustomList(); paint();
+  }
+
+  /* Panel: Formular */
+  var form = document.getElementById('custom-form');
+  var addOpen = document.getElementById('add-open');
+  var cfErr = document.getElementById('cf-err');
+  function closeForm(){ form.hidden = true; addOpen.hidden = false; cfErr.textContent = ''; form.reset(); }
+  addOpen.addEventListener('click', function(){
+    form.hidden = false; addOpen.hidden = true;
+    form.scrollIntoView({block:'nearest'});
+    document.getElementById('cf-name').focus();
+  });
+  document.getElementById('cf-cancel').addEventListener('click', closeForm);
+  form.addEventListener('submit', function(ev){
+    ev.preventDefault();
+    var name = document.getElementById('cf-name').value.trim();
+    if (!name) { cfErr.textContent = 'Bitte einen Namen eingeben.'; document.getElementById('cf-name').focus(); return; }
+    var section = document.getElementById('cf-section').value;
+    var c = {
+      id: 'cu-' + Date.now().toString(36) + Math.floor(Math.random()*1296).toString(36),
+      section: section,
+      name: name.slice(0, 80),
+      amount: document.getElementById('cf-amount').value.trim().slice(0, 40),
+      detail: document.getElementById('cf-detail').value.trim().slice(0, 300)
+    };
+    custom.push(c); cfg[c.id] = true;
+    var el = buildCustomEl(c);
+    document.getElementById(SEC_ROOT[section]).appendChild(el);
+    bindBox(el.querySelector('input[type=checkbox]'));
+    saveCustom(); saveCfg(); applyCfg(); renumber(); resyncTib(); paint();
+    closeForm();
+    renderCustomList(section === 'mob' ? '„' + c.name + '“ hinzugefügt — sichtbar, wenn „Heute ist ein Mobility-Tag“ aktiv ist.' : '„' + c.name + '“ hinzugefügt.');
+  });
+  renderCustomList();
 
   document.querySelectorAll('[data-id] > input[type=checkbox], [data-id] > .step-head > input[type=checkbox]')
     .forEach(bindBox);
