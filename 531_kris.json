@@ -1,7 +1,7 @@
 {
-  "cycle": 8,
-  "week": 4,
-  "dayIndex": 112,
+  "cycle": 9,
+  "week": 2,
+  "dayIndex": 121,
   "lifts": {
     "ohp": {
       "name": "Seated OHP",
@@ -12,14 +12,14 @@
     },
     "dl": {
       "name": "Deadlift",
-      "tm": 202.5,
-      "inc": 0,
+      "tm": 207.5,
+      "inc": 5,
       "color": "#1D9E75",
-      "e1rm": 213
+      "e1rm": 219
     },
     "bench": {
       "name": "Bench Press",
-      "tm": 127.5,
+      "tm": 130,
       "inc": 2.5,
       "color": "#378ADD",
       "e1rm": 137
@@ -39,6 +39,123 @@
     "dl"
   ],
   "history": [
+    {
+      "date": "31.10.26",
+      "lift": "Seated OHP",
+      "liftKey": "ohp",
+      "cycle": 9,
+      "week": 2,
+      "tm": 90,
+      "topSetKg": 80,
+      "topSetReps": 4,
+      "e1rm": 91,
+      "tmRec": "hold",
+      "jokers": []
+    },
+    {
+      "date": "30.10.26",
+      "lift": "Deadlift",
+      "liftKey": "dl",
+      "cycle": 9,
+      "week": 1,
+      "tm": 207.5,
+      "topSetKg": 177.5,
+      "topSetReps": 7,
+      "e1rm": 219,
+      "tmRec": "normal",
+      "jokers": []
+    },
+    {
+      "date": "26.10.26",
+      "lift": "Bench Press",
+      "liftKey": "bench",
+      "cycle": 9,
+      "week": 1,
+      "tm": 130,
+      "topSetKg": 110,
+      "topSetReps": 7,
+      "e1rm": 136,
+      "tmRec": "normal",
+      "jokers": []
+    },
+    {
+      "date": "25.10.26",
+      "lift": "Squat",
+      "liftKey": "squat",
+      "cycle": 9,
+      "week": 1,
+      "tm": 120,
+      "topSetKg": 102.5,
+      "topSetReps": 5,
+      "e1rm": 120,
+      "tmRec": "hold",
+      "jokers": []
+    },
+    {
+      "date": "24.10.26",
+      "lift": "Seated OHP",
+      "liftKey": "ohp",
+      "cycle": 9,
+      "week": 1,
+      "tm": 90,
+      "topSetKg": 77.5,
+      "topSetReps": 6,
+      "e1rm": 93,
+      "tmRec": "hold",
+      "jokers": []
+    },
+    {
+      "date": "20.10.26",
+      "lift": "Deadlift",
+      "liftKey": "dl",
+      "cycle": 8,
+      "week": 4,
+      "tm": 202.5,
+      "topSetKg": 122.5,
+      "topSetReps": null,
+      "e1rm": null,
+      "tmRec": null,
+      "jokers": []
+    },
+    {
+      "date": "20.10.26",
+      "lift": "Bench Press",
+      "liftKey": "bench",
+      "cycle": 8,
+      "week": 4,
+      "tm": 127.5,
+      "topSetKg": 77.5,
+      "topSetReps": null,
+      "e1rm": null,
+      "tmRec": null,
+      "jokers": []
+    },
+    {
+      "date": "17.10.26",
+      "lift": "Squat",
+      "liftKey": "squat",
+      "cycle": 8,
+      "week": 4,
+      "tm": 120,
+      "topSetKg": 72.5,
+      "topSetReps": null,
+      "e1rm": null,
+      "tmRec": null,
+      "jokers": []
+    },
+    {
+      "date": "17.10.26",
+      "lift": "Seated OHP",
+      "liftKey": "ohp",
+      "cycle": 8,
+      "week": 4,
+      "tm": 90,
+      "topSetKg": 55,
+      "topSetReps": null,
+      "e1rm": null,
+      "tmRec": null,
+      "jokers": []
+    },
     {
       "date": "13.10.26",
       "lift": "Deadlift",
