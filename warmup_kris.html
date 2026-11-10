@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Warm-up Kris</title>
+<style>
+:root{
+  --bg:#f3f4f1; --card:#ffffff; --ink:#1f2622; --muted:#5d6a63; --line:#d9ded9;
+  --accent:#2f6b4f; --accent-soft:#e3efe8; --leg:#b0782a; --leg-soft:#f6ecdc;
+  --warn:#a8463b; --warn-soft:#f6e3e0;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#151a17; --card:#1e2521; --ink:#e6ece8; --muted:#9aa9a1; --line:#2f3a34;
+    --accent:#7fc29e; --accent-soft:#233229; --leg:#e0ad63; --leg-soft:#352b1d;
+    --warn:#e08a7f; --warn-soft:#3a2522;
+  }
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif}
+main{max-width:720px;margin:0 auto;padding:20px 16px 60px}
+h1{margin:0;font-size:26px}
+header p{margin:4px 0 14px;color:var(--muted);font-size:14px}
+nav{display:flex;gap:6px;flex-wrap:wrap;position:sticky;top:0;background:var(--bg);padding:8px 0;z-index:5}
+nav button{font:inherit;font-size:15px;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;padding:6px 14px;cursor:pointer}
+nav button.active{background:var(--accent);border-color:var(--accent);color:#fff}
+nav button.active[data-mode=uk]{background:var(--leg);border-color:var(--leg)}
+.mode{display:none}.mode.active{display:block}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:0 0 12px}
+.block{border-left:5px solid var(--accent)}
+.mode[data-mode=uk] .block{border-left-color:var(--leg)}
+.bh{display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin-bottom:4px}
+.bh h3{margin:0;font-size:17px}
+.dur{font-size:13px;color:var(--muted);white-space:nowrap}
+ul.ex{list-style:none;margin:0;padding:0}
+ul.ex li{display:flex;gap:10px;align-items:flex-start;padding:8px 0;border-top:1px solid var(--line)}
+ul.ex li:first-child{border-top:none}
+ul.ex input{width:22px;height:22px;accent-color:var(--accent);flex:none;margin-top:2px}
+.mode[data-mode=uk] ul.ex input{accent-color:var(--leg)}
+ul.ex li.done .n{text-decoration:line-through;color:var(--muted)}
+.n{font-weight:600}
+.d{display:block;font-size:13px;color:var(--muted)}
+.q{margin-left:auto;white-space:nowrap;color:var(--muted);font-size:14px;font-variant-numeric:tabular-nums;padding-left:8px}
+.warn{border-left:4px solid var(--warn);background:var(--warn-soft);padding:8px 12px;border-radius:0 8px 8px 0;font-size:14px;margin:0 0 12px}
+.bar{display:flex;justify-content:space-between;align-items:center;gap:10px;font-size:14px;color:var(--muted);margin:0 0 12px}
+.btn{font:inherit;font-size:14px;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:8px;padding:5px 12px;cursor:pointer}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th,td{text-align:left;vertical-align:top;padding:6px;border-top:1px solid var(--line)}
+th{font-size:12px;color:var(--muted);border-top:none}
+h2{font-size:18px;margin:22px 0 8px}
+button:focus-visible,input:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+</style>
+</head>
+<body>
+<main>
+<header>
+  <h1>Warm-up</h1>
+  <p>~15 min vor dem Krafttraining · Stange leer · Häkchen werden pro Tag gespeichert</p>
+</header>
+
+<nav>
+  <button data-mode="uk" class="active">Unterkörper · Squat / DL</button>
+  <button data-mode="ok">Oberkörper · Bench / OHP</button>
+  <button data-mode="cardio">Cardio</button>
+</nav>
+
+<div class="bar"><span id="prog">0 / 0 erledigt</span><button class="btn" id="reset" type="button">Heute zurücksetzen</button></div>
+
+<!-- ============ UNTERKÖRPER ============ -->
+<section class="mode active" data-mode="uk">
+  <div class="card block">
+    <div class="bh"><h3>1 · Puls</h3><span class="dur">5 min</span></div>
+    <ul class="ex">
+      <li><input type="checkbox"><span><span class="n">Airbike</span><span class="d">2 min locker, 3 min steigernd</span></span><span class="q">5 min</span></li>
+    </ul>
+  </div>
+  <div class="card block">
+    <div class="bh"><h3>2 · Mobilität</h3><span class="dur">~4 min</span></div>
+    <ul class="ex">
+      <li><input type="checkbox"><span><span class="n">Tiefe Hocke halten</span><span class="d">Fersen unten, Ellbogen drücken Knie nach außen</span></span><span class="q">30–45 s</span></li>
+      <li><input type="checkbox"><span><span class="n">Cossack Squat</span><span class="d">seitlich tief, Ferse vom Beugebein bleibt unten</span></span><span class="q">5 / Seite</span></li>
+      <li><input type="checkbox"><span><span class="n">90/90 Hip Rotation</span><span class="d">aufrecht sitzen, Knie von Seite zu Seite drehen</span></span><span class="q">5 / Seite</span></li>
+      <li><input type="checkbox"><span><span class="n">Knee-to-Wall wippend</span><span class="d">Knie über die Zehen zur Wand, Ferse bleibt unten</span></span><span class="q">10 / Seite</span></li>
+    </ul>
+  </div>
+  <div class="card block">
+    <div class="bh"><h3>3 · Spannung</h3><span class="dur">~3 min</span></div>
+    <ul class="ex">
+      <li><input type="checkbox"><span><span class="n">Dead Bug</span><span class="d">unterer Rücken drückt in den Boden, langsam ausatmen</span></span><span class="q">6 / Seite</span></li>
+      <li><input type="checkbox"><span><span class="n">Goblet Squat mit Pause</span><span class="d">3 s runter, 3 s unten halten, Rippen unten, kein Hohlkreuz</span></span><span class="q">5</span></li>
+    </ul>
+  </div>
+  <div class="card block">
+    <div class="bh"><h3>4 · Clean-Drill (leere Stange)</h3><span class="dur">~3 min</span></div>
+    <ul class="ex">
+      <li><input type="checkbox"><span><span class="n">RDL</span><span class="d">Hinge, Stange nah am Bein, Lats an</span></span><span class="q">5</span></li>
+      <li><input type="checkbox"><span><span class="n">Hang Clean Pull</span><span class="d">aus Oberschenkelmitte explosiv strecken, Schultern hoch</span></span><span class="q">5</span></li>
+      <li><input type="checkbox"><span><span class="n">Muscle Clean</span><span class="d">ohne Abtauchen in den Front Rack umsetzen</span></span><span class="q">5</span></li>
+      <li><input type="checkbox"><span><span class="n">Front Squat</span><span class="d">Ellbogen hoch, aufrecht</span></span><span class="q">5</span></li>
+    </ul>
+  </div>
+  <div class="card block">
+    <div class="bh"><h3>5 · Hauptlift</h3><span class="dur">nach Plan</span></div>
+    <ul class="ex">
+      <li><input type="checkbox"><span><span class="n">Aufwärmsätze Squat / DL</span><span class="d">nach Programm, Video aus 45° beim letzten Aufwärm- und beim Top-Satz</span></span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ OBERKÖRPER ============ -->
+<section class="mode" data-mode="ok">
+  <div class="warn">Snatch-Drill nur mit leerer Stange. Zwickt der rechte Ellbogen, Snatch Drops weglassen.</div>
+  <div class="card block">
+    <div class="bh"><h3>1 · Puls</h3><span class="dur">5 min</span></div>
+    <ul class="ex">
+      <li><input type="checkbox"><span><span class="n">Airbike mit aktivem Armzug</span><span class="d">2 min locker, 3 min steigernd</span></span><span class="q">5 min</span></li>
+    </ul>
+  </div>
+  <div class="card block">
+    <div class="bh"><h3>2 · Mobilität</h3><span class="dur">~3 min</span></div>
+    <ul class="ex">
+      <li><input type="checkbox"><span><span class="n">BWS über Foam-Roller strecken</span><span class="d">Rolle quer, Hände hinter den Kopf</span></span><span class="q">8</span></li>
+      <li><input type="checkbox"><span><span class="n">Türrahmen-Dehnung</span><span class="d">Unterarme auf Schulterhöhe, tief einatmen</span></span><span class="q">2 × 30 s</span></li>
+      <li><input type="checkbox"><span><span class="n">Wall Slides</span><span class="d">Rücken und Arme an der Wand, Rippen unten</span></span><span class="q">10</span></li>
+    </ul>
+  </div>
+  <div class="card block">
+    <div class="bh"><h3>3 · Schulter</h3><span class="dur">~3 min</span></div>
+    <ul class="ex">
+      <li><input type="checkbox"><span><span class="n">TRX Y-T-W</span><span class="d">Schulterblätter zuerst, Arme gestreckt</span></span><span class="q">je 8</span></li>
+      <li><input type="checkbox"><span><span class="n">Scapula-Liegestütz</span><span class="d">Arme gestreckt, nur Schulterblätter bewegen</span></span><span class="q">10</span></li>
+    </ul>
+  </div>
+  <div class="card block">
+    <div class="bh"><h3>4 · Burgener-Warm-up (Snatch, leere Stange)</h3><span class="dur">~3 min</span></div>
+    <ul class="ex">
+      <li><input type="checkbox"><span><span class="n">Down &amp; Up</span><span class="d">Reißgriff, Stange an der Hüfte, Dip &amp; Drive, Schultern hoch, Arme lang</span></span><span class="q">5</span></li>
+      <li><input type="checkbox"><span><span class="n">Elbows High &amp; Outside</span><span class="d">nach dem Drive Ellbogen hoch und nach außen, Stange nah</span></span><span class="q">5</span></li>
+      <li><input type="checkbox"><span><span class="n">Muscle Snatch</span><span class="d">durchziehen und über Kopf umdrehen, ohne abzutauchen</span></span><span class="q">5</span></li>
+      <li><input type="checkbox"><span><span class="n">Snatch Lands</span><span class="d">Stange im Nacken, Füße in die Fangposition springen, Stange über Kopf stoßen</span></span><span class="q">5</span></li>
+      <li><input type="checkbox"><span><span class="n">Snatch Drops</span><span class="d">Stange im Nacken, schnell unter die Stange in die Überkopf-Hocke</span></span><span class="q">5</span></li>
+    </ul>
+  </div>
+  <div class="card block">
+    <div class="bh"><h3>5 · Hauptlift</h3><span class="dur">nach Plan</span></div>
+    <ul class="ex">
+      <li><input type="checkbox"><span><span class="n">Aufwärmsätze Bench / OHP</span><span class="d">nach Programm</span></span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ CARDIO ============ -->
+<section class="mode" data-mode="cardio">
+  <div class="card">
+    <h3 style="margin:0 0 6px">Airbike · Regeln</h3>
+    <table>
+      <tr><th>Was</th><th>Wann</th><th>Dosis</th></tr>
+      <tr><td><b>Zone 2 Steady</b></td><td>nach OK-Tagen oder an Ruhetagen</td><td>20–30 min, Nasenatmung möglich</td></tr>
+      <tr><td><b>Intervalle</b></td><td>max. 2× pro Woche, <b>nicht am Tag vor UK</b></td><td>10 × 15 s hart / 45 s locker</td></tr>
+      <tr><td><b>Ausfahren</b></td><td>nach UK-Tagen</td><td>5–10 min locker</td></tr>
+    </table>
+    <p class="d" style="margin-top:8px">Ziel: 2–3 h Zone 2 pro Woche. Einheit in Oura als Training starten, damit sie zählt. Intervalle nur, wenn HRV und Schlaf passen.</p>
+  </div>
+  <div class="card">
+    <h3 style="margin:0 0 6px">Heute erledigt</h3>
+    <ul class="ex">
+      <li><input type="checkbox"><span><span class="n">Zone 2</span><span class="d">20–30 min</span></span></li>
+      <li><input type="checkbox"><span><span class="n">Intervalle</span><span class="d">10 × 15/45 s</span></span></li>
+      <li><input type="checkbox"><span><span class="n">Ausfahren</span><span class="d">5–10 min</span></span></li>
+    </ul>
+  </div>
+</section>
+</main>
+
+<script>
+(function(){
+  var d=new Date(), KEY='wu-'+d.getFullYear()+'-'+(d.getMonth()+1)+'-'+d.getDate(), MK='wu-mode';
+  var state={}; try{state=JSON.parse(localStorage.getItem(KEY)||'{}')||{};}catch(e){state={};}
+  function save(){try{localStorage.setItem(KEY,JSON.stringify(state));}catch(e){}}
+  var btns=document.querySelectorAll('nav button'), modes=document.querySelectorAll('.mode');
+  function current(){return document.querySelector('.mode.active');}
+  function prog(){
+    var boxes=current().querySelectorAll('ul.ex input'), n=0;
+    boxes.forEach(function(b){if(b.checked)n++;});
+    document.getElementById('prog').textContent=n+' / '+boxes.length+' erledigt';
+  }
+  function show(m){
+    btns.forEach(function(b){b.classList.toggle('active',b.dataset.mode===m);});
+    modes.forEach(function(s){s.classList.toggle('active',s.dataset.mode===m);});
+    try{localStorage.setItem(MK,m);}catch(e){}
+    prog(); window.scrollTo({top:0});
+  }
+  btns.forEach(function(b){b.addEventListener('click',function(){show(b.dataset.mode);});});
+  modes.forEach(function(s){
+    s.querySelectorAll('ul.ex li').forEach(function(li,i){
+      var id=s.dataset.mode+'-'+i, cb=li.querySelector('input');
+      cb.checked=!!state[id]; li.classList.toggle('done',cb.checked);
+      cb.addEventListener('change',function(){state[id]=cb.checked;li.classList.toggle('done',cb.checked);save();prog();});
+    });
+  });
+  document.getElementById('reset').addEventListener('click',function(){
+    var m=current().dataset.mode;
+    current().querySelectorAll('ul.ex li').forEach(function(li,i){
+      var cb=li.querySelector('input'); cb.checked=false; li.classList.remove('done'); delete state[m+'-'+i];
+    });
+    save(); prog();
+  });
+  var start='uk'; try{start=localStorage.getItem(MK)||'uk';}catch(e){}
+  show(start);
+})();
+</script>
+</body>
+</html>
