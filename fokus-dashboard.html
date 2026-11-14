@@ -1,0 +1,438 @@
+<title>Kris Fokus-Cockpit</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600&display=swap">
+<style>
+/* Layout: one calm column — ONE-Thing-Kaskade oben, Lebensbereiche als Liste, Tracker + Wochen-Check-in unten */
+:root{
+  --bg:#f3f5f6; --surface:#ffffff; --ink:#18232b; --muted:#5d6b75; --line:#dbe2e6;
+  --accent:#1f6f78; --accent-soft:#e1eff0; --warn:#a86a12; --ok:#2e7d4f;
+  --display:"Space Grotesk",system-ui,sans-serif; --body:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#11181d; --surface:#18222a; --ink:#e4ebef; --muted:#93a3ad; --line:#2a3943;
+  --accent:#5fb7c0; --accent-soft:#1c3337; --warn:#e0a64a; --ok:#6cc391; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#11181d; --surface:#18222a; --ink:#e4ebef; --muted:#93a3ad; --line:#2a3943;
+  --accent:#5fb7c0; --accent-soft:#1c3337; --warn:#e0a64a; --ok:#6cc391; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.5}
+.wrap{max-width:860px;margin:0 auto;padding-block:28px 48px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-direction:column;gap:28px}
+header{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:8px}
+h1{font-family:var(--display);font-size:1.7rem;margin:0;letter-spacing:-.01em}
+h2{font-family:var(--display);font-size:1.05rem;margin:0 0 10px;text-wrap:balance}
+.meta{color:var(--muted);font-size:.85rem;font-variant-numeric:tabular-nums}
+.label{font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:600}
+.question{background:var(--accent-soft);border-radius:10px;padding:12px 14px;font-size:.92rem}
+.question b{color:var(--accent)}
+/* Kaskade */
+.cascade{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.step{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 12px;display:flex;flex-direction:column;gap:4px;min-width:0}
+.step.today{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent) inset}
+.step textarea{border:0;background:transparent;color:var(--ink);font:500 .95rem/1.35 var(--body);resize:none;min-height:3.9em;width:100%;padding:0}
+.step textarea:focus{outline:none}
+.step:focus-within{border-color:var(--accent)}
+@media (max-width:640px){.cascade{grid-template-columns:1fr 1fr}}
+/* Bereiche: Kreis aus Kreisen */
+.ringwrap{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:20px;align-items:center}
+@media (max-width:700px){.ringwrap{grid-template-columns:1fr}}
+#ring{width:100%;max-width:440px;height:auto;display:block;margin:0 auto}
+#ring .orbit{fill:none;stroke:var(--line);stroke-width:1.5;stroke-dasharray:4 6}
+#ring .core{fill:var(--accent-soft);stroke:var(--accent);stroke-width:1.5}
+#ring .coretext{fill:var(--accent);font:600 15px var(--display);text-anchor:middle}
+#ring .node{cursor:pointer;outline:none}
+#ring .node circle{fill:var(--surface);stroke:var(--line);stroke-width:2;transition:stroke .15s,fill .15s}
+#ring .node text{fill:var(--ink);font:600 14px var(--body);text-anchor:middle;pointer-events:none}
+#ring .node:hover circle{stroke:var(--accent)}
+#ring .node.sel circle{stroke:var(--accent);stroke-width:3.5}
+#ring .node.primary circle{fill:var(--accent);stroke:var(--accent)}
+#ring .node.primary text{fill:var(--surface)}
+#ring .node.primary.sel circle{stroke:var(--ink)}
+#ring .node:focus-visible circle{stroke:var(--ink);stroke-width:3.5}
+.detail{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px;display:flex;flex-direction:column;gap:12px;min-width:0}
+.dhead{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.dhead h3{font-family:var(--display);font-size:1.1rem;margin:0;text-wrap:balance}
+.dgoal{margin:2px 0 0;font-size:.92rem}
+.dq{display:flex;flex-direction:column;gap:4px}
+.dq textarea{font:inherit;font-size:.9rem;padding:8px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--ink);resize:vertical;width:100%}
+.dlinks{display:flex;flex-direction:column;gap:4px}
+.dlinks a.open{color:var(--accent);font-weight:600;text-decoration:none}
+.missing{color:var(--warn);font-size:.85rem}
+.btn.ghost{background:transparent;color:var(--accent);border:1px solid var(--accent);align-self:flex-start}
+.star:focus-visible,button:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
+.pill{font-size:.72rem;font-weight:600;padding:3px 9px;border-radius:99px;white-space:nowrap}
+.pill.p{background:var(--accent);color:var(--surface)}
+.pill.m{background:transparent;color:var(--muted);border:1px solid var(--line)}
+@media (max-width:640px){.area{grid-template-columns:24px 1fr auto}.area .goal{grid-column:2/4}}
+.hint{font-size:.8rem;color:var(--muted);margin:8px 2px 0}
+/* Morning-Manifest */
+.manifest{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:18px 20px;display:flex;flex-direction:column;gap:14px}
+.mtext{font:500 1.05rem/1.65 var(--display);max-width:60ch;display:flex;flex-direction:column;gap:12px}
+.mtext p{margin:0}
+.mtext .one{color:var(--accent);font-weight:600;border-bottom:2px solid var(--accent-soft)}
+.mtext .one.empty-one{color:var(--warn)}
+.mfield{display:flex;flex-direction:column;gap:4px}
+.mfield input{font:inherit;font-size:.92rem;padding:8px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--ink);width:100%}
+.mfoot{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between}
+.streak{font-size:.85rem;color:var(--muted);font-variant-numeric:tabular-nums}
+.btn.done{background:var(--ok)}
+details.mods summary{cursor:pointer;color:var(--accent);font-weight:600;font-size:.88rem}
+details.mods .modlist{display:flex;flex-direction:column;gap:12px;margin-top:10px;font-size:.92rem}
+details.mods .modlist p{margin:2px 0 0;color:var(--ink)}
+/* Journal */
+.journal{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px 18px;display:flex;flex-direction:column;gap:14px}
+.seg{display:flex;flex-wrap:wrap;gap:6px}
+.seg button{font:600 .85rem var(--body);padding:7px 12px;border-radius:99px;border:1px solid var(--line);background:transparent;color:var(--muted);cursor:pointer}
+.seg button[aria-selected="true"]{background:var(--accent);border-color:var(--accent);color:var(--surface)}
+.jpanel ol{margin:0;padding-left:1.3em;display:flex;flex-direction:column;gap:8px;max-width:65ch}
+.jpanel li b{font-weight:600}
+.jnote{font-size:.85rem;color:var(--muted);margin:10px 0 0;max-width:65ch}
+.jmin{font-size:.85rem;background:var(--accent-soft);border-radius:8px;padding:8px 12px;margin:0}
+/* Daten sichern */
+.data{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px 18px;display:flex;flex-direction:column;gap:12px}
+.row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.data textarea{font:12px/1.4 ui-monospace,Menlo,Consolas,monospace;width:100%;min-height:80px;padding:8px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--ink)}
+.data input[type=file]{font-size:.85rem;color:var(--muted);max-width:100%}
+.msg{font-size:.85rem;margin:0}
+.btn.danger{background:var(--warn)}
+.saved{font-size:.78rem;color:var(--ok);opacity:0;transition:opacity .3s}
+.saved.on{opacity:1}
+/* Tracker */
+.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+@media (max-width:640px){.tiles{grid-template-columns:1fr}}
+.tile{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px 14px;display:flex;flex-direction:column;gap:6px}
+.tile a.open{color:var(--accent);font-weight:600;text-decoration:none}
+.tile a.open:hover{text-decoration:underline}
+.tile .missing{color:var(--warn);font-size:.85rem}
+.tile input{font:inherit;font-size:.82rem;padding:6px 8px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--ink);width:100%}
+.linkbtn{border:0;background:none;color:var(--muted);font:inherit;font-size:.8rem;cursor:pointer;padding:0;text-align:left}
+/* Check-in */
+.checkin{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px}
+.form{display:flex;flex-wrap:wrap;gap:10px;align-items:flex-end}
+.field{display:flex;flex-direction:column;gap:4px}
+.field input{font:inherit;width:96px;padding:7px 8px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--ink);font-variant-numeric:tabular-nums}
+.btn{font:600 .88rem var(--body);background:var(--accent);color:var(--surface);border:0;border-radius:8px;padding:9px 14px;cursor:pointer}
+.tablewrap{overflow-x:auto;margin-top:14px}
+table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums;font-size:.9rem}
+th,td{text-align:left;padding:7px 8px;border-top:1px solid var(--line)}
+th{font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:600;border-top:0}
+td.del{text-align:right}
+td.del button{border:0;background:none;color:var(--muted);cursor:pointer;font:inherit}
+.empty{color:var(--muted);font-size:.88rem;margin-top:10px}
+.ok{color:var(--ok)} .warn{color:var(--warn)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<div class="wrap">
+  <header>
+    <div>
+      <div class="label">The ONE Thing</div>
+      <h1>Fokus-Cockpit</h1>
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:flex-end;gap:2px"><div class="meta" id="meta"></div><span class="saved" id="saved" aria-live="polite">✓ Gespeichert</span></div>
+  </header>
+
+  <div class="question"><b>Fokusfrage:</b> Was ist das EINE, das ich tun kann, sodass dadurch alles andere leichter oder unnötig wird?</div>
+
+  <section>
+    <h2>Morning-Manifest</h2>
+    <div class="manifest">
+      <div class="mtext">
+        <p>Ich komme zur Ruhe. Ich atme tief ein – und lasse los.<br>Gib mir Gelassenheit für das Unänderbare, Mut fürs Änderbare.</p>
+        <p>Meine ONE Thing heute ist: <span class="one" id="m-one"></span><br>Ich erledige das Wichtige zuerst.</p>
+        <p>Ich reagiere nicht – ich entscheide.<br>Ich lasse los, was nicht meins ist.<br>Meine Gelassenheit ist meine Stärke.</p>
+        <p id="m-int-line" hidden>Heute bleibe ich ruhig, wenn: <span class="one" id="m-int-show"></span></p>
+        <p>Danke für alles, was schon da ist.</p>
+      </div>
+      <label class="mfield"><span class="label">Ruhe-Intention heute</span><input id="m-int" type="text" placeholder="In welcher Situation will ich heute bewusst ruhig reagieren?"></label>
+      <details class="mods" id="m-mods">
+        <summary>Module (optional, bei Bedarf dazulesen)</summary>
+        <div class="modlist">
+          <div><span class="label">Kian</span><p>Ich sehe Kian ruhig atmend und gesund. Ich vertraue seinem Körper. Ich vertraue dem Prozess.</p></div>
+          <div><span class="label">Training</span><p>Ich bin ruhig, fokussiert, kontrolliert unter der Stange. Jede Wiederholung macht mich stärker – sicher, sauber, kraftvoll.</p></div>
+          <div><span class="label">Partnerschaft</span><p>Ich bringe Präsenz, Wärme und Klarheit. Ich höre wirklich zu. Ich bin wirklich da.</p></div>
+          <div><span class="label">Umgang mit anderen</span><p>Ich urteile weniger und verstehe mehr. Ich setze Grenzen mit Ruhe und Klarheit. Ich erlaube anderen, ihren eigenen Weg zu gehen.</p></div>
+        </div>
+      </details>
+      <div class="mfoot">
+        <span class="streak" id="m-streak"></span>
+        <button class="btn" type="button" id="m-done">Heute gelesen</button>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Zielkaskade</h2>
+    <div class="cascade">
+      <label class="step"><span class="label">Jahr 2027</span><textarea id="c-year" rows="3" placeholder="Jahres-ONE-Thing eintragen"></textarea></label>
+      <label class="step"><span class="label" id="lbl-month">Monat</span><textarea id="c-month" rows="3" placeholder="Was muss diesen Monat passieren?"></textarea></label>
+      <label class="step"><span class="label" id="lbl-week">Woche</span><textarea id="c-week" rows="3" placeholder="Was muss diese Woche passieren?"></textarea></label>
+      <label class="step today"><span class="label" id="lbl-day">Heute</span><textarea id="c-day" rows="3" placeholder="Die EINE Sache heute"></textarea></label>
+    </div>
+  </section>
+
+  <section>
+    <h2>Lebensbereiche</h2>
+    <div class="ringwrap">
+      <svg id="ring" viewBox="0 0 440 440" role="group" aria-label="Lebensbereiche"></svg>
+      <div class="detail" id="detail"></div>
+    </div>
+    <p class="hint">Kreis antippen für Details. Ausgefüllter Kreis = Primärfokus (nur einer), alle anderen laufen auf Erhaltungsniveau.</p>
+  </section>
+
+  <section>
+    <h2>Tracker</h2>
+    <div class="tiles" id="tiles"></div>
+  </section>
+
+  <section>
+    <h2>Journal-Leitfaden</h2>
+    <div class="journal">
+      <div class="seg" role="tablist" aria-label="Journal-Zeitpunkt">
+        <button type="button" role="tab" id="jt-morgen" data-j="morgen">Morgens · 2 Min</button>
+        <button type="button" role="tab" id="jt-abend" data-j="abend">Abends · 5 Min</button>
+        <button type="button" role="tab" id="jt-sonntag" data-j="sonntag">Sonntag · 15 Min</button>
+      </div>
+      <div class="jpanel" id="jp-morgen" role="tabpanel">
+        <ol>
+          <li><b>ONE Thing heute:</b> Was ist das EINE, das ich heute tun kann, sodass alles andere leichter oder unnötig wird?</li>
+          <li><b>Zeitfenster:</b> Wann mache ich es? (Uhrzeit)</li>
+          <li><b>Ruhe-Intention:</b> In welcher Situation will ich heute bewusst ruhig reagieren?</li>
+          <li><b>Satz zum Start:</b> Ich reagiere nicht, ich entscheide.</li>
+        </ol>
+      </div>
+      <div class="jpanel" id="jp-abend" role="tabpanel">
+        <ol>
+          <li><b>Trigger:</b> Worüber habe ich mich heute aufgeregt?</li>
+          <li><b>Gedanke:</b> Was habe ich mir in dem Moment erzählt?</li>
+          <li><b>Kontrolle:</b> Lag es in meinem Einfluss? J / T (teilweise) / N</li>
+          <li><b>Reaktion:</b> Wie habe ich reagiert, und wie hätte die ruhige Version von mir reagiert?</li>
+          <li><b>Energie:</b> Womit oder mit wem habe ich mich beschäftigt, das nicht meins ist?</li>
+          <li><b>ONE Thing erledigt?</b> J / N</li>
+          <li><b>Dankbar für:</b> eine Zeile</li>
+          <li><b>Ruhe-Score:</b> 1–10</li>
+        </ol>
+        <p class="jnote">Kein Trigger heute? Dann stattdessen: Wann war ich heute besonders ruhig, und was hat dazu beigetragen?</p>
+      </div>
+      <div class="jpanel" id="jp-sonntag" role="tabpanel">
+        <ol>
+          <li><b>Zahlen ins Cockpit:</b> Ø Ruhe-Score · Anzahl Trigger · ONE-Thing-Tage von 7 (Wochen-Check-in unten)</li>
+          <li><b>Muster:</b> Welcher Trigger kam mehrfach? (Person, Situation, Uhrzeit, Müdigkeit, Hunger)</li>
+          <li><b>Einfluss:</b> Was davon lag wirklich in meiner Kontrolle?</li>
+          <li><b>Wenn-dann-Regel für nächste Woche:</b> Wenn [Situation], dann [ruhige Reaktion].</li>
+          <li><b>Wochen-ONE-Thing:</b> Was muss nächste Woche passieren, damit das Monatsziel näher rückt? (oben in der Zielkaskade eintragen)</li>
+        </ol>
+      </div>
+      <p class="jmin"><b>Mindestversion an schlechten Tagen:</b> Ruhe-Score + ein Trigger. Lieber kurz als gar nicht. Kürzel: T = Trigger · K = Kontrolle (J/T/N) · R = Ruhe-Score</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Wochen-Check-in</h2>
+    <div class="checkin">
+      <form class="form" id="ci-form">
+        <div class="field"><label class="label" for="ci-kw">KW</label><input id="ci-kw" type="number" min="1" max="53" required></div>
+        <div class="field"><label class="label" for="ci-calm">Ø Ruhe 1–10</label><input id="ci-calm" type="number" min="1" max="10" step="0.1" required></div>
+        <div class="field"><label class="label" for="ci-trig">Trigger</label><input id="ci-trig" type="number" min="0" required></div>
+        <div class="field"><label class="label" for="ci-one">ONE-Thing-Tage</label><input id="ci-one" type="number" min="0" max="7" required></div>
+        <button class="btn" type="submit">Woche speichern</button>
+      </form>
+      <div class="tablewrap" id="ci-table"></div>
+    </div>
+    <p class="hint">Werte kommen aus dem Wochenrückblick im Journal.</p>
+  </section>
+
+  <section>
+    <h2>Daten sichern</h2>
+    <div class="data">
+      <p class="msg" style="color:var(--muted)">Alles speichert automatisch in diesem Browser. Für ein anderes Gerät oder als Absicherung: Backup erstellen und später wieder einspielen.</p>
+      <div class="row">
+        <button class="btn" type="button" id="bk-dl">Backup herunterladen</button>
+        <button class="btn ghost" type="button" id="bk-copy">Backup kopieren</button>
+      </div>
+      <span class="label">Wiederherstellen</span>
+      <div class="row"><input type="file" id="bk-file" accept=".json,application/json" aria-label="Backup-Datei wählen"></div>
+      <textarea id="bk-text" placeholder="… oder Backup-Text hier einfügen" aria-label="Backup-Text"></textarea>
+      <div class="row">
+        <button class="btn ghost" type="button" id="bk-load">Backup einspielen</button>
+        <span id="bk-confirm" hidden><button class="btn danger" type="button" id="bk-yes">Ja, aktuelle Daten ersetzen</button></span>
+      </div>
+      <p class="msg" id="bk-msg" aria-live="polite"></p>
+    </div>
+  </section>
+</div>
+
+<script>
+/* Speicher: alle Schlüssel mit Präfix "fc:", damit es auf GitHub Pages keine Kollision mit anderen Trackern gibt. Alte Einträge ohne Präfix werden weiter gelesen. */
+const P="fc:";
+let savedT;
+function flashSaved(){const el=document.getElementById("saved");if(!el)return;el.classList.add("on");clearTimeout(savedT);savedT=setTimeout(()=>el.classList.remove("on"),1200)}
+const S={
+ get(k,d){try{let v=localStorage.getItem(P+k);if(v===null)v=localStorage.getItem(k);return v===null?d:JSON.parse(v)}catch(e){return d}},
+ set(k,v){try{localStorage.setItem(P+k,JSON.stringify(v));flashSaved()}catch(e){}}
+};
+
+function isoWeek(d){const t=new Date(Date.UTC(d.getFullYear(),d.getMonth(),d.getDate()));const day=t.getUTCDay()||7;t.setUTCDate(t.getUTCDate()+4-day);const y0=new Date(Date.UTC(t.getUTCFullYear(),0,1));return Math.ceil(((t-y0)/86400000+1)/7)}
+const now=new Date();
+const kw=isoWeek(now);
+const endYear=new Date(now.getFullYear(),11,31);
+const daysLeft=Math.round((endYear-new Date(now.getFullYear(),now.getMonth(),now.getDate()))/86400000);
+const months=["Januar","Februar","März","April","Mai","Juni","Juli","August","September","Oktober","November","Dezember"];
+const wd=["So","Mo","Di","Mi","Do","Fr","Sa"];
+document.getElementById("meta").textContent=`${wd[now.getDay()]}, ${now.getDate()}. ${months[now.getMonth()]} ${now.getFullYear()} · KW ${kw} · noch ${daysLeft} Tage im Jahr`;
+document.getElementById("lbl-month").textContent="Monat · "+months[now.getMonth()];
+document.getElementById("lbl-week").textContent="Woche · KW "+kw;
+document.getElementById("lbl-day").textContent="Heute · "+wd[now.getDay()]+" "+now.getDate()+".";
+document.getElementById("ci-kw").value=kw;
+
+/* Kaskade: Tageseintrag gilt nur für heute, Woche nur für diese KW */
+const dayKey="day-"+ymd(now), weekKey="week-"+now.getFullYear()+"-"+kw, monthKey="month-"+now.getFullYear()+"-"+now.getMonth();
+const cmap={"c-year":"year-2027","c-month":monthKey,"c-week":weekKey,"c-day":dayKey};
+for(const [id,key] of Object.entries(cmap)){const el=document.getElementById(id);el.value=S.get("casc:"+key,"");el.addEventListener("input",()=>S.set("casc:"+key,el.value))}
+
+/* Morning-Manifest: ONE Thing kommt live aus dem Feld "Heute" */
+function ymd(d){return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0")}
+const today=ymd(now);
+function renderOne(){const v=document.getElementById("c-day").value.trim();const el=document.getElementById("m-one");el.textContent=v||"unten bei „Heute“ eintragen";el.classList.toggle("empty-one",!v)}
+renderOne();document.getElementById("c-day").addEventListener("input",renderOne);
+const mInt=document.getElementById("m-int");mInt.value=S.get("mint:"+today,"");
+function renderInt(){const v=mInt.value.trim();document.getElementById("m-int-line").hidden=!v;document.getElementById("m-int-show").textContent=v}
+renderInt();mInt.addEventListener("input",()=>{S.set("mint:"+today,mInt.value);renderInt()});
+let mDays=S.get("mdays",[]);
+function renderStreak(){
+ const set=new Set(mDays);let n=0;const d=new Date(now);if(!set.has(ymd(d)))d.setDate(d.getDate()-1);
+ while(set.has(ymd(d))){n++;d.setDate(d.getDate()-1)}
+ const last7=[...Array(7)].map((_,i)=>{const x=new Date(now);x.setDate(x.getDate()-i);return set.has(ymd(x))}).filter(Boolean).length;
+ document.getElementById("m-streak").textContent=`Serie: ${n} ${n===1?"Tag":"Tage"} · letzte 7 Tage: ${last7}/7`;
+ const b=document.getElementById("m-done");const done=set.has(today);b.textContent=done?"✓ Heute gelesen":"Heute gelesen";b.classList.toggle("done",done);b.setAttribute("aria-pressed",String(done));
+}
+document.getElementById("m-done").addEventListener("click",()=>{mDays=mDays.includes(today)?mDays.filter(x=>x!==today):[...mDays,today];S.set("mdays",mDays);renderStreak()});
+renderStreak();
+
+/* Lebensbereiche: Ziele so, wie Kris sie genannt hat */
+const AREAS=[
+ {id:"ruhe",name:"Innere Ruhe & Mindset",goal:"Ruhiger, wohlwollender, weniger Aufregen · Messgröße: Ø Ruhe-Score"},
+ {id:"fit",name:"Gesundheit & Fitness",goal:"1RM: Squat (High Bar) 180 kg · Bench 160 kg · Deadlift 240 kg · VO2max / Work Capacity (Airbike)"},
+ {id:"fam",name:"Vaterschaft & Familie",goal:"Gesundheit Kian · Schulentscheidung (öffentlich/privat, Transport) · Partnerschaft"},
+ {id:"job",name:"Beruf",goal:"Gehalt 200k"},
+ {id:"fin",name:"Finanzen",goal:"Depot ca. 60k → 100k"},
+ {id:"learn",name:"Lernen & Schreiben",goal:"Noch festlegen"}
+];
+const SHORT={ruhe:["Innere","Ruhe"],fit:["Fitness"],fam:["Familie"],job:["Beruf"],fin:["Finanzen"],learn:["Lernen &","Schreiben"]};
+const TR={fit:["t531","tmorning"],job:["twork"]};
+const TRACK_NAMES={t531:"5/3/1-Trainingstracker",tmorning:"Morning-Routine",twork:"Arbeit"};
+let primary=S.get("primary",null);
+let sel=null;
+const NS="http://www.w3.org/2000/svg";
+function mk(t,a,p){const e=document.createElementNS(NS,t);for(const k in a)e.setAttribute(k,a[k]);if(p)p.appendChild(e);return e}
+function wrapText(txt,max,lines){const out=[];let cur="";for(const w of txt.split(/\s+/).filter(Boolean)){if((cur+" "+w).trim().length>max&&cur){out.push(cur);cur=w}else cur=(cur+" "+w).trim()}if(cur)out.push(cur);if(out.length>lines){out.length=lines;out[lines-1]+="…"}return out}
+function renderRing(){
+ const svg=document.getElementById("ring");svg.innerHTML="";
+ const C=220,R=150,r=56;
+ mk("circle",{cx:C,cy:C,r:R,class:"orbit"},svg);
+ mk("circle",{cx:C,cy:C,r:72,class:"core"},svg);
+ const yr=(S.get("casc:year-2027","")||"").trim();
+ const lines=yr?wrapText(yr,13,4):["Jahres-","ONE Thing","eintragen"];
+ const ct=mk("text",{x:C,y:C-(lines.length-1)*9+5,class:"coretext"},svg);
+ lines.forEach((l,i)=>{mk("tspan",{x:C,dy:i?18:0},ct).textContent=l});
+ AREAS.forEach((a,i)=>{
+  const ang=-Math.PI/2+i*2*Math.PI/AREAS.length;
+  const x=+(C+R*Math.cos(ang)).toFixed(1),y=+(C+R*Math.sin(ang)).toFixed(1);
+  const isP=primary===a.id,isS=sel===a.id;
+  const g=mk("g",{class:"node"+(isP?" primary":"")+(isS?" sel":""),tabindex:"0",role:"button","data-id":a.id,"aria-pressed":String(isS),"aria-label":a.name+(isP?", Primärfokus":"")},svg);
+  mk("circle",{cx:x,cy:y,r:r},g);
+  const sh=SHORT[a.id];
+  const t=mk("text",{x:x,y:y-(sh.length-1)*8+5},g);
+  sh.forEach((l,j)=>{mk("tspan",{x:x,dy:j?16:0},t).textContent=l});
+  const go=()=>{sel=isS?null:a.id;renderRing();renderDetail();const n=svg.querySelector(`[data-id="${a.id}"]`);if(n)n.focus({preventScroll:true})};
+  g.addEventListener("click",go);
+  g.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();go()}});
+ });
+}
+function renderDetail(){
+ const box=document.getElementById("detail");
+ const a=AREAS.find(x=>x.id===sel);
+ if(!a){box.innerHTML=`<span class="label">Details</span><p class="empty" style="margin:0">Wähle einen Bereich im Kreis, um Ziel, Fokusfrage und Tracker zu sehen.</p>`;return}
+ const isP=primary===a.id;
+ const links=(TR[a.id]||[]).map(id=>{const u=S.get("url:"+id,"");return u?`<a class="open" href="${u}" target="_blank" rel="noopener">${TRACK_NAMES[id]} ↗</a>`:`<span class="missing">${TRACK_NAMES[id]}: Link fehlt (unten eintragen)</span>`}).join("");
+ box.innerHTML=`<div class="dhead"><h3>${a.name}</h3><span class="pill ${isP?"p":"m"}">${isP?"Primär":"Erhalten"}</span></div>
+ <div><div class="label">Ziel</div><p class="dgoal">${a.goal}</p></div>
+ <label class="dq"><span class="label">Fokusfrage · groß & konkret</span><textarea id="fq-${a.id}" rows="3" placeholder="Was ist das EINE, das ich tun kann, um [Ergebnis] bis [Datum] zu erreichen?"></textarea></label>
+ ${links?`<div class="dlinks"><div class="label">Tracker</div>${links}</div>`:""}
+ <button class="btn ghost" type="button" id="setp">${isP?"Primärfokus entfernen":"Als Primärfokus setzen"}</button>`;
+ const ta=document.getElementById("fq-"+a.id);ta.value=S.get("fq:"+a.id,"");ta.addEventListener("input",()=>S.set("fq:"+a.id,ta.value));
+ document.getElementById("setp").addEventListener("click",()=>{primary=isP?null:a.id;S.set("primary",primary);renderRing();renderDetail()});
+}
+renderRing();renderDetail();
+document.getElementById("c-year").addEventListener("input",renderRing);
+
+/* Tracker-Links: URL einmal einfügen, dann merkt sich die Seite sie */
+const TRACK=[{id:"t531",name:"5/3/1-Trainingstracker"},{id:"tmorning",name:"Morning-Routine"},{id:"twork",name:"Arbeit"}];
+function renderTiles(){
+ const box=document.getElementById("tiles");box.innerHTML="";
+ TRACK.forEach(t=>{
+  const url=S.get("url:"+t.id,"");
+  const tile=document.createElement("div");tile.className="tile";
+  const edit=!url;
+  tile.innerHTML=`<span class="label">${t.name}</span>`+
+   (url?`<a class="open" href="${url}" target="_blank" rel="noopener">Öffnen ↗</a><button class="linkbtn" type="button">Link ändern</button>`
+       :`<span class="missing">Link fehlt</span><input id="in-${t.id}" type="url" placeholder="https://… einfügen + Enter">`);
+  box.appendChild(tile);
+  if(url){tile.querySelector(".linkbtn").addEventListener("click",()=>{S.set("url:"+t.id,"");renderTiles();document.getElementById("in-"+t.id).value=url})}
+  else{const inp=tile.querySelector("input");inp.addEventListener("keydown",e=>{if(e.key==="Enter"){const v=inp.value.trim();if(/^https:\/\//.test(v)){S.set("url:"+t.id,v);renderTiles()}}})}
+ });
+}
+renderTiles();
+
+/* Wochen-Check-in */
+let weeks=S.get("weeks",[]);
+function renderWeeks(){
+ const box=document.getElementById("ci-table");
+ if(!weeks.length){box.innerHTML=`<p class="empty">Noch keine Woche gespeichert. Am Sonntag nach dem Journal-Rückblick die drei Werte oben eintragen.</p>`;return}
+ const rows=[...weeks].sort((a,b)=>b.kw-a.kw).slice(0,12).map(w=>{
+  const c=w.calm>=7?"ok":w.calm<5?"warn":"";const o=w.one>=5?"ok":w.one<3?"warn":"";
+  return `<tr><td>KW ${w.kw}</td><td class="${c}">${w.calm}</td><td>${w.trig}</td><td class="${o}">${w.one}/7</td><td class="del"><button type="button" data-kw="${w.kw}" aria-label="KW ${w.kw} löschen">×</button></td></tr>`}).join("");
+ box.innerHTML=`<table><thead><tr><th>Woche</th><th>Ø Ruhe</th><th>Trigger</th><th>ONE Thing</th><th></th></tr></thead><tbody>${rows}</tbody></table>`;
+ box.querySelectorAll("button[data-kw]").forEach(b=>b.addEventListener("click",()=>{weeks=weeks.filter(w=>w.kw!=b.dataset.kw);S.set("weeks",weeks);renderWeeks()}));
+}
+document.getElementById("ci-form").addEventListener("submit",e=>{
+ e.preventDefault();
+ const w={kw:+document.getElementById("ci-kw").value,calm:+document.getElementById("ci-calm").value,trig:+document.getElementById("ci-trig").value,one:+document.getElementById("ci-one").value};
+ weeks=weeks.filter(x=>x.kw!==w.kw);weeks.push(w);S.set("weeks",weeks);renderWeeks();
+});
+renderWeeks();
+
+/* Journal-Tabs: Vorauswahl nach Tageszeit (Sonntag ab 12 Uhr = Wochenrückblick) */
+function showJ(k){["morgen","abend","sonntag"].forEach(x=>{document.getElementById("jp-"+x).hidden=x!==k;document.getElementById("jt-"+x).setAttribute("aria-selected",String(x===k))})}
+document.querySelectorAll(".seg button").forEach(b=>b.addEventListener("click",()=>showJ(b.dataset.j)));
+showJ(now.getHours()<12?"morgen":now.getDay()===0?"sonntag":"abend");
+
+/* Backup & Wiederherstellen */
+const KNOWN=/^(casc:|fq:|url:|mint:|primary$|weeks$|mdays$)/;
+function collect(){const o={};try{for(let i=0;i<localStorage.length;i++){const k=localStorage.key(i);let n=null;if(k.startsWith(P))n=k.slice(P.length);else if(KNOWN.test(k)&&localStorage.getItem(P+k)===null)n=k;if(n!==null)o[n]=JSON.parse(localStorage.getItem(k))}}catch(e){}return{app:"fokus-cockpit",version:1,exported:new Date().toISOString(),data:o}}
+const msg=t=>{document.getElementById("bk-msg").textContent=t};
+function copyText(t){const ta=document.getElementById("bk-text");const fallback=()=>{ta.value=t;ta.select();msg("Backup steht im Textfeld und ist markiert. Mit Strg+C kopieren und z. B. in OneNote ablegen.")};try{navigator.clipboard.writeText(t).then(()=>msg("Backup in die Zwischenablage kopiert. Z. B. in OneNote einfügen."),fallback)}catch(e){fallback()}}
+/* In Claude: Speichern über die downloads-Funktion des Viewers. Auf GitHub Pages (kein window.claude): normaler Browser-Download. */
+let dlApi;
+if(window.claude&&window.claude.use){window.claude.use("downloads").then(d=>{dlApi=d}).catch(()=>{dlApi=null})}else{dlApi=null}
+document.getElementById("bk-dl").addEventListener("click",()=>{
+ const json=JSON.stringify(collect(),null,1);const fn="fokus-cockpit-backup-"+today+".json";
+ if(window.claude){
+  if(!dlApi){copyText(json);return}
+  dlApi.save({filename:fn,data:json}).then(()=>msg("Backup gespeichert: "+fn)).catch(e=>{if(e&&e.code==="declined")msg("Speichern abgebrochen.");else copyText(json)});
+  return;
+ }
+ try{const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([json],{type:"application/json"}));a.download=fn;document.body.appendChild(a);a.click();a.remove();msg("Backup heruntergeladen: "+fn)}catch(e){copyText(json)}
+});
+document.getElementById("bk-copy").addEventListener("click",()=>copyText(JSON.stringify(collect())));
+document.getElementById("bk-file").addEventListener("change",e=>{const f=e.target.files[0];if(!f)return;const r=new FileReader();r.onload=()=>{document.getElementById("bk-text").value=r.result;msg("Datei geladen. Jetzt „Backup einspielen“ klicken.")};r.readAsText(f)});
+let pending=null;
+document.getElementById("bk-load").addEventListener("click",()=>{
+ try{const o=JSON.parse(document.getElementById("bk-text").value);if(!o||o.app!=="fokus-cockpit"||typeof o.data!=="object")throw 0;pending=o.data;document.getElementById("bk-confirm").hidden=false;msg(`Backup vom ${(o.exported||"").slice(0,10)} mit ${Object.keys(o.data).length} Einträgen erkannt. Bestätigen, um die aktuellen Daten zu ersetzen.`)}
+ catch(e){pending=null;document.getElementById("bk-confirm").hidden=true;msg("Das ist kein gültiges Cockpit-Backup. Bitte die komplette Backup-Datei oder den kompletten Text verwenden.")}
+});
+document.getElementById("bk-yes").addEventListener("click",()=>{
+ if(!pending)return;
+ try{const del=[];for(let i=0;i<localStorage.length;i++){const k=localStorage.key(i);if(k.startsWith(P)||KNOWN.test(k))del.push(k)}del.forEach(k=>localStorage.removeItem(k));for(const [k,v] of Object.entries(pending))localStorage.setItem(P+k,JSON.stringify(v));msg("Wiederhergestellt. Seite lädt neu …");setTimeout(()=>location.reload(),600)}
+ catch(e){msg("Speichern nicht möglich. Ist der Browser im privaten Modus?")}
+});
+</script>
