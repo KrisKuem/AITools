@@ -1,0 +1,8195 @@
+{
+  "app": "time-focus",
+  "v": 1,
+  "exportedAt": "2026-11-14T12:17:26.492Z",
+  "days": {
+    "2026-09-28": [
+      {
+        "id": "muktsgb7od09y",
+        "project": "bi",
+        "start": 1790574440083,
+        "end": 1790574666120,
+        "note": ""
+      },
+      {
+        "id": "muktxb5o1wq0b",
+        "project": "fusion",
+        "start": 1790574666684,
+        "end": 1790574909067,
+        "note": ""
+      },
+      {
+        "id": "muku2iy8cdk84",
+        "project": "pause",
+        "start": 1790574910064,
+        "end": 1790575744736,
+        "note": ""
+      },
+      {
+        "id": "mukukftzneuf5",
+        "project": "bi",
+        "start": 1790575745831,
+        "end": 1790583215983,
+        "note": ""
+      },
+      {
+        "id": "mukz0kj8eiblp",
+        "project": "pause",
+        "start": 1790583216884,
+        "end": 1790583307245,
+        "note": ""
+      },
+      {
+        "id": "mukz2iqkbhloa",
+        "project": "fusion",
+        "start": 1790583307868,
+        "end": 1790583482116,
+        "note": ""
+      },
+      {
+        "id": "mukz69eczonal",
+        "project": "lonza",
+        "start": 1790583482388,
+        "end": 1790586545466,
+        "note": ""
+      },
+      {
+        "id": "mul0zx902fddh",
+        "project": "bi",
+        "start": 1790586545940,
+        "end": 1790586878413,
+        "note": ""
+      },
+      {
+        "id": "mul1727407jkn",
+        "project": "fusion",
+        "start": 1790586878944,
+        "end": 1790587960303,
+        "note": ""
+      },
+      {
+        "id": "mul1om8054tpa",
+        "project": "bi",
+        "start": 1790587698048,
+        "end": 1790587743924,
+        "note": ""
+      },
+      {
+        "id": "mul1u7t6a27sd",
+        "project": "bi",
+        "start": 1790587959306,
+        "end": 1790588220584,
+        "note": ""
+      },
+      {
+        "id": "mul1ztntgtqmy",
+        "project": "lonza",
+        "start": 1790588220905,
+        "end": 1790588576409,
+        "note": ""
+      },
+      {
+        "id": "mul27h3ss05yg",
+        "project": "pause",
+        "start": 1790588577880,
+        "end": 1790594209832,
+        "note": ""
+      },
+      {
+        "id": "mul5k74l49no8",
+        "project": "fusion",
+        "start": 1790594210325,
+        "end": 1790595182969,
+        "note": ""
+      },
+      {
+        "id": "mul651a0bns2q",
+        "project": "lonza",
+        "start": 1790595182520,
+        "end": 1790596898506,
+        "note": ""
+      },
+      {
+        "id": "mul75tumbc2xw",
+        "project": "pause",
+        "start": 1790596899166,
+        "end": 1790597299870,
+        "note": ""
+      },
+      {
+        "id": "mul7ego0nia34",
+        "project": "lonza",
+        "start": 1790597301984,
+        "end": 1790597692186,
+        "note": ""
+      },
+      {
+        "id": "mul7mu3wa37ee",
+        "project": "fusion",
+        "start": 1790597692652,
+        "end": 1790601115090,
+        "note": ""
+      },
+      {
+        "id": "mul9o7dp3ttav",
+        "project": "pause",
+        "start": 1790601115741,
+        "end": 1790601437173,
+        "note": ""
+      },
+      {
+        "id": "mul9v3pl5947q",
+        "project": "fusion",
+        "start": 1790601437577,
+        "end": 1790602231656,
+        "note": ""
+      },
+      {
+        "id": "mulac4t45xw4g",
+        "project": "lonza",
+        "start": 1790602232152,
+        "end": 1790603504084,
+        "note": ""
+      },
+      {
+        "id": "mulb3dt5i4qgp",
+        "project": "fusion",
+        "start": 1790603503529,
+        "end": 1790610930226,
+        "note": ""
+      },
+      {
+        "id": "muln89kmdh4qo",
+        "project": "fusion",
+        "start": 1790620200000,
+        "end": 1790623886710,
+        "note": ""
+      }
+    ],
+    "2026-09-29": [
+      {
+        "id": "mumahuzzc6304",
+        "project": "fusion",
+        "start": 1790661600000,
+        "end": 1790663669279,
+        "note": ""
+      },
+      {
+        "id": "mumawxmp9bgpq",
+        "project": "bi",
+        "start": 1790663668801,
+        "end": 1790667774547,
+        "note": ""
+      },
+      {
+        "id": "mumdcyb0iyn9x",
+        "project": "pause",
+        "start": 1790667775404,
+        "end": 1790667883276,
+        "note": ""
+      },
+      {
+        "id": "mumdfajp6bwlx",
+        "project": "bi",
+        "start": 1790667884581,
+        "end": 1790667885602,
+        "note": ""
+      },
+      {
+        "id": "mumdfbud3bknj",
+        "project": "fusion",
+        "start": 1790667886261,
+        "end": 1790668324724,
+        "note": ""
+      },
+      {
+        "id": "mumdoqehw63s0",
+        "project": "private",
+        "start": 1790668325033,
+        "end": 1790668765004,
+        "note": ""
+      },
+      {
+        "id": "mumdy684l6z5e",
+        "project": "fusion",
+        "start": 1790668765444,
+        "end": 1790669081565,
+        "note": ""
+      },
+      {
+        "id": "mume4ydrtb5cv",
+        "project": "lonza",
+        "start": 1790669081871,
+        "end": 1790669082628,
+        "note": ""
+      },
+      {
+        "id": "mume4yod6uv08",
+        "project": "fusion",
+        "start": 1790669082253,
+        "end": 1790676300000,
+        "note": ""
+      },
+      {
+        "id": "mumln59sm0b2r",
+        "project": "pause",
+        "start": 1790676300000,
+        "end": 1790681687920,
+        "note": ""
+      },
+      {
+        "id": "mumlnhviejc2a",
+        "project": "fusion",
+        "start": 1790681704254,
+        "end": 1790681919448,
+        "note": ""
+      },
+      {
+        "id": "mumls2jxyvgrt",
+        "project": "bi",
+        "start": 1790681917677,
+        "end": 1790682189350,
+        "note": ""
+      },
+      {
+        "id": "mumlxwisyhv4m",
+        "project": "fusion",
+        "start": 1790682189796,
+        "end": 1790685455741,
+        "note": ""
+      },
+      {
+        "id": "mumnvwqzjh8m4",
+        "project": "lonza",
+        "start": 1790685456011,
+        "end": 1790689537251,
+        "note": ""
+      },
+      {
+        "id": "mumqbexweuhgr",
+        "project": "fusion",
+        "start": 1790689538660,
+        "end": 1790694010723,
+        "note": ""
+      },
+      {
+        "id": "mumsza96756ns",
+        "project": "bi",
+        "start": 1790694011562,
+        "end": null,
+        "note": ""
+      }
+    ],
+    "2026-09-08": [
+      {
+        "id": "mts8seij56x3v",
+        "project": "fusion",
+        "start": 1788846112892,
+        "end": 1788846520377,
+        "note": ""
+      },
+      {
+        "id": "mts8zs0tzmzam",
+        "project": "bi",
+        "start": 1788846456989,
+        "end": 1788846532350,
+        "note": ""
+      },
+      {
+        "id": "mts91fn1lwjrs",
+        "project": "fusion",
+        "start": 1788846534253,
+        "end": 1788849114337,
+        "note": ""
+      },
+      {
+        "id": "mts9dy1oxdz0g",
+        "project": "bi",
+        "start": 1788847117980,
+        "end": 1788847321619,
+        "note": ""
+      },
+      {
+        "id": "mtsa0o5vkcg4j",
+        "project": "private",
+        "start": 1788848178259,
+        "end": 1788849054728,
+        "note": ""
+      },
+      {
+        "id": "mtsakqud6ftno",
+        "project": "lonza",
+        "start": 1788849114853,
+        "end": 1788849413470,
+        "note": ""
+      },
+      {
+        "id": "mtsar6k67ze5j",
+        "project": "bi",
+        "start": 1788849415158,
+        "end": 1788849777750,
+        "note": ""
+      },
+      {
+        "id": "mtsay7vn2f3w4",
+        "project": "private",
+        "start": 1788849743459,
+        "end": 1788849778784,
+        "note": ""
+      },
+      {
+        "id": "mtsayzmfooz7o",
+        "project": "fusion",
+        "start": 1788849779415,
+        "end": 1788849860078,
+        "note": ""
+      },
+      {
+        "id": "mtsb0qenk13yb",
+        "project": "bi",
+        "start": 1788849860783,
+        "end": 1788850148188,
+        "note": ""
+      },
+      {
+        "id": "mtsb19k8srb16",
+        "project": "private",
+        "start": 1788849885608,
+        "end": 1788850041453,
+        "note": ""
+      },
+      {
+        "id": "mtsb4ml6hdzrs",
+        "project": "private",
+        "start": 1788850042458,
+        "end": 1788850906732,
+        "note": ""
+      },
+      {
+        "id": "mtsb6wq3hkvco",
+        "project": "fusion",
+        "start": 1788850148907,
+        "end": 1788850205091,
+        "note": ""
+      },
+      {
+        "id": "mtsbn45p7i8ic",
+        "project": "bi",
+        "start": 1788850905037,
+        "end": 1788852015986,
+        "note": ""
+      },
+      {
+        "id": "mtscay4wnrr38",
+        "project": "fusion",
+        "start": 1788852016976,
+        "end": 1788852592744,
+        "note": ""
+      },
+      {
+        "id": "mtscml402tn2w",
+        "project": "bi",
+        "start": 1788852559968,
+        "end": 1788852577563,
+        "note": ""
+      },
+      {
+        "id": "mtscn9125tggf",
+        "project": "private",
+        "start": 1788852590966,
+        "end": 1788852925455,
+        "note": ""
+      },
+      {
+        "id": "mtscueqwf8mqj",
+        "project": "lonza",
+        "start": 1788852924968,
+        "end": 1788854770200,
+        "note": ""
+      },
+      {
+        "id": "mtsd27nzwh09z",
+        "project": "private",
+        "start": 1788853289039,
+        "end": 1788853290450,
+        "note": ""
+      },
+      {
+        "id": "mtsdxytcg8vyn",
+        "project": "bi",
+        "start": 1788854770560,
+        "end": 1788854834056,
+        "note": ""
+      },
+      {
+        "id": "mtsdzazz3cq8g",
+        "project": "private",
+        "start": 1788854833007,
+        "end": 1788854873409,
+        "note": ""
+      },
+      {
+        "id": "mtse06ry739q3",
+        "project": "fusion",
+        "start": 1788854874190,
+        "end": 1788854879823,
+        "note": ""
+      },
+      {
+        "id": "mtse0ajur1sh7",
+        "project": "lonza",
+        "start": 1788854879082,
+        "end": 1788855721765,
+        "note": ""
+      },
+      {
+        "id": "mtseidg29uk6s",
+        "project": "private",
+        "start": 1788855722642,
+        "end": 1788856152276,
+        "note": ""
+      },
+      {
+        "id": "mtserkd3kvhcf",
+        "project": "pause",
+        "start": 1788856151511,
+        "end": 1788856299270,
+        "note": ""
+      },
+      {
+        "id": "mtseupr8tiyg6",
+        "project": "bi",
+        "start": 1788856298468,
+        "end": 1788857216602,
+        "note": ""
+      },
+      {
+        "id": "mtsf5bbich4fx",
+        "project": "private",
+        "start": 1788856792974,
+        "end": 1788856855414,
+        "note": ""
+      },
+      {
+        "id": "mtsfeevcp14xq",
+        "project": "private",
+        "start": 1788857217480,
+        "end": 1788858675842,
+        "note": ""
+      },
+      {
+        "id": "mtsfs5s8qjqew",
+        "project": "bi",
+        "start": 1788857858888,
+        "end": 1788857968023,
+        "note": ""
+      },
+      {
+        "id": "mtsg9l3uw0e23",
+        "project": "pause",
+        "start": 1788858671898,
+        "end": 1788866018065,
+        "note": ""
+      },
+      {
+        "id": "mtsg9p9eibch4",
+        "project": "private",
+        "start": 1788858677282,
+        "end": 1788858680066,
+        "note": ""
+      },
+      {
+        "id": "mtsi2oiwlvbyn",
+        "project": "fusion",
+        "start": 1788861708968,
+        "end": 1788867000000,
+        "note": ""
+      },
+      {
+        "id": "mtskn4k5ucud9",
+        "project": "fusion",
+        "start": 1788866022101,
+        "end": 1788867845243,
+        "note": ""
+      },
+      {
+        "id": "mtsl74gi7li13",
+        "project": "bi",
+        "start": 1788866955090,
+        "end": 1788867143441,
+        "note": ""
+      },
+      {
+        "id": "mtslb6m776pww",
+        "project": "private",
+        "start": 1788867144511,
+        "end": 1788867847283,
+        "note": ""
+      },
+      {
+        "id": "mtslq845j46mc",
+        "project": "lonza",
+        "start": 1788867846293,
+        "end": 1788868241388,
+        "note": ""
+      },
+      {
+        "id": "mtslq9lxr92zl",
+        "project": "private",
+        "start": 1788867848229,
+        "end": 1788868241913,
+        "note": ""
+      },
+      {
+        "id": "mtslypuo3vdno",
+        "project": "pause",
+        "start": 1788868242528,
+        "end": 1788868800835,
+        "note": ""
+      },
+      {
+        "id": "mtsmap9g3fw63",
+        "project": "fusion",
+        "start": 1788868801636,
+        "end": 1788868867976,
+        "note": ""
+      },
+      {
+        "id": "mtsmc41f5s2ik",
+        "project": "lonza",
+        "start": 1788868867443,
+        "end": 1788869230749,
+        "note": ""
+      },
+      {
+        "id": "mtsmjwnf4x2ts",
+        "project": "bi",
+        "start": 1788869231115,
+        "end": 1788869478853,
+        "note": ""
+      },
+      {
+        "id": "mtsmp8ez6j2iw",
+        "project": "fusion",
+        "start": 1788869479643,
+        "end": 1788869523764,
+        "note": ""
+      },
+      {
+        "id": "mtsmpxw7ddfvw",
+        "project": "private",
+        "start": 1788869512663,
+        "end": 1788869717177,
+        "note": ""
+      },
+      {
+        "id": "mtsmq5x6s2061",
+        "project": "bi",
+        "start": 1788869523066,
+        "end": 1788869526816,
+        "note": ""
+      },
+      {
+        "id": "mtsmq8fokxqqf",
+        "project": "fusion",
+        "start": 1788869526324,
+        "end": 1788869860594,
+        "note": ""
+      },
+      {
+        "id": "mtsmxdii9dziq",
+        "project": "private",
+        "start": 1788869859498,
+        "end": 1788869863166,
+        "note": ""
+      },
+      {
+        "id": "mtsmxgnv9zxtm",
+        "project": "fusion",
+        "start": 1788869863579,
+        "end": 1788869886828,
+        "note": ""
+      },
+      {
+        "id": "mtsmxz0ilvt6i",
+        "project": "private",
+        "start": 1788869887362,
+        "end": 1788870060802,
+        "note": ""
+      },
+      {
+        "id": "mtsn1pjduu8g9",
+        "project": "pause",
+        "start": 1788870061705,
+        "end": 1788870349660,
+        "note": ""
+      },
+      {
+        "id": "mtsn7wwv0a9cm",
+        "project": "fusion",
+        "start": 1788870351199,
+        "end": 1788870662681,
+        "note": ""
+      },
+      {
+        "id": "mtsnelve6h7l3",
+        "project": "lonza",
+        "start": 1788870663482,
+        "end": 1788872118750,
+        "note": ""
+      },
+      {
+        "id": "mtsnpvvym6cn2",
+        "project": "bi",
+        "start": 1788871189678,
+        "end": 1788871192469,
+        "note": ""
+      },
+      {
+        "id": "mtsnqh980ugm6",
+        "project": "fusion",
+        "start": 1788871217372,
+        "end": 1788871235680,
+        "note": ""
+      },
+      {
+        "id": "mtso9tfgusfg4",
+        "project": "fusion",
+        "start": 1788872119612,
+        "end": 1788876085303,
+        "note": ""
+      },
+      {
+        "id": "mtsoea8bs7y9s",
+        "project": "private",
+        "start": 1788872328011,
+        "end": 1788872331108,
+        "note": ""
+      },
+      {
+        "id": "mtsof287cvh5m",
+        "project": "private",
+        "start": 1788872364295,
+        "end": 1788872365788,
+        "note": ""
+      },
+      {
+        "id": "mtsqmtt9a1m7k",
+        "project": "lonza",
+        "start": 1788876085869,
+        "end": 1788879348920,
+        "note": ""
+      },
+      {
+        "id": "mtssks1lrbhtk",
+        "project": "bi",
+        "start": 1788879349497,
+        "end": 1788881253935,
+        "note": ""
+      },
+      {
+        "id": "mtssq3g8kwxzw",
+        "project": "fusion",
+        "start": 1788879597560,
+        "end": 1788882605999,
+        "note": ""
+      },
+      {
+        "id": "mtsvl41ivl525",
+        "project": "fusion",
+        "start": 1788884403894,
+        "end": 1788884688686,
+        "note": ""
+      },
+      {
+        "id": "mtswrbxttmfe1",
+        "project": "fusion",
+        "start": 1788886373682,
+        "end": 1788886375124,
+        "note": ""
+      },
+      {
+        "id": "mtswrdcotjysq",
+        "project": "lonza",
+        "start": 1788886375512,
+        "end": 1788886419702,
+        "note": ""
+      }
+    ],
+    "2026-10-21": [
+      {
+        "id": "mvhlt3shu5elp",
+        "project": "lonza",
+        "start": 1792553820000,
+        "end": 1792569215246,
+        "note": ""
+      },
+      {
+        "id": "mvhtffwesp9nm",
+        "project": "biacct",
+        "start": 1792569216830,
+        "end": 1792569987381,
+        "note": ""
+      },
+      {
+        "id": "mvhtvyqful5gt",
+        "project": "bi",
+        "start": 1792569987735,
+        "end": 1792570318615,
+        "note": ""
+      },
+      {
+        "id": "mvhu32cfmujra",
+        "project": "biacct",
+        "start": 1792570319007,
+        "end": 1792570933347,
+        "note": ""
+      },
+      {
+        "id": "mvhug7kyni5va",
+        "project": "bi",
+        "start": 1792570932322,
+        "end": 1792572113248,
+        "note": ""
+      },
+      {
+        "id": "mvhv5j6tb1kkh",
+        "project": "lonza",
+        "start": 1792572113765,
+        "end": 1792572522953,
+        "note": ""
+      },
+      {
+        "id": "mvhveblly52ik",
+        "project": "pause",
+        "start": 1792572523833,
+        "end": 1792573046376,
+        "note": ""
+      },
+      {
+        "id": "mvhvpkdr4gvxf",
+        "project": "private",
+        "start": 1792573048431,
+        "end": 1792578482883,
+        "note": ""
+      },
+      {
+        "id": "mvhyy26y47v5h",
+        "project": "biacct",
+        "start": 1792578483609,
+        "end": 1792579013818,
+        "note": ""
+      },
+      {
+        "id": "mvhz9fr6qjjgu",
+        "project": "lonza",
+        "start": 1792579014402,
+        "end": 1792619460000,
+        "note": ""
+      },
+      {
+        "id": "mvhzsock6lamk",
+        "project": "biacct",
+        "start": 1792579912004,
+        "end": 1792580340000,
+        "note": ""
+      }
+    ],
+    "2026-09-16": [
+      {
+        "id": "mu3t4cxrcnddl",
+        "project": "bi",
+        "start": 1789545390975,
+        "end": 1789546725849,
+        "note": ""
+      },
+      {
+        "id": "mu3t4dydbulz0",
+        "project": "fusion",
+        "start": 1789538400000,
+        "end": 1789544760000,
+        "note": ""
+      },
+      {
+        "id": "mu3tn3qoqjefb",
+        "project": "fusion",
+        "start": 1789546265520,
+        "end": 1789546552642,
+        "note": ""
+      },
+      {
+        "id": "mu3ttd3nugpis",
+        "project": "private",
+        "start": 1789546557587,
+        "end": 1789546560099,
+        "note": ""
+      },
+      {
+        "id": "mu3twzkh2w2w0",
+        "project": "pause",
+        "start": 1789546726673,
+        "end": 1789547008835,
+        "note": ""
+      },
+      {
+        "id": "mu3u44cktd44r",
+        "project": "fusion",
+        "start": 1789547059460,
+        "end": 1789549139616,
+        "note": ""
+      },
+      {
+        "id": "mu3vcowmegx6t",
+        "project": "bi",
+        "start": 1789549138966,
+        "end": 1789551244060,
+        "note": ""
+      },
+      {
+        "id": "mu3wfrlccp5bq",
+        "project": "fusion",
+        "start": 1789550962032,
+        "end": 1789550983088,
+        "note": ""
+      },
+      {
+        "id": "mu3wg82zt4xod",
+        "project": "lonza",
+        "start": 1789550983403,
+        "end": 1789552154566,
+        "note": ""
+      },
+      {
+        "id": "mu3x5bc9y1v4c",
+        "project": "fusion",
+        "start": 1789552154024,
+        "end": 1789552803793,
+        "note": ""
+      },
+      {
+        "id": "mu3x64hunndm0",
+        "project": "private",
+        "start": 1789552191810,
+        "end": 1789552339270,
+        "note": ""
+      },
+      {
+        "id": "mu3xj99k1b2fo",
+        "project": "bi",
+        "start": 1789552804520,
+        "end": 1789552955622,
+        "note": ""
+      },
+      {
+        "id": "mu3xmi9mrtb61",
+        "project": "fusion",
+        "start": 1789552956154,
+        "end": 1789553188902,
+        "note": ""
+      },
+      {
+        "id": "mu3xriczxkrqb",
+        "project": "bi",
+        "start": 1789553189555,
+        "end": 1789553825919,
+        "note": ""
+      },
+      {
+        "id": "mu3y3onrk70ks",
+        "project": "private",
+        "start": 1789553757591,
+        "end": 1789553826683,
+        "note": ""
+      },
+      {
+        "id": "mu3y56hbhssha",
+        "project": "pause",
+        "start": 1789553827343,
+        "end": 1789557973857,
+        "note": ""
+      },
+      {
+        "id": "mu40m2w2jctxx",
+        "project": "fusion",
+        "start": 1789557975074,
+        "end": 1789558498399,
+        "note": ""
+      },
+      {
+        "id": "mu40xb0vtlabo",
+        "project": "private",
+        "start": 1789558498830,
+        "end": 1789558660598,
+        "note": ""
+      },
+      {
+        "id": "mu410sgb1ih9n",
+        "project": "bi",
+        "start": 1789558661387,
+        "end": 1789562488897,
+        "note": ""
+      },
+      {
+        "id": "mu43au7wr8chy",
+        "project": "private",
+        "start": 1789562489468,
+        "end": 1789562490910,
+        "note": ""
+      },
+      {
+        "id": "mu43avsynkomp",
+        "project": "bi",
+        "start": 1789562491522,
+        "end": 1789567204257,
+        "note": ""
+      },
+      {
+        "id": "mu463xlarbgw7",
+        "project": "pause",
+        "start": 1789567206094,
+        "end": 1789567736134,
+        "note": ""
+      },
+      {
+        "id": "mu46fb75qimz3",
+        "project": "fusion",
+        "start": 1789567736945,
+        "end": 1789569553420,
+        "note": ""
+      },
+      {
+        "id": "mu47i9c58ujgn",
+        "project": "bi",
+        "start": 1789569554117,
+        "end": 1789570431760,
+        "note": ""
+      },
+      {
+        "id": "mu4812y151t5i",
+        "project": "fusion",
+        "start": 1789570432297,
+        "end": 1789572302953,
+        "note": ""
+      },
+      {
+        "id": "mu4955ulj685p",
+        "project": "bi",
+        "start": 1789572302301,
+        "end": 1789572781696,
+        "note": ""
+      },
+      {
+        "id": "mu49fgfjjvelj",
+        "project": "fusion",
+        "start": 1789572782575,
+        "end": null,
+        "note": ""
+      }
+    ],
+    "2026-10-30": [
+      {
+        "id": "mvus6e0z9ez3l",
+        "project": "biacct",
+        "start": 1793348040000,
+        "end": 1793353185595,
+        "note": ""
+      },
+      {
+        "id": "mvuwm7van7uzn",
+        "project": "biacct",
+        "start": 1793360632150,
+        "end": 1793363492516,
+        "note": ""
+      }
+    ],
+    "2026-10-01": [
+      {
+        "id": "mup6dxorxauhp",
+        "project": "bi",
+        "start": 1790832600000,
+        "end": 1790837462475,
+        "note": ""
+      },
+      {
+        "id": "mup6e6lcsbx3f",
+        "project": "bi",
+        "start": 1790837474016,
+        "end": 1790838000000,
+        "note": ""
+      },
+      {
+        "id": "mupbfg2o79k6h",
+        "project": "fusion",
+        "start": 1790838000000,
+        "end": 1790848800000,
+        "note": ""
+      },
+      {
+        "id": "mupfbkvge4iut",
+        "project": "pause",
+        "start": 1790848800000,
+        "end": 1790852469780,
+        "note": ""
+      },
+      {
+        "id": "mupfd4xafw5b1",
+        "project": "bi",
+        "start": 1790852541742,
+        "end": 1790859152960,
+        "note": ""
+      },
+      {
+        "id": "mupjauntjxaji",
+        "project": "fusion",
+        "start": 1790859153593,
+        "end": 1790862656730,
+        "note": ""
+      },
+      {
+        "id": "mupldx6j6efca",
+        "project": "bi",
+        "start": 1790862656059,
+        "end": 1790863295232,
+        "note": ""
+      },
+      {
+        "id": "muplrmllxwccj",
+        "project": "lonza",
+        "start": 1790863295529,
+        "end": 1790865236157,
+        "note": ""
+      },
+      {
+        "id": "mupmx7q0fdxhv",
+        "project": "bi",
+        "start": 1790865235800,
+        "end": 1790866661900,
+        "note": ""
+      },
+      {
+        "id": "mupnrsf601olv",
+        "project": "fusion",
+        "start": 1790866662305,
+        "end": 1790871000000,
+        "note": ""
+      },
+      {
+        "id": "mupvb4lso4zk0",
+        "project": "fusion",
+        "start": 1790879321872,
+        "end": 1790883475401,
+        "note": ""
+      }
+    ],
+    "2026-09-17": [
+      {
+        "id": "mu54b8il6ni3f",
+        "project": "fusion",
+        "start": 1789624653789,
+        "end": 1789624968417,
+        "note": ""
+      },
+      {
+        "id": "mu54eujney8jf",
+        "project": "bi",
+        "start": 1789624822307,
+        "end": 1789625199411,
+        "note": ""
+      },
+      {
+        "id": "mu54mwtrzu64j",
+        "project": "private",
+        "start": 1789625198511,
+        "end": 1789625761567,
+        "note": ""
+      },
+      {
+        "id": "mu54z06297sjb",
+        "project": "pause",
+        "start": 1789625762714,
+        "end": 1789625770492,
+        "note": ""
+      },
+      {
+        "id": "mu54z5hrxade2",
+        "project": "bi",
+        "start": 1789625769615,
+        "end": 1789626963120,
+        "note": ""
+      },
+      {
+        "id": "mu55opr083sa4",
+        "project": "fusion",
+        "start": 1789626962268,
+        "end": 1789628315156,
+        "note": ""
+      },
+      {
+        "id": "mu56hq5lg6dcm",
+        "project": "bi",
+        "start": 1789628315816,
+        "end": 1789628724521,
+        "note": ""
+      },
+      {
+        "id": "mu56qi682ui68",
+        "project": "fusion",
+        "start": 1789628725376,
+        "end": 1789628820733,
+        "note": ""
+      },
+      {
+        "id": "mu56sigcuo7o2",
+        "project": "private",
+        "start": 1789628819052,
+        "end": 1789628931749,
+        "note": ""
+      },
+      {
+        "id": "mu56uyk2qcby3",
+        "project": "fusion",
+        "start": 1789628933234,
+        "end": 1789629479036,
+        "note": ""
+      },
+      {
+        "id": "mu576ocdsobyv",
+        "project": "private",
+        "start": 1789629479869,
+        "end": 1789629479869,
+        "note": ""
+      },
+      {
+        "id": "mu57jrbkzj1i6",
+        "project": "fusion",
+        "start": 1789629420000,
+        "end": 1789630734135,
+        "note": ""
+      },
+      {
+        "id": "mu57xl6cojlfn",
+        "project": "pause",
+        "start": 1789630735476,
+        "end": 1789631000525,
+        "note": ""
+      },
+      {
+        "id": "mu583a3dw9kfn",
+        "project": "fusion",
+        "start": 1789631001049,
+        "end": 1789633730680,
+        "note": ""
+      },
+      {
+        "id": "mu59psvdn7qzt",
+        "project": "bi",
+        "start": 1789633731433,
+        "end": 1789637697583,
+        "note": ""
+      },
+      {
+        "id": "mu5c2tp2zmpkl",
+        "project": "fusion",
+        "start": 1789637698262,
+        "end": 1789639377314,
+        "note": ""
+      },
+      {
+        "id": "mu5d2tu3hv7ru",
+        "project": "pause",
+        "start": 1789639378058,
+        "end": 1789642785498,
+        "note": ""
+      },
+      {
+        "id": "mu5f3vhkelbwd",
+        "project": "fusion",
+        "start": 1789642786088,
+        "end": 1789643939970,
+        "note": ""
+      },
+      {
+        "id": "mu5fsmcr33xl1",
+        "project": "private",
+        "start": 1789643940651,
+        "end": 1789645552098,
+        "note": ""
+      },
+      {
+        "id": "mu5gr5ev6wnm6",
+        "project": "fusion",
+        "start": 1789645551655,
+        "end": 1789648567245,
+        "note": ""
+      },
+      {
+        "id": "mu5ijsr4gx8ne",
+        "project": "bi",
+        "start": 1789648567888,
+        "end": 1789651964959,
+        "note": ""
+      },
+      {
+        "id": "mu5kkmkumhkhz",
+        "project": "fusion",
+        "start": 1789651965774,
+        "end": 1789653334608,
+        "note": ""
+      },
+      {
+        "id": "mu5kkoiavsred",
+        "project": "pause",
+        "start": 1789651968274,
+        "end": 1789652404878,
+        "note": ""
+      },
+      {
+        "id": "mu5ldz2n84gop",
+        "project": "private",
+        "start": 1789653334991,
+        "end": 1789653624843,
+        "note": ""
+      },
+      {
+        "id": "mu5lk7i9ldmg3",
+        "project": "bi",
+        "start": 1789653625857,
+        "end": 1789658249971,
+        "note": ""
+      },
+      {
+        "id": "mu5n529yfm6ym",
+        "project": "fusion",
+        "start": 1789656278470,
+        "end": 1789656731668,
+        "note": ""
+      },
+      {
+        "id": "mu5obc0t6fl9t",
+        "project": "lonza",
+        "start": 1789658250653,
+        "end": 1789658849970,
+        "note": ""
+      },
+      {
+        "id": "mu5p9fsz1a8tl",
+        "project": "fusion",
+        "start": 1789659841859,
+        "end": 1789661100000,
+        "note": ""
+      }
+    ],
+    "2026-10-02": [
+      {
+        "id": "muqjrcljl5opg",
+        "project": "lonza",
+        "start": 1790920389511,
+        "end": 1790920935328,
+        "note": ""
+      },
+      {
+        "id": "muqk324aekcb2",
+        "project": "bi",
+        "start": 1790920935802,
+        "end": 1790921970038,
+        "note": ""
+      },
+      {
+        "id": "muqkp8nreoz3y",
+        "project": "fusion",
+        "start": 1790921970711,
+        "end": 1790922314606,
+        "note": ""
+      },
+      {
+        "id": "muqkwma63x1rh",
+        "project": "lonza",
+        "start": 1790922314958,
+        "end": 1790922774828,
+        "note": ""
+      },
+      {
+        "id": "muql6hcgzshg5",
+        "project": "bi",
+        "start": 1790922775120,
+        "end": 1790922776275,
+        "note": ""
+      },
+      {
+        "id": "muql6hykdz0cf",
+        "project": "fusion",
+        "start": 1790922775916,
+        "end": 1790923138158,
+        "note": ""
+      },
+      {
+        "id": "muqle9pmwql4k",
+        "project": "private",
+        "start": 1790923138473,
+        "end": 1790923325805,
+        "note": ""
+      },
+      {
+        "id": "muqlial4ob8x8",
+        "project": "fusion",
+        "start": 1790923326232,
+        "end": 1790928119907,
+        "note": ""
+      },
+      {
+        "id": "muqod1oao8ch2",
+        "project": "lonza",
+        "start": 1790928120250,
+        "end": 1790928237680,
+        "note": ""
+      },
+      {
+        "id": "muqofkn5lpqpj",
+        "project": "fusion",
+        "start": 1790928238145,
+        "end": 1790930734595,
+        "note": ""
+      },
+      {
+        "id": "muqpx2jp67hru",
+        "project": "lonza",
+        "start": 1790930734117,
+        "end": 1790933521007,
+        "note": ""
+      },
+      {
+        "id": "muqrku1m7uum4",
+        "project": "pause",
+        "start": 1790933522458,
+        "end": 1790937256536,
+        "note": ""
+      },
+      {
+        "id": "muqtsvnt83bhi",
+        "project": "fusion",
+        "start": 1790937257032,
+        "end": 1790940678709,
+        "note": ""
+      },
+      {
+        "id": "muqvu8gnmowrj",
+        "project": "pause",
+        "start": 1790940679511,
+        "end": 1790941524181,
+        "note": ""
+      },
+      {
+        "id": "muqwccusou8bo",
+        "project": "bi",
+        "start": 1790941525012,
+        "end": 1790941902597,
+        "note": ""
+      },
+      {
+        "id": "muqwkh0vb4nai",
+        "project": "fusion",
+        "start": 1790941903663,
+        "end": 1790948624778,
+        "note": ""
+      },
+      {
+        "id": "mur0kk2uv3r6p",
+        "project": "bi",
+        "start": 1790948626086,
+        "end": 1790948626086,
+        "note": ""
+      }
+    ],
+    "2026-11-02": [
+      {
+        "id": "mvyvfg7yrwzav",
+        "project": "fusion",
+        "start": 1793600501470,
+        "end": 1793600869628,
+        "note": ""
+      },
+      {
+        "id": "mvyvncoikepp1",
+        "project": "bi",
+        "start": 1793600870130,
+        "end": 1793600979450,
+        "note": ""
+      },
+      {
+        "id": "mvyvppgskoivo",
+        "project": "fusion",
+        "start": 1793600980012,
+        "end": 1793601192088,
+        "note": ""
+      },
+      {
+        "id": "mvyvubaqv4q3z",
+        "project": "pause",
+        "start": 1793601194930,
+        "end": 1793601295813,
+        "note": ""
+      },
+      {
+        "id": "mvyvwhnu2g90l",
+        "project": "bi",
+        "start": 1793601296490,
+        "end": 1793601613104,
+        "note": ""
+      },
+      {
+        "id": "mvyw3axin1r9s",
+        "project": "pause",
+        "start": 1793601614357,
+        "end": 1793602510892,
+        "note": ""
+      },
+      {
+        "id": "mvywmjf9w2weg",
+        "project": "bi",
+        "start": 1793602511829,
+        "end": 1793603066397,
+        "note": ""
+      },
+      {
+        "id": "mvywyflanjbee",
+        "project": "biacct",
+        "start": 1793603066734,
+        "end": 1793603203732,
+        "note": ""
+      },
+      {
+        "id": "mvyx1egfd05fr",
+        "project": "fusion",
+        "start": 1793603205231,
+        "end": 1793603508131,
+        "note": ""
+      },
+      {
+        "id": "mvyx7wjfgiolf",
+        "project": "private",
+        "start": 1793603508603,
+        "end": 1793604072556,
+        "note": ""
+      },
+      {
+        "id": "mvyxjzzfublie",
+        "project": "fusion",
+        "start": 1793604072939,
+        "end": 1793604408628,
+        "note": ""
+      },
+      {
+        "id": "mvyxr7d168kmv",
+        "project": "bi",
+        "start": 1793604409093,
+        "end": 1793604440975,
+        "note": ""
+      },
+      {
+        "id": "mvyxrwc8avyqr",
+        "project": "lonza",
+        "start": 1793604441464,
+        "end": 1793604697194,
+        "note": ""
+      },
+      {
+        "id": "mvyxxdx7irfzs",
+        "project": "fusion",
+        "start": 1793604697531,
+        "end": 1793606463305,
+        "note": ""
+      },
+      {
+        "id": "mvyyz8p9527jt",
+        "project": "lonza",
+        "start": 1793606463693,
+        "end": 1793606694585,
+        "note": ""
+      },
+      {
+        "id": "mvyz476zzdp26",
+        "project": "bi",
+        "start": 1793606695019,
+        "end": 1793607504078,
+        "note": ""
+      },
+      {
+        "id": "mvyzljxcdvvev",
+        "project": "lonza",
+        "start": 1793607504671,
+        "end": 1793608827111,
+        "note": ""
+      },
+      {
+        "id": "mvz0dy3yea5wf",
+        "project": "fusion",
+        "start": 1793608829422,
+        "end": 1793608834775,
+        "note": ""
+      },
+      {
+        "id": "mvz0e2q5t0aru",
+        "project": "biacct",
+        "start": 1793608835405,
+        "end": 1793610094067,
+        "note": ""
+      },
+      {
+        "id": "mvz1526e4v4r4",
+        "project": "bi",
+        "start": 1793610094405,
+        "end": 1793610905769,
+        "note": ""
+      },
+      {
+        "id": "mvz1mgri02kcp",
+        "project": "lonza",
+        "start": 1793610906462,
+        "end": 1793611119924,
+        "note": ""
+      },
+      {
+        "id": "mvz1rr6o795nw",
+        "project": "private",
+        "start": 1793611153247,
+        "end": 1793611287912,
+        "note": ""
+      },
+      {
+        "id": "mvz1umq80wfn6",
+        "project": "biacct",
+        "start": 1793611287440,
+        "end": 1793614210731,
+        "note": ""
+      },
+      {
+        "id": "mvz3lalh3vlg6",
+        "project": "lonza",
+        "start": 1793614211045,
+        "end": 1793614602506,
+        "note": ""
+      },
+      {
+        "id": "mvz3towu5h9yx",
+        "project": "fusion",
+        "start": 1793614602845,
+        "end": 1793618055006,
+        "note": ""
+      },
+      {
+        "id": "mvz5vp3tv7s95",
+        "project": "pause",
+        "start": 1793618055641,
+        "end": 1793624455443,
+        "note": ""
+      },
+      {
+        "id": "mvz9ovo6ze117",
+        "project": "fusion",
+        "start": 1793624456022,
+        "end": 1793625148252,
+        "note": ""
+      },
+      {
+        "id": "mvza3p59oa9zz",
+        "project": "biacct",
+        "start": 1793625147405,
+        "end": 1793626006091,
+        "note": ""
+      },
+      {
+        "id": "mvzaoe4k3klab",
+        "project": "lonza",
+        "start": 1793626112900,
+        "end": 1793626390434,
+        "note": ""
+      },
+      {
+        "id": "mvzauchqg8zm2",
+        "project": "biacct",
+        "start": 1793626390718,
+        "end": 1793627102807,
+        "note": ""
+      },
+      {
+        "id": "mvzb9m6goq33c",
+        "project": "lonza",
+        "start": 1793627103112,
+        "end": 1793627516261,
+        "note": ""
+      },
+      {
+        "id": "mvzbih521mrco",
+        "project": "biacct",
+        "start": 1793627516486,
+        "end": 1793628270445,
+        "note": ""
+      },
+      {
+        "id": "mvzbyn7etpn18",
+        "project": "lonza",
+        "start": 1793628270842,
+        "end": 1793628391931,
+        "note": ""
+      },
+      {
+        "id": "mvzc18w5pvf3p",
+        "project": "biacct",
+        "start": 1793628392261,
+        "end": 1793632806547,
+        "note": ""
+      },
+      {
+        "id": "mvzenvjwvi7bl",
+        "project": "private",
+        "start": 1793632807292,
+        "end": 1793633128849,
+        "note": ""
+      },
+      {
+        "id": "mvzeusesgshwk",
+        "project": "biacct",
+        "start": 1793633129812,
+        "end": 1793636840002,
+        "note": ""
+      },
+      {
+        "id": "mvzh2bkx2ggh1",
+        "project": "lonza",
+        "start": 1793636840480,
+        "end": 1793638259898,
+        "note": ""
+      },
+      {
+        "id": "mvzi36kvxo3xr",
+        "project": "biacct",
+        "start": 1793638560271,
+        "end": 1793638860000,
+        "note": ""
+      }
+    ],
+    "2026-11-09": [
+      {
+        "id": "mw8wbedxbzobn",
+        "project": "fusion",
+        "start": 1794206653845,
+        "end": 1794206847409,
+        "note": ""
+      },
+      {
+        "id": "mw8wfk52dpbyp",
+        "project": "biacct",
+        "start": 1794206847926,
+        "end": 1794207692346,
+        "note": ""
+      },
+      {
+        "id": "mw8wxnzkb8rbv",
+        "project": "bi",
+        "start": 1794207692720,
+        "end": 1794207720133,
+        "note": ""
+      },
+      {
+        "id": "mw8wybhtvd1l8",
+        "project": "fusion",
+        "start": 1794207723185,
+        "end": 1794207840817,
+        "note": ""
+      },
+      {
+        "id": "mw8x0uvnpaspt",
+        "project": "biacct",
+        "start": 1794207841619,
+        "end": 1794209900706,
+        "note": ""
+      },
+      {
+        "id": "mw8y8zx41ocyx",
+        "project": "bi",
+        "start": 1794209901016,
+        "end": 1794211106776,
+        "note": ""
+      },
+      {
+        "id": "mw8yyuifscrzd",
+        "project": "biacct",
+        "start": 1794211107063,
+        "end": 1794211393956,
+        "note": ""
+      },
+      {
+        "id": "mw8z503zo4k4k",
+        "project": "bi",
+        "start": 1794211394255,
+        "end": 1794214177772,
+        "note": ""
+      },
+      {
+        "id": "mw90soc4b6o7h",
+        "project": "lonza",
+        "start": 1794214178356,
+        "end": 1794215898948,
+        "note": ""
+      },
+      {
+        "id": "mw91tk68qzo1k",
+        "project": "biacct",
+        "start": 1794215899232,
+        "end": 1794216966616,
+        "note": ""
+      },
+      {
+        "id": "mw92gg8gyac45",
+        "project": "bi",
+        "start": 1794216967216,
+        "end": 1794218675089,
+        "note": ""
+      },
+      {
+        "id": "mw93h29w3wd7d",
+        "project": "biacct",
+        "start": 1794218675396,
+        "end": 1794222868646,
+        "note": ""
+      },
+      {
+        "id": "mw95yyh3din2u",
+        "project": "pause",
+        "start": 1794222869511,
+        "end": 1794229218671,
+        "note": ""
+      },
+      {
+        "id": "mw99r0zf4ze21",
+        "project": "biacct",
+        "start": 1794229217979,
+        "end": 1794231175393,
+        "note": ""
+      },
+      {
+        "id": "mw9awzn28xrl7",
+        "project": "lonza",
+        "start": 1794231175790,
+        "end": 1794232961445,
+        "note": ""
+      },
+      {
+        "id": "mw9bz9tuyd8yy",
+        "project": "bi",
+        "start": 1794232961922,
+        "end": 1794234052514,
+        "note": ""
+      },
+      {
+        "id": "mw9cmp2pjjnwc",
+        "project": "lonza",
+        "start": 1794234054769,
+        "end": 1794234594883,
+        "note": ""
+      },
+      {
+        "id": "mw9cya26fc8tl",
+        "project": "biacct",
+        "start": 1794234595182,
+        "end": 1794234625815,
+        "note": ""
+      },
+      {
+        "id": "mw9cyy0xpukf9",
+        "project": "lonza",
+        "start": 1794234626241,
+        "end": 1794236681371,
+        "note": ""
+      },
+      {
+        "id": "mw9e70421f1qm",
+        "project": "bi",
+        "start": 1794236681810,
+        "end": 1794240209818,
+        "note": ""
+      },
+      {
+        "id": "mw9gamk4dxl3t",
+        "project": "biacct",
+        "start": 1794240210100,
+        "end": 1794241628517,
+        "note": ""
+      },
+      {
+        "id": "mw9h51bebya0l",
+        "project": "lonza",
+        "start": 1794241628906,
+        "end": 1794242252262,
+        "note": ""
+      }
+    ],
+    "2026-09-22": [
+      {
+        "id": "mue7ws09v7s22",
+        "project": "bi",
+        "start": 1790053200000,
+        "end": 1790106300000,
+        "note": ""
+      }
+    ],
+    "2026-11-06": [
+      {
+        "id": "mw4lfb40svkkb",
+        "project": "lonza",
+        "start": 1793946495744,
+        "end": 1793947370757,
+        "note": ""
+      },
+      {
+        "id": "mw4ly3stp047i",
+        "project": "fusion",
+        "start": 1793947372733,
+        "end": 1793951511787,
+        "note": ""
+      },
+      {
+        "id": "mw4oettyqi47o",
+        "project": "biacct",
+        "start": 1793951512198,
+        "end": 1793952104086,
+        "note": ""
+      },
+      {
+        "id": "mw4orirl1ojmu",
+        "project": "bi",
+        "start": 1793952104385,
+        "end": 1793954491059,
+        "note": ""
+      },
+      {
+        "id": "mw4q6o016dxhl",
+        "project": "biacct",
+        "start": 1793954490625,
+        "end": 1793961080991,
+        "note": ""
+      },
+      {
+        "id": "mw4u3xjnux0q6",
+        "project": "bi",
+        "start": 1793961081491,
+        "end": 1793965277565,
+        "note": ""
+      },
+      {
+        "id": "mw4wlw1xujcwp",
+        "project": "biacct",
+        "start": 1793965278597,
+        "end": 1793965279418,
+        "note": ""
+      },
+      {
+        "id": "mw4wlxbkr126h",
+        "project": "pause",
+        "start": 1793965280240,
+        "end": 1793970607162,
+        "note": ""
+      },
+      {
+        "id": "mw4zs45qmaxk4",
+        "project": "lonza",
+        "start": 1793970607886,
+        "end": 1793971237108,
+        "note": ""
+      },
+      {
+        "id": "mw510hlu62gy0",
+        "project": "biacct",
+        "start": 1793972678176,
+        "end": 1793975095451,
+        "note": ""
+      },
+      {
+        "id": "mw52gb1ie76ef",
+        "project": "bi",
+        "start": 1793975095782,
+        "end": 1793978997467,
+        "note": ""
+      },
+      {
+        "id": "mw54rxu0jzb6b",
+        "project": "biacct",
+        "start": 1793978997768,
+        "end": 1793983500000,
+        "note": ""
+      },
+      {
+        "id": "mw5hvhp738jz1",
+        "project": "biacct",
+        "start": 1793997360000,
+        "end": 1794000998491,
+        "note": ""
+      }
+    ],
+    "2026-11-11": [
+      {
+        "id": "mwbrwrjk4pv98",
+        "project": "lonza",
+        "start": 1794380651120,
+        "end": 1794382950233,
+        "note": ""
+      },
+      {
+        "id": "mwbta0uv9b7oy",
+        "project": "bi",
+        "start": 1794382949335,
+        "end": 1794383411587,
+        "note": ""
+      },
+      {
+        "id": "mwbtjytoi5v0n",
+        "project": "fusion",
+        "start": 1794383413260,
+        "end": 1794385532010,
+        "note": ""
+      },
+      {
+        "id": "mwbutdvjdbohg",
+        "project": "lonza",
+        "start": 1794385532287,
+        "end": 1794386941593,
+        "note": ""
+      },
+      {
+        "id": "mwbvnlihdl7wt",
+        "project": "biacct",
+        "start": 1794386941865,
+        "end": 1794392120537,
+        "note": ""
+      },
+      {
+        "id": "mwbyqlunjofjr",
+        "project": "bi",
+        "start": 1794392121119,
+        "end": 1794394104045,
+        "note": ""
+      },
+      {
+        "id": "mwbzx4nmnjdo2",
+        "project": "biacct",
+        "start": 1794394105042,
+        "end": 1794394382407,
+        "note": ""
+      },
+      {
+        "id": "mwc032yuqsd2l",
+        "project": "lonza",
+        "start": 1794394382790,
+        "end": 1794394800000,
+        "note": ""
+      },
+      {
+        "id": "mwc4sjlafsjcj",
+        "project": "bi",
+        "start": 1794402289198,
+        "end": 1794405600000,
+        "note": ""
+      },
+      {
+        "id": "mwc4sq1c0tmku",
+        "project": "pause",
+        "start": 1794395040000,
+        "end": 1794402298961,
+        "note": ""
+      },
+      {
+        "id": "mwc9na9u1rdwg",
+        "project": "lonza",
+        "start": 1794405600000,
+        "end": 1794409200000,
+        "note": ""
+      },
+      {
+        "id": "mwc9nzy8fexur",
+        "project": "biacct",
+        "start": 1794409200000,
+        "end": 1794410922149,
+        "note": ""
+      },
+      {
+        "id": "mwc9xl42dpwg0",
+        "project": "bi",
+        "start": 1794410922530,
+        "end": 1794411837771,
+        "note": ""
+      },
+      {
+        "id": "mwcah7lmzhbai",
+        "project": "biacct",
+        "start": 1794411838138,
+        "end": 1794416400000,
+        "note": ""
+      },
+      {
+        "id": "mwchdc59cb0o4",
+        "project": "biacct",
+        "start": 1794423414717,
+        "end": 1794426193449,
+        "note": ""
+      },
+      {
+        "id": "mwcj0wx9hmzpu",
+        "project": "fusion",
+        "start": 1794426194349,
+        "end": 1794428111769,
+        "note": ""
+      }
+    ],
+    "2026-10-26": [
+      {
+        "id": "mvow7y3zbx5kx",
+        "project": "fusion",
+        "start": 1792997169262,
+        "end": 1792997399609,
+        "note": ""
+      },
+      {
+        "id": "mvowcw3e8denj",
+        "project": "lonza",
+        "start": 1792997399930,
+        "end": 1792997514500,
+        "note": ""
+      },
+      {
+        "id": "mvowfcsyvjrc9",
+        "project": "bi",
+        "start": 1792997514898,
+        "end": 1792997666032,
+        "note": ""
+      },
+      {
+        "id": "mvowilohilk23",
+        "project": "biacct",
+        "start": 1792997666369,
+        "end": 1792998446585,
+        "note": ""
+      },
+      {
+        "id": "mvowzb9j52vhl",
+        "project": "fusion",
+        "start": 1792998446023,
+        "end": 1793000086142,
+        "note": ""
+      },
+      {
+        "id": "mvoxyhb3meguh",
+        "project": "bi",
+        "start": 1793000086815,
+        "end": 1793001655025,
+        "note": ""
+      },
+      {
+        "id": "mvoyw3s3vj9cw",
+        "project": "lonza",
+        "start": 1793001655587,
+        "end": 1793003313606,
+        "note": ""
+      },
+      {
+        "id": "mvozvng8zm277",
+        "project": "biacct",
+        "start": 1793003314040,
+        "end": 1793003606455,
+        "note": ""
+      },
+      {
+        "id": "mvp01xdpu85y4",
+        "project": "bi",
+        "start": 1793003606845,
+        "end": 1793004973651,
+        "note": ""
+      },
+      {
+        "id": "mvp0v8aqr17t3",
+        "project": "biacct",
+        "start": 1793004974018,
+        "end": 1793007049389,
+        "note": ""
+      },
+      {
+        "id": "mvp23pyjrzrck",
+        "project": "lonza",
+        "start": 1793007049771,
+        "end": 1793007689095,
+        "note": ""
+      },
+      {
+        "id": "mvp2hflggfhyg",
+        "project": "private",
+        "start": 1793007689524,
+        "end": 1793007744707,
+        "note": ""
+      },
+      {
+        "id": "mvp2imie6b64l",
+        "project": "lonza",
+        "start": 1793007745142,
+        "end": 1793009761531,
+        "note": ""
+      },
+      {
+        "id": "mvp3puv8boltq",
+        "project": "fusion",
+        "start": 1793009762180,
+        "end": 1793012392925,
+        "note": ""
+      },
+      {
+        "id": "mvp5a9a8twr73",
+        "project": "pause",
+        "start": 1793012393599,
+        "end": 1793018435630,
+        "note": ""
+      },
+      {
+        "id": "mvp8vs321rxnl",
+        "project": "bi",
+        "start": 1793017020000,
+        "end": 1793020067281,
+        "note": ""
+      },
+      {
+        "id": "mvp9uqn4jwyny",
+        "project": "fusion",
+        "start": 1793020067680,
+        "end": 1793020670230,
+        "note": ""
+      },
+      {
+        "id": "mvpa7o0vr1rfw",
+        "project": "bi",
+        "start": 1793020670815,
+        "end": 1793021404196,
+        "note": ""
+      },
+      {
+        "id": "mvpanfekzkr8q",
+        "project": "private",
+        "start": 1793021406140,
+        "end": 1793021702412,
+        "note": ""
+      },
+      {
+        "id": "mvpatsi1k4r8x",
+        "project": "bi",
+        "start": 1793021703049,
+        "end": 1793022453047,
+        "note": ""
+      },
+      {
+        "id": "mvpb9vi5nftan",
+        "project": "biacct",
+        "start": 1793022453437,
+        "end": 1793023091178,
+        "note": ""
+      },
+      {
+        "id": "mvpbq13slyi55",
+        "project": "bi",
+        "start": 1793023207192,
+        "end": 1793023720110,
+        "note": ""
+      },
+      {
+        "id": "mvpc117z1hu04",
+        "project": "lonza",
+        "start": 1793023720559,
+        "end": 1793024857543,
+        "note": ""
+      },
+      {
+        "id": "mvpcpf9m7klll",
+        "project": "biacct",
+        "start": 1793024858506,
+        "end": 1793024941659,
+        "note": ""
+      },
+      {
+        "id": "mvpcr7osj6305",
+        "project": "lonza",
+        "start": 1793024941996,
+        "end": 1793026853382,
+        "note": ""
+      },
+      {
+        "id": "mvpdw77iru5vz",
+        "project": "biacct",
+        "start": 1793026854270,
+        "end": null,
+        "note": ""
+      }
+    ],
+    "2026-11-10": [
+      {
+        "id": "mwacwhq95euhk",
+        "project": "fusion",
+        "start": 1794294977985,
+        "end": 1794297226712,
+        "note": ""
+      },
+      {
+        "id": "mwae8pccrk4vj",
+        "project": "bi",
+        "start": 1794297227340,
+        "end": 1794297484580,
+        "note": ""
+      },
+      {
+        "id": "mwaee86rc3vj8",
+        "project": "lonza",
+        "start": 1794297485043,
+        "end": 1794297600000,
+        "note": ""
+      },
+      {
+        "id": "mwagmoff4ih3i",
+        "project": "biacct",
+        "start": 1794301238571,
+        "end": 1794303018078,
+        "note": ""
+      },
+      {
+        "id": "mwagmqb59nu6h",
+        "project": "bi",
+        "start": 1794297600000,
+        "end": 1794301242381,
+        "note": ""
+      },
+      {
+        "id": "mwahots70845p",
+        "project": "bi",
+        "start": 1794303018438,
+        "end": 1794303886696,
+        "note": ""
+      },
+      {
+        "id": "mwai7g2blogu6",
+        "project": "biacct",
+        "start": 1794303887123,
+        "end": 1794307098882,
+        "note": ""
+      },
+      {
+        "id": "mwai8xb0p4dih",
+        "project": "private",
+        "start": 1794303956124,
+        "end": 1794304260312,
+        "note": ""
+      },
+      {
+        "id": "mwak4ajpujeo2",
+        "project": "bi",
+        "start": 1794307099237,
+        "end": 1794308100000,
+        "note": ""
+      },
+      {
+        "id": "mwaodrfwq8hrr",
+        "project": "fusion",
+        "start": 1794313800000,
+        "end": 1794316330695,
+        "note": ""
+      },
+      {
+        "id": "mwaodt6b6feif",
+        "project": "pause",
+        "start": 1794308040000,
+        "end": 1794313800000,
+        "note": ""
+      },
+      {
+        "id": "mwapr554jtj0v",
+        "project": "fusion",
+        "start": 1794316563400,
+        "end": 1794317212227,
+        "note": ""
+      },
+      {
+        "id": "mwaq522ivfqyf",
+        "project": "biacct",
+        "start": 1794317212602,
+        "end": 1794317588991,
+        "note": ""
+      },
+      {
+        "id": "mwaqd4qolnnph",
+        "project": "lonza",
+        "start": 1794317589312,
+        "end": 1794319638096,
+        "note": ""
+      },
+      {
+        "id": "mwarl25cbtld5",
+        "project": "fusion",
+        "start": 1794319638816,
+        "end": 1794319664608,
+        "note": ""
+      },
+      {
+        "id": "mwarlmajkp354",
+        "project": "digital",
+        "start": 1794319664923,
+        "end": 1794320995731,
+        "note": ""
+      },
+      {
+        "id": "mwase5h2yg4s0",
+        "project": "lonza",
+        "start": 1794320996150,
+        "end": 1794325794792,
+        "note": ""
+      },
+      {
+        "id": "mwav90fgf3mxs",
+        "project": "fusion",
+        "start": 1794325795180,
+        "end": 1794326537525,
+        "note": ""
+      },
+      {
+        "id": "mwavowqjsxti4",
+        "project": "biacct",
+        "start": 1794326536891,
+        "end": 1794328218095,
+        "note": ""
+      },
+      {
+        "id": "mwawoye69u5tk",
+        "project": "fusion",
+        "start": 1794328218654,
+        "end": 1794330000000,
+        "note": ""
+      }
+    ],
+    "2026-11-13": [
+      {
+        "id": "mwekywh9ew2tv",
+        "project": "biacct",
+        "start": 1794550392045,
+        "end": 1794552385542,
+        "note": ""
+      },
+      {
+        "id": "mwem5mzlpyd49",
+        "project": "fusion",
+        "start": 1794552385953,
+        "end": 1794552505722,
+        "note": ""
+      },
+      {
+        "id": "mwem87mfwsx2d",
+        "project": "lonza",
+        "start": 1794552506007,
+        "end": 1794553171973,
+        "note": ""
+      },
+      {
+        "id": "mwena0rplcl96",
+        "project": "lonza",
+        "start": 1794554270053,
+        "end": 1794554868217,
+        "note": ""
+      },
+      {
+        "id": "mwenmvnxo498w",
+        "project": "fusion",
+        "start": 1794554869965,
+        "end": 1794559238412,
+        "note": ""
+      },
+      {
+        "id": "mweq8ipdm76vy",
+        "project": "biacct",
+        "start": 1794559238833,
+        "end": 1794565606325,
+        "note": ""
+      },
+      {
+        "id": "mweu109lo559u",
+        "project": "fusion",
+        "start": 1794565606809,
+        "end": 1794586915290,
+        "note": ""
+      },
+      {
+        "id": "mwf6prrmtsbjh",
+        "project": "biacct",
+        "start": 1794586917585,
+        "end": 1794604184353,
+        "note": ""
+      }
+    ],
+    "2026-10-05": [
+      {
+        "id": "muuuy73elfixa",
+        "project": "lonza",
+        "start": 1791181049450,
+        "end": 1791181613301,
+        "note": ""
+      },
+      {
+        "id": "muuvaadmfv0qp",
+        "project": "fusion",
+        "start": 1791181613578,
+        "end": 1791183565175,
+        "note": ""
+      },
+      {
+        "id": "muuvpvuq8ki3m",
+        "project": "lonza",
+        "start": 1791182341250,
+        "end": 1791182437116,
+        "note": ""
+      },
+      {
+        "id": "muuwg4xoy8vcp",
+        "project": "lonza",
+        "start": 1791183566076,
+        "end": 1791184496877,
+        "note": ""
+      },
+      {
+        "id": "muuwpxcxe38ao",
+        "project": "fusion",
+        "start": 1791184022817,
+        "end": 1791187096850,
+        "note": ""
+      },
+      {
+        "id": "muuyjsn0r8i04",
+        "project": "pause",
+        "start": 1791187095996,
+        "end": 1791188539841,
+        "note": ""
+      },
+      {
+        "id": "muuzes1j6azlc",
+        "project": "fusion",
+        "start": 1791188541559,
+        "end": 1791191400000,
+        "note": ""
+      },
+      {
+        "id": "muv4znhnydxd9",
+        "project": "pause",
+        "start": 1791191340000,
+        "end": 1791197915614,
+        "note": ""
+      },
+      {
+        "id": "muv50gx80u0rj",
+        "project": "fusion",
+        "start": 1791197951660,
+        "end": 1791203652408,
+        "note": ""
+      },
+      {
+        "id": "muv8eo18eo8s0",
+        "project": "pause",
+        "start": 1791203652908,
+        "end": 1791204394588,
+        "note": ""
+      },
+      {
+        "id": "muv8ukq75o1li",
+        "project": "fusion",
+        "start": 1791204395119,
+        "end": 1791205288560,
+        "note": ""
+      },
+      {
+        "id": "muv9dqidzwbql",
+        "project": "bi",
+        "start": 1791205289076,
+        "end": 1791207334931,
+        "note": ""
+      },
+      {
+        "id": "muvalkphjeqzz",
+        "project": "fusion",
+        "start": 1791207334421,
+        "end": 1791212676609,
+        "note": ""
+      },
+      {
+        "id": "muvds2blteyo5",
+        "project": "bi",
+        "start": 1791212676033,
+        "end": 1791213265686,
+        "note": ""
+      }
+    ],
+    "2026-10-07": [
+      {
+        "id": "muxpdden3isjl",
+        "project": "fusion",
+        "start": 1791353078303,
+        "end": 1791357882672,
+        "note": ""
+      },
+      {
+        "id": "muxs8h2p23xq6",
+        "project": "bi",
+        "start": 1791357888625,
+        "end": 1791358208347,
+        "note": ""
+      },
+      {
+        "id": "muxsfc8kaa5fa",
+        "project": "fusion",
+        "start": 1791358208947,
+        "end": 1791359749914,
+        "note": ""
+      },
+      {
+        "id": "muxtcdnz70y7e",
+        "project": "bi",
+        "start": 1791359750447,
+        "end": 1791359943543,
+        "note": ""
+      },
+      {
+        "id": "muxtgj09s2glp",
+        "project": "fusion",
+        "start": 1791359943993,
+        "end": 1791360343276,
+        "note": ""
+      },
+      {
+        "id": "muxtp3k9sn0ic",
+        "project": "bi",
+        "start": 1791360343881,
+        "end": 1791363460555,
+        "note": ""
+      },
+      {
+        "id": "muxvjwpjkp8ha",
+        "project": "lonza",
+        "start": 1791363460951,
+        "end": 1791365078683,
+        "note": ""
+      },
+      {
+        "id": "muxwil6v7b218",
+        "project": "bi",
+        "start": 1791365078983,
+        "end": 1791366840000,
+        "note": ""
+      },
+      {
+        "id": "muy1aj2fdhyxh",
+        "project": "pause",
+        "start": 1791366900000,
+        "end": 1791372840000,
+        "note": ""
+      },
+      {
+        "id": "muy1c69it3a0w",
+        "project": "private",
+        "start": 1791373177782,
+        "end": 1791373413419,
+        "note": ""
+      },
+      {
+        "id": "muy1h99h7xob4",
+        "project": "fusion",
+        "start": 1791373414949,
+        "end": 1791373924123,
+        "note": ""
+      },
+      {
+        "id": "muy1s6gg7c9fg",
+        "project": "bi",
+        "start": 1791373924528,
+        "end": 1791374328874,
+        "note": ""
+      },
+      {
+        "id": "muy20uw48e8dw",
+        "project": "fusion",
+        "start": 1791374329444,
+        "end": 1791374641131,
+        "note": ""
+      },
+      {
+        "id": "muy27jq62li3i",
+        "project": "lonza",
+        "start": 1791374641566,
+        "end": 1791375031436,
+        "note": ""
+      },
+      {
+        "id": "muy2fx5ci3i4k",
+        "project": "private",
+        "start": 1791375032208,
+        "end": 1791375681721,
+        "note": ""
+      },
+      {
+        "id": "muy2tuod8yw8k",
+        "project": "bi",
+        "start": 1791375682189,
+        "end": 1791376270116,
+        "note": ""
+      },
+      {
+        "id": "muy30mcdoenzf",
+        "project": "private",
+        "start": 1791375997981,
+        "end": 1791377447156,
+        "note": ""
+      },
+      {
+        "id": "muy3vowx99hyo",
+        "project": "fusion",
+        "start": 1791377447649,
+        "end": 1791378292723,
+        "note": ""
+      },
+      {
+        "id": "muy4dtf6tle73",
+        "project": "bi",
+        "start": 1791378293298,
+        "end": 1791378570004,
+        "note": ""
+      },
+      {
+        "id": "muy4jraeiuib5",
+        "project": "private",
+        "start": 1791378570469,
+        "end": 1791378697440,
+        "note": ""
+      },
+      {
+        "id": "muy4mhjbweok4",
+        "project": "fusion",
+        "start": 1791378697799,
+        "end": 1791379795059,
+        "note": ""
+      },
+      {
+        "id": "muy5a0j9sde25",
+        "project": "lonza",
+        "start": 1791379795509,
+        "end": 1791385001123,
+        "note": ""
+      },
+      {
+        "id": "muy8dlk0lpmve",
+        "project": "fusion",
+        "start": 1791385001568,
+        "end": 1791386761219,
+        "note": ""
+      },
+      {
+        "id": "muy9fbrvvpb20",
+        "project": "bi",
+        "start": 1791386761819,
+        "end": 1791389640000,
+        "note": ""
+      },
+      {
+        "id": "muygfhe17f9nv",
+        "project": "lonza",
+        "start": 1791389700000,
+        "end": 1791390900000,
+        "note": ""
+      }
+    ],
+    "2026-10-14": [
+      {
+        "id": "mv7ptypzns0ax",
+        "project": "fusion",
+        "start": 1791954900000,
+        "end": 1791961369523,
+        "note": ""
+      },
+      {
+        "id": "mv7rj4lrczk89",
+        "project": "bi",
+        "start": 1791961367823,
+        "end": 1791961370032,
+        "note": ""
+      },
+      {
+        "id": "mv7rj6pyi0cb2",
+        "project": "bi",
+        "start": 1791961370566,
+        "end": 1791961372628,
+        "note": ""
+      },
+      {
+        "id": "mv7rj7zc3zrmp",
+        "project": "fusion",
+        "start": 1791961372200,
+        "end": 1791964149523,
+        "note": ""
+      },
+      {
+        "id": "mv7t6r68tyr69",
+        "project": "lonza",
+        "start": 1791964149776,
+        "end": 1791964149776,
+        "note": ""
+      },
+      {
+        "id": "mv7tp6eebealf",
+        "project": "fusion",
+        "start": 1791965009318,
+        "end": 1791984397744,
+        "note": ""
+      },
+      {
+        "id": "mv7tp7ehhup6o",
+        "project": "lonza",
+        "start": 1791965010617,
+        "end": 1791968436058,
+        "note": ""
+      },
+      {
+        "id": "mv858qvqpqrp2",
+        "project": "lonza",
+        "start": 1791984398102,
+        "end": 1791985736067,
+        "note": ""
+      },
+      {
+        "id": "mv861etlmi32j",
+        "project": "fusion",
+        "start": 1791985735497,
+        "end": 1791987578581,
+        "note": ""
+      },
+      {
+        "id": "mv874x58xr94b",
+        "project": "lonza",
+        "start": 1791987578828,
+        "end": 1791989331975,
+        "note": ""
+      },
+      {
+        "id": "mv886i8i9z6cm",
+        "project": "fusion",
+        "start": 1791989332434,
+        "end": 1791996340701,
+        "note": ""
+      },
+      {
+        "id": "mv8ccq4kb4pm8",
+        "project": "lonza",
+        "start": 1791996341060,
+        "end": 1791996791061,
+        "note": ""
+      },
+      {
+        "id": "mv8cmd4h205tz",
+        "project": "fusion",
+        "start": 1791996790769,
+        "end": 1792008060000,
+        "note": ""
+      }
+    ],
+    "2026-10-28": [
+      {
+        "id": "mvtz2sgxka2yf",
+        "project": "bi",
+        "start": 1793169180000,
+        "end": 1793215800000,
+        "note": ""
+      },
+      {
+        "id": "mvtz3qsf975vx",
+        "project": "biacct",
+        "start": 1793215800000,
+        "end": 1793219400000,
+        "note": ""
+      },
+      {
+        "id": "mvtz3teiy7x3i",
+        "project": "lonza",
+        "start": 1793219400000,
+        "end": 1793221200000,
+        "note": ""
+      }
+    ],
+    "2026-11-04": [
+      {
+        "id": "mw1ruhfuoba5g",
+        "project": "biacct",
+        "start": 1793772240000,
+        "end": 1793781449507,
+        "note": ""
+      },
+      {
+        "id": "mw1v5tc07okl5",
+        "project": "fusion",
+        "start": 1793781450432,
+        "end": 1793781609684,
+        "note": ""
+      },
+      {
+        "id": "mw1v98tw0gppx",
+        "project": "biacct",
+        "start": 1793781610484,
+        "end": 1793782742012,
+        "note": ""
+      },
+      {
+        "id": "mw1vxi8mdqts9",
+        "project": "bi",
+        "start": 1793782742422,
+        "end": 1793784682519,
+        "note": ""
+      },
+      {
+        "id": "mw1x345epp1jy",
+        "project": "biacct",
+        "start": 1793784683714,
+        "end": 1793786640367,
+        "note": ""
+      },
+      {
+        "id": "mw1y9268aembe",
+        "project": "lonza",
+        "start": 1793786640704,
+        "end": 1793787251020,
+        "note": ""
+      },
+      {
+        "id": "mw248dqlll03a",
+        "project": "fusion",
+        "start": 1793796686732,
+        "end": 1793797162457,
+        "note": ""
+      },
+      {
+        "id": "mw24il3scahty",
+        "project": "biacct",
+        "start": 1793797162840,
+        "end": 1793799971677,
+        "note": ""
+      },
+      {
+        "id": "mw266smcoi1h9",
+        "project": "bi",
+        "start": 1793799971940,
+        "end": 1793802222457,
+        "note": ""
+      },
+      {
+        "id": "mw27j1msp90lb",
+        "project": "private",
+        "start": 1793802223108,
+        "end": 1793802731690,
+        "note": ""
+      },
+      {
+        "id": "mw27tyv3dsj8b",
+        "project": "fusion",
+        "start": 1793802732735,
+        "end": 1793802821961,
+        "note": ""
+      },
+      {
+        "id": "mw27vv0drd6yl",
+        "project": "bi",
+        "start": 1793802821053,
+        "end": 1793805890981,
+        "note": ""
+      },
+      {
+        "id": "mw29pngr92k8y",
+        "project": "biacct",
+        "start": 1793805890571,
+        "end": 1793808054413,
+        "note": ""
+      },
+      {
+        "id": "mw2b01apwhj3s",
+        "project": "lonza",
+        "start": 1793808054673,
+        "end": 1793810942686,
+        "note": ""
+      },
+      {
+        "id": "mw2cpy7upqo2p",
+        "project": "bi",
+        "start": 1793810943354,
+        "end": 1793813138068,
+        "note": ""
+      },
+      {
+        "id": "mw2j0eev2by1b",
+        "project": "fusion",
+        "start": 1793821508599,
+        "end": 1793826731936,
+        "note": ""
+      }
+    ],
+    "2026-09-24": [
+      {
+        "id": "muf3wdb3sbze5",
+        "project": "lonza",
+        "start": 1790228621919,
+        "end": 1790229580660,
+        "note": ""
+      },
+      {
+        "id": "muf4gyex7hyiv",
+        "project": "fusion",
+        "start": 1790229582393,
+        "end": 1790229588678,
+        "note": ""
+      },
+      {
+        "id": "muf4h2ubt76nk",
+        "project": "lonza",
+        "start": 1790229588131,
+        "end": 1790230022172,
+        "note": ""
+      },
+      {
+        "id": "muf4qe1txqfoz",
+        "project": "bi",
+        "start": 1790230022561,
+        "end": 1790232575157,
+        "note": ""
+      },
+      {
+        "id": "muf4x8qtzl1qs",
+        "project": "private",
+        "start": 1790230342277,
+        "end": 1790230451546,
+        "note": ""
+      },
+      {
+        "id": "muf5kfe6x99x4",
+        "project": "lonza",
+        "start": 1790231423982,
+        "end": 1790232502173,
+        "note": ""
+      },
+      {
+        "id": "muf5kfs79r265",
+        "project": "fusion",
+        "start": 1790231424487,
+        "end": 1790232501889,
+        "note": ""
+      },
+      {
+        "id": "muf694plnuq2k",
+        "project": "pause",
+        "start": 1790232576537,
+        "end": 1790232816743,
+        "note": ""
+      },
+      {
+        "id": "muf6ear7a7llm",
+        "project": "bi",
+        "start": 1790232817651,
+        "end": 1790234074906,
+        "note": ""
+      },
+      {
+        "id": "muf71ys1yu9qa",
+        "project": "private",
+        "start": 1790233921873,
+        "end": 1790234046306,
+        "note": ""
+      },
+      {
+        "id": "muf757y07bfrh",
+        "project": "private",
+        "start": 1790234073720,
+        "end": 1790234279100,
+        "note": ""
+      },
+      {
+        "id": "muf79mrrolx2m",
+        "project": "bi",
+        "start": 1790234279559,
+        "end": 1790235751748,
+        "note": ""
+      },
+      {
+        "id": "muf7egnfb8zy0",
+        "project": "private",
+        "start": 1790234504907,
+        "end": 1790234728530,
+        "note": ""
+      },
+      {
+        "id": "muf85715g3xq0",
+        "project": "fusion",
+        "start": 1790235752153,
+        "end": 1790235795706,
+        "note": ""
+      },
+      {
+        "id": "muf8658v0i24c",
+        "project": "lonza",
+        "start": 1790235796495,
+        "end": 1790235826705,
+        "note": ""
+      },
+      {
+        "id": "muf86t1236wsq",
+        "project": "bi",
+        "start": 1790235827318,
+        "end": 1790235848097,
+        "note": ""
+      },
+      {
+        "id": "muf878dl5onic",
+        "project": "lonza",
+        "start": 1790235847209,
+        "end": 1790235848605,
+        "note": ""
+      },
+      {
+        "id": "muf878ph0y7k9",
+        "project": "fusion",
+        "start": 1790235847637,
+        "end": 1790235975169,
+        "note": ""
+      },
+      {
+        "id": "muf89zcwveb2j",
+        "project": "lonza",
+        "start": 1790235975488,
+        "end": 1790236430110,
+        "note": ""
+      },
+      {
+        "id": "muf8jqfbj1w17",
+        "project": "bi",
+        "start": 1790236430471,
+        "end": 1790240029237,
+        "note": ""
+      },
+      {
+        "id": "mufag40lecx2x",
+        "project": "private",
+        "start": 1790239620692,
+        "end": 1790239781419,
+        "note": ""
+      },
+      {
+        "id": "mufaovmeo4jaw",
+        "project": "private",
+        "start": 1790240029718,
+        "end": 1790240344648,
+        "note": ""
+      },
+      {
+        "id": "mufavmzlx7sxf",
+        "project": "bi",
+        "start": 1790240345121,
+        "end": 1790240481332,
+        "note": ""
+      },
+      {
+        "id": "mufayjkhf7bks",
+        "project": "private",
+        "start": 1790240480657,
+        "end": 1790240515691,
+        "note": ""
+      },
+      {
+        "id": "mufazb8xz9lbz",
+        "project": "fusion",
+        "start": 1790240516529,
+        "end": 1790240813839,
+        "note": ""
+      },
+      {
+        "id": "mufb5oy7nakcy",
+        "project": "private",
+        "start": 1790240814223,
+        "end": 1790285220000,
+        "note": ""
+      },
+      {
+        "id": "mufdfxxcgym3q",
+        "project": "pause",
+        "start": 1790244651647,
+        "end": 1790246767246,
+        "note": ""
+      },
+      {
+        "id": "mufepb9qxrbfi",
+        "project": "bi",
+        "start": 1790246768461,
+        "end": 1790247205233,
+        "note": ""
+      },
+      {
+        "id": "mufeypb2kiul7",
+        "project": "private",
+        "start": 1790247206558,
+        "end": 1790247391512,
+        "note": ""
+      },
+      {
+        "id": "muff2o9mbdr94",
+        "project": "fusion",
+        "start": 1790247391834,
+        "end": 1790248745728,
+        "note": ""
+      },
+      {
+        "id": "muffvohyum3w8",
+        "project": "private",
+        "start": 1790248745158,
+        "end": 1790248747523,
+        "note": ""
+      },
+      {
+        "id": "muffvpxve5gll",
+        "project": "bi",
+        "start": 1790248747027,
+        "end": 1790249078126,
+        "note": ""
+      },
+      {
+        "id": "mufg1a2cm3ne4",
+        "project": "private",
+        "start": 1790249006387,
+        "end": 1790249008375,
+        "note": ""
+      },
+      {
+        "id": "mufg2ublqbc4d",
+        "project": "fusion",
+        "start": 1790249079297,
+        "end": 1790254358806,
+        "note": ""
+      },
+      {
+        "id": "mufj80vola67z",
+        "project": "private",
+        "start": 1790254359923,
+        "end": 1790254939064,
+        "note": ""
+      },
+      {
+        "id": "mufjkfzzwxtae",
+        "project": "fusion",
+        "start": 1790254939391,
+        "end": 1790255804384,
+        "note": ""
+      },
+      {
+        "id": "mufjs1hk59rgz",
+        "project": "pause",
+        "start": 1790255293832,
+        "end": 1790255482055,
+        "note": ""
+      },
+      {
+        "id": "mufk2z54x89ji",
+        "project": "lonza",
+        "start": 1790255804008,
+        "end": 1790256583713,
+        "note": ""
+      },
+      {
+        "id": "mufkjoj1oo489",
+        "project": "fusion",
+        "start": 1790256583405,
+        "end": 1790256652925,
+        "note": ""
+      },
+      {
+        "id": "mufkl6jod4i0i",
+        "project": "lonza",
+        "start": 1790256653412,
+        "end": 1790257371018,
+        "note": ""
+      },
+      {
+        "id": "mufl0kz7hqdbb",
+        "project": "private",
+        "start": 1790257371955,
+        "end": 1790257548464,
+        "note": ""
+      },
+      {
+        "id": "mufl4dfltyrn6",
+        "project": "fusion",
+        "start": 1790257548801,
+        "end": 1790258712993,
+        "note": ""
+      },
+      {
+        "id": "mufltc6de40n0",
+        "project": "bi",
+        "start": 1790258713573,
+        "end": 1790260448115,
+        "note": ""
+      },
+      {
+        "id": "mufmuizq6d1i7",
+        "project": "fusion",
+        "start": 1790260448678,
+        "end": 1790260722048,
+        "note": ""
+      },
+      {
+        "id": "mufn0dknswvmq",
+        "project": "lonza",
+        "start": 1790260721591,
+        "end": 1790261055884,
+        "note": ""
+      }
+    ],
+    "2026-10-12": [
+      {
+        "id": "mv4v2lq1r6cgf",
+        "project": "fusion",
+        "start": 1791785916793,
+        "end": 1791785919058,
+        "note": ""
+      },
+      {
+        "id": "mv4v2o1dxebqa",
+        "project": "bi",
+        "start": 1791785919793,
+        "end": 1791786010251,
+        "note": ""
+      },
+      {
+        "id": "mv4v4maxxdj7t",
+        "project": "private",
+        "start": 1791786010857,
+        "end": 1791786325408,
+        "note": ""
+      },
+      {
+        "id": "mv4vbd968b0xb",
+        "project": "fusion",
+        "start": 1791786325722,
+        "end": 1791786545002,
+        "note": ""
+      },
+      {
+        "id": "mv4vg0pet9t9g",
+        "project": "private",
+        "start": 1791786542738,
+        "end": 1791786654405,
+        "note": ""
+      },
+      {
+        "id": "mv4vg2sk0v1rd",
+        "project": "bi",
+        "start": 1791786545444,
+        "end": 1791787297325,
+        "note": ""
+      },
+      {
+        "id": "mv4vw7anv2o7v",
+        "project": "fusion",
+        "start": 1791787297775,
+        "end": 1791787805719,
+        "note": ""
+      },
+      {
+        "id": "mv4w73k4v1zec",
+        "project": "bi",
+        "start": 1791787806148,
+        "end": 1791788290357,
+        "note": ""
+      },
+      {
+        "id": "mv4whhimcnmgi",
+        "project": "lonza",
+        "start": 1791788290798,
+        "end": 1791789298642,
+        "note": ""
+      },
+      {
+        "id": "mv4x33gb6z0lc",
+        "project": "bi",
+        "start": 1791789299003,
+        "end": 1791790463512,
+        "note": ""
+      },
+      {
+        "id": "mv4xs2mppn679",
+        "project": "private",
+        "start": 1791790464337,
+        "end": 1791791284321,
+        "note": ""
+      },
+      {
+        "id": "mv4y4gwoonzj0",
+        "project": "bi",
+        "start": 1791791042712,
+        "end": 1791791662618,
+        "note": ""
+      },
+      {
+        "id": "mv4yhrq680xyr",
+        "project": "private",
+        "start": 1791791663262,
+        "end": 1791795536335,
+        "note": ""
+      },
+      {
+        "id": "mv50swuxkfe4d",
+        "project": "bi",
+        "start": 1791795542361,
+        "end": 1791795870064,
+        "note": ""
+      },
+      {
+        "id": "mv50zxbl4leew",
+        "project": "fusion",
+        "start": 1791795869553,
+        "end": 1791798433901,
+        "note": ""
+      },
+      {
+        "id": "mv52iwm4ul2aj",
+        "project": "pause",
+        "start": 1791798434715,
+        "end": 1791804482754,
+        "note": ""
+      },
+      {
+        "id": "mv564kbduy360",
+        "project": "bi",
+        "start": 1791804484057,
+        "end": 1791805073280,
+        "note": ""
+      },
+      {
+        "id": "mv566x56hcfz8",
+        "project": "private",
+        "start": 1791804593994,
+        "end": 1791804708476,
+        "note": ""
+      },
+      {
+        "id": "mv56h6ld0qnah",
+        "project": "lonza",
+        "start": 1791805072801,
+        "end": 1791805427016,
+        "note": ""
+      },
+      {
+        "id": "mv56os5o4ho35",
+        "project": "fusion",
+        "start": 1791805427340,
+        "end": 1791808138543,
+        "note": ""
+      },
+      {
+        "id": "mv58awliw8uep",
+        "project": "bi",
+        "start": 1791808139142,
+        "end": 1791811782320,
+        "note": ""
+      },
+      {
+        "id": "mv5ah00ddt8fi",
+        "project": "lonza",
+        "start": 1791811782733,
+        "end": 1791814456527,
+        "note": ""
+      },
+      {
+        "id": "mv5c2belvokel",
+        "project": "fusion",
+        "start": 1791814456893,
+        "end": 1791816657589,
+        "note": ""
+      },
+      {
+        "id": "mv5ddhqkusygr",
+        "project": "lonza",
+        "start": 1791816657932,
+        "end": 1791819990309,
+        "note": ""
+      },
+      {
+        "id": "mv5fcwihtxvsq",
+        "project": "fusion",
+        "start": 1791819989657,
+        "end": 1791830976986,
+        "note": ""
+      },
+      {
+        "id": "mv5lzwvv8hat6",
+        "project": "fusion",
+        "start": 1791831140923,
+        "end": null,
+        "note": ""
+      }
+    ],
+    "2026-11-03": [
+      {
+        "id": "mw0buw04b0alr",
+        "project": "fusion",
+        "start": 1793688561796,
+        "end": 1793689272597,
+        "note": ""
+      },
+      {
+        "id": "mw0ca54864p36",
+        "project": "biacct",
+        "start": 1793689273448,
+        "end": 1793689433795,
+        "note": ""
+      },
+      {
+        "id": "mw0cdl0rc9u13",
+        "project": "lonza",
+        "start": 1793689434027,
+        "end": 1793689875489,
+        "note": ""
+      },
+      {
+        "id": "mw0cn21d3u06g",
+        "project": "biacct",
+        "start": 1793689875985,
+        "end": 1793691036268,
+        "note": ""
+      },
+      {
+        "id": "mw0dbx0pvqisp",
+        "project": "bi",
+        "start": 1793691035881,
+        "end": 1793692650263,
+        "note": ""
+      },
+      {
+        "id": "mw0eaiap6xze5",
+        "project": "biacct",
+        "start": 1793692649761,
+        "end": 1793693114449,
+        "note": ""
+      },
+      {
+        "id": "mw0ekh4r8oqos",
+        "project": "bi",
+        "start": 1793693114810,
+        "end": 1793695886097,
+        "note": ""
+      },
+      {
+        "id": "mw0g7vqpcyotx",
+        "project": "biacct",
+        "start": 1793695886449,
+        "end": 1793697101696,
+        "note": ""
+      },
+      {
+        "id": "mw0gxxp54zvii",
+        "project": "bi",
+        "start": 1793697102041,
+        "end": 1793697692079,
+        "note": ""
+      },
+      {
+        "id": "mw0hal6uktfui",
+        "project": "biacct",
+        "start": 1793697692357,
+        "end": 1793703710561,
+        "note": ""
+      },
+      {
+        "id": "mw0kvm888qtqf",
+        "project": "pause",
+        "start": 1793703712328,
+        "end": 1793709524066,
+        "note": ""
+      },
+      {
+        "id": "mw0oc5iw0ec6y",
+        "project": "bi",
+        "start": 1793709522679,
+        "end": 1793709678728,
+        "note": ""
+      },
+      {
+        "id": "mw0ofibbna624",
+        "project": "biacct",
+        "start": 1793709679223,
+        "end": 1793717247964,
+        "note": ""
+      },
+      {
+        "id": "mw0sxqopmdl6c",
+        "project": "bi",
+        "start": 1793717248345,
+        "end": 1793717306758,
+        "note": ""
+      },
+      {
+        "id": "mw0sz0pz7d2rq",
+        "project": "fusion",
+        "start": 1793717308007,
+        "end": 1793718119329,
+        "note": ""
+      },
+      {
+        "id": "mw0tgfhlr6vts",
+        "project": "biacct",
+        "start": 1793718120297,
+        "end": 1793721697077,
+        "note": ""
+      },
+      {
+        "id": "mw0vl3rrqsw17",
+        "project": "fusion",
+        "start": 1793721697623,
+        "end": 1793724201851,
+        "note": ""
+      },
+      {
+        "id": "mw0x2stcdntdi",
+        "project": "biacct",
+        "start": 1793724202848,
+        "end": 1793725716604,
+        "note": ""
+      }
+    ],
+    "2026-09-11": [
+      {
+        "id": "mtwlfbg9rf36i",
+        "project": "fusion",
+        "start": 1789109202105,
+        "end": 1789109962630,
+        "note": ""
+      },
+      {
+        "id": "mtwlslhfxyyf2",
+        "project": "lonza",
+        "start": 1789109821635,
+        "end": 1789109822213,
+        "note": ""
+      },
+      {
+        "id": "mtwlsm6f1g65c",
+        "project": "bi",
+        "start": 1789109822535,
+        "end": 1789109953615,
+        "note": ""
+      },
+      {
+        "id": "mtwlvmmvvglym",
+        "project": "bi",
+        "start": 1789109963095,
+        "end": 1789110104309,
+        "note": ""
+      },
+      {
+        "id": "mtwlyn2kd67hu",
+        "project": "fusion",
+        "start": 1789110103628,
+        "end": 1789110492637,
+        "note": ""
+      },
+      {
+        "id": "mtwm2vylrrty9",
+        "project": "bi",
+        "start": 1789110301773,
+        "end": 1789112193356,
+        "note": ""
+      },
+      {
+        "id": "mtwn7g2519b40",
+        "project": "pause",
+        "start": 1789112194061,
+        "end": 1789112467216,
+        "note": ""
+      },
+      {
+        "id": "mtwndacxf3q7f",
+        "project": "lonza",
+        "start": 1789112466609,
+        "end": 1789112585269,
+        "note": ""
+      },
+      {
+        "id": "mtwnft4q96i9k",
+        "project": "fusion",
+        "start": 1789112584250,
+        "end": 1789112682642,
+        "note": ""
+      },
+      {
+        "id": "mtwnhkbx3rby5",
+        "project": "bi",
+        "start": 1789112666157,
+        "end": 1789112674414,
+        "note": ""
+      },
+      {
+        "id": "mtwnhvyv17moi",
+        "project": "lonza",
+        "start": 1789112681239,
+        "end": 1789114752997,
+        "note": ""
+      },
+      {
+        "id": "mtwoqaywmkt4z",
+        "project": "pause",
+        "start": 1789114753544,
+        "end": 1789114754241,
+        "note": ""
+      },
+      {
+        "id": "mtwoqbpy5t669",
+        "project": "private",
+        "start": 1789114754518,
+        "end": 1789115349111,
+        "note": ""
+      },
+      {
+        "id": "mtwp32t7swtey",
+        "project": "fusion",
+        "start": 1789115349499,
+        "end": 1789115589501,
+        "note": ""
+      },
+      {
+        "id": "mtwp88az5lwol",
+        "project": "lonza",
+        "start": 1789115589899,
+        "end": 1789118267851,
+        "note": ""
+      },
+      {
+        "id": "mtwqtngrx0egp",
+        "project": "private",
+        "start": 1789118268939,
+        "end": 1789119121893,
+        "note": ""
+      },
+      {
+        "id": "mtwrby14dfkvh",
+        "project": "bi",
+        "start": 1789119122440,
+        "end": 1789119627409,
+        "note": ""
+      },
+      {
+        "id": "mtwrms1sr9pry",
+        "project": "fusion",
+        "start": 1789119627904,
+        "end": 1789120250897,
+        "note": ""
+      },
+      {
+        "id": "mtws056yagf14",
+        "project": "bi",
+        "start": 1789120251465,
+        "end": 1789120921575,
+        "note": ""
+      },
+      {
+        "id": "mtwseix1diybk",
+        "project": "pause",
+        "start": 1789120922437,
+        "end": 1789124923195,
+        "note": ""
+      },
+      {
+        "id": "mtwsfvn1jjh5x",
+        "project": "fusion",
+        "start": 1789120985581,
+        "end": 1789120989602,
+        "note": ""
+      },
+      {
+        "id": "mtwusa9kcsa6b",
+        "project": "fusion",
+        "start": 1789124923639,
+        "end": 1789127793203,
+        "note": ""
+      },
+      {
+        "id": "mtwwhsnlzq5pf",
+        "project": "private",
+        "start": 1789127793488,
+        "end": 1789128000000,
+        "note": ""
+      },
+      {
+        "id": "mtwx6ue351w3s",
+        "project": "fusion",
+        "start": 1789128962139,
+        "end": 1789128963504,
+        "note": ""
+      },
+      {
+        "id": "mtwx6vnbqkh82",
+        "project": "lonza",
+        "start": 1789128963767,
+        "end": 1789130850496,
+        "note": ""
+      },
+      {
+        "id": "mtwyc51wikdo6",
+        "project": "fusion",
+        "start": 1789130888851,
+        "end": 1789133674940,
+        "note": ""
+      },
+      {
+        "id": "mtwzzv7svix11",
+        "project": "pause",
+        "start": 1789133675464,
+        "end": 1789134873267,
+        "note": ""
+      },
+      {
+        "id": "mtx0pjr66o2pk",
+        "project": "fusion",
+        "start": 1789134873665,
+        "end": 1789141591360,
+        "note": ""
+      },
+      {
+        "id": "mtxdi3uulay1i",
+        "project": "fusion",
+        "start": 1789151760000,
+        "end": 1789156361478,
+        "note": ""
+      }
+    ],
+    "2026-09-09": [
+      {
+        "id": "mttoxc0edvpww",
+        "project": "fusion",
+        "start": 1788932640000,
+        "end": 1788934037736,
+        "note": ""
+      },
+      {
+        "id": "mttrnojxxneob",
+        "project": "bi",
+        "start": 1788938271502,
+        "end": 1788938281950,
+        "note": ""
+      },
+      {
+        "id": "mttrnx2v2j8uk",
+        "project": "fusion",
+        "start": 1788938282551,
+        "end": 1788938417914,
+        "note": ""
+      },
+      {
+        "id": "mttrqszyankcn",
+        "project": "bi",
+        "start": 1788938417230,
+        "end": 1788938445701,
+        "note": ""
+      },
+      {
+        "id": "mttrrfi7ae3dt",
+        "project": "fusion",
+        "start": 1788938446399,
+        "end": 1788938671106,
+        "note": ""
+      },
+      {
+        "id": "mttrw97t64aeb",
+        "project": "lonza",
+        "start": 1788938671529,
+        "end": 1788938808053,
+        "note": ""
+      },
+      {
+        "id": "mttrz6u6wa1ze",
+        "project": "fusion",
+        "start": 1788938808414,
+        "end": 1788939080146,
+        "note": ""
+      },
+      {
+        "id": "mtts5027evvgv",
+        "project": "bi",
+        "start": 1788939079567,
+        "end": 1788939684896,
+        "note": ""
+      },
+      {
+        "id": "mttsfwz7ixy8x",
+        "project": "fusion",
+        "start": 1788939588787,
+        "end": 1788939589740,
+        "note": ""
+      },
+      {
+        "id": "mttsgl35g129a",
+        "project": "fusion",
+        "start": 1788939620033,
+        "end": 1788940229942,
+        "note": ""
+      },
+      {
+        "id": "mttsi21bew3rk",
+        "project": "bi",
+        "start": 1788939688655,
+        "end": 1788939927249,
+        "note": ""
+      },
+      {
+        "id": "mttspfwj0pmhc",
+        "project": "bi",
+        "start": 1788940033219,
+        "end": 1788941766470,
+        "note": ""
+      },
+      {
+        "id": "mtttqly60ik0k",
+        "project": "pause",
+        "start": 1788941767326,
+        "end": 1788942024198,
+        "note": ""
+      },
+      {
+        "id": "mtttw4ummqfnr",
+        "project": "private",
+        "start": 1788942025102,
+        "end": 1788942090407,
+        "note": ""
+      },
+      {
+        "id": "mttu0sbyttknk",
+        "project": "private",
+        "start": 1788942242158,
+        "end": 1788942288599,
+        "note": ""
+      },
+      {
+        "id": "mttu1szsffap4",
+        "project": "private",
+        "start": 1788942289672,
+        "end": 1788942579099,
+        "note": ""
+      },
+      {
+        "id": "mttu2m68xjgc8",
+        "project": "fusion",
+        "start": 1788942327488,
+        "end": 1788942466662,
+        "note": ""
+      },
+      {
+        "id": "mttu80v2d5x43",
+        "project": "fusion",
+        "start": 1788942579806,
+        "end": 1788943344974,
+        "note": ""
+      },
+      {
+        "id": "mttuo32zb0rx7",
+        "project": "bi",
+        "start": 1788943329179,
+        "end": 1788943375636,
+        "note": ""
+      },
+      {
+        "id": "mttup39boxv8k",
+        "project": "fusion",
+        "start": 1788943376063,
+        "end": 1788943849718,
+        "note": ""
+      },
+      {
+        "id": "mttuz8gcf7a0e",
+        "project": "lonza",
+        "start": 1788943849356,
+        "end": 1788944147867,
+        "note": ""
+      },
+      {
+        "id": "mttv5qxocst8o",
+        "project": "fusion",
+        "start": 1788944153244,
+        "end": 1788944396303,
+        "note": ""
+      },
+      {
+        "id": "mttvayu13je0a",
+        "project": "bi",
+        "start": 1788944396761,
+        "end": 1788944677779,
+        "note": ""
+      },
+      {
+        "id": "mttvgypc80zmc",
+        "project": "private",
+        "start": 1788944676528,
+        "end": 1788945089976,
+        "note": ""
+      },
+      {
+        "id": "mttvpuq3o0p0c",
+        "project": "bi",
+        "start": 1788945091274,
+        "end": 1788945949026,
+        "note": ""
+      },
+      {
+        "id": "mttw8acobpymj",
+        "project": "pause",
+        "start": 1788945951336,
+        "end": 1788946038182,
+        "note": ""
+      },
+      {
+        "id": "mttwa504nug40",
+        "project": "fusion",
+        "start": 1788946037716,
+        "end": 1788946370007,
+        "note": ""
+      },
+      {
+        "id": "mttwh9ntxagny",
+        "project": "lonza",
+        "start": 1788946370345,
+        "end": 1788947082873,
+        "note": ""
+      },
+      {
+        "id": "mttwt8mfaun1i",
+        "project": "fusion",
+        "start": 1788946928871,
+        "end": 1788948107050,
+        "note": ""
+      },
+      {
+        "id": "mttx58j991r1e",
+        "project": "bi",
+        "start": 1788947488629,
+        "end": 1788947509888,
+        "note": ""
+      },
+      {
+        "id": "mttxiipoe53h4",
+        "project": "pause",
+        "start": 1788948108348,
+        "end": 1788951418908,
+        "note": ""
+      },
+      {
+        "id": "mttxy2niwfr0z",
+        "project": "fusion",
+        "start": 1788948834030,
+        "end": 1788948834593,
+        "note": ""
+      },
+      {
+        "id": "mttzhhkgmrl0w",
+        "project": "fusion",
+        "start": 1788951419440,
+        "end": 1788951812782,
+        "note": ""
+      },
+      {
+        "id": "mttzhiz3ezw89",
+        "project": "bi",
+        "start": 1788951421263,
+        "end": 1788951466594,
+        "note": ""
+      },
+      {
+        "id": "mttznfq36doc2",
+        "project": "bi",
+        "start": 1788951696987,
+        "end": 1788952700698,
+        "note": ""
+      },
+      {
+        "id": "mtu07cd1a10ag",
+        "project": "private",
+        "start": 1788952625749,
+        "end": 1788952696432,
+        "note": ""
+      },
+      {
+        "id": "mtu08xjfe66km",
+        "project": "fusion",
+        "start": 1788952699851,
+        "end": 1788952721634,
+        "note": ""
+      },
+      {
+        "id": "mtu09eoy9p68r",
+        "project": "private",
+        "start": 1788952722082,
+        "end": 1788952997046,
+        "note": ""
+      },
+      {
+        "id": "mtu0fbemy6194",
+        "project": "bi",
+        "start": 1788952997758,
+        "end": 1788957765461,
+        "note": ""
+      },
+      {
+        "id": "mtu0fl3mzrcrw",
+        "project": "private",
+        "start": 1788953010322,
+        "end": 1788953082885,
+        "note": ""
+      },
+      {
+        "id": "mtu0hn2zbtgj9",
+        "project": "private",
+        "start": 1788953106203,
+        "end": 1788953279953,
+        "note": ""
+      },
+      {
+        "id": "mtu39ilrxbebw",
+        "project": "private",
+        "start": 1788957765999,
+        "end": 1788958231147,
+        "note": ""
+      },
+      {
+        "id": "mtu3cis6smnz2",
+        "project": "bi",
+        "start": 1788957906197,
+        "end": 1788958752808,
+        "note": ""
+      },
+      {
+        "id": "mtu3t3naelhl8",
+        "project": "private",
+        "start": 1788958679734,
+        "end": 1788958749150,
+        "note": ""
+      },
+      {
+        "id": "mtu3uofzxac6k",
+        "project": "fusion",
+        "start": 1788958753343,
+        "end": 1788958978517,
+        "note": ""
+      },
+      {
+        "id": "mtu3zif5tj7fe",
+        "project": "private",
+        "start": 1788958978816,
+        "end": 1788959263719,
+        "note": ""
+      },
+      {
+        "id": "mtu45mkbj2ly1",
+        "project": "fusion",
+        "start": 1788959264123,
+        "end": 1788959911042,
+        "note": ""
+      },
+      {
+        "id": "mtu4jhck8bgtr",
+        "project": "private",
+        "start": 1788959910548,
+        "end": 1788960564786,
+        "note": ""
+      },
+      {
+        "id": "mtu4xinuat0yx",
+        "project": "bi",
+        "start": 1788960565434,
+        "end": 1788961239758,
+        "note": ""
+      },
+      {
+        "id": "mtu4xkvufnb7p",
+        "project": "private",
+        "start": 1788960568314,
+        "end": 1788960581538,
+        "note": ""
+      },
+      {
+        "id": "mtu5byjnta9g2",
+        "project": "fusion",
+        "start": 1788961239203,
+        "end": 1788961904827,
+        "note": ""
+      },
+      {
+        "id": "mtu5q8jtzkl1e",
+        "project": "bi",
+        "start": 1788961905353,
+        "end": 1788962338045,
+        "note": ""
+      },
+      {
+        "id": "mtu5r16nu8c4g",
+        "project": "pause",
+        "start": 1788961942463,
+        "end": 1788962334118,
+        "note": ""
+      },
+      {
+        "id": "mtu5zixw4u1y9",
+        "project": "fusion",
+        "start": 1788962338723,
+        "end": 1788962933787,
+        "note": ""
+      },
+      {
+        "id": "mtu6c9jmbkeas",
+        "project": "bi",
+        "start": 1788962933074,
+        "end": 1788963870787,
+        "note": ""
+      },
+      {
+        "id": "mtu8v53lf0tvf",
+        "project": "bi",
+        "start": 1788967173009,
+        "end": 1788967242643,
+        "note": ""
+      },
+      {
+        "id": "mtu8wn6so82uu",
+        "project": "fusion",
+        "start": 1788967243108,
+        "end": 1788968212784,
+        "note": ""
+      },
+      {
+        "id": "mtu9hfru7xxje",
+        "project": "bi",
+        "start": 1788968213274,
+        "end": 1788968593742,
+        "note": ""
+      },
+      {
+        "id": "mtu9pjwb3jufa",
+        "project": "fusion",
+        "start": 1788968591867,
+        "end": 1788969287330,
+        "note": ""
+      },
+      {
+        "id": "mtu9po7zsrrfj",
+        "project": "private",
+        "start": 1788968597471,
+        "end": 1788969600000,
+        "note": ""
+      },
+      {
+        "id": "mtud2om0roix7",
+        "project": "fusion",
+        "start": 1788974243352,
+        "end": 1788978540864,
+        "note": ""
+      }
+    ],
+    "2026-10-06": [
+      {
+        "id": "muwa8jlcr84rg",
+        "project": "fusion",
+        "start": 1791267192624,
+        "end": 1791267458029,
+        "note": ""
+      },
+      {
+        "id": "muwae7yp8va26",
+        "project": "private",
+        "start": 1791267457489,
+        "end": 1791267562865,
+        "note": ""
+      },
+      {
+        "id": "muwaebfhllbwd",
+        "project": "bi",
+        "start": 1791267461981,
+        "end": 1791267562055,
+        "note": ""
+      },
+      {
+        "id": "muwaggxqo31ki",
+        "project": "fusion",
+        "start": 1791267562430,
+        "end": 1791267578518,
+        "note": ""
+      },
+      {
+        "id": "muwagt0qyzyjw",
+        "project": "private",
+        "start": 1791267578090,
+        "end": 1791267984716,
+        "note": ""
+      },
+      {
+        "id": "muwagx2nlqlar",
+        "project": "fusion",
+        "start": 1791267583343,
+        "end": 1791267985541,
+        "note": ""
+      },
+      {
+        "id": "muwapizsirlhz",
+        "project": "lonza",
+        "start": 1791267985000,
+        "end": 1791267985976,
+        "note": ""
+      },
+      {
+        "id": "muwapk3epy839",
+        "project": "bi",
+        "start": 1791267986426,
+        "end": 1791279454272,
+        "note": ""
+      },
+      {
+        "id": "muwfr2jzfzn7o",
+        "project": "fusion",
+        "start": 1791276455087,
+        "end": 1791276860242,
+        "note": ""
+      },
+      {
+        "id": "muwhjd6q4isii",
+        "project": "private",
+        "start": 1791279454849,
+        "end": 1791285770150,
+        "note": ""
+      },
+      {
+        "id": "muwlaqktwpu8l",
+        "project": "fusion",
+        "start": 1791285770764,
+        "end": 1791287266192,
+        "note": ""
+      },
+      {
+        "id": "muwm6s1c0mfjb",
+        "project": "bi",
+        "start": 1791287265647,
+        "end": 1791289518405,
+        "note": ""
+      },
+      {
+        "id": "muwnj1t968a3l",
+        "project": "fusion",
+        "start": 1791289517804,
+        "end": 1791289846712,
+        "note": ""
+      },
+      {
+        "id": "muwnq3zyzqsaw",
+        "project": "bi",
+        "start": 1791289847230,
+        "end": 1791295620550,
+        "note": ""
+      },
+      {
+        "id": "muwr5vej0absh",
+        "project": "private",
+        "start": 1791295621434,
+        "end": 1791296731288,
+        "note": ""
+      },
+      {
+        "id": "muwrto5k5rtk4",
+        "project": "bi",
+        "start": 1791296731783,
+        "end": 1791299491596,
+        "note": ""
+      },
+      {
+        "id": "muwtgu1s6aidg",
+        "project": "fusion",
+        "start": 1791299492127,
+        "end": 1791302400000,
+        "note": ""
+      },
+      {
+        "id": "muwtjcp5vf9yq",
+        "project": "lonza",
+        "start": 1791299609609,
+        "end": 1791299625954,
+        "note": ""
+      }
+    ],
+    "2026-10-16": [
+      {
+        "id": "mval86rjzm6cn",
+        "project": "fusion",
+        "start": 1792132178239,
+        "end": 1792132186224,
+        "note": ""
+      },
+      {
+        "id": "mval8dabltbng",
+        "project": "bi",
+        "start": 1792132186691,
+        "end": 1792132834527,
+        "note": ""
+      },
+      {
+        "id": "mvalm8jhvvepi",
+        "project": "fusion",
+        "start": 1792132833725,
+        "end": 1792133980498,
+        "note": ""
+      },
+      {
+        "id": "mvamau44dzgie",
+        "project": "fusion",
+        "start": 1792133981428,
+        "end": 1792144200000,
+        "note": ""
+      },
+      {
+        "id": "mvav9nb5w4bnm",
+        "project": "pause",
+        "start": 1792144200000,
+        "end": 1792148460000,
+        "note": ""
+      },
+      {
+        "id": "mvav9ocn6perm",
+        "project": "fusion",
+        "start": 1792148460000,
+        "end": 1792151302155,
+        "note": ""
+      },
+      {
+        "id": "mvaw8jyza1yfc",
+        "project": "lonza",
+        "start": 1792150671131,
+        "end": 1792152441522,
+        "note": ""
+      },
+      {
+        "id": "mvaxai87t6yuy",
+        "project": "fusion",
+        "start": 1792152441799,
+        "end": 1792153006788,
+        "note": ""
+      },
+      {
+        "id": "mvaxmmtvns4iz",
+        "project": "pause",
+        "start": 1792153007635,
+        "end": 1792154270082,
+        "note": ""
+      },
+      {
+        "id": "mvaydpighx2pg",
+        "project": "fusion",
+        "start": 1792154270824,
+        "end": 1792157086730,
+        "note": ""
+      },
+      {
+        "id": "mvaydq6vzlui1",
+        "project": "pause",
+        "start": 1792154271703,
+        "end": 1792154275593,
+        "note": ""
+      },
+      {
+        "id": "mvb021t8q4mkq",
+        "project": "lonza",
+        "start": 1792157086124,
+        "end": 1792158325661,
+        "note": ""
+      },
+      {
+        "id": "mvb0smixfanhr",
+        "project": "fusion",
+        "start": 1792158326025,
+        "end": 1792161624278,
+        "note": ""
+      },
+      {
+        "id": "mvb2rbuuqnlu5",
+        "project": "lonza",
+        "start": 1792161624774,
+        "end": 1792163351336,
+        "note": ""
+      },
+      {
+        "id": "mvb3scjdyyohf",
+        "project": "fusion",
+        "start": 1792163351928,
+        "end": 1792165500000,
+        "note": ""
+      },
+      {
+        "id": "mvbc86fnn37xs",
+        "project": "fusion",
+        "start": 1792177527443,
+        "end": 1792180526944,
+        "note": ""
+      }
+    ],
+    "2026-09-18": [
+      {
+        "id": "mu6krb35vv4kl",
+        "project": "fusion",
+        "start": 1789710300000,
+        "end": 1789712759761,
+        "note": ""
+      },
+      {
+        "id": "mu6kro6lvgdys",
+        "project": "bi",
+        "start": 1789712760621,
+        "end": 1789712765458,
+        "note": ""
+      },
+      {
+        "id": "mu6krssm4jp7q",
+        "project": "pause",
+        "start": 1789712766598,
+        "end": 1789713052324,
+        "note": ""
+      },
+      {
+        "id": "mu6kxxt1oyz87",
+        "project": "bi",
+        "start": 1789713053029,
+        "end": 1789715243392,
+        "note": ""
+      },
+      {
+        "id": "mu6m8wngeb558",
+        "project": "lonza",
+        "start": 1789715244364,
+        "end": 1789715932831,
+        "note": ""
+      },
+      {
+        "id": "mu6mnod8fv1d0",
+        "project": "fusion",
+        "start": 1789715933468,
+        "end": 1789717540242,
+        "note": ""
+      },
+      {
+        "id": "mu6nm4jvzvo7l",
+        "project": "lonza",
+        "start": 1789717540747,
+        "end": 1789721419340,
+        "note": ""
+      },
+      {
+        "id": "mu6px9yo1buwg",
+        "project": "fusion",
+        "start": 1789721420208,
+        "end": 1789722117792,
+        "note": ""
+      },
+      {
+        "id": "mu6qc8nubqquq",
+        "project": "lonza",
+        "start": 1789722118362,
+        "end": 1789723929955,
+        "note": ""
+      },
+      {
+        "id": "mu6rf3ixtl6z8",
+        "project": "fusion",
+        "start": 1789723931289,
+        "end": 1789726962037,
+        "note": ""
+      },
+      {
+        "id": "mu6t82gb3hid5",
+        "project": "pause",
+        "start": 1789726962539,
+        "end": 1789730111556,
+        "note": ""
+      },
+      {
+        "id": "mu6v3krgbsnqy",
+        "project": "fusion",
+        "start": 1789730112220,
+        "end": 1789733179937,
+        "note": ""
+      },
+      {
+        "id": "mu6wxcckr1yor",
+        "project": "bi",
+        "start": 1789733180612,
+        "end": 1789734645956,
+        "note": ""
+      },
+      {
+        "id": "mu6yhw1j9hllm",
+        "project": "fusion",
+        "start": 1789735818871,
+        "end": 1789741749815,
+        "note": ""
+      },
+      {
+        "id": "mu7210mpz525m",
+        "project": "private",
+        "start": 1789741750129,
+        "end": 1789741830870,
+        "note": ""
+      },
+      {
+        "id": "mu722r8v6lv7a",
+        "project": "lonza",
+        "start": 1789741831279,
+        "end": 1789744978344,
+        "note": ""
+      },
+      {
+        "id": "mu7bszfp690p7",
+        "project": "fusion",
+        "start": 1789758171493,
+        "end": 1789760193772,
+        "note": ""
+      }
+    ],
+    "2026-10-08": [
+      {
+        "id": "muz64x9r3it2y",
+        "project": "lonza",
+        "start": 1791441000000,
+        "end": 1791442210255,
+        "note": ""
+      },
+      {
+        "id": "muz6598lbar9c",
+        "project": "fusion",
+        "start": 1791439200000,
+        "end": 1791441000000,
+        "note": ""
+      },
+      {
+        "id": "muz6fsbs6i93f",
+        "project": "fusion",
+        "start": 1791442210600,
+        "end": 1791442383823,
+        "note": ""
+      },
+      {
+        "id": "muz6jibu02b28",
+        "project": "private",
+        "start": 1791442384266,
+        "end": 1791443102816,
+        "note": ""
+      },
+      {
+        "id": "muz6yx6xok48f",
+        "project": "bi",
+        "start": 1791443103369,
+        "end": 1791446694851,
+        "note": ""
+      },
+      {
+        "id": "muz93vtlg1g4h",
+        "project": "fusion",
+        "start": 1791446694105,
+        "end": 1791451179633,
+        "note": ""
+      },
+      {
+        "id": "muzbs14f9d1f2",
+        "project": "lonza",
+        "start": 1791451179951,
+        "end": 1791452604736,
+        "note": ""
+      },
+      {
+        "id": "muzcmkse747qh",
+        "project": "fusion",
+        "start": 1791452605118,
+        "end": 1791454049159,
+        "note": ""
+      },
+      {
+        "id": "muzdhjead0phe",
+        "project": "pause",
+        "start": 1791454049650,
+        "end": 1791459168895,
+        "note": ""
+      },
+      {
+        "id": "muzgj9st0opwi",
+        "project": "lonza",
+        "start": 1791459169373,
+        "end": 1791459886380,
+        "note": ""
+      },
+      {
+        "id": "muzgyo0abrgkz",
+        "project": "bi",
+        "start": 1791459887625,
+        "end": 1791461643588,
+        "note": ""
+      },
+      {
+        "id": "muzi0b8yg0aot",
+        "project": "fusion",
+        "start": 1791461644018,
+        "end": 1791465380639,
+        "note": ""
+      },
+      {
+        "id": "muzk8f8m47cch",
+        "project": "private",
+        "start": 1791465381670,
+        "end": 1791466936270,
+        "note": ""
+      },
+      {
+        "id": "muzl5r31ucewr",
+        "project": "bi",
+        "start": 1791466936669,
+        "end": 1791466937609,
+        "note": ""
+      },
+      {
+        "id": "muzl5rjc2v6ow",
+        "project": "lonza",
+        "start": 1791466937256,
+        "end": 1791468037417,
+        "note": ""
+      },
+      {
+        "id": "muzltcuiii7zn",
+        "project": "fusion",
+        "start": 1791468037962,
+        "end": 1791473360420,
+        "note": ""
+      },
+      {
+        "id": "muzozg1g3bi43",
+        "project": "lonza",
+        "start": 1791473360884,
+        "end": 1791475920000,
+        "note": ""
+      }
+    ],
+    "2026-11-05": [
+      {
+        "id": "mw3a7qqzxzt46",
+        "project": "lonza",
+        "start": 1793863800000,
+        "end": 1793867429901,
+        "note": ""
+      },
+      {
+        "id": "mw3acnymhpnd2",
+        "project": "biacct",
+        "start": 1793867430478,
+        "end": 1793869485760,
+        "note": ""
+      },
+      {
+        "id": "mw3bkqjk1c7sp",
+        "project": "biacct",
+        "start": 1793869486688,
+        "end": 1793870816689,
+        "note": ""
+      },
+      {
+        "id": "mw3cd981kr828",
+        "project": "biacct",
+        "start": 1793870817265,
+        "end": 1793871037978,
+        "note": ""
+      },
+      {
+        "id": "mw3chz2if9rbw",
+        "project": "bi",
+        "start": 1793871037386,
+        "end": 1793872994793,
+        "note": ""
+      },
+      {
+        "id": "mw3dyp5tx524t",
+        "project": "biacct",
+        "start": 1793873497313,
+        "end": 1793873499159,
+        "note": ""
+      },
+      {
+        "id": "mw3dyquv7ydl5",
+        "project": "fusion",
+        "start": 1793873499511,
+        "end": 1793873752423,
+        "note": ""
+      },
+      {
+        "id": "mw3e469srcmi3",
+        "project": "lonza",
+        "start": 1793873752768,
+        "end": 1793875500000,
+        "note": ""
+      },
+      {
+        "id": "mw3jrthaazxzp",
+        "project": "biacct",
+        "start": 1793875500000,
+        "end": 1793883285956,
+        "note": ""
+      },
+      {
+        "id": "mw3js4irrxe2v",
+        "project": "bi",
+        "start": 1793881468323,
+        "end": 1793883268323,
+        "note": ""
+      },
+      {
+        "id": "mw3jsrqmqudx4",
+        "project": "biacct",
+        "start": 1793883298414,
+        "end": 1793884764081,
+        "note": ""
+      },
+      {
+        "id": "mw3koa6m6omhh",
+        "project": "pause",
+        "start": 1793884768654,
+        "end": 1793885332008,
+        "note": ""
+      },
+      {
+        "id": "mw3l0dioetxmj",
+        "project": "fusion",
+        "start": 1793885332848,
+        "end": 1793886021499,
+        "note": ""
+      },
+      {
+        "id": "mw3lf57puz1s9",
+        "project": "biacct",
+        "start": 1793886021925,
+        "end": 1793892778234,
+        "note": ""
+      },
+      {
+        "id": "mw3pfymmv4eyj",
+        "project": "bi",
+        "start": 1793892778510,
+        "end": 1793893549406,
+        "note": ""
+      },
+      {
+        "id": "mw3pwhngv1ofp",
+        "project": "biacct",
+        "start": 1793893549660,
+        "end": 1793894314940,
+        "note": ""
+      },
+      {
+        "id": "mw3qcwrprazb8",
+        "project": "lonza",
+        "start": 1793894315749,
+        "end": 1793894582212,
+        "note": ""
+      },
+      {
+        "id": "mw3qimsvremc2",
+        "project": "bi",
+        "start": 1793894582767,
+        "end": 1793898130707,
+        "note": ""
+      },
+      {
+        "id": "mw3smop7v5j01",
+        "project": "lonza",
+        "start": 1793898131083,
+        "end": 1793898748548,
+        "note": ""
+      },
+      {
+        "id": "mw3t02ovenb83",
+        "project": "bi",
+        "start": 1793898755743,
+        "end": 1793902320000,
+        "note": ""
+      }
+    ],
+    "2026-09-30": [
+      {
+        "id": "munrdbkatpw4k",
+        "project": "fusion",
+        "start": 1790747040000,
+        "end": 1790751773871,
+        "note": ""
+      },
+      {
+        "id": "munrdcdeldepb",
+        "project": "bi",
+        "start": 1790751774434,
+        "end": 1790753702110,
+        "note": ""
+      },
+      {
+        "id": "munsip9a63ogk",
+        "project": "fusion",
+        "start": 1790753704029,
+        "end": 1790754300547,
+        "note": ""
+      },
+      {
+        "id": "munsvhs2nujsa",
+        "project": "lonza",
+        "start": 1790754300866,
+        "end": 1790756992305,
+        "note": ""
+      },
+      {
+        "id": "munuh9d6rysdc",
+        "project": "bi",
+        "start": 1790756996010,
+        "end": 1790758757237,
+        "note": ""
+      },
+      {
+        "id": "munvizxgzit5o",
+        "project": "fusion",
+        "start": 1790758756708,
+        "end": 1790761680000,
+        "note": ""
+      },
+      {
+        "id": "munzscihptbfs",
+        "project": "pause",
+        "start": 1790761620000,
+        "end": 1790766060000,
+        "note": ""
+      },
+      {
+        "id": "munzvwbzt04g9",
+        "project": "bi",
+        "start": 1790766077039,
+        "end": 1790769891770,
+        "note": ""
+      },
+      {
+        "id": "muo25mro9vsao",
+        "project": "fusion",
+        "start": 1790769890436,
+        "end": 1790772367046,
+        "note": ""
+      },
+      {
+        "id": "muo3n601ujm4f",
+        "project": "bi",
+        "start": 1790772388129,
+        "end": 1790774971783,
+        "note": ""
+      },
+      {
+        "id": "muo56k2bos9dz",
+        "project": "private",
+        "start": 1790774972434,
+        "end": 1790776999459,
+        "note": ""
+      },
+      {
+        "id": "muo6e0racljtp",
+        "project": "bi",
+        "start": 1790777000278,
+        "end": 1790780062750,
+        "note": ""
+      },
+      {
+        "id": "muo87o7dx98l1",
+        "project": "private",
+        "start": 1790780063305,
+        "end": 1790781019294,
+        "note": ""
+      },
+      {
+        "id": "muo8s657nf4gw",
+        "project": "fusion",
+        "start": 1790781019675,
+        "end": 1790781615080,
+        "note": ""
+      },
+      {
+        "id": "muo94wgmr7gn1",
+        "project": "lonza",
+        "start": 1790781613653,
+        "end": 1790783965225,
+        "note": ""
+      },
+      {
+        "id": "muoajbdf81zch",
+        "project": "bi",
+        "start": 1790783965779,
+        "end": 1790799600000,
+        "note": ""
+      }
+    ],
+    "2026-10-20": [
+      {
+        "id": "mvgajlp4kvb8b",
+        "project": "fusion",
+        "start": 1792476120000,
+        "end": 1792477405479,
+        "note": ""
+      },
+      {
+        "id": "mvgajn555vn2y",
+        "project": "bi",
+        "start": 1792477033961,
+        "end": 1792477034456,
+        "note": ""
+      },
+      {
+        "id": "mvgarm953d329",
+        "project": "bi",
+        "start": 1792477406057,
+        "end": 1792477860041,
+        "note": ""
+      },
+      {
+        "id": "mvgbzqrryp1sm",
+        "project": "bi",
+        "start": 1792479464775,
+        "end": 1792490357532,
+        "note": ""
+      },
+      {
+        "id": "mvggnb608j9dj",
+        "project": "fusion",
+        "start": 1792487282760,
+        "end": 1792489874085,
+        "note": ""
+      },
+      {
+        "id": "mvgih77bk19ty",
+        "project": "lonza",
+        "start": 1792490356919,
+        "end": 1792490803634,
+        "note": ""
+      },
+      {
+        "id": "mvgiqshic1n1s",
+        "project": "pause",
+        "start": 1792490804406,
+        "end": 1792493486925,
+        "note": ""
+      },
+      {
+        "id": "mvgmi2o10vjsh",
+        "project": "fusion",
+        "start": 1792497116158,
+        "end": 1792497521045,
+        "note": ""
+      },
+      {
+        "id": "mvgmqrzxp3ox3",
+        "project": "biacct",
+        "start": 1792497522237,
+        "end": 1792498979953,
+        "note": ""
+      },
+      {
+        "id": "mvgnm0ac3au0f",
+        "project": "private",
+        "start": 1792498979316,
+        "end": 1792499409516,
+        "note": ""
+      },
+      {
+        "id": "mvgnv8sqpp3px",
+        "project": "lonza",
+        "start": 1792499410250,
+        "end": 1792500949294,
+        "note": ""
+      },
+      {
+        "id": "mvgos8lq7j317",
+        "project": "fusion",
+        "start": 1792500949646,
+        "end": 1792500990117,
+        "note": ""
+      },
+      {
+        "id": "mvgot428wm9us",
+        "project": "lonza",
+        "start": 1792500990416,
+        "end": 1792501210471,
+        "note": ""
+      },
+      {
+        "id": "mvgoxu3t1ajxo",
+        "project": "biacct",
+        "start": 1792501210793,
+        "end": 1792501277095,
+        "note": ""
+      },
+      {
+        "id": "mvgoz8x7l8yth",
+        "project": "bi",
+        "start": 1792501276651,
+        "end": 1792502031874,
+        "note": ""
+      },
+      {
+        "id": "mvgpfga39ej15",
+        "project": "fusion",
+        "start": 1792502032683,
+        "end": 1792503330245,
+        "note": ""
+      },
+      {
+        "id": "mvgq7a5fm9pua",
+        "project": "bi",
+        "start": 1792503331107,
+        "end": 1792504167393,
+        "note": ""
+      },
+      {
+        "id": "mvgtxg1kjw3nz",
+        "project": "bi",
+        "start": 1792509590648,
+        "end": 1792509631270,
+        "note": ""
+      },
+      {
+        "id": "mvgtybztxknh6",
+        "project": "fusion",
+        "start": 1792509632057,
+        "end": 1792509907051,
+        "note": ""
+      },
+      {
+        "id": "mvgu48n1knoc8",
+        "project": "biacct",
+        "start": 1792509907644,
+        "end": 1792509957283,
+        "note": ""
+      }
+    ],
+    "2026-10-23": [
+      {
+        "id": "mvkm002jxe2t7",
+        "project": "biacct",
+        "start": 1792738137691,
+        "end": 1792745651247,
+        "note": ""
+      },
+      {
+        "id": "mvkqh1x2tllmh",
+        "project": "biacct",
+        "start": 1792745651702,
+        "end": 1792745652722,
+        "note": ""
+      },
+      {
+        "id": "mvkqh3av2lh79",
+        "project": "fusion",
+        "start": 1792745653495,
+        "end": 1792753505931,
+        "note": ""
+      },
+      {
+        "id": "mvkv5elrvjxhn",
+        "project": "lonza",
+        "start": 1792753506351,
+        "end": 1792766310117,
+        "note": ""
+      },
+      {
+        "id": "mvl2ruj8xevum",
+        "project": "fusion",
+        "start": 1792766310740,
+        "end": 1792792799999,
+        "note": ""
+      }
+    ],
+    "2026-10-19": [
+      {
+        "id": "mveunm7yescfl",
+        "project": "lonza",
+        "start": 1792389879358,
+        "end": 1792390532011,
+        "note": ""
+      },
+      {
+        "id": "mvev1mf0vkiyf",
+        "project": "fusion",
+        "start": 1792390532796,
+        "end": 1792390671830,
+        "note": ""
+      },
+      {
+        "id": "mvev4m2uoi483",
+        "project": "bi",
+        "start": 1792390672326,
+        "end": 1792390835483,
+        "note": ""
+      },
+      {
+        "id": "mvev84gajut0l",
+        "project": "lonza",
+        "start": 1792390836106,
+        "end": 1792391314185,
+        "note": ""
+      },
+      {
+        "id": "mvevidyc8jezv",
+        "project": "pause",
+        "start": 1792391314980,
+        "end": 1792391409570,
+        "note": ""
+      },
+      {
+        "id": "mvevkfn9csboy",
+        "project": "lonza",
+        "start": 1792391410485,
+        "end": 1792393992765,
+        "note": ""
+      },
+      {
+        "id": "mvex3sp2l8r86",
+        "project": "fusion",
+        "start": 1792393993478,
+        "end": 1792395653037,
+        "note": ""
+      },
+      {
+        "id": "mvey3di45ar7l",
+        "project": "lonza",
+        "start": 1792395653403,
+        "end": 1792396057328,
+        "note": ""
+      },
+      {
+        "id": "mveyc1hpy6y5q",
+        "project": "fusion",
+        "start": 1792396057741,
+        "end": 1792397371833,
+        "note": ""
+      },
+      {
+        "id": "mvez47rx1f42z",
+        "project": "lonza",
+        "start": 1792397372253,
+        "end": 1792397403611,
+        "note": ""
+      },
+      {
+        "id": "mvez4w8d6ujiq",
+        "project": "fusion",
+        "start": 1792397403949,
+        "end": 1792398126870,
+        "note": ""
+      },
+      {
+        "id": "mvezkecbdrd6d",
+        "project": "private",
+        "start": 1792398127259,
+        "end": 1792398375845,
+        "note": ""
+      },
+      {
+        "id": "mvezrkleq66yp",
+        "project": "bi",
+        "start": 1792398461954,
+        "end": 1792399855043,
+        "note": ""
+      },
+      {
+        "id": "mvf0lf4rkeec9",
+        "project": "fusion",
+        "start": 1792399854555,
+        "end": 1792403460000,
+        "note": ""
+      },
+      {
+        "id": "mvf71cvi6qodm",
+        "project": "pause",
+        "start": 1792403460000,
+        "end": 1792410600000,
+        "note": ""
+      },
+      {
+        "id": "mvf753vm64mk7",
+        "project": "fusion",
+        "start": 1792410850786,
+        "end": 1792424367195,
+        "note": ""
+      },
+      {
+        "id": "mvfbxq22ffwop",
+        "project": "bi",
+        "start": 1792418904362,
+        "end": 1792419113095,
+        "note": ""
+      },
+      {
+        "id": "mvff97akk881h",
+        "project": "fusion",
+        "start": 1792424478764,
+        "end": 1792425763850,
+        "note": ""
+      }
+    ],
+    "2026-09-10": [
+      {
+        "id": "mtv4ae8uzzq3q",
+        "project": "fusion",
+        "start": 1789019952798,
+        "end": 1789020028583,
+        "note": ""
+      },
+      {
+        "id": "mtv4bxtu5e566",
+        "project": "bi",
+        "start": 1789020024834,
+        "end": 1789020261341,
+        "note": ""
+      },
+      {
+        "id": "mtv4h0w20e3yj",
+        "project": "fusion",
+        "start": 1789020262082,
+        "end": 1789020582293,
+        "note": ""
+      },
+      {
+        "id": "mtv4nvgxea65u",
+        "project": "bi",
+        "start": 1789020581649,
+        "end": 1789020699024,
+        "note": ""
+      },
+      {
+        "id": "mtv4qdkbiqz5f",
+        "project": "fusion",
+        "start": 1789020698411,
+        "end": 1789020970019,
+        "note": ""
+      },
+      {
+        "id": "mtv4w7qtfmrnu",
+        "project": "bi",
+        "start": 1789020970805,
+        "end": 1789020983992,
+        "note": ""
+      },
+      {
+        "id": "mtv4wioltz2sw",
+        "project": "fusion",
+        "start": 1789020984981,
+        "end": 1789021463710,
+        "note": ""
+      },
+      {
+        "id": "mtv56sfike9qn",
+        "project": "bi",
+        "start": 1789021464174,
+        "end": 1789021552548,
+        "note": ""
+      },
+      {
+        "id": "mtv58p53o6f1n",
+        "project": "pause",
+        "start": 1789021553223,
+        "end": 1789021881594,
+        "note": ""
+      },
+      {
+        "id": "mtv5fr2ws4q7s",
+        "project": "fusion",
+        "start": 1789021882328,
+        "end": 1789021884936,
+        "note": ""
+      },
+      {
+        "id": "mtv5ftlwan7vk",
+        "project": "lonza",
+        "start": 1789021885604,
+        "end": 1789023710312,
+        "note": ""
+      },
+      {
+        "id": "mtv623cssxtdg",
+        "project": "bi",
+        "start": 1789022924668,
+        "end": 1789022951608,
+        "note": ""
+      },
+      {
+        "id": "mtv6iy3v2w4vt",
+        "project": "private",
+        "start": 1789023711019,
+        "end": 1789023965911,
+        "note": ""
+      },
+      {
+        "id": "mtv6of0ia1k4q",
+        "project": "fusion",
+        "start": 1789023966210,
+        "end": 1789024040416,
+        "note": ""
+      },
+      {
+        "id": "mtv6p66h55kvc",
+        "project": "bi",
+        "start": 1789024001417,
+        "end": 1789024003254,
+        "note": ""
+      },
+      {
+        "id": "mtv6pzsjugfed",
+        "project": "private",
+        "start": 1789024039795,
+        "end": 1789024131776,
+        "note": ""
+      },
+      {
+        "id": "mtv6rza31htaq",
+        "project": "private",
+        "start": 1789024132443,
+        "end": 1789024498588,
+        "note": ""
+      },
+      {
+        "id": "mtv6v8k0ps9w5",
+        "project": "fusion",
+        "start": 1789024284432,
+        "end": 1789024288729,
+        "note": ""
+      },
+      {
+        "id": "mtv6vb421gjn3",
+        "project": "bi",
+        "start": 1789024287746,
+        "end": 1789024288180,
+        "note": ""
+      },
+      {
+        "id": "mtv6zt8n5r8e0",
+        "project": "fusion",
+        "start": 1789024497863,
+        "end": 1789024607776,
+        "note": ""
+      },
+      {
+        "id": "mtv72344n7ek1",
+        "project": "private",
+        "start": 1789024603972,
+        "end": 1789024623336,
+        "note": ""
+      },
+      {
+        "id": "mtv726n3ydx1q",
+        "project": "bi",
+        "start": 1789024608543,
+        "end": 1789024621239,
+        "note": ""
+      },
+      {
+        "id": "mtv72h9ruclp0",
+        "project": "fusion",
+        "start": 1789024622319,
+        "end": 1789024762314,
+        "note": ""
+      },
+      {
+        "id": "mtv75htila9v4",
+        "project": "private",
+        "start": 1789024762998,
+        "end": 1789024883269,
+        "note": ""
+      },
+      {
+        "id": "mtv78317fkk23",
+        "project": "bi",
+        "start": 1789024883803,
+        "end": 1789030701221,
+        "note": ""
+      },
+      {
+        "id": "mtv78bb4lqheo",
+        "project": "pause",
+        "start": 1789024894528,
+        "end": 1789025027728,
+        "note": ""
+      },
+      {
+        "id": "mtv80ngskz7aj",
+        "project": "private",
+        "start": 1789026216652,
+        "end": 1789026221002,
+        "note": ""
+      },
+      {
+        "id": "mtv86l7of7u77",
+        "project": "private",
+        "start": 1789026493667,
+        "end": 1789026937769,
+        "note": ""
+      },
+      {
+        "id": "mtv8pnvjr8xla",
+        "project": "private",
+        "start": 1789027383582,
+        "end": 1789027384010,
+        "note": ""
+      },
+      {
+        "id": "mtv8u7nh89s8w",
+        "project": "private",
+        "start": 1789027595837,
+        "end": 1789027596159,
+        "note": ""
+      },
+      {
+        "id": "mtvaosdebcqfz",
+        "project": "fusion",
+        "start": 1789030701985,
+        "end": 1789031325749,
+        "note": ""
+      },
+      {
+        "id": "mtvb263z8ghox",
+        "project": "bi",
+        "start": 1789031326319,
+        "end": 1789032197367,
+        "note": ""
+      },
+      {
+        "id": "mtvbkus0klfo7",
+        "project": "private",
+        "start": 1789032198096,
+        "end": 1789032199032,
+        "note": ""
+      },
+      {
+        "id": "mtvbkv4a3nmkt",
+        "project": "fusion",
+        "start": 1789032198538,
+        "end": 1789032248579,
+        "note": ""
+      },
+      {
+        "id": "mtvblyoal8zdq",
+        "project": "bi",
+        "start": 1789032249802,
+        "end": 1789033246880,
+        "note": ""
+      },
+      {
+        "id": "mtvbz5m1fi498",
+        "project": "private",
+        "start": 1789032865321,
+        "end": 1789032904276,
+        "note": ""
+      },
+      {
+        "id": "mtvc71jd3ash9",
+        "project": "private",
+        "start": 1789033233289,
+        "end": 1789033341359,
+        "note": ""
+      },
+      {
+        "id": "mtvc9d9sox1bp",
+        "project": "bi",
+        "start": 1789033341808,
+        "end": 1789033353308,
+        "note": ""
+      },
+      {
+        "id": "mtvc9mlmua6ny",
+        "project": "fusion",
+        "start": 1789033353898,
+        "end": 1789033616410,
+        "note": ""
+      },
+      {
+        "id": "mtvcfa74nq5x0",
+        "project": "pause",
+        "start": 1789033617760,
+        "end": 1789037634778,
+        "note": ""
+      },
+      {
+        "id": "mtveter6ss4wn",
+        "project": "fusion",
+        "start": 1789037636082,
+        "end": 1789037781794,
+        "note": ""
+      },
+      {
+        "id": "mtvewipmsxw2b",
+        "project": "bi",
+        "start": 1789037781178,
+        "end": 1789037792871,
+        "note": ""
+      },
+      {
+        "id": "mtvewselj3uvb",
+        "project": "fusion",
+        "start": 1789037793741,
+        "end": 1789037998022,
+        "note": ""
+      },
+      {
+        "id": "mtvf16kgtgt6h",
+        "project": "bi",
+        "start": 1789037998720,
+        "end": 1789044706021,
+        "note": ""
+      },
+      {
+        "id": "mtvfkukr6z306",
+        "project": "fusion",
+        "start": 1789038916299,
+        "end": 1789039333301,
+        "note": ""
+      },
+      {
+        "id": "mtvftstfhb59u",
+        "project": "private",
+        "start": 1789039333922,
+        "end": 1789039333922,
+        "note": ""
+      },
+      {
+        "id": "mtvg6i87b8nau",
+        "project": "fusion",
+        "start": 1789039926727,
+        "end": 1789040025436,
+        "note": ""
+      },
+      {
+        "id": "mtvg8msu8z9xv",
+        "project": "private",
+        "start": 1789040025966,
+        "end": 1789041523588,
+        "note": ""
+      },
+      {
+        "id": "mtvh4pinkspof",
+        "project": "fusion",
+        "start": 1789041522478,
+        "end": 1789041749547,
+        "note": ""
+      },
+      {
+        "id": "mtvin9zbp43xq",
+        "project": "private",
+        "start": 1789044068418,
+        "end": 1789044747782,
+        "note": ""
+      },
+      {
+        "id": "mtvj0z9h6lorn",
+        "project": "fusion",
+        "start": 1789044707717,
+        "end": 1789045807290,
+        "note": ""
+      },
+      {
+        "id": "mtvjoko09rdw5",
+        "project": "private",
+        "start": 1789045808543,
+        "end": 1789045942465,
+        "note": ""
+      },
+      {
+        "id": "mtvjrgg26oipm",
+        "project": "fusion",
+        "start": 1789045943042,
+        "end": 1789045953723,
+        "note": ""
+      },
+      {
+        "id": "mtvjrp8qgrz2q",
+        "project": "bi",
+        "start": 1789045954442,
+        "end": 1789045970785,
+        "note": ""
+      },
+      {
+        "id": "mtvjs2e9lkpxw",
+        "project": "fusion",
+        "start": 1789045971489,
+        "end": 1789046160421,
+        "note": ""
+      },
+      {
+        "id": "mtvjw2ntmlvwn",
+        "project": "private",
+        "start": 1789046158457,
+        "end": 1789046320654,
+        "note": ""
+      },
+      {
+        "id": "mtvjzjj9z8tir",
+        "project": "fusion",
+        "start": 1789046320293,
+        "end": 1789048234329,
+        "note": ""
+      },
+      {
+        "id": "mtvjzlhalcwss",
+        "project": "private",
+        "start": 1789046322813,
+        "end": 1789046400349,
+        "note": ""
+      },
+      {
+        "id": "mtvl4kn4wf5qi",
+        "project": "lonza",
+        "start": 1789048234622,
+        "end": 1789048796836,
+        "note": ""
+      },
+      {
+        "id": "mtvlgkhg81vk5",
+        "project": "fusion",
+        "start": 1789048794292,
+        "end": 1789048797218,
+        "note": ""
+      },
+      {
+        "id": "mtvlglxlkr6ma",
+        "project": "bi",
+        "start": 1789048796169,
+        "end": 1789050112209,
+        "note": ""
+      },
+      {
+        "id": "mtvlxfv0yqsh5",
+        "project": "lonza",
+        "start": 1789049581452,
+        "end": 1789050112600,
+        "note": ""
+      },
+      {
+        "id": "mtvm9shmt1kmm",
+        "project": "fusion",
+        "start": 1789050157690,
+        "end": 1789050373987,
+        "note": ""
+      },
+      {
+        "id": "mtvmee5k1125p",
+        "project": "lonza",
+        "start": 1789050372391,
+        "end": 1789050373396,
+        "note": ""
+      },
+      {
+        "id": "mtvmeelbok9qs",
+        "project": "bi",
+        "start": 1789050372959,
+        "end": 1789053055300,
+        "note": ""
+      },
+      {
+        "id": "mtvmp2ptee1wq",
+        "project": "lonza",
+        "start": 1789050870785,
+        "end": 1789051328041,
+        "note": ""
+      },
+      {
+        "id": "mtvnzwp8m51o0",
+        "project": "fusion",
+        "start": 1789053055818,
+        "end": 1789053057970,
+        "note": ""
+      },
+      {
+        "id": "mtvnzykqh3j17",
+        "project": "lonza",
+        "start": 1789053058250,
+        "end": 1789054076824,
+        "note": ""
+      },
+      {
+        "id": "mtvolszu3vven",
+        "project": "private",
+        "start": 1789054077450,
+        "end": 1789055375172,
+        "note": ""
+      }
+    ],
+    "2026-11-12": [
+      {
+        "id": "mwd7y5f0tszqh",
+        "project": "bi",
+        "start": 1794464100000,
+        "end": 1794468600000,
+        "note": ""
+      },
+      {
+        "id": "mwda56lt725do",
+        "project": "digital",
+        "start": 1794468600000,
+        "end": 1794471743985,
+        "note": ""
+      },
+      {
+        "id": "mwda5lo23wfxg",
+        "project": "bi",
+        "start": 1794471762674,
+        "end": 1794472824270,
+        "note": ""
+      },
+      {
+        "id": "mwdasbmuvl43u",
+        "project": "biacct",
+        "start": 1794472822758,
+        "end": 1794474034078,
+        "note": ""
+      },
+      {
+        "id": "mwdbiak35fhi5",
+        "project": "bi",
+        "start": 1794474034419,
+        "end": 1794481053089,
+        "note": ""
+      },
+      {
+        "id": "mwdjixcvrkcg2",
+        "project": "bi",
+        "start": 1794485280000,
+        "end": 1794491225529,
+        "note": ""
+      },
+      {
+        "id": "mwdlqriukcqcd",
+        "project": "biacct",
+        "start": 1794491225814,
+        "end": 1794496555866,
+        "note": ""
+      },
+      {
+        "id": "mwdox0hsdzai8",
+        "project": "bi",
+        "start": 1794496556224,
+        "end": 1794497400000,
+        "note": ""
+      },
+      {
+        "id": "mwdsdvgg98doq",
+        "project": "digital",
+        "start": 1794497400000,
+        "end": 1794501000000,
+        "note": ""
+      },
+      {
+        "id": "mwdsekrhkssws",
+        "project": "bi",
+        "start": 1794501000000,
+        "end": null,
+        "note": ""
+      }
+    ],
+    "2026-10-15": [
+      {
+        "id": "mv948kbblzrye",
+        "project": "fusion",
+        "start": 1792043176151,
+        "end": 1792044093950,
+        "note": ""
+      },
+      {
+        "id": "mv94s8qhl0f5b",
+        "project": "lonza",
+        "start": 1792044094265,
+        "end": 1792045207184,
+        "note": ""
+      },
+      {
+        "id": "mv95g3q3rm9ff",
+        "project": "fusion",
+        "start": 1792045207515,
+        "end": 1792046279875,
+        "note": ""
+      },
+      {
+        "id": "mv9632coki5bg",
+        "project": "lonza",
+        "start": 1792046278824,
+        "end": 1792046360596,
+        "note": ""
+      },
+      {
+        "id": "mv964togb6uf9",
+        "project": "fusion",
+        "start": 1792046360896,
+        "end": 1792046881224,
+        "note": ""
+      },
+      {
+        "id": "mv96fzeya9xi5",
+        "project": "lonza",
+        "start": 1792046881546,
+        "end": 1792047921172,
+        "note": ""
+      },
+      {
+        "id": "mv9729u7b5w9e",
+        "project": "fusion",
+        "start": 1792047921487,
+        "end": 1792047928252,
+        "note": ""
+      },
+      {
+        "id": "mv972fend6e1a",
+        "project": "bi",
+        "start": 1792047928703,
+        "end": 1792048781857,
+        "note": ""
+      },
+      {
+        "id": "mv97jxomv3vkq",
+        "project": "fusion",
+        "start": 1792048745542,
+        "end": 1792051346866,
+        "note": ""
+      },
+      {
+        "id": "mv993pavxpcsc",
+        "project": "bi",
+        "start": 1792051347413,
+        "end": 1792054800000,
+        "note": ""
+      },
+      {
+        "id": "mv9mf30v0pi69",
+        "project": "lonza",
+        "start": 1792073713422,
+        "end": 1792074660000,
+        "note": ""
+      },
+      {
+        "id": "mv9mf6re9svms",
+        "project": "private",
+        "start": 1792073718266,
+        "end": 1792073718817,
+        "note": ""
+      },
+      {
+        "id": "mv9mf7gnce4j8",
+        "project": "fusion",
+        "start": 1792054800000,
+        "end": 1792073700000,
+        "note": ""
+      },
+      {
+        "id": "mv9vks491nmgj",
+        "project": "fusion",
+        "start": 1792074720000,
+        "end": 1792080900000,
+        "note": ""
+      },
+      {
+        "id": "mv9vz7149xhzk",
+        "project": "fusion",
+        "start": 1792089768280,
+        "end": 1792089769796,
+        "note": ""
+      },
+      {
+        "id": "mv9vz8fzy34wy",
+        "project": "lonza",
+        "start": 1792089770111,
+        "end": 1792090616065,
+        "note": ""
+      },
+      {
+        "id": "mv9whdfo4c5pg",
+        "project": "fusion",
+        "start": 1792090616388,
+        "end": 1792091752363,
+        "note": ""
+      }
+    ],
+    "2026-10-29": [
+      {
+        "id": "mvtz7lczb77pi",
+        "project": "biacct",
+        "start": 1793255400000,
+        "end": 1793277060000,
+        "note": ""
+      },
+      {
+        "id": "mvtz8c9jaa0mp",
+        "project": "bi",
+        "start": 1793277000000,
+        "end": 1793295000000,
+        "note": ""
+      },
+      {
+        "id": "mvtz9utj4qo2d",
+        "project": "biacct",
+        "start": 1793304628039,
+        "end": 1793307505601,
+        "note": ""
+      }
+    ],
+    "2026-09-23": [
+      {
+        "id": "mudoi3agsbwva",
+        "project": "bi",
+        "start": 1790142295336,
+        "end": 1790142564536,
+        "note": ""
+      },
+      {
+        "id": "mudoifvdbuxcz",
+        "project": "private",
+        "start": 1790142311641,
+        "end": 1790142562864,
+        "note": ""
+      },
+      {
+        "id": "mudonue5939l5",
+        "project": "fusion",
+        "start": 1790142563741,
+        "end": 1790142738479,
+        "note": ""
+      },
+      {
+        "id": "mudornnw82rwc",
+        "project": "bi",
+        "start": 1790142741644,
+        "end": 1790143138975,
+        "note": ""
+      },
+      {
+        "id": "mudp036hlyzwz",
+        "project": "private",
+        "start": 1790143135001,
+        "end": 1790143158760,
+        "note": ""
+      },
+      {
+        "id": "mudp0fxmttcn6",
+        "project": "bi",
+        "start": 1790143151530,
+        "end": 1790143156481,
+        "note": ""
+      },
+      {
+        "id": "mudp0kcffy3ve",
+        "project": "fusion",
+        "start": 1790143157247,
+        "end": 1790143939966,
+        "note": ""
+      },
+      {
+        "id": "mudpaqd1blvbw",
+        "project": "private",
+        "start": 1790143631605,
+        "end": 1790143633822,
+        "note": ""
+      },
+      {
+        "id": "mudphcjjysx9z",
+        "project": "lonza",
+        "start": 1790143940287,
+        "end": 1790144330997,
+        "note": ""
+      },
+      {
+        "id": "mudpnhp64d4h9",
+        "project": "private",
+        "start": 1790144226906,
+        "end": 1790144227626,
+        "note": ""
+      },
+      {
+        "id": "mudppqeop8wwq",
+        "project": "fusion",
+        "start": 1790144331504,
+        "end": 1790145245879,
+        "note": ""
+      },
+      {
+        "id": "mudpr7lljgyaa",
+        "project": "private",
+        "start": 1790144400441,
+        "end": 1790144480665,
+        "note": ""
+      },
+      {
+        "id": "mudq9cannssqc",
+        "project": "bi",
+        "start": 1790145246335,
+        "end": 1790147336926,
+        "note": ""
+      },
+      {
+        "id": "mudqqdd5y5ajk",
+        "project": "private",
+        "start": 1790146040873,
+        "end": 1790147336037,
+        "note": ""
+      },
+      {
+        "id": "mudri51iahluh",
+        "project": "fusion",
+        "start": 1790147336454,
+        "end": 1790148135823,
+        "note": ""
+      },
+      {
+        "id": "mudri72gr942r",
+        "project": "private",
+        "start": 1790147339080,
+        "end": 1790148904451,
+        "note": ""
+      },
+      {
+        "id": "mudrzaca4uur3",
+        "project": "bi",
+        "start": 1790148136474,
+        "end": 1790151936336,
+        "note": ""
+      },
+      {
+        "id": "mudsn5e9wkdt8",
+        "project": "private",
+        "start": 1790149249809,
+        "end": 1790149268803,
+        "note": ""
+      },
+      {
+        "id": "mudtz6g431h72",
+        "project": "fusion",
+        "start": 1790151490660,
+        "end": 1790151574951,
+        "note": ""
+      },
+      {
+        "id": "mudu8qob71u9h",
+        "project": "fusion",
+        "start": 1790151936778,
+        "end": 1790155159483,
+        "note": ""
+      },
+      {
+        "id": "mudw5tqdd37fu",
+        "project": "pause",
+        "start": 1790155160005,
+        "end": 1790155592169,
+        "note": ""
+      },
+      {
+        "id": "mudwf2rbx9lj4",
+        "project": "fusion",
+        "start": 1790155591607,
+        "end": 1790155593654,
+        "note": ""
+      },
+      {
+        "id": "mudwf3xltiyxh",
+        "project": "private",
+        "start": 1790155593129,
+        "end": 1790155688651,
+        "note": ""
+      },
+      {
+        "id": "mudwh58fugchl",
+        "project": "bi",
+        "start": 1790155688127,
+        "end": 1790155775473,
+        "note": ""
+      },
+      {
+        "id": "mudwix2k4q89n",
+        "project": "fusion",
+        "start": 1790155770860,
+        "end": 1790157080707,
+        "note": ""
+      },
+      {
+        "id": "mudxb03wefqgs",
+        "project": "bi",
+        "start": 1790157081164,
+        "end": 1790157090622,
+        "note": ""
+      },
+      {
+        "id": "mudxb7viy4ucs",
+        "project": "fusion",
+        "start": 1790157091230,
+        "end": 1790157325968,
+        "note": ""
+      },
+      {
+        "id": "mudxg99lwt7o8",
+        "project": "private",
+        "start": 1790157326312,
+        "end": 1790158140296,
+        "note": ""
+      },
+      {
+        "id": "mudxxps198t6w",
+        "project": "pause",
+        "start": 1790158140864,
+        "end": 1790164340773,
+        "note": ""
+      },
+      {
+        "id": "mue1mm77nrkco",
+        "project": "fusion",
+        "start": 1790164341475,
+        "end": 1790164378456,
+        "note": ""
+      },
+      {
+        "id": "mue1negw1erya",
+        "project": "lonza",
+        "start": 1790164378112,
+        "end": 1790164456597,
+        "note": ""
+      },
+      {
+        "id": "mue1p3apxwu4n",
+        "project": "fusion",
+        "start": 1790164456945,
+        "end": 1790164908446,
+        "note": ""
+      },
+      {
+        "id": "mue1ys1xqvy8j",
+        "project": "bi",
+        "start": 1790164908933,
+        "end": 1790166603455,
+        "note": ""
+      },
+      {
+        "id": "mue2z4128h6qi",
+        "project": "fusion",
+        "start": 1790166604070,
+        "end": 1790166703679,
+        "note": ""
+      },
+      {
+        "id": "mue3195qrox99",
+        "project": "bi",
+        "start": 1790166704030,
+        "end": 1790167614328,
+        "note": ""
+      },
+      {
+        "id": "mue3ks4fhb937",
+        "project": "fusion",
+        "start": 1790167615071,
+        "end": 1790171166312,
+        "note": ""
+      },
+      {
+        "id": "mue5owmaog7po",
+        "project": "lonza",
+        "start": 1790171166754,
+        "end": 1790174017697,
+        "note": ""
+      },
+      {
+        "id": "mue7dz554drkk",
+        "project": "private",
+        "start": 1790174016041,
+        "end": 1790174363289,
+        "note": ""
+      },
+      {
+        "id": "mue7vkgypa8w9",
+        "project": "private",
+        "start": 1790174836833,
+        "end": 1790174850611,
+        "note": ""
+      },
+      {
+        "id": "mue7vvvz6sc5x",
+        "project": "bi",
+        "start": 1790174851631,
+        "end": 1790175030238,
+        "note": ""
+      },
+      {
+        "id": "mue7zou9v0pjk",
+        "project": "private",
+        "start": 1790175029121,
+        "end": 1790175488549,
+        "note": ""
+      },
+      {
+        "id": "mue7zrezvzusr",
+        "project": "bi",
+        "start": 1790175032459,
+        "end": 1790175648018,
+        "note": ""
+      },
+      {
+        "id": "mue8cxxysxwvq",
+        "project": "fusion",
+        "start": 1790175647446,
+        "end": 1790176455520,
+        "note": ""
+      },
+      {
+        "id": "mue8u9ts7v6uw",
+        "project": "bi",
+        "start": 1790176456000,
+        "end": 1790177045610,
+        "note": ""
+      },
+      {
+        "id": "mue96x8j5uc7b",
+        "project": "fusion",
+        "start": 1790177046211,
+        "end": 1790177169596,
+        "note": ""
+      },
+      {
+        "id": "mue99kuwolgn7",
+        "project": "bi",
+        "start": 1790177170136,
+        "end": 1790177619340,
+        "note": ""
+      },
+      {
+        "id": "mue9j7zqufhys",
+        "project": "private",
+        "start": 1790177620022,
+        "end": 1790177852015,
+        "note": ""
+      },
+      {
+        "id": "mueg27w5dd3be",
+        "project": "fusion",
+        "start": 1790188584053,
+        "end": null,
+        "note": ""
+      }
+    ],
+    "2026-10-09": [
+      {
+        "id": "mv0jzbevie6dc",
+        "project": "lonza",
+        "start": 1791525422983,
+        "end": 1791526276917,
+        "note": ""
+      },
+      {
+        "id": "mv0khkkzukrmr",
+        "project": "private",
+        "start": 1791526274675,
+        "end": 1791526277750,
+        "note": ""
+      },
+      {
+        "id": "mv0khne8j7gwy",
+        "project": "bi",
+        "start": 1791526278320,
+        "end": 1791527640000,
+        "note": ""
+      },
+      {
+        "id": "mv0lvyi0we0km",
+        "project": "fusion",
+        "start": 1791528625512,
+        "end": 1791530148304,
+        "note": ""
+      },
+      {
+        "id": "mv0lwb50je2vf",
+        "project": "pause",
+        "start": 1791528641892,
+        "end": 1791528642724,
+        "note": ""
+      },
+      {
+        "id": "mv0mslpkkz28j",
+        "project": "lonza",
+        "start": 1791530148584,
+        "end": 1791531296018,
+        "note": ""
+      },
+      {
+        "id": "mv0nh7syx6tc3",
+        "project": "private",
+        "start": 1791531296962,
+        "end": 1791531585049,
+        "note": ""
+      },
+      {
+        "id": "mv0nndmii7my1",
+        "project": "fusion",
+        "start": 1791531584442,
+        "end": 1791533124241,
+        "note": ""
+      },
+      {
+        "id": "mv0okebxsgs83",
+        "project": "lonza",
+        "start": 1791533125005,
+        "end": 1791534021343,
+        "note": ""
+      },
+      {
+        "id": "mv0p3m9gx27lr",
+        "project": "fusion",
+        "start": 1791534021748,
+        "end": 1791534582567,
+        "note": ""
+      },
+      {
+        "id": "mv0pfnalrv37w",
+        "project": "lonza",
+        "start": 1791534582957,
+        "end": 1791536628707,
+        "note": ""
+      },
+      {
+        "id": "mv0yaw8iztild",
+        "project": "pause",
+        "start": 1791543720000,
+        "end": 1791549478203,
+        "note": ""
+      },
+      {
+        "id": "mv0ybljveg471",
+        "project": "fusion",
+        "start": 1791549510619,
+        "end": 1791564000000,
+        "note": ""
+      }
+    ],
+    "2026-09-25": [
+      {
+        "id": "mugjz4jo3bdi6",
+        "project": "lonza",
+        "start": 1790316090564,
+        "end": 1790316360000,
+        "note": ""
+      },
+      {
+        "id": "mugjz84zi70hf",
+        "project": "fusion",
+        "start": 1790315760000,
+        "end": 1790316099405,
+        "note": ""
+      },
+      {
+        "id": "mugjzf9cbiw06",
+        "project": "lonza",
+        "start": 1790316104448,
+        "end": 1790316124508,
+        "note": ""
+      },
+      {
+        "id": "mugkeiven9w53",
+        "project": "lonza",
+        "start": 1790316808970,
+        "end": 1790317280491,
+        "note": ""
+      },
+      {
+        "id": "mugkon7wy93l4",
+        "project": "fusion",
+        "start": 1790317281164,
+        "end": 1790317303703,
+        "note": ""
+      },
+      {
+        "id": "mugkp4twu7hj6",
+        "project": "private",
+        "start": 1790317303988,
+        "end": 1790317496021,
+        "note": ""
+      },
+      {
+        "id": "mugktb9m7731l",
+        "project": "fusion",
+        "start": 1790317498954,
+        "end": 1790317533447,
+        "note": ""
+      },
+      {
+        "id": "mugku27gbwn2t",
+        "project": "lonza",
+        "start": 1790317533868,
+        "end": 1790317725966,
+        "note": ""
+      },
+      {
+        "id": "mugn4l77brn8p",
+        "project": "bi",
+        "start": 1790321384275,
+        "end": 1790321406339,
+        "note": ""
+      },
+      {
+        "id": "mugn52m99pqf2",
+        "project": "lonza",
+        "start": 1790321406849,
+        "end": 1790321472820,
+        "note": ""
+      },
+      {
+        "id": "mugn6iyw6d2n2",
+        "project": "private",
+        "start": 1790321474696,
+        "end": 1790322285292,
+        "note": ""
+      },
+      {
+        "id": "mugnnwo020wy7",
+        "project": "fusion",
+        "start": 1790322285600,
+        "end": 1790322412076,
+        "note": ""
+      },
+      {
+        "id": "mugnqm0121ud3",
+        "project": "private",
+        "start": 1790322411745,
+        "end": 1790322659526,
+        "note": ""
+      },
+      {
+        "id": "mugnvwq70p0hj",
+        "project": "fusion",
+        "start": 1790322658927,
+        "end": 1790323411273,
+        "note": ""
+      },
+      {
+        "id": "mugoc1npq4otk",
+        "project": "bi",
+        "start": 1790323411813,
+        "end": 1790324060302,
+        "note": ""
+      },
+      {
+        "id": "mugopyi39qapn",
+        "project": "fusion",
+        "start": 1790324060907,
+        "end": 1790324215769,
+        "note": ""
+      },
+      {
+        "id": "mugot9dxt1hkg",
+        "project": "bi",
+        "start": 1790324214981,
+        "end": 1790324404359,
+        "note": ""
+      },
+      {
+        "id": "mugoxc88om373",
+        "project": "fusion",
+        "start": 1790324405288,
+        "end": 1790324627668,
+        "note": ""
+      },
+      {
+        "id": "mugoy8d442itz",
+        "project": "private",
+        "start": 1790324446936,
+        "end": 1790324627339,
+        "note": ""
+      },
+      {
+        "id": "mugp2492t2msf",
+        "project": "bi",
+        "start": 1790324628230,
+        "end": 1790327044207,
+        "note": ""
+      },
+      {
+        "id": "mugqhwqap9zsm",
+        "project": "lonza",
+        "start": 1790327044593,
+        "end": 1790327505042,
+        "note": ""
+      },
+      {
+        "id": "mugqrsaxla5lr",
+        "project": "fusion",
+        "start": 1790327505417,
+        "end": 1790327540089,
+        "note": ""
+      },
+      {
+        "id": "mugqsjb06pvlz",
+        "project": "lonza",
+        "start": 1790327540412,
+        "end": 1790328480846,
+        "note": ""
+      },
+      {
+        "id": "mugrcp7rwtn9x",
+        "project": "bi",
+        "start": 1790328481190,
+        "end": 1790328539218,
+        "note": ""
+      },
+      {
+        "id": "mugrcq7lraxtj",
+        "project": "lonza",
+        "start": 1790328482481,
+        "end": 1790330286124,
+        "note": ""
+      },
+      {
+        "id": "mugsfdaugcu7x",
+        "project": "fusion",
+        "start": 1790330285334,
+        "end": 1790330935913,
+        "note": ""
+      },
+      {
+        "id": "mugstbkvysdc1",
+        "project": "lonza",
+        "start": 1790330936287,
+        "end": 1790332355364,
+        "note": ""
+      },
+      {
+        "id": "mugtnq99dh2w4",
+        "project": "fusion",
+        "start": 1790332354989,
+        "end": 1790332720792,
+        "note": ""
+      },
+      {
+        "id": "mugtvl93cnwo3",
+        "project": "pause",
+        "start": 1790332721751,
+        "end": 1790334884947,
+        "note": ""
+      },
+      {
+        "id": "mugv5yuymwjla",
+        "project": "fusion",
+        "start": 1790334885562,
+        "end": 1790339252024,
+        "note": ""
+      },
+      {
+        "id": "mugwllzfftzxd",
+        "project": "private",
+        "start": 1790337294982,
+        "end": 1790337507999,
+        "note": ""
+      },
+      {
+        "id": "mugxrkaikubw0",
+        "project": "private",
+        "start": 1790339252345,
+        "end": 1790339675676,
+        "note": ""
+      },
+      {
+        "id": "mugy0np60sicc",
+        "project": "fusion",
+        "start": 1790339676666,
+        "end": 1790343999841,
+        "note": ""
+      },
+      {
+        "id": "muh0lbrknkb6g",
+        "project": "private",
+        "start": 1790344000208,
+        "end": 1790344909517,
+        "note": ""
+      },
+      {
+        "id": "muh14trgq2vcz",
+        "project": "bi",
+        "start": 1790344909996,
+        "end": 1790349981384,
+        "note": ""
+      },
+      {
+        "id": "muh45jr37g942",
+        "project": "fusion",
+        "start": 1790349982526,
+        "end": 1790352360000,
+        "note": ""
+      },
+      {
+        "id": "muhbgfzuhg6b1",
+        "project": "fusion",
+        "start": 1790361240000,
+        "end": 1790362248186,
+        "note": ""
+      },
+      {
+        "id": "muhbgr4gg2o1z",
+        "project": "fusion",
+        "start": 1790362262608,
+        "end": 1790366272811,
+        "note": ""
+      }
+    ],
+    "2026-09-07": [
+      {
+        "id": "mtqvnljd6av23",
+        "project": "private",
+        "start": 1788763587529,
+        "end": 1788764425545,
+        "note": ""
+      },
+      {
+        "id": "mtqvqkebm2f6f",
+        "project": "bi",
+        "start": 1788763726020,
+        "end": 1788763748211,
+        "note": ""
+      },
+      {
+        "id": "mtqvrktzqeazq",
+        "project": "bi",
+        "start": 1788763773240,
+        "end": 1788763961607,
+        "note": ""
+      },
+      {
+        "id": "mtqw5e7g0purl",
+        "project": "bi",
+        "start": 1788764417836,
+        "end": 1788764443531,
+        "note": ""
+      },
+      {
+        "id": "mtqw5yurl5hv5",
+        "project": "pause",
+        "start": 1788764444595,
+        "end": 1788764653530,
+        "note": ""
+      },
+      {
+        "id": "mtqwai2tglgnc",
+        "project": "private",
+        "start": 1788764656133,
+        "end": 1788764957005,
+        "note": ""
+      },
+      {
+        "id": "mtqwasewmhpxz",
+        "project": "bi",
+        "start": 1788764669528,
+        "end": 1788764679601,
+        "note": ""
+      },
+      {
+        "id": "mtqwb0mytyg06",
+        "project": "fusion",
+        "start": 1788764680186,
+        "end": 1788765282188,
+        "note": ""
+      },
+      {
+        "id": "mtqwh21w5p9l5",
+        "project": "bi",
+        "start": 1788764961956,
+        "end": 1788764971076,
+        "note": ""
+      },
+      {
+        "id": "mtqwk65zc7lhm",
+        "project": "private",
+        "start": 1788765107255,
+        "end": 1788765108718,
+        "note": ""
+      },
+      {
+        "id": "mtqwm2a6duoc1",
+        "project": "bi",
+        "start": 1788765195534,
+        "end": 1788765200737,
+        "note": ""
+      },
+      {
+        "id": "mtqwnvlds9sxa",
+        "project": "private",
+        "start": 1788765280177,
+        "end": 1788765309765,
+        "note": ""
+      },
+      {
+        "id": "mtqwnyq3s0i38",
+        "project": "fusion",
+        "start": 1788765284235,
+        "end": 1788765509103,
+        "note": ""
+      },
+      {
+        "id": "mtqwsrgprdou8",
+        "project": "private",
+        "start": 1788765508105,
+        "end": 1788765609777,
+        "note": ""
+      },
+      {
+        "id": "mtqwuy6am43hg",
+        "project": "fusion",
+        "start": 1788765610114,
+        "end": 1788765707679,
+        "note": ""
+      },
+      {
+        "id": "mtqwx11gl4r15",
+        "project": "lonza",
+        "start": 1788765707140,
+        "end": 1788765791563,
+        "note": ""
+      },
+      {
+        "id": "mtqwx7pi032xc",
+        "project": "private",
+        "start": 1788765715782,
+        "end": 1788765725937,
+        "note": ""
+      },
+      {
+        "id": "mtqwz1daq30af",
+        "project": "lonza",
+        "start": 1788765800878,
+        "end": 1788765813674,
+        "note": ""
+      },
+      {
+        "id": "mtqwz8lb0m19n",
+        "project": "fusion",
+        "start": 1788765810239,
+        "end": 1788766250790,
+        "note": ""
+      },
+      {
+        "id": "mtqwzmdy0i2tu",
+        "project": "bi",
+        "start": 1788765828118,
+        "end": 1788765848624,
+        "note": ""
+      },
+      {
+        "id": "mtqx22r2rdggs",
+        "project": "private",
+        "start": 1788765942638,
+        "end": 1788765949260,
+        "note": ""
+      },
+      {
+        "id": "mtqx7lkx2wtdi",
+        "project": "private",
+        "start": 1788766200321,
+        "end": 1788766219934,
+        "note": ""
+      },
+      {
+        "id": "mtqx82ffhhn0n",
+        "project": "bi",
+        "start": 1788766222155,
+        "end": 1788766249260,
+        "note": ""
+      },
+      {
+        "id": "mtqx8q72uizo4",
+        "project": "fusion",
+        "start": 1788766252958,
+        "end": 1788766312350,
+        "note": ""
+      },
+      {
+        "id": "mtqx9zqv73shh",
+        "project": "lonza",
+        "start": 1788766311991,
+        "end": 1788766349311,
+        "note": ""
+      },
+      {
+        "id": "mtqxasvetffqq",
+        "project": "fusion",
+        "start": 1788766349738,
+        "end": 1788766560718,
+        "note": ""
+      },
+      {
+        "id": "mtqxfb34ksz84",
+        "project": "private",
+        "start": 1788766559968,
+        "end": 1788766589346,
+        "note": ""
+      },
+      {
+        "id": "mtqxfy5jbg6lu",
+        "project": "fusion",
+        "start": 1788766589863,
+        "end": 1788767245994,
+        "note": ""
+      },
+      {
+        "id": "mtqxl0toajffk",
+        "project": "bi",
+        "start": 1788766826604,
+        "end": 1788766832011,
+        "note": ""
+      },
+      {
+        "id": "mtqxmpn05sa8r",
+        "project": "private",
+        "start": 1788766905420,
+        "end": 1788766913875,
+        "note": ""
+      },
+      {
+        "id": "mtqxty1kcsk8d",
+        "project": "lonza",
+        "start": 1788767242904,
+        "end": 1788767279662,
+        "note": ""
+      },
+      {
+        "id": "mtqxug1ams24o",
+        "project": "private",
+        "start": 1788767266222,
+        "end": 1788767570267,
+        "note": ""
+      },
+      {
+        "id": "mtqxvczj3czl5",
+        "project": "lonza",
+        "start": 1788767308927,
+        "end": 1788767314538,
+        "note": ""
+      },
+      {
+        "id": "mtqxvm4c9xk9z",
+        "project": "fusion",
+        "start": 1788767320764,
+        "end": 1788767438881,
+        "note": ""
+      },
+      {
+        "id": "mtqy0z4vlco12",
+        "project": "fusion",
+        "start": 1788767570911,
+        "end": 1788767701256,
+        "note": ""
+      },
+      {
+        "id": "mtqy0ze1xrvwy",
+        "project": "private",
+        "start": 1788767571241,
+        "end": 1788767572277,
+        "note": ""
+      },
+      {
+        "id": "mtqy3qvmvzjv0",
+        "project": "bi",
+        "start": 1788767700178,
+        "end": 1788767751192,
+        "note": ""
+      },
+      {
+        "id": "mtqy4uvzbwdty",
+        "project": "fusion",
+        "start": 1788767752031,
+        "end": 1788767955938,
+        "note": ""
+      },
+      {
+        "id": "mtqy96mrhw7oq",
+        "project": "bi",
+        "start": 1788767953875,
+        "end": 1788767990341,
+        "note": ""
+      },
+      {
+        "id": "mtqy9nm08f260",
+        "project": "private",
+        "start": 1788767975880,
+        "end": 1788767976369,
+        "note": ""
+      },
+      {
+        "id": "mtqy9z5vxw4tq",
+        "project": "fusion",
+        "start": 1788767990851,
+        "end": 1788768116845,
+        "note": ""
+      },
+      {
+        "id": "mtqycn7hspvwb",
+        "project": "bi",
+        "start": 1788768115325,
+        "end": 1788768172698,
+        "note": ""
+      },
+      {
+        "id": "mtqydu0or7n65",
+        "project": "private",
+        "start": 1788768170808,
+        "end": 1788768346029,
+        "note": ""
+      },
+      {
+        "id": "mtqyhlm18c7rn",
+        "project": "fusion",
+        "start": 1788768346537,
+        "end": 1788768518798,
+        "note": ""
+      },
+      {
+        "id": "mtqyirf2h7feo",
+        "project": "private",
+        "start": 1788768400718,
+        "end": 1788768404505,
+        "note": ""
+      },
+      {
+        "id": "mtqykd7p6breg",
+        "project": "private",
+        "start": 1788768475621,
+        "end": 1788768478246,
+        "note": ""
+      },
+      {
+        "id": "mtqyki6f1fyh1",
+        "project": "bi",
+        "start": 1788768482055,
+        "end": 1788768491655,
+        "note": ""
+      },
+      {
+        "id": "mtqylaw555uxo",
+        "project": "private",
+        "start": 1788768519269,
+        "end": 1788768691932,
+        "note": ""
+      },
+      {
+        "id": "mtqyp0ibnd585",
+        "project": "fusion",
+        "start": 1788768692435,
+        "end": 1788768878438,
+        "note": ""
+      },
+      {
+        "id": "mtqypso3ij5vg",
+        "project": "private",
+        "start": 1788768728931,
+        "end": 1788768732785,
+        "note": ""
+      },
+      {
+        "id": "mtqyq5czqbo87",
+        "project": "bi",
+        "start": 1788768745379,
+        "end": 1788768752806,
+        "note": ""
+      },
+      {
+        "id": "mtqyrz1sh074x",
+        "project": "private",
+        "start": 1788768830512,
+        "end": 1788768832049,
+        "note": ""
+      },
+      {
+        "id": "mtqysk8qvatjz",
+        "project": "bi",
+        "start": 1788768857978,
+        "end": 1788768964712,
+        "note": ""
+      },
+      {
+        "id": "mtqytaiz3l4rw",
+        "project": "private",
+        "start": 1788768892043,
+        "end": 1788768895657,
+        "note": ""
+      },
+      {
+        "id": "mtqyuv8insa2w",
+        "project": "private",
+        "start": 1788768965538,
+        "end": 1788768971389,
+        "note": ""
+      },
+      {
+        "id": "mtqyux4nbm1ct",
+        "project": "bi",
+        "start": 1788768967991,
+        "end": 1788769034705,
+        "note": ""
+      },
+      {
+        "id": "mtqywd18wroq4",
+        "project": "fusion",
+        "start": 1788769035260,
+        "end": 1788769118643,
+        "note": ""
+      },
+      {
+        "id": "mtqyxfrzegy09",
+        "project": "private",
+        "start": 1788769085471,
+        "end": 1788769289638,
+        "note": ""
+      },
+      {
+        "id": "mtqyz7kg5fwm7",
+        "project": "fusion",
+        "start": 1788769168144,
+        "end": 1788769224943,
+        "note": ""
+      },
+      {
+        "id": "mtqz0w82pm3kh",
+        "project": "bi",
+        "start": 1788769246754,
+        "end": 1788769284238,
+        "note": ""
+      },
+      {
+        "id": "mtqz22havlqkq",
+        "project": "private",
+        "start": 1788769301518,
+        "end": 1788769392585,
+        "note": ""
+      },
+      {
+        "id": "mtqz415pxgwxd",
+        "project": "fusion",
+        "start": 1788769393117,
+        "end": 1788769455638,
+        "note": ""
+      },
+      {
+        "id": "mtqz5drxc4dn7",
+        "project": "pause",
+        "start": 1788769456125,
+        "end": 1788769499387,
+        "note": ""
+      },
+      {
+        "id": "mtqz6ce1jphkr",
+        "project": "fusion",
+        "start": 1788769500985,
+        "end": 1788769528368,
+        "note": ""
+      },
+      {
+        "id": "mtqz6xrmyrsf1",
+        "project": "lonza",
+        "start": 1788769528690,
+        "end": 1788770079288,
+        "note": ""
+      },
+      {
+        "id": "mtqzdlznum49e",
+        "project": "private",
+        "start": 1788769840019,
+        "end": 1788769840612,
+        "note": ""
+      },
+      {
+        "id": "mtqzisor6vwsy",
+        "project": "fusion",
+        "start": 1788770081979,
+        "end": 1788770218176,
+        "note": ""
+      },
+      {
+        "id": "mtqzkfvpp964z",
+        "project": "private",
+        "start": 1788770158693,
+        "end": 1788770199365,
+        "note": ""
+      },
+      {
+        "id": "mtqzl1qbir4fp",
+        "project": "bi",
+        "start": 1788770187011,
+        "end": 1788770187498,
+        "note": ""
+      },
+      {
+        "id": "mtqzlpgroghk1",
+        "project": "lonza",
+        "start": 1788770217771,
+        "end": 1788770402371,
+        "note": ""
+      },
+      {
+        "id": "mtqzpoc6gwmn6",
+        "project": "bi",
+        "start": 1788770402934,
+        "end": 1788770405896,
+        "note": ""
+      },
+      {
+        "id": "mtqzpqxvt4l22",
+        "project": "lonza",
+        "start": 1788770406307,
+        "end": 1788770545629,
+        "note": ""
+      },
+      {
+        "id": "mtqzscuyxkhdw",
+        "project": "private",
+        "start": 1788770528026,
+        "end": 1788770534881,
+        "note": ""
+      },
+      {
+        "id": "mtqzsqwlh6l81",
+        "project": "fusion",
+        "start": 1788770546229,
+        "end": 1788770584861,
+        "note": ""
+      },
+      {
+        "id": "mtqztan7e96k5",
+        "project": "bi",
+        "start": 1788770571811,
+        "end": 1788770581764,
+        "note": ""
+      },
+      {
+        "id": "mtqztixdzjij2",
+        "project": "pause",
+        "start": 1788770582545,
+        "end": 1788770722609,
+        "note": ""
+      },
+      {
+        "id": "mtqzwkqefs8v8",
+        "project": "bi",
+        "start": 1788770724854,
+        "end": 1788770836208,
+        "note": ""
+      },
+      {
+        "id": "mtqzyzo8mk478",
+        "project": "fusion",
+        "start": 1788770837528,
+        "end": 1788770963597,
+        "note": ""
+      },
+      {
+        "id": "mtr01ducv9z87",
+        "project": "private",
+        "start": 1788770949204,
+        "end": 1788771033745,
+        "note": ""
+      },
+      {
+        "id": "mtr037boy8nq4",
+        "project": "fusion",
+        "start": 1788771034068,
+        "end": 1788771384189,
+        "note": ""
+      },
+      {
+        "id": "mtr0a815rllf6",
+        "project": "private",
+        "start": 1788771361577,
+        "end": 1788771431808,
+        "note": ""
+      },
+      {
+        "id": "mtr0auer7frm5",
+        "project": "bi",
+        "start": 1788771390579,
+        "end": 1788771394650,
+        "note": ""
+      },
+      {
+        "id": "mtr0bqitbppwf",
+        "project": "fusion",
+        "start": 1788771432197,
+        "end": 1788771512343,
+        "note": ""
+      },
+      {
+        "id": "mtr0dfwtcyrgs",
+        "project": "lonza",
+        "start": 1788771511757,
+        "end": 1788771807936,
+        "note": ""
+      },
+      {
+        "id": "mtr0jt0o0kc3y",
+        "project": "fusion",
+        "start": 1788771808680,
+        "end": 1788771881258,
+        "note": ""
+      },
+      {
+        "id": "mtr0lbmb4opwl",
+        "project": "bi",
+        "start": 1788771879443,
+        "end": 1788771897849,
+        "note": ""
+      },
+      {
+        "id": "mtr0leulqb9g8",
+        "project": "private",
+        "start": 1788771883629,
+        "end": 1788771884859,
+        "note": ""
+      },
+      {
+        "id": "mtr0lqbhs6nm5",
+        "project": "fusion",
+        "start": 1788771898493,
+        "end": 1788771993702,
+        "note": ""
+      },
+      {
+        "id": "mtr0ns4ue2inj",
+        "project": "private",
+        "start": 1788771994158,
+        "end": 1788772111522,
+        "note": ""
+      },
+      {
+        "id": "mtr0qbejlpbb8",
+        "project": "fusion",
+        "start": 1788772112443,
+        "end": 1788772168184,
+        "note": ""
+      },
+      {
+        "id": "mtr0rimmwg12z",
+        "project": "lonza",
+        "start": 1788772168462,
+        "end": 1788772225885,
+        "note": ""
+      },
+      {
+        "id": "mtr0ssluz8fy3",
+        "project": "pause",
+        "start": 1788772228050,
+        "end": 1788772495774,
+        "note": ""
+      },
+      {
+        "id": "mtr0ym59vm5hl",
+        "project": "private",
+        "start": 1788772499613,
+        "end": 1788772520875,
+        "note": ""
+      },
+      {
+        "id": "mtr0ymhyaijs9",
+        "project": "fusion",
+        "start": 1788772500070,
+        "end": 1788774596431,
+        "note": ""
+      },
+      {
+        "id": "mtr0zd0iqh16l",
+        "project": "private",
+        "start": 1788772534434,
+        "end": 1788772571989,
+        "note": ""
+      },
+      {
+        "id": "mtr0zuwn13q9y",
+        "project": "bi",
+        "start": 1788772557623,
+        "end": 1788772567267,
+        "note": ""
+      },
+      {
+        "id": "mtr10jgan1u5t",
+        "project": "lonza",
+        "start": 1788772589434,
+        "end": 1788772590448,
+        "note": ""
+      },
+      {
+        "id": "mtr19ae1ydpsh",
+        "project": "private",
+        "start": 1788772997593,
+        "end": 1788772998057,
+        "note": ""
+      },
+      {
+        "id": "mtr1c9tx622wl",
+        "project": "bi",
+        "start": 1788773136837,
+        "end": 1788773137629,
+        "note": ""
+      },
+      {
+        "id": "mtr1cipuvfwqb",
+        "project": "bi",
+        "start": 1788773148354,
+        "end": 1788773204266,
+        "note": ""
+      },
+      {
+        "id": "mtr1iqnyusie1",
+        "project": "pause",
+        "start": 1788773438590,
+        "end": 1788778740262,
+        "note": ""
+      },
+      {
+        "id": "mtr4of65wiymn",
+        "project": "lonza",
+        "start": 1788778742477,
+        "end": 1788782877472,
+        "note": ""
+      },
+      {
+        "id": "mtr4og1tlkez5",
+        "project": "fusion",
+        "start": 1788778743617,
+        "end": 1788779211173,
+        "note": ""
+      },
+      {
+        "id": "mtr4op3kuuei0",
+        "project": "bi",
+        "start": 1788778755344,
+        "end": 1788778774025,
+        "note": ""
+      },
+      {
+        "id": "mtr4yi17wjq7m",
+        "project": "fusion",
+        "start": 1788779212747,
+        "end": 1788782881201,
+        "note": ""
+      },
+      {
+        "id": "mtr5ilmg7b69n",
+        "project": "private",
+        "start": 1788780150520,
+        "end": 1788782309917,
+        "note": ""
+      },
+      {
+        "id": "mtr75438oqmap",
+        "project": "bi",
+        "start": 1788782880500,
+        "end": 1788782998216,
+        "note": ""
+      },
+      {
+        "id": "mtr77nhia6og4",
+        "project": "private",
+        "start": 1788782998951,
+        "end": 1788783204331,
+        "note": ""
+      },
+      {
+        "id": "mtr7c2o5u4qfs",
+        "project": "fusion",
+        "start": 1788783205253,
+        "end": 1788783207886,
+        "note": ""
+      },
+      {
+        "id": "mtr7c518e71sq",
+        "project": "private",
+        "start": 1788783208316,
+        "end": 1788783211725,
+        "note": ""
+      },
+      {
+        "id": "mtr7c7b1k5kln",
+        "project": "bi",
+        "start": 1788783211261,
+        "end": 1788783232027,
+        "note": ""
+      },
+      {
+        "id": "mtr7cod7gbvf4",
+        "project": "pause",
+        "start": 1788783233371,
+        "end": 1788783764640,
+        "note": ""
+      },
+      {
+        "id": "mtr7o3panq86h",
+        "project": "private",
+        "start": 1788783766462,
+        "end": 1788783770572,
+        "note": ""
+      },
+      {
+        "id": "mtr7o6f78oro5",
+        "project": "fusion",
+        "start": 1788783769987,
+        "end": 1788783934856,
+        "note": ""
+      },
+      {
+        "id": "mtr7rq23wkqh0",
+        "project": "private",
+        "start": 1788783935403,
+        "end": 1788784073965,
+        "note": ""
+      },
+      {
+        "id": "mtr7upd5fnp4u",
+        "project": "fusion",
+        "start": 1788784074473,
+        "end": 1788784083006,
+        "note": ""
+      },
+      {
+        "id": "mtr7uvb9in0s5",
+        "project": "bi",
+        "start": 1788784082181,
+        "end": 1788784130917,
+        "note": ""
+      },
+      {
+        "id": "mtr7vxq7h6ort",
+        "project": "pause",
+        "start": 1788784131968,
+        "end": 1788784210382,
+        "note": ""
+      },
+      {
+        "id": "mtr7xn1kioxyc",
+        "project": "bi",
+        "start": 1788784211432,
+        "end": 1788786306676,
+        "note": ""
+      },
+      {
+        "id": "mtr7xwclota6i",
+        "project": "private",
+        "start": 1788784223493,
+        "end": 1788784225420,
+        "note": ""
+      },
+      {
+        "id": "mtr8kkl0ssu4a",
+        "project": "fusion",
+        "start": 1788785281332,
+        "end": 1788785287984,
+        "note": ""
+      },
+      {
+        "id": "mtr8la0x1m505",
+        "project": "private",
+        "start": 1788785314305,
+        "end": 1788785336458,
+        "note": ""
+      },
+      {
+        "id": "mtr8o7d3ptjzn",
+        "project": "private",
+        "start": 1788785450824,
+        "end": 1788785568575,
+        "note": ""
+      },
+      {
+        "id": "mtr921xjcgqid",
+        "project": "private",
+        "start": 1788786096967,
+        "end": 1788786309782,
+        "note": ""
+      },
+      {
+        "id": "mtr96lic0xub7",
+        "project": "bi",
+        "start": 1788786308964,
+        "end": 1788786399211,
+        "note": ""
+      },
+      {
+        "id": "mtr98jffzfocn",
+        "project": "lonza",
+        "start": 1788786399579,
+        "end": 1788786458321,
+        "note": ""
+      },
+      {
+        "id": "mtr99tag6zutd",
+        "project": "private",
+        "start": 1788786459016,
+        "end": 1788786480626,
+        "note": ""
+      },
+      {
+        "id": "mtr9a9mog3n30",
+        "project": "fusion",
+        "start": 1788786480192,
+        "end": 1788786493729,
+        "note": ""
+      },
+      {
+        "id": "mtr9ajpkg4mpu",
+        "project": "private",
+        "start": 1788786493256,
+        "end": 1788786504034,
+        "note": ""
+      },
+      {
+        "id": "mtr9asdnpqfvg",
+        "project": "fusion",
+        "start": 1788786504491,
+        "end": 1788786577183,
+        "note": ""
+      },
+      {
+        "id": "mtr9cc6fy2p61",
+        "project": "private",
+        "start": 1788786576807,
+        "end": 1788786618334,
+        "note": ""
+      },
+      {
+        "id": "mtr9d8jwhh6al",
+        "project": "fusion",
+        "start": 1788786618764,
+        "end": 1788786848043,
+        "note": ""
+      },
+      {
+        "id": "mtr9i5qcvmqm0",
+        "project": "lonza",
+        "start": 1788786848388,
+        "end": 1788787304882,
+        "note": ""
+      },
+      {
+        "id": "mtr9ryasuvk97",
+        "project": "fusion",
+        "start": 1788787305316,
+        "end": 1788787367583,
+        "note": ""
+      },
+      {
+        "id": "mtr9t9t8digco",
+        "project": "bi",
+        "start": 1788787366892,
+        "end": 1788787480235,
+        "note": ""
+      },
+      {
+        "id": "mtr9vpw5ite9k",
+        "project": "private",
+        "start": 1788787481045,
+        "end": 1788787773513,
+        "note": ""
+      },
+      {
+        "id": "mtra203u2o7ee",
+        "project": "lonza",
+        "start": 1788787774218,
+        "end": 1788789426292,
+        "note": ""
+      },
+      {
+        "id": "mtra94swkr07b",
+        "project": "private",
+        "start": 1788788106896,
+        "end": 1788788622506,
+        "note": ""
+      },
+      {
+        "id": "mtrb0hmkv4x56",
+        "project": "fusion",
+        "start": 1788789383228,
+        "end": 1788789551550,
+        "note": ""
+      },
+      {
+        "id": "mtrb43va51e6s",
+        "project": "pause",
+        "start": 1788789552022,
+        "end": 1788789631350,
+        "note": ""
+      },
+      {
+        "id": "mtrb5so1pz5un",
+        "project": "fusion",
+        "start": 1788789630817,
+        "end": 1788789933806,
+        "note": ""
+      },
+      {
+        "id": "mtrbc9n0vkchv",
+        "project": "private",
+        "start": 1788789932748,
+        "end": 1788790007839,
+        "note": ""
+      },
+      {
+        "id": "mtrbdu4kz440d",
+        "project": "lonza",
+        "start": 1788790005956,
+        "end": 1788790006977,
+        "note": ""
+      },
+      {
+        "id": "mtrbdv7bxxuec",
+        "project": "fusion",
+        "start": 1788790007351,
+        "end": 1788790118715,
+        "note": ""
+      },
+      {
+        "id": "mtrbg8qy2ahiq",
+        "project": "private",
+        "start": 1788790118218,
+        "end": 1788790513712,
+        "note": ""
+      },
+      {
+        "id": "mtrbop9zt4bh9",
+        "project": "fusion",
+        "start": 1788790512887,
+        "end": 1788790525059,
+        "note": ""
+      },
+      {
+        "id": "mtrboz9dnm7lu",
+        "project": "private",
+        "start": 1788790525825,
+        "end": 1788791426491,
+        "note": ""
+      },
+      {
+        "id": "mtrbre3fasfxb",
+        "project": "bi",
+        "start": 1788790638363,
+        "end": 1788790645937,
+        "note": ""
+      },
+      {
+        "id": "mtrc8b5esoalt",
+        "project": "fusion",
+        "start": 1788791427698,
+        "end": 1788792815313,
+        "note": ""
+      },
+      {
+        "id": "mtrc8iw41vzkm",
+        "project": "bi",
+        "start": 1788791437732,
+        "end": 1788791438752,
+        "note": ""
+      },
+      {
+        "id": "mtrd247pwp21k",
+        "project": "private",
+        "start": 1788792818389,
+        "end": 1788794580000,
+        "note": ""
+      },
+      {
+        "id": "mtrmhcnl4i3fc",
+        "project": "fusion",
+        "start": 1788795000000,
+        "end": 1788796980000,
+        "note": ""
+      },
+      {
+        "id": "mtt07z4a3f1fo",
+        "project": "fusion",
+        "start": 1788818399999,
+        "end": 1788818399999,
+        "note": ""
+      }
+    ],
+    "2026-10-22": [
+      {
+        "id": "mvj4zuc1y6jmw",
+        "project": "lonza",
+        "start": 1792649110609,
+        "end": 1792649111275,
+        "note": ""
+      },
+      {
+        "id": "mvj4zvfey9t7f",
+        "project": "fusion",
+        "start": 1792649112026,
+        "end": 1792650484863,
+        "note": ""
+      },
+      {
+        "id": "mvj5tac03lc6j",
+        "project": "biacct",
+        "start": 1792650484368,
+        "end": 1792650949461,
+        "note": ""
+      },
+      {
+        "id": "mvj639g5qmrqe",
+        "project": "lonza",
+        "start": 1792650949781,
+        "end": 1792652356599,
+        "note": ""
+      },
+      {
+        "id": "mvj6xf5grxliv",
+        "project": "biacct",
+        "start": 1792652356852,
+        "end": 1792653081027,
+        "note": ""
+      },
+      {
+        "id": "mvj7cy5zrrbxd",
+        "project": "lonza",
+        "start": 1792653081335,
+        "end": 1792660838192,
+        "note": ""
+      },
+      {
+        "id": "mvjbz80zpu66p",
+        "project": "lonza",
+        "start": 1792660839011,
+        "end": 1792706399999,
+        "note": ""
+      },
+      {
+        "id": "mvklzk4mvwvak",
+        "project": "biacct",
+        "start": 1792706399999,
+        "end": 1792706399999,
+        "note": ""
+      }
+    ],
+    "2026-10-24": [
+      {
+        "id": "mvns5xgqbkb2b",
+        "project": "fusion",
+        "start": 1792820400000,
+        "end": 1792879199999,
+        "note": ""
+      }
+    ],
+    "2026-10-13": [
+      {
+        "id": "mv68nk6e7k6nw",
+        "project": "fusion",
+        "start": 1791869195750,
+        "end": 1791869632631,
+        "note": ""
+      },
+      {
+        "id": "mv68wxl8n5bhn",
+        "project": "lonza",
+        "start": 1791869633036,
+        "end": 1791869914334,
+        "note": ""
+      },
+      {
+        "id": "mv69zw69vgonl",
+        "project": "fusion",
+        "start": 1791871450785,
+        "end": 1791871648533,
+        "note": ""
+      },
+      {
+        "id": "mv6a45a2v8uhh",
+        "project": "bi",
+        "start": 1791871649209,
+        "end": 1791871729340,
+        "note": ""
+      },
+      {
+        "id": "mv6a5vmvf4lst",
+        "project": "fusion",
+        "start": 1791871730023,
+        "end": 1791872531590,
+        "note": ""
+      },
+      {
+        "id": "mv6an2g96x2ef",
+        "project": "bi",
+        "start": 1791872532009,
+        "end": 1791873629336,
+        "note": ""
+      },
+      {
+        "id": "mv6balw4i9jp1",
+        "project": "fusion",
+        "start": 1791873630292,
+        "end": 1791873923972,
+        "note": ""
+      },
+      {
+        "id": "mv6bgx1phjygd",
+        "project": "lonza",
+        "start": 1791873924685,
+        "end": 1791874938918,
+        "note": ""
+      },
+      {
+        "id": "mv6c2nyyi3l0e",
+        "project": "bi",
+        "start": 1791874939353,
+        "end": 1791875462659,
+        "note": ""
+      },
+      {
+        "id": "mv6cdw1twnuwr",
+        "project": "fusion",
+        "start": 1791875463041,
+        "end": 1791875585825,
+        "note": ""
+      },
+      {
+        "id": "mv6cgj5mkdtgj",
+        "project": "bi",
+        "start": 1791875586298,
+        "end": 1791876900000,
+        "note": ""
+      },
+      {
+        "id": "mv6eo8z3pl5f5",
+        "project": "pause",
+        "start": 1791876900000,
+        "end": 1791878100000,
+        "note": ""
+      },
+      {
+        "id": "mv6evnt2gy06z",
+        "project": "lonza",
+        "start": 1791879651398,
+        "end": 1791880616621,
+        "note": ""
+      },
+      {
+        "id": "mv6fgcu97rj2a",
+        "project": "fusion",
+        "start": 1791880616961,
+        "end": 1791885742679,
+        "note": ""
+      },
+      {
+        "id": "mv6ii885kf3xa",
+        "project": "lonza",
+        "start": 1791885743141,
+        "end": 1791886466880,
+        "note": ""
+      },
+      {
+        "id": "mv6ixs14s14tk",
+        "project": "pause",
+        "start": 1791886468648,
+        "end": 1791892407784,
+        "note": ""
+      },
+      {
+        "id": "mv6mh3p71zkys",
+        "project": "lonza",
+        "start": 1791892409083,
+        "end": 1791893448836,
+        "note": ""
+      },
+      {
+        "id": "mv6n3ebhojqkt",
+        "project": "fusion",
+        "start": 1791893449277,
+        "end": 1791893642240,
+        "note": ""
+      },
+      {
+        "id": "mv6n7hxed8s34",
+        "project": "lonza",
+        "start": 1791893640578,
+        "end": 1791900293892,
+        "note": ""
+      },
+      {
+        "id": "mv6r63vvt55dq",
+        "project": "fusion",
+        "start": 1791900294187,
+        "end": 1791907305246,
+        "note": ""
+      },
+      {
+        "id": "mv70lr5x9nszc",
+        "project": "fusion",
+        "start": 1791916140741,
+        "end": 1791920277781,
+        "note": ""
+      }
+    ],
+    "2026-09-21": [
+      {
+        "id": "muawitgs1qs7t",
+        "project": "bi",
+        "start": 1789970760000,
+        "end": 1789975860376,
+        "note": ""
+      },
+      {
+        "id": "muawix2d29st6",
+        "project": "fusion",
+        "start": 1789970400000,
+        "end": 1789971900000,
+        "note": ""
+      },
+      {
+        "id": "muawqyxvtyr2h",
+        "project": "private",
+        "start": 1789974748003,
+        "end": 1789975063968,
+        "note": ""
+      },
+      {
+        "id": "muax0zv5va8md",
+        "project": "private",
+        "start": 1789975215761,
+        "end": 1789975293350,
+        "note": ""
+      },
+      {
+        "id": "muaxetqzcfbly",
+        "project": "fusion",
+        "start": 1789975861019,
+        "end": 1789976684562,
+        "note": ""
+      },
+      {
+        "id": "muaxwhws9185g",
+        "project": "pause",
+        "start": 1789976685484,
+        "end": 1789976796268,
+        "note": ""
+      },
+      {
+        "id": "muaxyvw3w0lu4",
+        "project": "bi",
+        "start": 1789976796915,
+        "end": 1789979295000,
+        "note": ""
+      },
+      {
+        "id": "muazkkfa0031r",
+        "project": "fusion",
+        "start": 1789979488102,
+        "end": 1789979993544,
+        "note": ""
+      },
+      {
+        "id": "muazvfl2ganoa",
+        "project": "private",
+        "start": 1789979995046,
+        "end": 1789981251626,
+        "note": ""
+      },
+      {
+        "id": "mub0mdkudl8aq",
+        "project": "bi",
+        "start": 1789981252158,
+        "end": 1789981253134,
+        "note": ""
+      },
+      {
+        "id": "mub0meuwmrb6t",
+        "project": "fusion",
+        "start": 1789981253816,
+        "end": 1789981991041,
+        "note": ""
+      },
+      {
+        "id": "mub1280hdhdji",
+        "project": "private",
+        "start": 1789981991441,
+        "end": 1789982595826,
+        "note": ""
+      },
+      {
+        "id": "mub1f6oxq1ws5",
+        "project": "fusion",
+        "start": 1789982596257,
+        "end": 1789983325433,
+        "note": ""
+      },
+      {
+        "id": "mub1usv5san6f",
+        "project": "pause",
+        "start": 1789983324833,
+        "end": 1789986479535,
+        "note": ""
+      },
+      {
+        "id": "mub3rb1n6xzig",
+        "project": "private",
+        "start": 1789986521003,
+        "end": 1789987280615,
+        "note": ""
+      },
+      {
+        "id": "mub47llm713mv",
+        "project": "bi",
+        "start": 1789987281178,
+        "end": 1789987433902,
+        "note": ""
+      },
+      {
+        "id": "mub4awn3r2vhx",
+        "project": "private",
+        "start": 1789987435455,
+        "end": 1789988148372,
+        "note": ""
+      },
+      {
+        "id": "mub4q79i204au",
+        "project": "fusion",
+        "start": 1789988149062,
+        "end": 1789990111175,
+        "note": ""
+      },
+      {
+        "id": "mub5w9lrx9qss",
+        "project": "bi",
+        "start": 1789990111647,
+        "end": 1789990855269,
+        "note": ""
+      },
+      {
+        "id": "mub6c7p7khjbk",
+        "project": "fusion",
+        "start": 1789990855675,
+        "end": 1789991186331,
+        "note": ""
+      },
+      {
+        "id": "mub6jb4xabfzt",
+        "project": "private",
+        "start": 1789991186721,
+        "end": 1789991807498,
+        "note": ""
+      },
+      {
+        "id": "mub6wmcv5y9mf",
+        "project": "fusion",
+        "start": 1789991807791,
+        "end": 1789992525510,
+        "note": ""
+      },
+      {
+        "id": "mub7c0ht7fu6g",
+        "project": "private",
+        "start": 1789992525953,
+        "end": 1789993800780,
+        "note": ""
+      },
+      {
+        "id": "mub83cdldlb7y",
+        "project": "fusion",
+        "start": 1789993801065,
+        "end": 1789993802715,
+        "note": ""
+      },
+      {
+        "id": "mub83d7lw9d8v",
+        "project": "lonza",
+        "start": 1789993802145,
+        "end": 1789994894953,
+        "note": ""
+      },
+      {
+        "id": "mub8qsoy5l2up",
+        "project": "fusion",
+        "start": 1789994895297,
+        "end": 1789997651398,
+        "note": ""
+      },
+      {
+        "id": "mubadvo46x20y",
+        "project": "bi",
+        "start": 1789997651859,
+        "end": 1789998007963,
+        "note": ""
+      },
+      {
+        "id": "mubalirb242ck",
+        "project": "lonza",
+        "start": 1789998008375,
+        "end": 1789999377415,
+        "note": ""
+      },
+      {
+        "id": "mubbevf8e17xy",
+        "project": "bi",
+        "start": 1789999377812,
+        "end": 1789999379531,
+        "note": ""
+      },
+      {
+        "id": "mubbewf3ehrqs",
+        "project": "fusion",
+        "start": 1789999379103,
+        "end": 1790004115055,
+        "note": ""
+      },
+      {
+        "id": "mubdebsagivds",
+        "project": "private",
+        "start": 1790002711594,
+        "end": 1790002830201,
+        "note": ""
+      },
+      {
+        "id": "mube8f1dkbnlg",
+        "project": "lonza",
+        "start": 1790004115488,
+        "end": 1790004233021,
+        "note": ""
+      },
+      {
+        "id": "mubeay0sxpkk6",
+        "project": "bi",
+        "start": 1790004233404,
+        "end": 1790004486832,
+        "note": ""
+      },
+      {
+        "id": "mubegeai94xvn",
+        "project": "pause",
+        "start": 1790004487770,
+        "end": 1790007311393,
+        "note": ""
+      },
+      {
+        "id": "mubg4xjm0hcmz",
+        "project": "bi",
+        "start": 1790007312082,
+        "end": 1790007723125,
+        "note": ""
+      },
+      {
+        "id": "mubh3639oochm",
+        "project": "bi",
+        "start": 1790008909461,
+        "end": 1790010719139,
+        "note": ""
+      },
+      {
+        "id": "mublcy8bb9hqa",
+        "project": "fusion",
+        "start": 1790016084299,
+        "end": 1790019014621,
+        "note": ""
+      }
+    ]
+  }
+}
