@@ -78,6 +78,28 @@ h2{font-family:var(--display);font-size:1.05rem;margin:0 0 10px;text-wrap:balanc
 details.mods summary{cursor:pointer;color:var(--accent);font-weight:600;font-size:.88rem}
 details.mods .modlist{display:flex;flex-direction:column;gap:12px;margin-top:10px;font-size:.92rem}
 details.mods .modlist p{margin:2px 0 0;color:var(--ink)}
+/* Kaskade je Bereich */
+#casc-src{font-size:.85rem;color:var(--muted);margin:-4px 0 10px;max-width:70ch}
+#casc-src b{color:var(--ink)}
+.acasc{display:flex;flex-direction:column;gap:6px}
+.af{display:grid;grid-template-columns:76px minmax(0,1fr);gap:8px;align-items:start;font-size:.82rem;color:var(--muted)}
+.af span{padding-top:7px}
+.af textarea{font:inherit;font-size:.88rem;color:var(--ink);padding:6px 8px;border:1px solid var(--line);border-radius:6px;background:var(--bg);resize:vertical;width:100%}
+/* Zielmatrix */
+#mx-intro{font-size:.85rem;color:var(--muted);margin:-4px 0 10px;max-width:70ch}
+#mx-intro b{color:var(--ink)}
+.matrix{background:var(--surface);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.mx-row{display:grid;grid-template-columns:132px repeat(5,minmax(0,1fr));gap:8px;padding:10px 12px;border-top:1px solid var(--line);align-items:start}
+.mx-head{border-top:0;padding-block:10px 2px}
+.mx-sub{font-size:.72rem;color:var(--muted)}
+.mx-row.mx-p{background:var(--accent-soft)}
+.mx-name{font-weight:600;font-size:.88rem;padding-top:6px;display:flex;flex-direction:column;gap:6px;align-items:flex-start;min-width:0}
+.mx-cell{display:flex;flex-direction:column;gap:3px;min-width:0}
+.mx-cell textarea{font:inherit;font-size:.84rem;line-height:1.35;color:var(--ink);padding:6px 8px;border:1px solid var(--line);border-radius:6px;background:var(--surface);resize:vertical;width:100%}
+.mx-cell.short textarea{border-style:dashed;background:var(--bg)}
+.mx-cell textarea:focus{outline:2px solid var(--accent);outline-offset:0;border-color:var(--accent)}
+.mx-lab{display:none;font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;font-weight:600}
+@media (max-width:760px){.mx-head{display:none}.mx-row{grid-template-columns:1fr}.mx-lab{display:block}.mx-name{flex-direction:row;align-items:center;padding-top:0}}
 /* Journal */
 .journal{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px 18px;display:flex;flex-direction:column;gap:14px}
 .seg{display:flex;flex-wrap:wrap;gap:6px}
@@ -162,6 +184,7 @@ td.del button{border:0;background:none;color:var(--muted);cursor:pointer;font:in
 
   <section>
     <h2>Zielkaskade</h2>
+    <p id="casc-src"></p>
     <div class="cascade">
       <label class="step"><span class="label">Jahr 2027</span><textarea id="c-year" rows="3" placeholder="Jahres-ONE-Thing eintragen"></textarea></label>
       <label class="step"><span class="label" id="lbl-month">Monat</span><textarea id="c-month" rows="3" placeholder="Was muss diesen Monat passieren?"></textarea></label>
@@ -177,6 +200,12 @@ td.del button{border:0;background:none;color:var(--muted);cursor:pointer;font:in
       <div class="detail" id="detail"></div>
     </div>
     <p class="hint">Kreis antippen für Details. Ausgefüllter Kreis = Primärfokus (nur einer), alle anderen laufen auf Erhaltungsniveau.</p>
+  </section>
+
+  <section>
+    <h2>Zielmatrix</h2>
+    <p id="mx-intro">Langfristig (Someday, 5 Jahre, 2027) für <b>alle</b> Bereiche, einmal im Jahr pflegen. Kurzfristig (Monat, Woche) nur für den Primärfokus und Bereiche, in denen gerade konkret etwas ansteht.</p>
+    <div class="matrix" id="matrix"></div>
   </section>
 
   <section>
@@ -286,8 +315,9 @@ document.getElementById("ci-kw").value=kw;
 
 /* Kaskade: Tageseintrag gilt nur für heute, Woche nur für diese KW */
 const dayKey="day-"+ymd(now), weekKey="week-"+now.getFullYear()+"-"+kw, monthKey="month-"+now.getFullYear()+"-"+now.getMonth();
-const cmap={"c-year":"year-2027","c-month":monthKey,"c-week":weekKey,"c-day":dayKey};
-for(const [id,key] of Object.entries(cmap)){const el=document.getElementById(id);el.value=S.get("casc:"+key,"");el.addEventListener("input",()=>S.set("casc:"+key,el.value))}
+const PER={someday:"someday",five:"5y",year:"year-2027",month:monthKey,week:weekKey};
+const areaKey=(a,k)=>"casc:"+a+":"+PER[k];
+{const el=document.getElementById("c-day");el.value=S.get("casc:"+dayKey,"");el.addEventListener("input",()=>S.set("casc:"+dayKey,el.value))}
 
 /* Morning-Manifest: ONE Thing kommt live aus dem Feld "Heute" */
 function ymd(d){return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0")}
@@ -330,7 +360,7 @@ function renderRing(){
  const C=220,R=150,r=56;
  mk("circle",{cx:C,cy:C,r:R,class:"orbit"},svg);
  mk("circle",{cx:C,cy:C,r:72,class:"core"},svg);
- const yr=(S.get("casc:year-2027","")||"").trim();
+ const yr=(S.get(topKey("year"),"")||"").trim();
  const lines=yr?wrapText(yr,13,4):["Jahres-","ONE Thing","eintragen"];
  const ct=mk("text",{x:C,y:C-(lines.length-1)*9+5,class:"coretext"},svg);
  lines.forEach((l,i)=>{mk("tspan",{x:C,dy:i?18:0},ct).textContent=l});
@@ -357,13 +387,41 @@ function renderDetail(){
  box.innerHTML=`<div class="dhead"><h3>${a.name}</h3><span class="pill ${isP?"p":"m"}">${isP?"Primär":"Erhalten"}</span></div>
  <div><div class="label">Ziel</div><p class="dgoal">${a.goal}</p></div>
  <label class="dq"><span class="label">Fokusfrage · groß & konkret</span><textarea id="fq-${a.id}" rows="3" placeholder="Was ist das EINE, das ich tun kann, um [Ergebnis] bis [Datum] zu erreichen?"></textarea></label>
+ <button class="linkbtn" type="button" id="to-mx" style="color:var(--accent);font-weight:600">Ziele dieses Bereichs in der Zielmatrix ↓</button>
  ${links?`<div class="dlinks"><div class="label">Tracker</div>${links}</div>`:""}
  <button class="btn ghost" type="button" id="setp">${isP?"Primärfokus entfernen":"Als Primärfokus setzen"}</button>`;
  const ta=document.getElementById("fq-"+a.id);ta.value=S.get("fq:"+a.id,"");ta.addEventListener("input",()=>S.set("fq:"+a.id,ta.value));
- document.getElementById("setp").addEventListener("click",()=>{primary=isP?null:a.id;S.set("primary",primary);renderRing();renderDetail()});
+ document.getElementById("to-mx").addEventListener("click",()=>{const r=document.getElementById("mxr-"+a.id);if(r){r.scrollIntoView({behavior:"smooth",block:"center"});const f=r.querySelector("textarea");if(f)f.focus({preventScroll:true})}});
+ document.getElementById("setp").addEventListener("click",()=>{primary=isP?null:a.id;S.set("primary",primary);migrate();bindTop();renderRing();renderDetail();renderMatrix()});
 }
-renderRing();renderDetail();
-document.getElementById("c-year").addEventListener("input",renderRing);
+/* Kaskade oben = Kaskade des Primärfokus. "Heute" bleibt bereichsübergreifend (eine ONE Thing pro Tag). */
+function topKey(k){return primary?areaKey(primary,k):"casc:"+PER[k]}
+function migrate(){if(!primary||S.get("migrated",false))return;["year","month","week"].forEach(k=>{const g=S.get("casc:"+PER[k],"");if(g&&!S.get(areaKey(primary,k),""))S.set(areaKey(primary,k),g)});S.set("migrated",true)}
+function bindTop(){
+ const a=AREAS.find(x=>x.id===primary);
+ document.getElementById("casc-src").innerHTML=a?`Jahr, Monat und Woche zeigen deinen Primärfokus: <b>${a.name}</b>. Alle Bereiche siehst du in der Zielmatrix. „Heute“ gilt bereichsübergreifend.`:`Noch kein Primärfokus gewählt. Wähle im Kreis einen Bereich als Primärfokus, dann zeigt die Kaskade hier dessen Ziele.`;
+ ["year","month","week"].forEach(k=>{document.getElementById("c-"+k).value=S.get(topKey(k),"")});
+}
+["year","month","week"].forEach(k=>{const el=document.getElementById("c-"+k);el.addEventListener("input",()=>{S.set(topKey(k),el.value);if(primary){const f=document.getElementById("mx-"+primary+"-"+k);if(f)f.value=el.value}if(k==="year")renderRing()})});
+/* Zielmatrix: alle Bereiche × alle Horizonte. Gleiche Daten wie die Kaskade oben. */
+const HZ=[["someday","Someday",""],["five","5 Jahre","bis 2031"],["year","2027",""],["month",months[now.getMonth()],""],["week","KW "+kw,""]];
+const SHORTTERM=new Set(["month","week"]);
+function renderMatrix(){
+ const box=document.getElementById("matrix");box.innerHTML="";
+ const head=document.createElement("div");head.className="mx-row mx-head";
+ head.innerHTML=`<div><span class="label">Bereich</span></div>`+HZ.map(h=>`<div><span class="label">${h[1]}</span>${h[2]?` <span class="mx-sub">${h[2]}</span>`:""}</div>`).join("");
+ box.appendChild(head);
+ AREAS.forEach(a=>{
+  const isP=a.id===primary;
+  const row=document.createElement("div");row.className="mx-row"+(isP?" mx-p":"");row.id="mxr-"+a.id;
+  row.innerHTML=`<div class="mx-name">${a.name}${isP?'<span class="pill p">Primär</span>':""}</div>`+
+   HZ.map(([k,l,s])=>`<label class="mx-cell${SHORTTERM.has(k)?" short":""}"><span class="mx-lab">${l}${s?" · "+s:""}</span><textarea id="mx-${a.id}-${k}" rows="2" aria-label="${a.name}, ${l}"></textarea></label>`).join("");
+  box.appendChild(row);
+  HZ.forEach(([k])=>{const f=document.getElementById(`mx-${a.id}-${k}`);f.value=S.get(areaKey(a.id,k),"");
+   f.addEventListener("input",()=>{S.set(areaKey(a.id,k),f.value);if(a.id===primary){const t=document.getElementById("c-"+k);if(t){t.value=f.value;if(k==="year")renderRing()}}})});
+ });
+}
+migrate();bindTop();renderRing();renderDetail();renderMatrix();
 
 /* Tracker-Links: URL einmal einfügen, dann merkt sich die Seite sie */
 const TRACK=[{id:"t531",name:"5/3/1-Trainingstracker"},{id:"tmorning",name:"Morning-Routine"},{id:"twork",name:"Arbeit"}];
